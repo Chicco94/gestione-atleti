@@ -1,0 +1,20 @@
+<div fxLayout="column" fxLayoutAlign="start stretch">
+	<div fxFlex style="background-color: #3f51b5;">
+		<div fxFlex></div>
+		<button mat-flat-button color="primary" (click)="close()">
+			<mat-icon aria-hidden="false" aria-label="Filtro">clear</mat-icon>
+		</button>
+		<button mat-flat-button color="primary" [mat-dialog-close]="data" cdkFocusInitial>
+			<mat-icon aria-hidden="false" aria-label="Filtro">done</mat-icon>
+		</button>
+	</div>
+	<div fxLayout="column" fxLayoutAlign="space-around stretch" style="margin: 10px">
+		<app-competition-field [placeholder]="'Gara'" [(idcompetition)]="data.athleteCompetition.idcompetition" fxFlex></app-competition-field>
+		<app-athlete-field [placeholder]="'Athleta'" [(idathlete)]="data.athleteCompetition.idathlete" fxFlex></app-athlete-field>
+		<app-speciality-field [placeholder]="'Specialità'" [(model)]="data.athleteCompetition.speciality" fxFlex></app-speciality-field>
+		<app-text-field [placeholder]="'Categoria'" [(model)]="data.athleteCompetition.category" fxFlex></app-text-field>
+		<app-text-field [placeholder]="'Vento'" [(model)]="data.athleteCompetition.wind" fxFlex></app-text-field>
+		<app-text-field [placeholder]="'Risultato'" [(model)]="data.athleteCompetition.result" fxFlex></app-text-field>
+		<app-text-field [placeholder]="'Punti'" [(model)]="data.athleteCompetition.points" fxFlex></app-text-field>
+	</div>
+</div>

@@ -1,0 +1,25 @@
+<ng-container>
+	<mat-card style="margin-top: 5px;">
+		<mat-card-header>
+			<mat-card-title>{{competition.descr}}</mat-card-title>
+			<mat-card-subtitle>Data: {{competition.date}}</mat-card-subtitle>
+			<mat-card-subtitle>Luogo: {{competition.place}}</mat-card-subtitle>
+		</mat-card-header>
+		<mat-card-content>
+			<div fxLayout="column">
+				<!--Prima Riga-->
+				<div fxLayout="row" fxLayoutAlign="space-around center" fxFlex>
+					<div><strong>Specialità: </strong> {{athleteCompetition.speciality}}</div>
+					<div><strong>Categoria: </strong>{{athleteCompetition.category}}</div>
+				</div>
+				<!--Seconda Riga-->
+				<div fxLayout="row" fxLayoutAlign="space-around center" fxFlex>
+					<div><strong>Risultato: </strong> {{athleteCompetition.result}}</div>
+					<div><strong>Vento: </strong> {{athleteCompetition.wind}}</div>
+					<div><strong>Punti: </strong> {{athleteCompetition.points}}</div>
+				</div>
+			</div>
+		</mat-card-content>
+	</mat-card>
+</ng-container>
+

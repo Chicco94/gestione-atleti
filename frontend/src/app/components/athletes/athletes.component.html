@@ -1,0 +1,63 @@
+<div class="section" style="max-height: 92vh;overflow-y: scroll;">
+	<mat-grid-list [cols]="mobile? 1:5" rowHeight="300px">
+		<mat-grid-tile *ngFor="let athlete of filteredAthletes">
+			<app-athlete-preview [athlete]="athlete"></app-athlete-preview>
+		</mat-grid-tile>
+	</mat-grid-list>
+	<div class="section" style="position:absolute; top:20px;right:20px;margin:8px" fxLayoutAlign="start center" fxLayout="column" >
+		<button mat-fab color="primary" style="margin:8px">
+			<mat-icon aria-hidden="false" aria-label="Aggiungi" (click)="newAthlete();$event.stopPropagation()">add</mat-icon>
+		</button>
+		<button mat-fab color="primary" style="margin:8px" [matMenuTriggerFor]="filter_menu">
+			<mat-icon aria-hidden="false" aria-label="Filtro">filter_list</mat-icon>
+		</button>
+		<mat-menu #filter_menu="matMenu">
+			<ng-template matMenuContent>
+				<button mat-menu-item [matMenuTriggerFor]="filter_menu_nome">Nome</button>
+				<button mat-menu-item [matMenuTriggerFor]="filter_menu_sesso">Sesso</button>
+				<button mat-menu-item [matMenuTriggerFor]="filter_menu_categoria">Categoria</button>
+				<button mat-menu-item color="primary" (click)="applyFilter()">
+					<mat-icon aria-hidden="false" aria-label="Filtro">filter_alt</mat-icon>
+					Applica filtri
+				</button>
+				<button mat-menu-item color="primary" (click)="clearFilter()">
+					<mat-icon aria-hidden="false" aria-label="Filtro">cleaning_services</mat-icon>
+					Pulisci filtri
+				</button>
+			</ng-template>
+		</mat-menu>
+
+		<mat-menu #filter_menu_nome="matMenu">
+			<ng-template matMenuContent>
+				<mat-form-field appearance="fill">
+					<mat-label>Atleti</mat-label>
+					<mat-select #selector [formControl]="filter_name" multiple (click)="$event.stopPropagation();">
+						<mat-option *ngFor="let item of filteredAthletesName" (click)="selector.open()" [value]="item">{{item}}</mat-option>
+					</mat-select>
+				</mat-form-field>
+			</ng-template>
+		</mat-menu>
+
+		<mat-menu #filter_menu_sesso="matMenu">
+			<ng-template matMenuContent>
+				<mat-form-field appearance="fill">
+					<mat-label>Sesso</mat-label>
+					<mat-select #selector [formControl]="filter_sex" multiple (click)="$event.stopPropagation();">
+						<mat-option *ngFor="let item of [sexEnum.male,sexEnum.female]" (click)="selector.open()" [value]="item">{{item}}</mat-option>
+					</mat-select>
+				</mat-form-field>
+			</ng-template>
+		</mat-menu>
+
+		<mat-menu #filter_menu_categoria="matMenu">
+			<ng-template matMenuContent>
+				<mat-form-field appearance="fill">
+					<mat-label>Categoria</mat-label>
+					<mat-select #selector [formControl]="filter_category" multiple (click)="$event.stopPropagation();">
+						<mat-option *ngFor="let item of filteredAthletesCategory" (click)="selector.open()" [value]="item">{{item}}</mat-option>
+					</mat-select>
+				</mat-form-field>
+			</ng-template>
+		</mat-menu>
+	</div>
+</div>

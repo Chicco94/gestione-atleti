@@ -1,0 +1,13 @@
+<ng-container>
+	<mat-card class="my-card">
+		<mat-card-header>
+			<mat-card-title>{{training.name}}</mat-card-title>
+		</mat-card-header>
+		<mat-card-content>
+			<p>{{training.descr}}</p>
+		</mat-card-content>
+		<mat-card-actions>
+			<button (click)="openTraining(training);$event.stopPropagation()" mat-raised-button color="primary">DETTAGLIO</button>
+		</mat-card-actions>
+	</mat-card>
+</ng-container>

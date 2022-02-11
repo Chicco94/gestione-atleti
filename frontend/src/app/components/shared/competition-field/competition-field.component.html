@@ -1,0 +1,8 @@
+<ng-container>
+	<mat-form-field fxFlex>
+		<mat-label>{{placeholder}}</mat-label>
+		<mat-select [(ngModel)]="idcompetition" (click)="$event.stopPropagation();" [disabled]="disabled" (ngModelChange)="onModelChange()">
+			<mat-option *ngFor="let item of competitions" [value]="item.id">{{item.descr}}</mat-option>
+		</mat-select>
+	</mat-form-field>
+</ng-container>

@@ -1,0 +1,16 @@
+
+.my-sidenav-content {
+	max-height: 92vh;
+	overflow-y: scroll;
+}
+
+.my-sidenav-container {
+	min-height: 92vh;
+}
+	
+	
+.my-sidenav {
+	padding: 5px;
+	min-height: 100%;
+	background: #3f51b5;
+}
