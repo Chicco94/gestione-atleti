@@ -5,7 +5,7 @@ export class Base implements Deserializable{
 		Object.setPrototypeOf(this, Base.prototype);
 	}
 
-	equal(object){
+	equal(o:Object){
 		return false;
 	}
 

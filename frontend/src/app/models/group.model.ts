@@ -7,6 +7,6 @@ export class Group extends IdBase{
 		Object.setPrototypeOf(this, Group.prototype);
 	}
 
-	descr:string;
+	descr:string="";
 }
 

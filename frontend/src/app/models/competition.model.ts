@@ -7,8 +7,8 @@ export class Competition extends IdBase{
 		Object.setPrototypeOf(this, Competition.prototype);
 	}
 
-	descr:string;
-	date:Date;
-	place:string;
+	descr:string="";
+	date:Date= new Date();
+	place:string="";
 }
 

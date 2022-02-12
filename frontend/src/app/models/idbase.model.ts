@@ -1,7 +1,7 @@
 import { Base } from "./base.model";
 
 export class IdBase extends Base{
-	id:string;
+	id:string="";
 
 	constructor () {
 		super();
@@ -9,7 +9,7 @@ export class IdBase extends Base{
 	}
 
 	
-	equal(object){
+	override equal<Model extends IdBase>(object:Model){
 		return this.id == object.id;
 	}
 }

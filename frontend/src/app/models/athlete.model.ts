@@ -8,31 +8,31 @@ export class Athlete extends IdBase{
 		Object.setPrototypeOf(this, Athlete.prototype);
 	}
 
-	tessera:string = undefined;
-	name:string = undefined;
-	surname:string = undefined;
-	date_of_birth:Date = undefined;
-	sex:SexEnum = undefined;
+	tessera:string = "";
+	name:string = "";
+	surname:string = "";
+	date_of_birth:Date = new Date();
+	sex:SexEnum = SexEnum.male;
 	
 	// VELOCITA'
-	piede_partenza_blocchi:SideEnum = undefined;
-	primo_piede:number = undefined;
-	secondo_piede:number = undefined;
+	piede_partenza_blocchi:SideEnum = SideEnum.dx;
+	primo_piede:number = 0;
+	secondo_piede:number = 0;
 
 	// OSTACOLI
-	passi_ostacoli_alti:number = undefined;
-	passi_ostacoli_bassi:number = undefined;
+	passi_ostacoli_alti:number = 0;
+	passi_ostacoli_bassi:number = 0;
 	
 	// LUNGO
-	rincorsa_lungo:number = undefined;
-	passi_lungo:number = undefined;
-	piede_stacco_lungo:SideEnum = undefined;
+	rincorsa_lungo:number = 0;
+	passi_lungo:number = 0;
+	piede_stacco_lungo:SideEnum = SideEnum.dx;
 	
 	// ALTO
-	rincorsa_alto_1:number = undefined;
-	rincorsa_alto_2:number = undefined;
-	passi_alto:number = undefined;
-	piede_stacco_alto:SideEnum = undefined;
+	rincorsa_alto_1:number = 0;
+	rincorsa_alto_2:number = 0;
+	passi_alto:number = 0;
+	piede_stacco_alto:SideEnum = SideEnum.dx;
 
 	/**
 	 * @author Enrico
@@ -73,7 +73,7 @@ export class Athlete extends IdBase{
 			case (this.age < 60): { return this.sex == SexEnum.male ? CategoryEnum.MM55 : CategoryEnum.MF55; }
 			case (this.age < 65): { return this.sex == SexEnum.male ? CategoryEnum.MM60 : CategoryEnum.MF60; }
 			case (this.age >= 65): { return this.sex == SexEnum.male ? CategoryEnum.MM65 : CategoryEnum.MF65; }
-			default: { console.error("categoria non trovata",this);return undefined;} 
+			default: { console.error("categoria non trovata",this);return CategoryEnum.AF;} 
 		}
 	}
 	set category(category:CategoryEnum){

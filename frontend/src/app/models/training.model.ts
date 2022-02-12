@@ -7,8 +7,8 @@ export class Training extends IdBase{
 		Object.setPrototypeOf(this, Training.prototype);
 	}
 
-	name:string;
-	descr:string;
+	name:string="";
+	descr:string="";
 	idathletes:string[] = [];
 }
 

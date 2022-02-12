@@ -1,8 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subscription, Observable, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Base } from '../models/base.model';
-import { tap, catchError, map } from 'rxjs/operators';
 import { BaseDao } from '../daos/base.dao';
 
 @Injectable({
@@ -10,9 +8,9 @@ import { BaseDao } from '../daos/base.dao';
 })
 export class BaseService<Model extends Base> {
 	list:Model[] = [];
-	protected listObservable: Observable<Model>;
+	protected listObservable: Observable<Model> = new Observable<Model>();
 	protected suburl: string = "";
-	public download_completed: boolean;
+	public download_completed: boolean = false;
 
 	constructor(private dao:BaseDao<Model>) {}
 
@@ -28,7 +26,7 @@ export class BaseService<Model extends Base> {
 	
 
 	public save(object:Model){
-		return this.dao.post(object).toPromise()
+		return this.dao.post(object)
 	}
 
 	/**
@@ -37,7 +35,7 @@ export class BaseService<Model extends Base> {
 	 * @description if element already in list, it updates it
 	 */
 	public push(newItem:Model){
-		let itemToUpdate:Model = this.list.find((item) => item.equal(newItem) );
+		let itemToUpdate:Model|undefined = this.list.find((item) => item.equal(newItem) );
 		if (itemToUpdate) {
 			let index = this.list.indexOf(itemToUpdate);
 			this.list[index] = newItem;
@@ -49,10 +47,6 @@ export class BaseService<Model extends Base> {
 		return Promise.resolve(newItem);
 	}
 
-	public saveAndPush(newItem){
-		this.save(newItem).then(
-			(data) => { return this.push(data)}
-			,(error) => {return Promise.reject(error)}
-		)
+	public saveAndPush(newItem:Model){
 	}
 }
