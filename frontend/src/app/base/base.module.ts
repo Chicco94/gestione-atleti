@@ -17,8 +17,12 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {ScrollingModule} from '@angular/cdk/scrolling';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 import { AppRoutingModule } from '../app-routing.module';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
+
 import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
@@ -47,6 +51,7 @@ import { HomeComponent } from './components/home/home.component';
     MatTabsModule,
     MatProgressSpinnerModule,
     ScrollingModule,
+    MatCheckboxModule,
   ],
   exports:[
     AppRoutingModule,
@@ -68,7 +73,8 @@ import { HomeComponent } from './components/home/home.component';
     MatDatepickerModule,
     MatTabsModule,
     MatProgressSpinnerModule,
-    ScrollingModule
+    ScrollingModule,
+    MatCheckboxModule,
   ]
 })
 export class BaseModule { }
