@@ -10,7 +10,6 @@ import { BaseModule } from './base/base.module';
 import { GestioneModule } from './gestione/gestione.module';
 import { AllenamentiModule } from './allenamenti/allenamenti.module';
 import { SharedModule } from './shared/shared.module';
-import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,6 @@ import { MatIconModule } from '@angular/material/icon';
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
-    MatIconModule,
 
     // Custom
     BaseModule,
