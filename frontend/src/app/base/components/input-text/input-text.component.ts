@@ -15,7 +15,6 @@ export class InputTextComponent implements OnInit {
   }
 
   onModelChange(value: string) {
-    console.log(value);
     this.modelChange.emit(value);
   }
 
