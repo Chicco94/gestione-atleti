@@ -1,0 +1,14 @@
+<div style="margin-left: 10px;margin-right: 10px">
+    <mat-form-field fxFlex>
+        <input 
+            matInput 
+            [matDatepicker]="picker" 
+            [placeholder]="placeholder" 
+            [(ngModel)]="model" 
+            (ngModelChange)="onModelChange(model)"
+            [ngModelOptions]="{standalone: true}"
+        >
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+</div>
