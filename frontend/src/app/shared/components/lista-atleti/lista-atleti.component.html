@@ -1,1 +1,19 @@
-<p>lista-atleti works!</p>
+<div style="height: 96px;">
+    <mat-form-field fxFlex>
+        <input matInput type="text" placeholder="Cerca" [(ngModel)]="searchString" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+</div>
+
+<cdk-virtual-scroll-viewport itemSize="50" style="height: calc(100% - 288px);">
+    <div *cdkVirtualFor="let atleta of atleti | search:'id,name,surname,category':searchString" #atleti>
+        <app-atleta-preview [atleta]="atleta" [selectable]="selectable"></app-atleta-preview>
+    </div>
+</cdk-virtual-scroll-viewport>
+
+<div style="height: 96px;">
+    <div fxLayout="row" fxLayoutAlign="center center" style="height: 96px;background-color: lightblue;">
+        <button mat-flat-button style="background-color: lightgreen;" [routerLink]="['/allenamento/',idallenamento]" routerLinkActive="activebutton">
+            <h1>Conferma</h1>
+        </button>
+    </div>
+</div>
