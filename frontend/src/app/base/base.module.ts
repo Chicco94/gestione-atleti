@@ -24,6 +24,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { HomeComponent } from './components/home/home.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { HomeComponent } from './components/home/home.component';
     MatCardModule,
     MatDialogModule,
     MatInputModule,
+    FormsModule,
     MatGridListModule,
     MatListModule,
     MatButtonModule,
@@ -63,6 +65,7 @@ import { HomeComponent } from './components/home/home.component';
     MatCardModule,
     MatDialogModule,
     MatInputModule,
+    FormsModule,
     MatGridListModule,
     MatListModule,
     MatButtonModule,

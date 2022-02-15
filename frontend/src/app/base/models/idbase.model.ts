@@ -1,7 +1,7 @@
 import { Base } from "./base.model";
 
 export class IdBase extends Base{
-	id:string="";
+	id:number=0;
 
 	constructor () {
 		super();
