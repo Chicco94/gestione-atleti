@@ -1,0 +1,12 @@
+<div style="margin-left: 10px;margin-right: 10px">
+    <mat-form-field fxFlex >
+        <input 
+            matInput 
+            type="text" 
+            [placeholder]="placeholder" 
+            [(ngModel)]="model" 
+            (ngModelChange)="onModelChange(model)"
+            [ngModelOptions]="{standalone: true}"
+        >
+    </mat-form-field>
+</div>

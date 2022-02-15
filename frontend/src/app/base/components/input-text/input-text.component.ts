@@ -1,0 +1,22 @@
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'app-input-text',
+  templateUrl: './input-text.component.html',
+  styleUrls: ['./input-text.component.scss']
+})
+export class InputTextComponent implements OnInit {
+  @Input() placeholder:string = "";
+  @Input() model:string = ""
+  @Output() modelChange:EventEmitter<string> = new EventEmitter<string>();
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  onModelChange(value: string) {
+    console.log(value);
+    this.modelChange.emit(value);
+  }
+
+}
