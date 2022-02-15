@@ -1,8 +1,0 @@
-<ng-container>
-	<mat-form-field fxFlex>
-		<mat-label>{{placeholder}}</mat-label>
-		<mat-select [(ngModel)]="model" (click)="$event.stopPropagation();" [disabled]="disabled" (ngModelChange)="onModelChange()">
-			<mat-option *ngFor="let item of sexEnum | enumToArray" [value]="sexEnum[item]">{{sexEnum[item]}}</mat-option>
-		</mat-select>
-	</mat-form-field>
-</ng-container>

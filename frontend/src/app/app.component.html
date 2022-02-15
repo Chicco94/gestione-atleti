@@ -1,18 +1,7 @@
-<h1>{{title}}</h1>
-<div>
-	<mat-sidenav-container class="my-sidenav-container">
-		<mat-sidenav #sidenav mode="side" opened="true" class="my-sidenav">
-			<div fxLayout="column" fxLayoutAlign="space-around center">
-				<div style="margin-top: 10px;" *ngFor="let page of pages">
-					<button mat-flat-button [routerLink]="page.routerLink" routerLinkActive="active" color="primary" [disabled]="page.disabled()">
-						<mat-icon aria-hidden="false" aria-label="page.ariaLabel">{{page.icon}}</mat-icon>
-					</button>
-				</div>
-			</div>
-		</mat-sidenav>
-		<mat-sidenav-content>
-			<router-outlet></router-outlet>
-		</mat-sidenav-content>
-	</mat-sidenav-container>
+<div style="background-color: #3f51b5" fxLayout="row" fxLayoutAlign="space-around center">
+    <button mat-flat-button [routerLink]="'home'" routerLinkActive="active" color="primary">
+        <mat-icon aria-hidden="false" aria-label="Home">home</mat-icon>
+    </button>
+    <h1 style="color:white">GESTIONE ATLETI</h1>
 </div>
-
+<router-outlet></router-outlet>

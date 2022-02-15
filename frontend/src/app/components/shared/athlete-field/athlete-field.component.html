@@ -1,8 +1,0 @@
-<ng-container>
-	<mat-form-field fxFlex>
-		<mat-label>{{placeholder}}</mat-label>
-		<mat-select [(ngModel)]="idathlete" (click)="$event.stopPropagation();" [disabled]="disabled" (ngModelChange)="onModelChange()">
-			<mat-option *ngFor="let item of athletes" [value]="item.id">{{item.fullName}}</mat-option>
-		</mat-select>
-	</mat-form-field>
-</ng-container>

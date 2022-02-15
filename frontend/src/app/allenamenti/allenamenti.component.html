@@ -1,0 +1,16 @@
+<div fxLayout="column" fxLayoutAlign="space-evenly stretch" style="height: 100%;">
+    <div fxLayout="row" fxLayoutAlign="end center" style="height: 100%;background-color: lightblue;">
+        <h1>NUOVO ALLENAMENTO</h1>
+        <button mat-flat-button [routerLink]="['/allenamento/']" routerLinkActive="activebutton">
+            <mat-icon aria-hidden="false" aria-label="newAllenamento">fitness_center</mat-icon>
+        </button>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center" style="height: 100%;background-color: cornflowerblue;">
+        <button mat-flat-button [routerLink]="['/listaAllenamenti/']" routerLinkActive="activebutton">
+            <mat-icon aria-hidden="false" aria-label="listaAllenamenti">fitness_center</mat-icon>
+        </button>
+        <h1>CONTINUA ALLENAMENTO</h1>
+    </div>
+</div>
+
+
