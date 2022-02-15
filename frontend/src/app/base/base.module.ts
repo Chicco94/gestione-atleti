@@ -25,10 +25,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
+import { InputTextComponent } from './components/input-text/input-text.component';
+import { InputDateComponent } from './components/input-date/input-date.component';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    InputTextComponent,
+    InputDateComponent
   ],
   imports: [
     CommonModule,
@@ -50,6 +55,7 @@ import { FormsModule } from '@angular/forms';
     MatMenuModule,
     MatSelectModule,
     MatDatepickerModule,
+    MatNativeDateModule,
     MatTabsModule,
     MatProgressSpinnerModule,
     ScrollingModule,
@@ -74,10 +80,15 @@ import { FormsModule } from '@angular/forms';
     MatMenuModule,
     MatSelectModule,
     MatDatepickerModule,
+    MatNativeDateModule,
     MatTabsModule,
     MatProgressSpinnerModule,
     ScrollingModule,
     MatCheckboxModule,
+
+    // Components
+    InputTextComponent,
+    InputDateComponent,
   ]
 })
 export class BaseModule { }
