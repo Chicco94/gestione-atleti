@@ -10,7 +10,7 @@
     </div>
     <div fxLayout="row" fxLayoutAlign="start center" style="height: 100%;background-color: cornflowerblue;">
         <h1>Seleziona test</h1>
-        <button mat-flat-button [routerLink]="['/listaTest/']" routerLinkActive="activebutton">
+        <button mat-flat-button [routerLink]="['/listaTest/',allenamento.id,true]" routerLinkActive="activebutton">
             <mat-icon aria-hidden="false" aria-label="listaTest">fitness_center</mat-icon>
         </button>
     </div>
