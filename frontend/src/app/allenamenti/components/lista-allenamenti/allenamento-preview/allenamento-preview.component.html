@@ -1,0 +1,10 @@
+<div fxLayout="row" fxLayoutAlign="start stretch" style="height: 100%;background-color: lightblue;">
+    <div style="margin-left: 10px;">
+        <b>{{allenamento.descr}}</b><br>
+        {{allenamento.data | date:"dd/mm/yy"}}
+    </div>
+    <div fxFlex></div>
+    <button mat-flat-button [routerLink]="['/allenamentoAttivo/', allenamento.id]" routerLinkActive="activebutton">
+        <mat-icon aria-hidden="false" aria-label="allenamentoAttivo">play_arrow</mat-icon>
+    </button>
+</div>

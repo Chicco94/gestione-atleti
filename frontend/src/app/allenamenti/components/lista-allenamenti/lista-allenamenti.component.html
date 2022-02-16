@@ -1,1 +1,11 @@
-<p>lista-allenamenti works!</p>
+<div style="height: 48px;">
+    <mat-form-field fxFlex>
+        <input matInput type="text" placeholder="Cerca" [(ngModel)]="searchString" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+</div>
+
+<cdk-virtual-scroll-viewport itemSize="50" style="height: calc(100% - 96px);">
+    <div *cdkVirtualFor="let allenamento of allenamenti | search:'descr,gruppo':searchString" #test>
+        <app-allenamento-preview [allenamento]="allenamento"></app-allenamento-preview>
+    </div>
+</cdk-virtual-scroll-viewport>

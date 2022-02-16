@@ -7,7 +7,7 @@ import { AllenamentiComponent } from './allenamenti.component';
 import { AllenamentoComponent } from './components/allenamento/allenamento.component';
 import { AllenamentoAttivoComponent } from './components/allenamento-attivo/allenamento-attivo.component';
 import { ListaAllenamentiComponent } from './components/lista-allenamenti/lista-allenamenti.component';
-import { AllenamentoPreviewComponent } from './components/allenamento-preview/allenamento-preview.component';
+import { AllenamentoPreviewComponent } from './components/lista-allenamenti/allenamento-preview/allenamento-preview.component';
 
 @NgModule({
   declarations: [
