@@ -1,0 +1,13 @@
+<div fxLayout="row" fxLayoutAlign="start stretch" style="height: 100%;background-color: lightblue;">
+    <div style="margin-left: 10px;">
+        <b>{{test.descr}}</b><br>
+        {{test.gruppo || " "}}
+    </div>
+    <div fxFlex></div>
+    <button mat-flat-button *ngIf="addable" (click)="add()">
+        <mat-icon aria-hidden="false" aria-label="addToAllenamento">add</mat-icon>
+    </button>
+    <button mat-flat-button *ngIf="removable" (click)="remove()">
+        <mat-icon aria-hidden="false" aria-label="removeFromAllenamento">delete</mat-icon>
+    </button>
+</div>

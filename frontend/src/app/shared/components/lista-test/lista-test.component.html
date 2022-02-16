@@ -1,1 +1,27 @@
-<p>lista-test works!</p>
+<div style="height: 48px;">
+    <mat-form-field fxFlex>
+        <input matInput type="text" placeholder="Cerca" [(ngModel)]="searchString" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+</div>
+
+<cdk-virtual-scroll-viewport itemSize="50" style="height: calc(50% - 85px);">
+    <div *cdkVirtualFor="let test of possible_tests | search:'descr,gruppo':searchString" #test>
+        <app-test-preview [test]="test" [(testList)]="allenamento.test" [addable]="true"></app-test-preview>
+    </div>
+</cdk-virtual-scroll-viewport>
+
+<mat-divider style="margin: 2px"></mat-divider>
+
+<cdk-virtual-scroll-viewport itemSize="50" style="height: calc(50% - 85px);">
+    <div *cdkVirtualFor="let test of allenamento.test | search:'descr,gruppo':searchString" #added>
+        <app-test-preview [test]="test" [(testList)]="allenamento.test" [removable]="true"></app-test-preview>
+    </div>
+</cdk-virtual-scroll-viewport>
+
+<div style="height: 72px;">
+    <div fxLayout="row" fxLayoutAlign="center center" style="height: 48px;background-color: lightblue;">
+        <button mat-flat-button style="background-color: lightgreen;" [routerLink]="['/allenamento/',idallenamento]" routerLinkActive="activebutton">
+            <h1>Conferma</h1>
+        </button>
+    </div>
+</div>
