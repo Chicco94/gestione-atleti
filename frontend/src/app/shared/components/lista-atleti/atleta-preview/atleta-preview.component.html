@@ -1,8 +1,9 @@
 
 <div fxLayout="row" fxLayoutAlign="start stretch" style="height: 100%;background-color: lightblue;">
-    <mat-checkbox *ngIf="selectable"></mat-checkbox>
-    <div style="margin-left: 10px;">
+    <div style="margin-left: 24px;">
         <b>{{atleta.fullName}}</b><br>
         {{atleta.age}} - {{atleta.category}}
     </div>
+    <div fxFlex></div>
+    <mat-checkbox *ngIf="selectable" style="margin-right: 24px;"></mat-checkbox>
 </div>

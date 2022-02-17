@@ -1,10 +1,8 @@
 <div style="height: 96px;">
-    <mat-form-field fxFlex>
-        <input matInput type="text" placeholder="Cerca" [(ngModel)]="searchString" [ngModelOptions]="{standalone: true}">
-    </mat-form-field>
+    <app-input-text placeholder="Cerca" [(model)]="searchString"></app-input-text>
 </div>
 
-<cdk-virtual-scroll-viewport itemSize="50" style="height: calc(100% - 288px);">
+<cdk-virtual-scroll-viewport itemSize="50" style="height: calc(100% - 240px);">
     <div *cdkVirtualFor="let atleta of atleti | search:'id,name,surname,category':searchString" #atleti>
         <app-atleta-preview [atleta]="atleta" [selectable]="selectable"></app-atleta-preview>
     </div>
