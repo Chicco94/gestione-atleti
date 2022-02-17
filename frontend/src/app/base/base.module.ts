@@ -20,9 +20,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { MatNativeDateModule } from '@angular/material/core';
+import {MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material/core';
 import {MatTableModule} from '@angular/material/table';
-
 import { AppRoutingModule } from '../app-routing.module';
 
 
@@ -96,6 +95,7 @@ import { InputNumberComponent } from './components/input-number/input-number.com
     InputTextComponent,
     InputDateComponent,
     InputNumberComponent,
-  ]
+  ],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'it-IT' }]
 })
 export class BaseModule { }

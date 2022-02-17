@@ -18,20 +18,15 @@ export class TestPreviewComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.testList);
   }
 
   add = ()=>{
-    console.log(this.testList);
     this.testList = [...this.testList,this.test];
     this.testListChange.emit(this.testList);
-    console.log(this.testList);
   };
 
   remove = ()=>{
-    console.log(this.testList);
     this.testList.splice(this.testList.indexOf(this.test));
     this.testListChange.emit(this.testList);
-    console.log(this.testList);
   };
 }

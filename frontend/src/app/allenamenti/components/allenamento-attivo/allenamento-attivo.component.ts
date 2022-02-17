@@ -28,7 +28,6 @@ export class AllenamentoAttivoComponent implements OnInit {
     this.dataSource = this.prepareTableDataSource(this.allenamento);
     this.columns = this.prepareTableColumns(this.dataSource)
     this.displayedColumns = this.columns.map(c => c.columnDef);
-    console.log(this.allenamento);
   }
 
   /**
