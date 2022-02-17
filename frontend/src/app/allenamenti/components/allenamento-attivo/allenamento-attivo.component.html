@@ -18,12 +18,11 @@
 	  </table>
 </div>
 
-
-<div fxLayout="row" fxLayoutAlign="space-evenly center" style="height: 96px;background-color: lightblue;">
-	<button mat-flat-button style="background-color: lightgreen;">
-		<h1>Salva</h1>
+<div fxLayout="row" fxLayoutAlign="space-evenly center" style="height: 96px;">
+	<button mat-icon-button class="circle-button-small" [routerLink]="['/listaAllenamenti/']" routerLinkActive="activebutton">
+		<mat-icon aria-hidden="false" aria-label="listaAllenamenti">save</mat-icon>
 	</button>
-	<button mat-flat-button style="background-color: lightgreen;" [routerLink]="['/allenamenti/']" routerLinkActive="activebutton">
-		<h1>Termina</h1>
+	<button mat-icon-button class="circle-button-small-green" [routerLink]="['/allenamenti/']" routerLinkActive="activebutton">
+		<mat-icon aria-hidden="false" aria-label="listaAllenamenti">verified</mat-icon>
 	</button>
 </div>
