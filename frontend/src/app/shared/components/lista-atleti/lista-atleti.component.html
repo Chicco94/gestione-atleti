@@ -1,4 +1,4 @@
-<div style="height: 96px;">
+<div style="height: 48px;">
     <app-input-text placeholder="Cerca" [(model)]="searchString"></app-input-text>
 </div>
 
@@ -8,10 +8,8 @@
     </div>
 </cdk-virtual-scroll-viewport>
 
-<div style="height: 96px;">
-    <div fxLayout="row" fxLayoutAlign="center center" style="height: 96px;background-color: lightblue;">
-        <button mat-flat-button style="background-color: lightgreen;" [routerLink]="['/allenamento/',idallenamento]" routerLinkActive="activebutton">
-            <h1>Conferma</h1>
-        </button>
-    </div>
+<div fxLayout="row" fxLayoutAlign="end center">
+    <button mat-icon-button class="circle-button-green" [routerLink]="['/allenamento/',idallenamento]"  routerLinkActive="activebutton">
+        <mat-icon aria-hidden="false" aria-label="listaTest">check</mat-icon>
+    </button>
 </div>
