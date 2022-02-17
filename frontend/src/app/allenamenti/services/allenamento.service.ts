@@ -16,14 +16,19 @@ export class AllenamentoService {
   constructor() {
     Object.setPrototypeOf(this, AllenamentoService.prototype);
 		let a1 = new Allenamento();
-		a1.descr = "Esempio 1";
+		a1.descr = "Allenamento di esempio 1";
     a1.data = new Date();
 		let a2 = new Allenamento();
-		a2.descr = "Esempio 2";
+		a2.descr = "Allenamento di esempio 2";
     a2.data = new Date();
+    let a3 = new Allenamento();
+		a3.descr = "Allenamento di esempio 3";
+    a3.data = new Date();
+    a3.completato = true;
 		for (let i=0;i<100;i++){
 			this.list.push(a1);
 			this.list.push(a2);
+			this.list.push(a3);
 		}
   }
 
