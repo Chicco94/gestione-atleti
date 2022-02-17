@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 // MATERIAL
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -18,22 +20,24 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatTableModule} from '@angular/material/table';
 
 import { AppRoutingModule } from '../app-routing.module';
 
-import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 import { HomeComponent } from './components/home/home.component';
-import { FormsModule } from '@angular/forms';
-import { MatNativeDateModule } from '@angular/material/core';
 import { InputTextComponent } from './components/input-text/input-text.component';
 import { InputDateComponent } from './components/input-date/input-date.component';
+import { InputNumberComponent } from './components/input-number/input-number.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     InputTextComponent,
-    InputDateComponent
+    InputDateComponent,
+    InputNumberComponent
   ],
   imports: [
     CommonModule,
@@ -60,6 +64,7 @@ import { InputDateComponent } from './components/input-date/input-date.component
     MatProgressSpinnerModule,
     ScrollingModule,
     MatCheckboxModule,
+    MatTableModule,
   ],
   exports:[
     AppRoutingModule,
@@ -85,10 +90,12 @@ import { InputDateComponent } from './components/input-date/input-date.component
     MatProgressSpinnerModule,
     ScrollingModule,
     MatCheckboxModule,
+    MatTableModule,
 
     // Components
     InputTextComponent,
     InputDateComponent,
+    InputNumberComponent,
   ]
 })
 export class BaseModule { }

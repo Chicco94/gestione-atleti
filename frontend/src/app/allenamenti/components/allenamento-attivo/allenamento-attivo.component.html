@@ -1,1 +1,29 @@
-<p>allenamento-attivo works!</p>
+<div style="height: calc(100% - 96px - 48px); max-width: 100%;overflow: auto;">
+	<table mat-table [dataSource]="dataSource" class="allenamento-table">
+		<ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef" [sticky]="column.sticky">
+			<th mat-header-cell *matHeaderCellDef>
+				{{column.header}}
+			</th>
+			<td mat-cell *matCellDef="let row">
+				<div fxLayout="row" fxLayoutAlign="start stretch">
+					<app-input-text *ngIf="column.type == 'text'" [placeholder]="column.header" [(model)]="row[column.key]" ></app-input-text>
+					<app-input-number [placeholder]="column.header" [(model)]="row[column.key]" *ngIf="column.type == 'number'"></app-input-number>
+					<div *ngIf="column.type == 'plain'">{{column.cell(row)}}</div>
+				</div>
+			</td>
+		</ng-container>
+	  
+		<tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
+		<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+	  </table>
+</div>
+
+
+<div fxLayout="row" fxLayoutAlign="space-evenly center" style="height: 96px;background-color: lightblue;">
+	<button mat-flat-button style="background-color: lightgreen;">
+		<h1>Salva</h1>
+	</button>
+	<button mat-flat-button style="background-color: lightgreen;" [routerLink]="['/allenamenti/']" routerLinkActive="activebutton">
+		<h1>Termina</h1>
+	</button>
+</div>

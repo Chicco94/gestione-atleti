@@ -1,0 +1,18 @@
+.allenamento-table {
+    width: 100%;
+}
+
+.mat-row .mat-cell {
+    padding: 4px;
+    border-right-width: 1px;
+    cursor: pointer;
+    height: 96px;
+}
+  
+.mat-row:hover .mat-cell {
+    border-color: currentColor;
+}
+
+.allenamento-row-is-clicked {
+    font-weight: bold;
+}
