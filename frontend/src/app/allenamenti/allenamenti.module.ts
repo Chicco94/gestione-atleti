@@ -8,6 +8,7 @@ import { AllenamentoComponent } from './components/allenamento/allenamento.compo
 import { AllenamentoAttivoComponent } from './components/allenamento-attivo/allenamento-attivo.component';
 import { ListaAllenamentiComponent } from './components/lista-allenamenti/lista-allenamenti.component';
 import { AllenamentoPreviewComponent } from './components/lista-allenamenti/allenamento-preview/allenamento-preview.component';
+import { BeforeAllenamentoComponent } from './components/before-allenamento/before-allenamento.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AllenamentoPreviewComponent } from './components/lista-allenamenti/alle
     ListaAllenamentiComponent,
     AllenamentoComponent,
     AllenamentoAttivoComponent,
-    AllenamentoPreviewComponent
+    AllenamentoPreviewComponent,
+    BeforeAllenamentoComponent
   ],
   imports: [
     CommonModule,
