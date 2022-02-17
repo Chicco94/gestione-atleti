@@ -30,8 +30,8 @@ $rowBorder: #616161; //rgba(0, 0, 0, 0.12);
 $paginator1: rgba(255, 255, 255, 0.54); //rgba(0, 0, 0, 0.54);
 $paginator2: rgba(255, 255, 255, 0.26); //rgba(0, 0, 0, 0.26);
 
-html, body { height: 100%;background-color: $discobolo; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { height: 100%;background-color: $discobolo;overflow-x: clip; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;overflow: hidden; }
 
 .circle-button {
 	background: $primary;
