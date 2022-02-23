@@ -3,7 +3,7 @@
 </div>
 
 <cdk-virtual-scroll-viewport itemSize="50" style="height: calc(100% - 240px);">
-    <div *cdkVirtualFor="let atleta of atleti | search:'id,name,surname,category':searchString" #atleti>
+    <div *cdkVirtualFor="let atleta of atleti | search:'id,name,cognome,category':searchString" #atleti>
         <app-atleta-preview [atleta]="atleta" [selectable]="selectable"></app-atleta-preview>
     </div>
 </cdk-virtual-scroll-viewport>

@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AthleteGroupService } from './athlete-group.service';
+import { AtletaGroupService } from './athlete-group.service';
 
-describe('AthleteGroupService', () => {
+describe('AtletaGroupService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: AthleteGroupService = TestBed.get(AthleteGroupService);
+    const service: AtletaGroupService = TestBed.get(AtletaGroupService);
     expect(service).toBeTruthy();
   });
 });

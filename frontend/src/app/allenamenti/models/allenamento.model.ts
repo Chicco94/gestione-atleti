@@ -1,5 +1,5 @@
 
-import { Athlete } from "src/app/shared/models/athlete.model";
+import { Atleta } from "src/app/shared/models/atleta.model";
 import { CategoryEnum, SexEnum, SideEnum, SpecialityEnum } from "../../base/models/enumerations";
 import { IdBase } from "../../base/models/idbase.model";
 import { Risultato } from "./risultato.model";
@@ -15,7 +15,7 @@ export class Allenamento extends IdBase{
     descr:string= "";
     data:Date=new Date();
     completato:boolean=false;
-    atleti:Athlete[] = [];
+    atleti:Atleta[] = [];
     test:Test[] = [];
     risultati:Risultato[] = [];
 

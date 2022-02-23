@@ -1,15 +1,15 @@
 import { Base } from "./base.model";
 
-export class AthleteGroup extends Base{
+export class AtletaGroup extends Base{
 	idathlete:string="";
 	idgroup:string="";
 
 	constructor () {
 		super();
-		Object.setPrototypeOf(this, AthleteGroup.prototype);
+		Object.setPrototypeOf(this, AtletaGroup.prototype);
 	}
 
-	override equal(object:AthleteGroup){
+	override equal(object:AtletaGroup){
 		try {
 			return this.idathlete == object.idathlete && this.idgroup == object.idgroup;
 		} catch {

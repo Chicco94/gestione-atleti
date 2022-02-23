@@ -7,6 +7,10 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true },
         nome: DataTypes.STRING,
         cognome: DataTypes.STRING,
+        tessera: DataTypes.STRING,
+        data_nascita: DataTypes.DATE,
+        sesso: DataTypes.STRING,
+        piede_partenza_blocchi: DataTypes.STRING,
     }, {
         freezeTableName: true
     })

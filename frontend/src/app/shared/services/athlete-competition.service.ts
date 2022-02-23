@@ -1,20 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BaseDao } from '../../base/daos/base.dao';
-import { AthleteCompetition } from '../models/athleteCompetition.model';
+import { AtletaCompetition } from '../models/athleteCompetition.model';
 import { BaseService } from './base.service';
 
 @Injectable({
 	providedIn: 'root'
 })
-export class AthleteCompetitionService extends BaseService<AthleteCompetition>  {
+export class AtletaCompetitionService extends BaseService<AtletaCompetition>  {
 
 	constructor(private localhttp:HttpClient) {
-		super(new BaseDao(localhttp,AthleteCompetition,"AthleteCompetition/"));
-		Object.setPrototypeOf(this, AthleteCompetitionService.prototype);
+		super(new BaseDao(localhttp,AtletaCompetition,"AtletaCompetition/"));
+		Object.setPrototypeOf(this, AtletaCompetitionService.prototype);
 	}
 
-	public getAthleteCompetitionByAthlete(idathlete:string):AthleteCompetition[]{
-		return this.list.filter((item:AthleteCompetition) => item.idathlete == idathlete);
+	public getAtletaCompetitionByAtleta(idathlete:string):AtletaCompetition[]{
+		return this.list.filter((item:AtletaCompetition) => item.idathlete == idathlete);
 	}
 }

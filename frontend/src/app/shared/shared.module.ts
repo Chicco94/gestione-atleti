@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AthleteComponent } from './components/athlete/athlete.component';
+import { AtletaComponent } from './components/athlete/athlete.component';
 import { EnumToArrayPipe, FilterPipe, SearchPipe } from './pipes/pipes';
 
 import { BaseModule } from '../base/base.module';
@@ -11,7 +11,7 @@ import { ListaTestComponent } from './components/lista-test/lista-test.component
 
 @NgModule({
   declarations: [
-    AthleteComponent,
+    AtletaComponent,
     AtletaPreviewComponent,
     TestPreviewComponent,
     ListaAtletiComponent,

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Athlete } from '../../models/athlete.model';
-import { AthleteService } from '../../services/athlete.service';
+import { Atleta } from '../../models/atleta.model';
+import { AtletaService } from '../../services/atleta.service';
 
 @Component({
   selector: 'app-lista-atleti',
@@ -11,13 +11,13 @@ import { AthleteService } from '../../services/athlete.service';
 export class ListaAtletiComponent implements OnInit {
   @Input() selectable:boolean=false;
   @Input() idallenamento:number=0;
-  selezionati:Athlete[] = [];
-  atleti:Athlete[] = []
+  selezionati:Atleta[] = [];
+  atleti:Atleta[] = []
   searchString:string="";
 
   constructor(
     private route:ActivatedRoute,
-    private athleteService:AthleteService
+    private athleteService:AtletaService
   ) {
     this.route.params.subscribe(params => {
       this.selectable = params['selectable'] === 'true';
@@ -29,7 +29,9 @@ export class ListaAtletiComponent implements OnInit {
   ngOnInit(): void {
     console.log("ngOnInit")
     this.athleteService.fetchAtleti();
-    this.athleteService.OnFetchAtleti().subscribe((data:any) => {console.log(data);this.atleti = data});
+    this.athleteService.OnFetchAtleti().subscribe((data:any) => {
+      this.atleti = data.map((single_data:any) => new Atleta().deserialize(single_data));
+    });
   }
 
 }

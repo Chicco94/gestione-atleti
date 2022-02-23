@@ -1,4 +1,4 @@
-import { Athlete } from "src/app/shared/models/athlete.model";
+import { Atleta } from "src/app/shared/models/atleta.model";
 import { IdBase } from "../../base/models/idbase.model";
 import { Allenamento } from "./allenamento.model";
 import { Test } from "./test.model";
@@ -10,7 +10,7 @@ export class Risultato extends IdBase{
 		Object.setPrototypeOf(this, Risultato.prototype);
 	}
 
-    atleta:Athlete = new Athlete();
+    atleta:Atleta = new Atleta();
     test:Test = new Test();
     allenamento:Allenamento = new Allenamento();
 	sequenza:number = 0;

@@ -584,7 +584,7 @@
 											"top": 396,
 											"width": 80.57080078125,
 											"height": 13,
-											"text": "+surname",
+											"text": "+cognome",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1093,7 +1093,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF65rgCwiiwSK8="
 									},
-									"name": "surname"
+									"name": "cognome"
 								},
 								{
 									"_type": "UMLAttribute",

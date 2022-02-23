@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Athlete } from 'src/app/shared/models/athlete.model';
+import { Atleta } from 'src/app/shared/models/atleta.model';
 import { Allenamento } from '../../models/allenamento.model';
 import { Risultato } from '../../models/risultato.model';
 import { Test } from '../../models/test.model';
@@ -36,24 +36,24 @@ export class AllenamentoAttivoComponent implements OnInit {
    * @param allenamento allenamento da cui recuperare i risultati
    */
   prepareTableDataSource(allenamento:Allenamento){
-    let a1 = new Athlete();
-		a1.name = "Enrico";
-		a1.surname = "Cominato";
-		let a2 = new Athlete();
-		a2.name = "Eleonora";
-		a2.surname = "Barcaro";
-		let a3 = new Athlete();
-		a3.name = "Matteo";
-		a3.surname = "Grigolato";
-		let a4 = new Athlete();
-		a4.name = "Elisabetta";
-		a4.surname = "Greggio";
-		let a5 = new Athlete();
-		a5.name = "Elena";
-		a5.surname = "Crepaldi";
-		let a6 = new Athlete();
-		a6.name = "Miracle";
-		a6.surname = "Aighimien";
+    let a1 = new Atleta();
+		a1.nome = "Enrico";
+		a1.cognome = "Cominato";
+		let a2 = new Atleta();
+		a2.nome = "Eleonora";
+		a2.cognome = "Barcaro";
+		let a3 = new Atleta();
+		a3.nome = "Matteo";
+		a3.cognome = "Grigolato";
+		let a4 = new Atleta();
+		a4.nome = "Elisabetta";
+		a4.cognome = "Greggio";
+		let a5 = new Atleta();
+		a5.nome = "Elena";
+		a5.cognome = "Crepaldi";
+		let a6 = new Atleta();
+		a6.nome = "Miracle";
+		a6.cognome = "Aighimien";
 
     return [
       {atleta:a1.fullName,result_1:4        ,result_2:undefined,result_3:undefined},

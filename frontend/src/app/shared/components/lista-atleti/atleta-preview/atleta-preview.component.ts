@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Athlete } from '../../../models/athlete.model';
+import { Atleta } from '../../../models/atleta.model';
 
 @Component({
   selector: 'app-atleta-preview',
@@ -7,11 +7,10 @@ import { Athlete } from '../../../models/athlete.model';
   styleUrls: ['./atleta-preview.component.scss']
 })
 export class AtletaPreviewComponent implements OnInit {
-  @Input() atleta:Athlete = new Athlete;
+  @Input() atleta:Atleta = new Atleta;
   @Input() selectable:boolean = false;
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `db_connector_athletemodel` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `surname` varchar(50) NOT NULL,
+  `cognome` varchar(50) NOT NULL,
   `date_of_birth` datetime(6) DEFAULT NULL,
   `sex` varchar(50) DEFAULT NULL,
   `piede_partenza_blocchi` varchar(50) DEFAULT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE `db_connector_athletemodel` (
 -- Dump dei dati per la tabella `db_connector_athletemodel`
 --
 
-INSERT INTO `db_connector_athletemodel` (`id`, `name`, `surname`, `date_of_birth`, `sex`, `piede_partenza_blocchi`, `primo_piede`, `secondo_piede`, `passi_ostacoli_alti`, `passi_ostacoli_bassi`, `rincorsa_lungo`, `passi_lungo`, `piede_stacco_lungo`, `rincorsa_alto_1`, `rincorsa_alto_2`, `passi_alto`, `piede_stacco_alto`, `tessera`) VALUES
+INSERT INTO `db_connector_athletemodel` (`id`, `name`, `cognome`, `date_of_birth`, `sex`, `piede_partenza_blocchi`, `primo_piede`, `secondo_piede`, `passi_ostacoli_alti`, `passi_ostacoli_bassi`, `rincorsa_lungo`, `passi_lungo`, `piede_stacco_lungo`, `rincorsa_alto_1`, `rincorsa_alto_2`, `passi_alto`, `piede_stacco_alto`, `tessera`) VALUES
 (2, 'Massimo', 'Bernecoli', '1980-11-03 00:00:00.000000', 'Maschio', '', '', '', '', '', '', '', '', '', '', '', '', NULL),
 (3, 'Enrico', 'Cominato', '1994-02-07 00:00:00.000000', 'Maschio', 'Sinistro', '1 piede e 8 dita', '1 piede e 8 dita', '3', '17', '', '14', 'Sinistro', '', '', '8', 'Sinistro', 'aa'),
 (4, 'Valerio', 'Iala', '1990-10-20 00:00:00.000000', 'Maschio', '', '', '', '', '', '', '', '', '', '', '', '', NULL),
