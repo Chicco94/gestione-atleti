@@ -1,0 +1,850 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">frontend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  AllenamentoAttivoComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-allenamento-attivo</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./allenamento-attivo.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./allenamento-attivo.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#allenamento" >allenamento</a>
+                            </li>
+                            <li>
+                                <a href="#columns" >columns</a>
+                            </li>
+                            <li>
+                                <a href="#dataSource" >dataSource</a>
+                            </li>
+                            <li>
+                                <a href="#displayedColumns" >displayedColumns</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#prepareTableColumns" >prepareTableColumns</a>
+                            </li>
+                            <li>
+                                <a href="#prepareTableDataSource" >prepareTableDataSource</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, allenamentoService: <a href="../injectables/AllenamentoService.html" target="_self">AllenamentoService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>allenamentoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AllenamentoService.html" target="_self" >AllenamentoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:27</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="prepareTableColumns"></a>
+                    <span class="name">
+                        <span ><b>prepareTableColumns</b></span>
+                        <a href="#prepareTableColumns"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>prepareTableColumns(datasource: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="68"
+                            class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:68</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>datasource</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/TableColumn.html" target="_self" >TableColumn[]</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="prepareTableDataSource"></a>
+                    <span class="name">
+                        <span ><b>prepareTableDataSource</b></span>
+                        <a href="#prepareTableDataSource"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>prepareTableDataSource(allenamento: <a href="../classes/Allenamento.html" target="_self">Allenamento</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:38</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>allenamento</td>
+                                    <td>
+                                                <code><a href="../classes/Allenamento.html" target="_self" >Allenamento</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>allenamento da cui recuperare i risultati</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>{}</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allenamento"></a>
+                    <span class="name">
+                        <span ><b>allenamento</b></span>
+                        <a href="#allenamento"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Allenamento.html" target="_self" >Allenamento</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Allenamento()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="columns"></a>
+                    <span class="name">
+                        <span ><b>columns</b></span>
+                        <a href="#columns"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/TableColumn.html" target="_self" >TableColumn[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataSource"></a>
+                    <span class="name">
+                        <span ><b>dataSource</b></span>
+                        <a href="#dataSource"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayedColumns"></a>
+                    <span class="name">
+                        <span ><b>displayedColumns</b></span>
+                        <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { Athlete } from &#x27;src/app/shared/models/athlete.model&#x27;;
+import { Allenamento } from &#x27;../../models/allenamento.model&#x27;;
+import { Risultato } from &#x27;../../models/risultato.model&#x27;;
+import { Test } from &#x27;../../models/test.model&#x27;;
+import { AllenamentoService } from &#x27;../../services/allenamento.service&#x27;;
+
+@Component({
+  selector: &#x27;app-allenamento-attivo&#x27;,
+  templateUrl: &#x27;./allenamento-attivo.component.html&#x27;,
+  styleUrls: [&#x27;./allenamento-attivo.component.scss&#x27;]
+})
+export class AllenamentoAttivoComponent implements OnInit {
+  allenamento:Allenamento &#x3D; new Allenamento();
+  columns:TableColumn[] &#x3D; [];
+  dataSource:any[] &#x3D; [];
+  displayedColumns:string[] &#x3D; [];
+  
+  constructor(
+    private route:ActivatedRoute,
+    private allenamentoService:AllenamentoService
+  ) {
+    this.route.params.subscribe(params &#x3D;&gt; {this.allenamento &#x3D; this.allenamentoService.getAllenamento(params[&#x27;id&#x27;]);});
+  }
+
+  ngOnInit(): void {
+    this.dataSource &#x3D; this.prepareTableDataSource(this.allenamento);
+    this.columns &#x3D; this.prepareTableColumns(this.dataSource)
+    this.displayedColumns &#x3D; this.columns.map(c &#x3D;&gt; c.columnDef);
+  }
+
+  /**
+   * @author Enrico
+   * @description trasforma un allenamento in un datasource per una tabella
+   * @param allenamento allenamento da cui recuperare i risultati
+   */
+  prepareTableDataSource(allenamento:Allenamento){
+    let a1 &#x3D; new Athlete();
+		a1.name &#x3D; &quot;Enrico&quot;;
+		a1.surname &#x3D; &quot;Cominato&quot;;
+		let a2 &#x3D; new Athlete();
+		a2.name &#x3D; &quot;Eleonora&quot;;
+		a2.surname &#x3D; &quot;Barcaro&quot;;
+		let a3 &#x3D; new Athlete();
+		a3.name &#x3D; &quot;Matteo&quot;;
+		a3.surname &#x3D; &quot;Grigolato&quot;;
+		let a4 &#x3D; new Athlete();
+		a4.name &#x3D; &quot;Elisabetta&quot;;
+		a4.surname &#x3D; &quot;Greggio&quot;;
+		let a5 &#x3D; new Athlete();
+		a5.name &#x3D; &quot;Elena&quot;;
+		a5.surname &#x3D; &quot;Crepaldi&quot;;
+		let a6 &#x3D; new Athlete();
+		a6.name &#x3D; &quot;Miracle&quot;;
+		a6.surname &#x3D; &quot;Aighimien&quot;;
+
+    return [
+      {atleta:a1.fullName,result_1:4        ,result_2:undefined,result_3:undefined},
+      {atleta:a2.fullName,result_1:undefined,result_2:undefined,result_3:undefined},
+      {atleta:a3.fullName,result_1:undefined,result_2:undefined,result_3:undefined},
+      {atleta:a4.fullName,result_1:undefined,result_2:undefined,result_3:undefined},
+      {atleta:a5.fullName,result_1:undefined,result_2:undefined,result_3:undefined},
+      {atleta:a6.fullName,result_1:undefined,result_2:undefined,result_3:undefined},
+    ]
+  }
+
+  prepareTableColumns(datasource:any):TableColumn[]{
+    return [
+      {
+        columnDef: &#x27;atleta&#x27;,
+        header: &quot;Atleta&quot;,
+        sticky: true,
+        key: &#x27;atleta&#x27;,
+        type: ColumnTypeEnum.plain,
+        cell: (d_row) &#x3D;&gt; &#x60;${d_row.atleta}&#x60;,
+      },
+      {
+        columnDef: &#x27;test_1&#x27;,
+        header: &quot;30 metri&quot;,
+        sticky: false,
+        key: &#x27;result_1&#x27;,
+        type: ColumnTypeEnum.number,
+        cell: (d_row) &#x3D;&gt; &#x60;${d_row.result_1}&#x60;,
+      },
+      {
+        columnDef: &#x27;test_2&#x27;,
+        header: &quot;40 metri&quot;,
+        sticky: false,
+        key: &#x27;result_2&#x27;,
+        type: ColumnTypeEnum.number,
+        cell: (d_row) &#x3D;&gt; &#x60;${d_row.result_2}&#x60;,
+      },
+      {
+        columnDef: &#x27;test_3&#x27;,
+        header: &quot;50 metri&quot;,
+        sticky: false,
+        key: &#x27;result_3&#x27;,
+        type: ColumnTypeEnum.number,
+        cell: (d_row) &#x3D;&gt; &#x60;${d_row.result_3}&#x60;,
+      },
+    ]
+  }
+}
+
+export interface TableColumn {
+  columnDef: string;
+  header: string;
+  sticky?: boolean;
+  key: string;
+  type: ColumnTypeEnum
+  cell: (model:any)&#x3D;&gt;string;
+}
+
+export enum ColumnTypeEnum{
+  plain&#x3D;&quot;plain&quot;,
+  number&#x3D;&quot;number&quot;,
+  text&#x3D;&quot;text&quot;,
+  time&#x3D;&quot;time&quot;
+} </code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div style&#x3D;&quot;height: calc(100% - 96px - 48px); max-width: 100%;overflow: auto;&quot;&gt;
+	&lt;table mat-table [dataSource]&#x3D;&quot;dataSource&quot; class&#x3D;&quot;allenamento-table&quot;&gt;
+		&lt;ng-container *ngFor&#x3D;&quot;let column of columns&quot; [matColumnDef]&#x3D;&quot;column.columnDef&quot; [sticky]&#x3D;&quot;column.sticky&quot;&gt;
+			&lt;th mat-header-cell *matHeaderCellDef&gt;
+				{{column.header}}
+			&lt;/th&gt;
+			&lt;td mat-cell *matCellDef&#x3D;&quot;let row&quot;&gt;
+				&lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;start stretch&quot;&gt;
+					&lt;app-input-text *ngIf&#x3D;&quot;column.type &#x3D;&#x3D; &#x27;text&#x27;&quot; [placeholder]&#x3D;&quot;column.header&quot; [(model)]&#x3D;&quot;row[column.key]&quot; &gt;&lt;/app-input-text&gt;
+					&lt;app-input-number [placeholder]&#x3D;&quot;column.header&quot; [(model)]&#x3D;&quot;row[column.key]&quot; *ngIf&#x3D;&quot;column.type &#x3D;&#x3D; &#x27;number&#x27;&quot;&gt;&lt;/app-input-number&gt;
+					&lt;div *ngIf&#x3D;&quot;column.type &#x3D;&#x3D; &#x27;plain&#x27;&quot;&gt;{{column.cell(row)}}&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/td&gt;
+		&lt;/ng-container&gt;
+	  
+		&lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns; sticky:true&quot;&gt;&lt;/tr&gt;
+		&lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns;&quot;&gt;&lt;/tr&gt;
+	  &lt;/table&gt;
+&lt;/div&gt;
+
+&lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;space-evenly center&quot; style&#x3D;&quot;height: 96px;&quot;&gt;
+	&lt;button mat-icon-button class&#x3D;&quot;circle-button-small&quot; [routerLink]&#x3D;&quot;[&#x27;/listaAllenamenti/&#x27;]&quot; routerLinkActive&#x3D;&quot;activebutton&quot;&gt;
+		&lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;listaAllenamenti&quot;&gt;save&lt;/mat-icon&gt;
+	&lt;/button&gt;
+	&lt;button mat-icon-button class&#x3D;&quot;circle-button-small-green&quot; [routerLink]&#x3D;&quot;[&#x27;/allenamenti/&#x27;]&quot; routerLinkActive&#x3D;&quot;activebutton&quot;&gt;
+		&lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;listaAllenamenti&quot;&gt;verified&lt;/mat-icon&gt;
+	&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./allenamento-attivo.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.allenamento-table {
+    width: 100%;
+}
+
+.mat-row .mat-cell {
+    padding: 4px;
+    border-right-width: 1px;
+    cursor: pointer;
+    height: 96px;
+}
+  
+.mat-row:hover .mat-cell {
+    border-color: currentColor;
+}
+
+.allenamento-row-is-clicked {
+    font-weight: bold;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div style="height: calc(100% - 96px - 48px); max-width: 100%;overflow: auto;">	<table mat-table [dataSource]="dataSource" class="allenamento-table">		<ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef" [sticky]="column.sticky">			<th mat-header-cell *matHeaderCellDef>				{{column.header}}			</th>			<td mat-cell *matCellDef="let row">				<div fxLayout="row" fxLayoutAlign="start stretch">					<app-input-text *ngIf="column.type == \'text\'" [placeholder]="column.header" [(model)]="row[column.key]" ></app-input-text>					<app-input-number [placeholder]="column.header" [(model)]="row[column.key]" *ngIf="column.type == \'number\'"></app-input-number>					<div *ngIf="column.type == \'plain\'">{{column.cell(row)}}</div>				</div>			</td>		</ng-container>	  		<tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>		<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>	  </table></div><div fxLayout="row" fxLayoutAlign="space-evenly center" style="height: 96px;">	<button mat-icon-button class="circle-button-small" [routerLink]="[\'/listaAllenamenti/\']" routerLinkActive="activebutton">		<mat-icon aria-hidden="false" aria-label="listaAllenamenti">save</mat-icon>	</button>	<button mat-icon-button class="circle-button-small-green" [routerLink]="[\'/allenamenti/\']" routerLinkActive="activebutton">		<mat-icon aria-hidden="false" aria-label="listaAllenamenti">verified</mat-icon>	</button></div></div>'
+    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AthleteComponent', 'selector': 'app-athlete'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AllenamentoAttivoComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AllenamentoAttivoComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
