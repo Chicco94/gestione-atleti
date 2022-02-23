@@ -10,6 +10,14 @@ import { BaseModule } from './base/base.module';
 import { GestioneModule } from './gestione/gestione.module';
 import { AllenamentiModule } from './allenamenti/allenamenti.module';
 import { SharedModule } from './shared/shared.module';
+import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io';
+import { environment } from 'src/environments/environment';
+
+const config: SocketIoConfig = {
+	url: environment.socketUrl, // socket server url;
+	options: {}
+}
+
 
 @NgModule({
   declarations: [
@@ -24,7 +32,9 @@ import { SharedModule } from './shared/shared.module';
     BaseModule,
     SharedModule,
     AllenamentiModule,
-    GestioneModule
+    GestioneModule,
+
+    SocketIoModule.forRoot(config)
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -23,10 +23,13 @@ export class ListaAtletiComponent implements OnInit {
       this.selectable = params['selectable'] === 'true';
       this.idallenamento = params['idallenamento'];
     });
+    console.log("contructor")
   }
 
   ngOnInit(): void {
-    this.atleti = this.athleteService.list;
+    console.log("ngOnInit")
+    this.athleteService.fetchAtleti();
+    this.athleteService.OnFetchAtleti().subscribe((data:any) => {console.log(data);this.atleti = data});
   }
 
 }
