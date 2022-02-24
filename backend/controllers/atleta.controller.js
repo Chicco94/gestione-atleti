@@ -7,6 +7,12 @@ const fetchAtleti = (socket) => {
 		.catch(logError)
 }
 
+const getAtleta = (socket,id) => {
+	Atleta.findByPk(id)
+		.then(atleta => socket.emit('getAtleta', atleta))
+		.catch(logError)
+}
+
 const addAtleta = (socket, data) => {
 	Atleta.create(data)
 		.then(() => fetchAtleti(socket)) // fetch updated atleti
@@ -33,5 +39,6 @@ module.exports = {
 	fetchAtleti,
 	updateAtleta,
 	deleteAtleta,
-	addAtleta
+	addAtleta,
+	getAtleta
 }

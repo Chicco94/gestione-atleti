@@ -24,7 +24,7 @@ const routes: Routes = [
 	{path: 'gestione', component:GestioneComponent},
 	{path: 'listaAtleti/:editable', component:ListaAtletiComponent},
 	{path: 'listaTest/:editable', component:ListaTestComponent},
-	{path: 'Atleta', component:AnagraficaAtletaComponent},
+	{path: 'Atleta/:id', component:AnagraficaAtletaComponent},
 	{path: 'Test', component:AnagraficaTestComponent},
 	{path: '', redirectTo:'/home', pathMatch: 'full'},
 	{path: '**', redirectTo:'/home' }

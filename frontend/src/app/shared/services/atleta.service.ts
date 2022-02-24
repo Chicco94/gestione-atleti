@@ -10,14 +10,12 @@ export class AtletaService {
 		Object.setPrototypeOf(this, AtletaService.prototype);
 	}
 
-	fetchAtleti(){
-		this.socket.emit('fetchAtleti');
-	}
-	OnFetchAtleti() {
-		return this.socket.fromEvent('fetchAtleti');
-	}
+	fetchAtleti(){this.socket.emit('fetchAtleti');}
+	addAtleta(atleta:Atleta){this.socket.emit('addAtleta',atleta);}
+	updateAtleta(atleta:Atleta){this.socket.emit('updateAtleta',atleta);}
+	deleteAtleta(id:number){this.socket.emit('deleteAtleta',id);}
+	getAtleta(id:number){this.socket.emit('getAtleta',id);}
 
-	public getAtleta(id:number):Atleta{
-		return new Atleta();
-	}
+	OnFetchAtleti() {return this.socket.fromEvent('fetchAtleti');}
+	OnGetAtleta() {return this.socket.fromEvent('getAtleta');}
 }
