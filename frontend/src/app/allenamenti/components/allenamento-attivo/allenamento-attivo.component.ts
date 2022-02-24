@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Atleta } from 'src/app/shared/models/atleta.model';
 import { Allenamento } from '../../models/allenamento.model';
-import { Risultato } from '../../models/risultato.model';
-import { Test } from '../../models/test.model';
 import { AllenamentoService } from '../../services/allenamento.service';
 
 @Component({

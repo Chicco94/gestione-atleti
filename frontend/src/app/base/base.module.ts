@@ -30,13 +30,15 @@ import { HomeComponent } from './components/home/home.component';
 import { InputTextComponent } from './components/input-text/input-text.component';
 import { InputDateComponent } from './components/input-date/input-date.component';
 import { InputNumberComponent } from './components/input-number/input-number.component';
+import { BackButtonDirective } from './directives/backbutton.directive';
 
 @NgModule({
   declarations: [
     HomeComponent,
     InputTextComponent,
     InputDateComponent,
-    InputNumberComponent
+    InputNumberComponent,
+    BackButtonDirective
   ],
   imports: [
     CommonModule,
@@ -95,6 +97,9 @@ import { InputNumberComponent } from './components/input-number/input-number.com
     InputTextComponent,
     InputDateComponent,
     InputNumberComponent,
+
+    // Directives
+    BackButtonDirective,
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'it-IT' }]
 })

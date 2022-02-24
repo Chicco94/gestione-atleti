@@ -10,16 +10,16 @@ import { ListaTestComponent } from './shared/components/lista-test/lista-test.co
 import { AllenamentoAttivoComponent } from './allenamenti/components/allenamento-attivo/allenamento-attivo.component';
 
 const routes: Routes = [
-  {path: 'home', component:HomeComponent},
-  {path: 'allenamenti', component:AllenamentiComponent},
-  {path: 'listaAllenamenti', component:ListaAllenamentiComponent},
-  {path: 'allenamento/:id', component:AllenamentoComponent},
-  {path: 'allenamentoAttivo/:id', component:AllenamentoAttivoComponent},
-  {path: 'listaAtleti/:idallenamento/:selectable', component:ListaAtletiComponent},
-  {path: 'listaTest/:idallenamento/:selectable', component:ListaTestComponent},
-  {path: 'gestione', component:GestioneComponent},
+	{path: 'home', component:HomeComponent},
+	{path: 'allenamenti', component:AllenamentiComponent},
+	{path: 'listaAllenamenti', component:ListaAllenamentiComponent},
+	{path: 'allenamento/:id', component:AllenamentoComponent},
+	{path: 'allenamentoAttivo/:id', component:AllenamentoAttivoComponent},
+	{path: 'listaAtleti/:idallenamento/:selectable', component:ListaAtletiComponent},
+	{path: 'listaTest/:idallenamento/:selectable', component:ListaTestComponent},
+	{path: 'gestione', component:GestioneComponent},
 	{path: '', redirectTo:'/home', pathMatch: 'full'},
-	{ path: '**', redirectTo:'/home' }
+	{path: '**', redirectTo:'/home' }
 ];
 
 @NgModule({

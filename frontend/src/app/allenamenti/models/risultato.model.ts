@@ -1,7 +1,7 @@
 import { Atleta } from "src/app/shared/models/atleta.model";
+import { Test } from "src/app/shared/models/test.model";
 import { IdBase } from "../../base/models/idbase.model";
 import { Allenamento } from "./allenamento.model";
-import { Test } from "./test.model";
 
 export class Risultato extends IdBase{
 

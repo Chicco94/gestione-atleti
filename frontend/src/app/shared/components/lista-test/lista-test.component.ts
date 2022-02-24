@@ -1,10 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { from, Observable } from 'rxjs';
 import { Allenamento } from 'src/app/allenamenti/models/allenamento.model';
-import { Test } from 'src/app/allenamenti/models/test.model';
+import { Test } from 'src/app/shared/models/test.model';
 import { AllenamentoService } from 'src/app/allenamenti/services/allenamento.service';
-import { TestService } from 'src/app/allenamenti/services/test.service';
+import { TestService } from 'src/app/shared/services/test.service';
 
 @Component({
   selector: 'app-lista-test',
@@ -32,7 +31,10 @@ export class ListaTestComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.possible_tests = this.testService.list;
+    this.testService.fetchTests();
+    this.testService.OnFetchTests().subscribe((data:any) => {
+      this.possible_tests = data.map((single_data:any) => new Test().deserialize(single_data));
+    });
     this.added_tests = this.allenamento.test || [];
   }
 

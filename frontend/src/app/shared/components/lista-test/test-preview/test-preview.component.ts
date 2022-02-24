@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
-import { Test } from 'src/app/allenamenti/models/test.model';
+import { Test } from 'src/app/shared/models/test.model';
 
 @Component({
   selector: 'app-test-preview',
