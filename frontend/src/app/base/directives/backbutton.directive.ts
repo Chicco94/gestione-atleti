@@ -10,7 +10,6 @@ export class BackButtonDirective {
 
   @HostListener('click')
   back(): void {
-    console.log("sono stato premuto")
     this.navigation.back()
   }
 }

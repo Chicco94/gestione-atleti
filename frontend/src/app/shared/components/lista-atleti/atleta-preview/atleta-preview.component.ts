@@ -9,6 +9,7 @@ import { Atleta } from '../../../models/atleta.model';
 export class AtletaPreviewComponent implements OnInit {
   @Input() atleta:Atleta = new Atleta;
   @Input() selectable:boolean = false;
+  @Input() editable:boolean = false;
   constructor() { }
 
   ngOnInit(): void {}

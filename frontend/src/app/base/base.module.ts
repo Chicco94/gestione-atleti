@@ -31,6 +31,7 @@ import { InputTextComponent } from './components/input-text/input-text.component
 import { InputDateComponent } from './components/input-date/input-date.component';
 import { InputNumberComponent } from './components/input-number/input-number.component';
 import { BackButtonDirective } from './directives/backbutton.directive';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { BackButtonDirective } from './directives/backbutton.directive';
     ScrollingModule,
     MatCheckboxModule,
     MatTableModule,
+    MatDividerModule,
   ],
   exports:[
     AppRoutingModule,
@@ -92,6 +94,7 @@ import { BackButtonDirective } from './directives/backbutton.directive';
     ScrollingModule,
     MatCheckboxModule,
     MatTableModule,
+    MatDividerModule,
 
     // Components
     InputTextComponent,

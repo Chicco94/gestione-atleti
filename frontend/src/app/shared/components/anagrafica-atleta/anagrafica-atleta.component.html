@@ -1,0 +1,37 @@
+<div fxLayout="column" fxLayoutAlign="start stretch" fxFlex layout-padding style="margin-left: 10px;margin-right: 10px;">
+	<form fxLayout="column" fxLayoutAlign="start stretch" fxFlex>
+		<app-input-text placeholder="Nome" [(model)]="atleta.nome"></app-input-text>
+		<app-input-text placeholder="Cognome" [(model)]="atleta.cognome"></app-input-text>
+		<app-input-text placeholder="Tessera" [(model)]="atleta.tessera"></app-input-text>
+		<app-input-date placeholder="Data di nascita" [(model)]="atleta.data_nascita"></app-input-date>
+		<!--
+		<mat-form-field fxFlex>
+			<mat-label>Sesso</mat-label>
+			<mat-select [(ngModel)]="atleta.sesso" (click)="$event.stopPropagation();"  >
+				<mat-option *ngFor="let item of sexEnum | enumToArray" [value]="item">{{item}}</mat-option>
+			</mat-select>
+		</mat-form-field>
+		
+		<mat-divider></mat-divider>
+		
+		<h2>Velocità</h2>
+
+		<mat-divider></mat-divider>
+
+		<h2>Ostacoli</h2>
+		<mat-form-field fxFlex><input matInput type="number" placeholder="Passi ostacoli alti" [(ngModel)]="atleta.passi_ostacoli_alti" [ngModelOptions]="{standalone: true}"  ></mat-form-field>
+		<mat-form-field fxFlex><input matInput type="number" placeholder="Passi ostacoli bassi" [(ngModel)]="atleta.passi_ostacoli_bassi" [ngModelOptions]="{standalone: true}"  ></mat-form-field>
+		<mat-divider></mat-divider>
+		
+		<h2>Lungo</h2>
+		<mat-form-field fxFlex><input matInput type="number" placeholder="Rincorsa lungo" [(ngModel)]="atleta.rincorsa_lungo" [ngModelOptions]="{standalone: true}"  ></mat-form-field>
+		<mat-form-field fxFlex><input matInput type="number" placeholder="Passi lungo" [(ngModel)]="atleta.passi_lungo" [ngModelOptions]="{standalone: true}"  ></mat-form-field>
+		<mat-divider></mat-divider>
+		
+		<h2>Alto</h2>
+		<mat-form-field fxFlex><input matInput type="number" placeholder="Rincorsa alto verticale" [(ngModel)]="atleta.rincorsa_alto_1" [ngModelOptions]="{standalone: true}"  ></mat-form-field>
+		<mat-form-field fxFlex><input matInput type="number" placeholder="Rincorsa alto orrizzontale" [(ngModel)]="atleta.rincorsa_alto_2" [ngModelOptions]="{standalone: true}"  ></mat-form-field>
+		<mat-form-field fxFlex><input matInput type="number" placeholder="Passi alto" [(ngModel)]="atleta.passi_alto" [ngModelOptions]="{standalone: true}"  ></mat-form-field>
+		<mat-divider></mat-divider>-->
+	</form>
+</div>

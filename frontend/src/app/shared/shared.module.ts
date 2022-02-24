@@ -8,10 +8,14 @@ import { AtletaPreviewComponent } from './components/lista-atleti/atleta-preview
 import { TestPreviewComponent } from './components/lista-test/test-preview/test-preview.component';
 import { ListaAtletiComponent } from './components/lista-atleti/lista-atleti.component';
 import { ListaTestComponent } from './components/lista-test/lista-test.component';
+import { AnagraficaAtletaComponent } from './components/anagrafica-atleta/anagrafica-atleta.component';
+import { AnagraficaTestComponent } from './components/anagrafica-test/anagrafica-test.component';
 
 @NgModule({
   declarations: [
     AtletaComponent,
+    AnagraficaAtletaComponent,
+    AnagraficaTestComponent,
     AtletaPreviewComponent,
     TestPreviewComponent,
     ListaAtletiComponent,

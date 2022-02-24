@@ -4,11 +4,16 @@
 
 <cdk-virtual-scroll-viewport itemSize="50" style="height: calc(100% - 240px);">
     <div *cdkVirtualFor="let atleta of atleti | search:'id,name,cognome,category':searchString" #atleti>
-        <app-atleta-preview [atleta]="atleta" [selectable]="selectable"></app-atleta-preview>
+        <app-atleta-preview [atleta]="atleta" [selectable]="selectable" [editable]="editable"></app-atleta-preview>
     </div>
 </cdk-virtual-scroll-viewport>
 
-<button mat-icon-button class="circle-button-green" style="position: absolute;bottom: -10px;right:-10px" [routerLink]="['/allenamento/',idallenamento]"  routerLinkActive="activebutton">
-    <mat-icon aria-hidden="false" aria-label="listaTest">check</mat-icon>
-</button>
+<div>
+    <button mat-icon-button class="circle-button-green" *ngIf="editable" style="position: absolute;bottom: -10px;left:-10px" [routerLink]="['/Atleta/']" routerLinkActive="activebutton">
+        <mat-icon aria-hidden="false" aria-label="listaTest">add</mat-icon>
+    </button>
+    <button backButton mat-icon-button class="circle-button-green" style="position: absolute;bottom: -10px;right:-10px">
+        <mat-icon aria-hidden="false" aria-label="listaTest">check</mat-icon>
+    </button>
+</div>
 

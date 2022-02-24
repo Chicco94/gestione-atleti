@@ -12,6 +12,8 @@ import { TestService } from 'src/app/shared/services/test.service';
 })
 export class ListaTestComponent implements OnInit {
   @Input() selectable:boolean=false;
+  @Input() addable:boolean=false;
+  @Input() editable:boolean=false;
   @Input() idallenamento:number=0;
   allenamento:Allenamento = new Allenamento();
   possible_tests:Test[] = [];
@@ -25,6 +27,8 @@ export class ListaTestComponent implements OnInit {
   ) {
     this.route.params.subscribe(params => {
       this.selectable = params['selectable'] === 'true';
+      this.editable = params['editable'] === 'true';
+      this.addable = !this.editable;
       this.idallenamento = params['idallenamento'];
       this.allenamento = this.allenamentoService.getAllenamento(this.idallenamento);
     });

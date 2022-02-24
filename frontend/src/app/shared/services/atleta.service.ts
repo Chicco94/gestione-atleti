@@ -11,7 +11,6 @@ export class AtletaService {
 	}
 
 	fetchAtleti(){
-		console.log("fetchAtleti")
 		this.socket.emit('fetchAtleti');
 	}
 	OnFetchAtleti() {

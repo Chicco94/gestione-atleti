@@ -10,6 +10,8 @@ import { AtletaService } from '../../services/atleta.service';
 })
 export class ListaAtletiComponent implements OnInit {
   @Input() selectable:boolean=false;
+  @Input() addable:boolean=false;
+  @Input() editable:boolean=false;
   @Input() idallenamento:number=0;
   selezionati:Atleta[] = [];
   atleti:Atleta[] = [];
@@ -20,8 +22,10 @@ export class ListaAtletiComponent implements OnInit {
     private athleteService:AtletaService
   ) {
     this.route.params.subscribe(params => {
-      this.selectable = params['selectable'] === 'true';
       this.idallenamento = params['idallenamento'];
+      this.selectable = params['selectable'] === 'true';
+      this.editable = params['editable'] === 'true';
+      this.addable = !this.editable;
     });
   }
 

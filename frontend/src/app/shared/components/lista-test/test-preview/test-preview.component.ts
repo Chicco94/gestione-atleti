@@ -12,6 +12,7 @@ export class TestPreviewComponent implements OnInit {
 
   @Input() addable?:boolean = false;
   @Input() removable?:boolean = false;
+  @Input() editable?:boolean = false;
 
   @Output() testListChange:EventEmitter<Test[]> = new EventEmitter<Test[]>();
 
