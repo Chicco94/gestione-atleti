@@ -6,8 +6,6 @@ import { Atleta } from 'src/app/shared/models/atleta.model';
 	providedIn: 'root'
 })
 export class AtletaService {
-	public atleti$ = this.socket.fromEvent<Atleta[]>('atleti');
-	list:Atleta[] = [];
 	constructor(private socket: Socket) {
 		Object.setPrototypeOf(this, AtletaService.prototype);
 	}
@@ -21,6 +19,6 @@ export class AtletaService {
 	}
 
 	public getAtleta(id:number):Atleta{
-		return this.list.find((athlete:Atleta) => athlete.id == id) || new Atleta();
+		return new Atleta();
 	}
 }

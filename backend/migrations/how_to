@@ -1,0 +1,7 @@
+CREAZIONE DI UNA MIGRAZIONE
+npx sequelize-cli migration:create --name NOME_MIGRAZIONE
+
+MODIFICARE IL FILE DELLA MIGRAZIONE
+
+AVVIARE LA MIGRAZIONE
+npx sequelize-cli db:migrate

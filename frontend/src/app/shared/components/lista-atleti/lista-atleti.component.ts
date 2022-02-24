@@ -12,7 +12,7 @@ export class ListaAtletiComponent implements OnInit {
   @Input() selectable:boolean=false;
   @Input() idallenamento:number=0;
   selezionati:Atleta[] = [];
-  atleti:Atleta[] = []
+  atleti:Atleta[] = [];
   searchString:string="";
 
   constructor(
@@ -23,11 +23,9 @@ export class ListaAtletiComponent implements OnInit {
       this.selectable = params['selectable'] === 'true';
       this.idallenamento = params['idallenamento'];
     });
-    console.log("contructor")
   }
 
   ngOnInit(): void {
-    console.log("ngOnInit")
     this.athleteService.fetchAtleti();
     this.athleteService.OnFetchAtleti().subscribe((data:any) => {
       this.atleti = data.map((single_data:any) => new Atleta().deserialize(single_data));
