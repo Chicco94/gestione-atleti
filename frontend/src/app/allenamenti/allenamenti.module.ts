@@ -9,9 +9,13 @@ import { AllenamentoAttivoComponent } from './components/allenamento-attivo/alle
 import { ListaAllenamentiComponent } from './components/lista-allenamenti/lista-allenamenti.component';
 import { AllenamentoPreviewComponent } from './components/lista-allenamenti/allenamento-preview/allenamento-preview.component';
 import { BeforeAllenamentoComponent } from './components/before-allenamento/before-allenamento.component';
+import { AllenamentiLandingComponent } from './components/allenamenti-landing/allenamenti-landing.component';
+import { AllenamentoLandingComponent } from './components/allenamento-landing/allenamento-landing.component';
 
 @NgModule({
   declarations: [
+    AllenamentiLandingComponent,
+    AllenamentoLandingComponent,
     AllenamentiComponent,
     ListaAllenamentiComponent,
     AllenamentoComponent,
