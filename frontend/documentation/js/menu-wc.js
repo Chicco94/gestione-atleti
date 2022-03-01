@@ -155,15 +155,24 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/GestioneModule.html" data-type="entity-link" >GestioneModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-GestioneModule-9680f80a2fed1e686e18748ec0570d55ff48bdbce325d778e1978fbbde66c95a2b12ba55e46211d5ff2d439ab70e94084b27cc3bb531c5eb0fc2321a05f8b5a4"' : 'data-target="#xs-components-links-module-GestioneModule-9680f80a2fed1e686e18748ec0570d55ff48bdbce325d778e1978fbbde66c95a2b12ba55e46211d5ff2d439ab70e94084b27cc3bb531c5eb0fc2321a05f8b5a4"' }>
+                                            'data-target="#components-links-module-GestioneModule-89e419ba1c4e4eb594b12a371901a07c7daa7fd31fd5aac312fc78eaa0d162bc0f6799248017a6b9d7c647f905b12190bd951171abd0faec4db6557ee0cb8c65"' : 'data-target="#xs-components-links-module-GestioneModule-89e419ba1c4e4eb594b12a371901a07c7daa7fd31fd5aac312fc78eaa0d162bc0f6799248017a6b9d7c647f905b12190bd951171abd0faec4db6557ee0cb8c65"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-GestioneModule-9680f80a2fed1e686e18748ec0570d55ff48bdbce325d778e1978fbbde66c95a2b12ba55e46211d5ff2d439ab70e94084b27cc3bb531c5eb0fc2321a05f8b5a4"' :
-                                            'id="xs-components-links-module-GestioneModule-9680f80a2fed1e686e18748ec0570d55ff48bdbce325d778e1978fbbde66c95a2b12ba55e46211d5ff2d439ab70e94084b27cc3bb531c5eb0fc2321a05f8b5a4"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-GestioneModule-89e419ba1c4e4eb594b12a371901a07c7daa7fd31fd5aac312fc78eaa0d162bc0f6799248017a6b9d7c647f905b12190bd951171abd0faec4db6557ee0cb8c65"' :
+                                            'id="xs-components-links-module-GestioneModule-89e419ba1c4e4eb594b12a371901a07c7daa7fd31fd5aac312fc78eaa0d162bc0f6799248017a6b9d7c647f905b12190bd951171abd0faec4db6557ee0cb8c65"' }>
+                                            <li class="link">
+                                                <a href="components/GestioneAtletiLandingComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >GestioneAtletiLandingComponent</a>
+                                            </li>
                                             <li class="link">
                                                 <a href="components/GestioneComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >GestioneComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/GestioneLandingComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >GestioneLandingComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/GestioneTestLandingComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >GestioneTestLandingComponent</a>
                                             </li>
                                         </ul>
                                     </li>

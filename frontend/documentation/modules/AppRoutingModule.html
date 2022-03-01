@@ -87,11 +87,15 @@ import { AnagraficaTestComponent } from &#x27;./shared/components/anagrafica-tes
 import { AllenamentiLandingComponent } from &#x27;./allenamenti/components/allenamenti-landing/allenamenti-landing.component&#x27;;
 import { AllenamentoLandingComponent } from &#x27;./allenamenti/components/allenamento-landing/allenamento-landing.component&#x27;;
 import { ListaAllenamentiLandingComponent } from &#x27;./allenamenti/components/lista-allenamenti-landing/lista-allenamenti-landing.component&#x27;;
+import { GestioneLandingComponent } from &#x27;./gestione/components/gestione-landing/gestione-landing.component&#x27;;
+import { GestioneTestLandingComponent } from &#x27;./gestione/components/gestione-test-landing/gestione-test-landing.component&#x27;;
+import { GestioneAtletiLandingComponent } from &#x27;./gestione/components/gestione-atleti-landing/gestione-atleti-landing.component&#x27;;
 
 const routes: Routes &#x3D; [
 	{path: &#x27;home&#x27;, component:HomeComponent},
 
-	{
+
+	{	// ALLENA
 		path: &#x27;allena&#x27;, 
 		component:AllenamentiLandingComponent,
 		children: [
@@ -116,11 +120,32 @@ const routes: Routes &#x3D; [
 		]
 	},
 
-	{path: &#x27;gestione&#x27;, component:GestioneComponent},
-	{path: &#x27;listaAtleti/:editable&#x27;, component:ListaAtletiComponent},
-	{path: &#x27;listaTest/:editable&#x27;, component:ListaTestComponent},
-	{path: &#x27;Atleta/:id&#x27;, component:AnagraficaAtletaComponent},
-	{path: &#x27;Test&#x27;, component:AnagraficaTestComponent},
+	{	// GESTIONE
+		path: &#x27;gestione&#x27;, 
+		component:GestioneLandingComponent,
+		children: [
+			{path: &#x27;&#x27;, component:GestioneComponent},
+			{
+				path: &#x27;listaAtleti/:editable&#x27;, 
+				component:GestioneAtletiLandingComponent,
+				children: [
+					{path: &#x27;&#x27;, component:ListaAtletiComponent},
+					{path: &#x27;:id&#x27;, component:AnagraficaAtletaComponent},
+				]
+			},
+			{
+				path: &#x27;listaTest/:editable&#x27;, 
+				component:GestioneTestLandingComponent,
+				children: [
+					{path: &#x27;&#x27;, component:ListaTestComponent},
+					{path: &#x27;:id&#x27;, component:AnagraficaTestComponent},
+				]
+			},
+
+		]
+	},
+
+	// WILDCARDS
 	{path: &#x27;&#x27;, redirectTo:&#x27;/home&#x27;, pathMatch: &#x27;full&#x27;},
 	{path: &#x27;**&#x27;, redirectTo:&#x27;/home&#x27; }
 ];
