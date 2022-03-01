@@ -11,11 +11,13 @@ import { AllenamentoPreviewComponent } from './components/lista-allenamenti/alle
 import { BeforeAllenamentoComponent } from './components/before-allenamento/before-allenamento.component';
 import { AllenamentiLandingComponent } from './components/allenamenti-landing/allenamenti-landing.component';
 import { AllenamentoLandingComponent } from './components/allenamento-landing/allenamento-landing.component';
+import { ListaAllenamentiLandingComponent } from './components/lista-allenamenti-landing/lista-allenamenti-landing.component';
 
 @NgModule({
   declarations: [
     AllenamentiLandingComponent,
     AllenamentoLandingComponent,
+    ListaAllenamentiLandingComponent,
     AllenamentiComponent,
     ListaAllenamentiComponent,
     AllenamentoComponent,

@@ -12,26 +12,33 @@ import { AnagraficaAtletaComponent } from './shared/components/anagrafica-atleta
 import { AnagraficaTestComponent } from './shared/components/anagrafica-test/anagrafica-test.component';
 import { AllenamentiLandingComponent } from './allenamenti/components/allenamenti-landing/allenamenti-landing.component';
 import { AllenamentoLandingComponent } from './allenamenti/components/allenamento-landing/allenamento-landing.component';
+import { ListaAllenamentiLandingComponent } from './allenamenti/components/lista-allenamenti-landing/lista-allenamenti-landing.component';
 
 const routes: Routes = [
 	{path: 'home', component:HomeComponent},
 
 	{
 		path: 'allena', 
-		component:AllenamentiComponent,
+		component:AllenamentiLandingComponent,
 		children: [
-			{path: 'listaAllenamenti', component:ListaAllenamentiComponent},
+			{path: '', component:AllenamentiComponent},
 			{
-				path: 'allenamento/:idallenamento', 
-				component:AllenamentoComponent,
+				path: 'listaAllenamenti', 
+				component:ListaAllenamentiLandingComponent,
 				children: [
-					{path: 'listaAtleti/:selectable', component:ListaAtletiComponent},
-					{path: 'listaTest/:selectable', component:ListaTestComponent},
-					{path: '', component:AllenamentoLandingComponent},
+					{path: '', component:ListaAllenamentiComponent},
+					{path: ':id', component:AllenamentoAttivoComponent},
 				]
 			},
-			{path: 'allenamentoAttivo/:id', component:AllenamentoAttivoComponent},
-			{path: '', component:AllenamentiLandingComponent},
+			{
+				path: 'allenamento/:idallenamento', 
+				component:AllenamentoLandingComponent,
+				children: [
+					{path: '', component:AllenamentoComponent},
+					{path: 'listaAtleti/:selectable', component:ListaAtletiComponent},
+					{path: 'listaTest/:selectable', component:ListaTestComponent},
+				]
+			},
 		]
 	},
 
