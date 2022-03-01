@@ -22,16 +22,26 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material/core';
 import {MatTableModule} from '@angular/material/table';
-import { AppRoutingModule } from '../app-routing.module';
+import {MatDividerModule} from '@angular/material/divider';
+import {AppRoutingModule} from '../app-routing.module';
 
 
-
+// Components
 import { HomeComponent } from './components/home/home.component';
 import { InputTextComponent } from './components/input-text/input-text.component';
 import { InputDateComponent } from './components/input-date/input-date.component';
 import { InputNumberComponent } from './components/input-number/input-number.component';
+import { InputSideComponent } from './components/input-side/input-side.component';
+
+
+// Directives
 import { BackButtonDirective } from './directives/backbutton.directive';
-import { MatDividerModule } from '@angular/material/divider';
+
+
+// Pipes
+import { SearchPipe } from './pipes/search.pipe';
+import { EnumToArrayPipe } from './pipes/enum-to-array.pipe';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +49,10 @@ import { MatDividerModule } from '@angular/material/divider';
     InputTextComponent,
     InputDateComponent,
     InputNumberComponent,
-    BackButtonDirective
+    InputSideComponent,
+    BackButtonDirective,
+    SearchPipe,
+    EnumToArrayPipe
   ],
   imports: [
     CommonModule,
@@ -100,9 +113,14 @@ import { MatDividerModule } from '@angular/material/divider';
     InputTextComponent,
     InputDateComponent,
     InputNumberComponent,
+    InputSideComponent,
 
     // Directives
     BackButtonDirective,
+
+    // Pipes
+    SearchPipe,
+    EnumToArrayPipe
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'it-IT' }]
 })

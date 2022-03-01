@@ -1,4 +1,4 @@
-<div fxLayout="column" fxLayoutAlign="start stretch" fxFlex layout-padding style="margin-left: 10px;margin-right: 10px;">
+<div fxLayout="column" fxLayoutAlign="start stretch" fxFlex layout-padding style="margin-left: 10px;margin-right: 10px;height: calc(100vh - 48px);overflow-y: scroll;">
 	<form fxLayout="column" fxLayoutAlign="start stretch" fxFlex>
 		<app-input-text placeholder="Nome" [(model)]="atleta.nome"></app-input-text>
 		<app-input-text placeholder="Cognome" [(model)]="atleta.cognome"></app-input-text>
@@ -10,29 +10,31 @@
 			<mat-select [(ngModel)]="atleta.sesso" (click)="$event.stopPropagation();"  >
 				<mat-option *ngFor="let item of sexEnum | enumToArray" [value]="item">{{item}}</mat-option>
 			</mat-select>
-		</mat-form-field>
+		</mat-form-field>-->
 		
 		<mat-divider></mat-divider>
 		
 		<h2>Velocità</h2>
-
+		<!--<app-input-side placeholder="Piede di partenza" [(model)]="atleta.piede_partenza_blocchi"></app-input-side>-->
+		<app-input-number placeholder="Primo piede" [(model)]="atleta.primo_piede"></app-input-number>
+		<app-input-number placeholder="Secondo piede" [(model)]="atleta.secondo_piede"></app-input-number>
 		<mat-divider></mat-divider>
-
+		
 		<h2>Ostacoli</h2>
-		<mat-form-field fxFlex><input matInput type="number" placeholder="Passi ostacoli alti" [(ngModel)]="atleta.passi_ostacoli_alti" [ngModelOptions]="{standalone: true}"  ></mat-form-field>
-		<mat-form-field fxFlex><input matInput type="number" placeholder="Passi ostacoli bassi" [(ngModel)]="atleta.passi_ostacoli_bassi" [ngModelOptions]="{standalone: true}"  ></mat-form-field>
+		<app-input-number placeholder="Passi ostacoli alti" [(model)]="atleta.passi_ostacoli_alti"></app-input-number>
+		<app-input-number placeholder="Passi ostacoli bassi" [(model)]="atleta.passi_ostacoli_bassi"></app-input-number>
 		<mat-divider></mat-divider>
 		
 		<h2>Lungo</h2>
-		<mat-form-field fxFlex><input matInput type="number" placeholder="Rincorsa lungo" [(ngModel)]="atleta.rincorsa_lungo" [ngModelOptions]="{standalone: true}"  ></mat-form-field>
-		<mat-form-field fxFlex><input matInput type="number" placeholder="Passi lungo" [(ngModel)]="atleta.passi_lungo" [ngModelOptions]="{standalone: true}"  ></mat-form-field>
+		<app-input-number placeholder="Rincorsa lungo" [(model)]="atleta.rincorsa_lungo"></app-input-number>
+		<app-input-number placeholder="Passi lungo" [(model)]="atleta.passi_lungo"></app-input-number>
 		<mat-divider></mat-divider>
 		
 		<h2>Alto</h2>
-		<mat-form-field fxFlex><input matInput type="number" placeholder="Rincorsa alto verticale" [(ngModel)]="atleta.rincorsa_alto_1" [ngModelOptions]="{standalone: true}"  ></mat-form-field>
-		<mat-form-field fxFlex><input matInput type="number" placeholder="Rincorsa alto orrizzontale" [(ngModel)]="atleta.rincorsa_alto_2" [ngModelOptions]="{standalone: true}"  ></mat-form-field>
-		<mat-form-field fxFlex><input matInput type="number" placeholder="Passi alto" [(ngModel)]="atleta.passi_alto" [ngModelOptions]="{standalone: true}"  ></mat-form-field>
-		<mat-divider></mat-divider>-->
+		<app-input-number placeholder="Rincorsa alto verticale" [(model)]="atleta.rincorsa_alto_1"></app-input-number>
+		<app-input-number placeholder="Rincorsa alto orrizzontale" [(model)]="atleta.rincorsa_alto_2"></app-input-number>
+		<app-input-number placeholder="Passi alto" [(model)]="atleta.passi_alto"></app-input-number>
+		<mat-divider></mat-divider>
 	</form>
 </div>
 <div fxLayout="row" fxLayoutAlign="end center" style="height: 96px;">

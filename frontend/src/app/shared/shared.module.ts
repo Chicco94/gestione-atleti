@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AtletaComponent } from './components/athlete/athlete.component';
-import { EnumToArrayPipe, FilterPipe, SearchPipe } from './pipes/pipes';
 
 import { BaseModule } from '../base/base.module';
 import { AtletaPreviewComponent } from './components/lista-atleti/atleta-preview/atleta-preview.component';
@@ -19,17 +18,13 @@ import { AnagraficaTestComponent } from './components/anagrafica-test/anagrafica
     AtletaPreviewComponent,
     TestPreviewComponent,
     ListaAtletiComponent,
-    ListaTestComponent,
-    EnumToArrayPipe,
-    FilterPipe,
-    SearchPipe
+    ListaTestComponent
   ],
   imports: [
     CommonModule,
     BaseModule
   ],
   exports:[
-    SearchPipe
   ]
 })
 export class SharedModule { }
