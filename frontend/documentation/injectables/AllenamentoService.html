@@ -121,7 +121,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/allenamenti/services/allenamento.service.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/allenamenti/services/allenamento.service.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -154,8 +154,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="74"
-                            class="link-to-prism">src/app/allenamenti/services/allenamento.service.ts:74</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/app/allenamenti/services/allenamento.service.ts:59</a></div>
                 </td>
             </tr>
 
@@ -191,8 +191,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">src/app/allenamenti/services/allenamento.service.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/allenamenti/services/allenamento.service.ts:33</a></div>
                 </td>
             </tr>
 
@@ -270,7 +270,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/allenamenti/services/allenamento.service.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/allenamenti/services/allenamento.service.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -285,11 +285,9 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { SexEnum } from &#x27;src/app/base/models/enumerations&#x27;;
-import { AtletaPreviewComponent } from &#x27;src/app/shared/components/lista-atleti/atleta-preview/atleta-preview.component&#x27;;
-import { Athlete } from &#x27;src/app/shared/models/athlete.model&#x27;;
+import { Atleta } from &#x27;src/app/shared/models/atleta.model&#x27;;
 import { Allenamento } from &#x27;../models/allenamento.model&#x27;;
 import { Risultato } from &#x27;../models/risultato.model&#x27;;
-import { Test } from &#x27;../models/test.model&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;
@@ -320,35 +318,22 @@ export class AllenamentoService {
   getAllenamento(id:number):Allenamento{
     let temp &#x3D; new Allenamento();
     temp.id &#x3D; id;
-    let t1 &#x3D; new Test();
-    t1.descr &#x3D; &quot;30 metri&quot;;
-    t1.gruppo &#x3D; &quot;rapidità&quot;;
-    let t2 &#x3D; new Test();
-    t2.descr &#x3D; &quot;lungo da fermo&quot;;
-    t2.gruppo &#x3D; &quot;esplosività&quot;;
-    let t3 &#x3D; new Test();
-    t3.descr &#x3D; &quot;1000 metri&quot;;
-    t3.gruppo &#x3D; &quot;resistenza&quot;;
-    temp.test.push(t1);
-    temp.test.push(t2);
-    temp.test.push(t3);
 
-    let a1 &#x3D; new Athlete();
-		a1.name &#x3D; &quot;Enrico&quot;;
-		a1.surname &#x3D; &quot;Cominato&quot;;
-		a1.sex &#x3D; SexEnum.male;
-		a1.date_of_birth &#x3D; new Date(&quot;1994-02-07&quot;);
-		let a2 &#x3D; new Athlete();
-		a2.name &#x3D; &quot;Eleonora&quot;;
-		a2.surname &#x3D; &quot;Barcaro&quot;;
-		a2.sex &#x3D; SexEnum.female;
-		a2.date_of_birth &#x3D; new Date(&quot;2008-10-10&quot;);
+    let a1 &#x3D; new Atleta();
+		a1.nome &#x3D; &quot;Enrico&quot;;
+		a1.cognome &#x3D; &quot;Cominato&quot;;
+		a1.sesso &#x3D; SexEnum.male;
+		a1.data_nascita &#x3D; new Date(&quot;1994-02-07&quot;);
+		let a2 &#x3D; new Atleta();
+		a2.nome &#x3D; &quot;Eleonora&quot;;
+		a2.cognome &#x3D; &quot;Barcaro&quot;;
+		a2.sesso &#x3D; SexEnum.female;
+		a2.data_nascita &#x3D; new Date(&quot;2008-10-10&quot;);
     temp.atleti.push(a1);
     temp.atleti.push(a2);
 
     let r1 &#x3D; new Risultato();
     r1.atleta &#x3D; a1;
-    r1.test &#x3D; t1;
     r1.risultato &#x3D; 4;
 
     temp.risultati.push(r1);

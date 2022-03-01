@@ -256,6 +256,14 @@ import { BaseModule } from &#x27;./base/base.module&#x27;;
 import { GestioneModule } from &#x27;./gestione/gestione.module&#x27;;
 import { AllenamentiModule } from &#x27;./allenamenti/allenamenti.module&#x27;;
 import { SharedModule } from &#x27;./shared/shared.module&#x27;;
+import { SocketIoConfig, SocketIoModule } from &#x27;ngx-socket-io&#x27;;
+import { environment } from &#x27;src/environments/environment&#x27;;
+
+const config: SocketIoConfig &#x3D; {
+	url: environment.socketUrl, // socket server url;
+	options: {}
+}
+
 
 @NgModule({
   declarations: [
@@ -270,7 +278,9 @@ import { SharedModule } from &#x27;./shared/shared.module&#x27;;
     BaseModule,
     SharedModule,
     AllenamentiModule,
-    GestioneModule
+    GestioneModule,
+
+    SocketIoModule.forRoot(config)
   ],
   providers: [],
   bootstrap: [AppComponent]

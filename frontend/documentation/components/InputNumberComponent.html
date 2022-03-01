@@ -425,8 +425,8 @@ export class InputNumberComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div style&#x3D;&quot;margin-left: 10px;margin-right: 10px&quot;&gt;
-    &lt;mat-form-field fxFlex &gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div style&#x3D;&quot;margin-left: 10px;margin-right: 10px; background-color: white;border-radius: 15px;&quot;&gt;
+    &lt;mat-form-field fxFlex style&#x3D;&quot;margin-left: 10px;margin-right: 10px;&quot;&gt;
         &lt;input 
             matInput 
             type&#x3D;&quot;number&quot; 
@@ -472,9 +472,9 @@ export class InputNumberComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div style="margin-left: 10px;margin-right: 10px">    <mat-form-field fxFlex >        <input             matInput             type="number"             [placeholder]="placeholder"             [(ngModel)]="model"             (ngModelChange)="onModelChange(model)"            [ngModelOptions]="{standalone: true}"        >    </mat-form-field></div></div>'
-    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AthleteComponent', 'selector': 'app-athlete'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
-    var DIRECTIVES = [];
+        var COMPONENT_TEMPLATE = '<div><div style="margin-left: 10px;margin-right: 10px; background-color: white;border-radius: 15px;">    <mat-form-field fxFlex style="margin-left: 10px;margin-right: 10px;">        <input             matInput             type="number"             [placeholder]="placeholder"             [(ngModel)]="model"             (ngModelChange)="onModelChange(model)"            [ngModelOptions]="{standalone: true}"        >    </mat-form-field></div></div>'
+    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentiLandingComponent', 'selector': 'app-allenamenti-landing'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoLandingComponent', 'selector': 'app-allenamento-landing'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AnagraficaAtletaComponent', 'selector': 'app-anagrafica-atleta'},{'name': 'AnagraficaTestComponent', 'selector': 'app-anagrafica-test'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AtletaComponent', 'selector': 'app-athlete'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAllenamentiLandingComponent', 'selector': 'app-lista-allenamenti-landing'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
+    var DIRECTIVES = [{'name': 'BackButtonDirective', 'selector': '[backButton]'}];
     var ACTUAL_COMPONENT = {'name': 'InputNumberComponent'};
 </script>
 <script src="../js/tree.js"></script>

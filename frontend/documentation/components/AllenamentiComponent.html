@@ -393,11 +393,10 @@ export class AllenamentiComponent implements OnInit {
 		dialogRef.afterClosed().subscribe(result &#x3D;&gt; {
 			if (result){
 				result.id &#x3D; 0
-				this.router.navigate([&#x27;allenamento&#x27;,result.id]);
+				this.router.navigate([&#x27;allenamento&#x27;,result.id],{ relativeTo: this.route });
 			}
 		});
 	}
-
 }
 </code></pre>
     </div>
@@ -410,14 +409,11 @@ export class AllenamentiComponent implements OnInit {
         &lt;/button&gt;
     &lt;/div&gt;
     &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;start center&quot; style&#x3D;&quot;height: 100%; margin-left: 40px;&quot;&gt;
-        &lt;button mat-icon-button class&#x3D;&quot;circle-button&quot; [routerLink]&#x3D;&quot;[&#x27;/listaAllenamenti/&#x27;]&quot; routerLinkActive&#x3D;&quot;activebutton&quot;&gt;
+        &lt;button mat-icon-button class&#x3D;&quot;circle-button&quot; [routerLink]&#x3D;&quot;[&#x27;listaAllenamenti/&#x27;]&quot; routerLinkActive&#x3D;&quot;activebutton&quot;&gt;
             &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;listaAllenamenti&quot;&gt;restart_alt&lt;/mat-icon&gt;
         &lt;/button&gt;
     &lt;/div&gt;
-&lt;/div&gt;
-
-
-</code></pre>
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -452,9 +448,9 @@ export class AllenamentiComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div fxLayout="column" fxLayoutAlign="space-evenly stretch" style="height: calc(100vh - 48px);">    <div fxLayout="row" fxLayoutAlign="end center" style="height: 100%; margin-right: 40px;">        <button mat-icon-button class="circle-button" (click)="newAllenamento()">            <mat-icon aria-hidden="false" aria-label="newAllenamento">add</mat-icon>        </button>    </div>    <div fxLayout="row" fxLayoutAlign="start center" style="height: 100%; margin-left: 40px;">        <button mat-icon-button class="circle-button" [routerLink]="[\'/listaAllenamenti/\']" routerLinkActive="activebutton">            <mat-icon aria-hidden="false" aria-label="listaAllenamenti">restart_alt</mat-icon>        </button>    </div></div></div>'
-    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AthleteComponent', 'selector': 'app-athlete'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
-    var DIRECTIVES = [];
+        var COMPONENT_TEMPLATE = '<div><div fxLayout="column" fxLayoutAlign="space-evenly stretch" style="height: calc(100vh - 48px);">    <div fxLayout="row" fxLayoutAlign="end center" style="height: 100%; margin-right: 40px;">        <button mat-icon-button class="circle-button" (click)="newAllenamento()">            <mat-icon aria-hidden="false" aria-label="newAllenamento">add</mat-icon>        </button>    </div>    <div fxLayout="row" fxLayoutAlign="start center" style="height: 100%; margin-left: 40px;">        <button mat-icon-button class="circle-button" [routerLink]="[\'listaAllenamenti/\']" routerLinkActive="activebutton">            <mat-icon aria-hidden="false" aria-label="listaAllenamenti">restart_alt</mat-icon>        </button>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentiLandingComponent', 'selector': 'app-allenamenti-landing'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoLandingComponent', 'selector': 'app-allenamento-landing'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AnagraficaAtletaComponent', 'selector': 'app-anagrafica-atleta'},{'name': 'AnagraficaTestComponent', 'selector': 'app-anagrafica-test'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AtletaComponent', 'selector': 'app-athlete'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAllenamentiLandingComponent', 'selector': 'app-lista-allenamenti-landing'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
+    var DIRECTIVES = [{'name': 'BackButtonDirective', 'selector': '[backButton]'}];
     var ACTUAL_COMPONENT = {'name': 'AllenamentiComponent'};
 </script>
 <script src="../js/tree.js"></script>

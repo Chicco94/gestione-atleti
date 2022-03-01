@@ -341,10 +341,8 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { ActivatedRoute } from &#x27;@angular/router&#x27;;
-import { Athlete } from &#x27;src/app/shared/models/athlete.model&#x27;;
+import { Atleta } from &#x27;src/app/shared/models/atleta.model&#x27;;
 import { Allenamento } from &#x27;../../models/allenamento.model&#x27;;
-import { Risultato } from &#x27;../../models/risultato.model&#x27;;
-import { Test } from &#x27;../../models/test.model&#x27;;
 import { AllenamentoService } from &#x27;../../services/allenamento.service&#x27;;
 
 @Component({
@@ -377,24 +375,24 @@ export class AllenamentoAttivoComponent implements OnInit {
    * @param allenamento allenamento da cui recuperare i risultati
    */
   prepareTableDataSource(allenamento:Allenamento){
-    let a1 &#x3D; new Athlete();
-		a1.name &#x3D; &quot;Enrico&quot;;
-		a1.surname &#x3D; &quot;Cominato&quot;;
-		let a2 &#x3D; new Athlete();
-		a2.name &#x3D; &quot;Eleonora&quot;;
-		a2.surname &#x3D; &quot;Barcaro&quot;;
-		let a3 &#x3D; new Athlete();
-		a3.name &#x3D; &quot;Matteo&quot;;
-		a3.surname &#x3D; &quot;Grigolato&quot;;
-		let a4 &#x3D; new Athlete();
-		a4.name &#x3D; &quot;Elisabetta&quot;;
-		a4.surname &#x3D; &quot;Greggio&quot;;
-		let a5 &#x3D; new Athlete();
-		a5.name &#x3D; &quot;Elena&quot;;
-		a5.surname &#x3D; &quot;Crepaldi&quot;;
-		let a6 &#x3D; new Athlete();
-		a6.name &#x3D; &quot;Miracle&quot;;
-		a6.surname &#x3D; &quot;Aighimien&quot;;
+    let a1 &#x3D; new Atleta();
+		a1.nome &#x3D; &quot;Enrico&quot;;
+		a1.cognome &#x3D; &quot;Cominato&quot;;
+		let a2 &#x3D; new Atleta();
+		a2.nome &#x3D; &quot;Eleonora&quot;;
+		a2.cognome &#x3D; &quot;Barcaro&quot;;
+		let a3 &#x3D; new Atleta();
+		a3.nome &#x3D; &quot;Matteo&quot;;
+		a3.cognome &#x3D; &quot;Grigolato&quot;;
+		let a4 &#x3D; new Atleta();
+		a4.nome &#x3D; &quot;Elisabetta&quot;;
+		a4.cognome &#x3D; &quot;Greggio&quot;;
+		let a5 &#x3D; new Atleta();
+		a5.nome &#x3D; &quot;Elena&quot;;
+		a5.cognome &#x3D; &quot;Crepaldi&quot;;
+		let a6 &#x3D; new Atleta();
+		a6.nome &#x3D; &quot;Miracle&quot;;
+		a6.cognome &#x3D; &quot;Aighimien&quot;;
 
     return [
       {atleta:a1.fullName,result_1:4        ,result_2:undefined,result_3:undefined},

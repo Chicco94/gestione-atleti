@@ -153,6 +153,9 @@
                                 <a href="#atleta" >atleta</a>
                             </li>
                             <li>
+                                <a href="#editable" >editable</a>
+                            </li>
+                            <li>
                                 <a href="#selectable" >selectable</a>
                             </li>
                         </ul>
@@ -177,7 +180,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/components/lista-atleti/atleta-preview/atleta-preview.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/shared/components/lista-atleti/atleta-preview/atleta-preview.component.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -197,18 +200,44 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../classes/Athlete.html" target="_self" >Athlete</a></code>
+                        <i>Type : </i>        <code><a href="../classes/Atleta.html" target="_self" >Atleta</a></code>
 
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new Athlete</code>
+                        <i>Default value : </i><code>new Atleta</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
                                     <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/shared/components/lista-atleti/atleta-preview/atleta-preview.component.ts:10</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="editable"></a>
+                        <b>editable</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/shared/components/lista-atleti/atleta-preview/atleta-preview.component.ts:12</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -268,8 +297,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/shared/components/lista-atleti/atleta-preview/atleta-preview.component.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">src/app/shared/components/lista-atleti/atleta-preview/atleta-preview.component.ts:15</a></div>
                 </td>
             </tr>
 
@@ -292,7 +321,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, OnInit } from &#x27;@angular/core&#x27;;
-import { Athlete } from &#x27;../../../models/athlete.model&#x27;;
+import { Atleta } from &#x27;../../../models/atleta.model&#x27;;
 
 @Component({
   selector: &#x27;app-atleta-preview&#x27;,
@@ -300,12 +329,12 @@ import { Athlete } from &#x27;../../../models/athlete.model&#x27;;
   styleUrls: [&#x27;./atleta-preview.component.scss&#x27;]
 })
 export class AtletaPreviewComponent implements OnInit {
-  @Input() atleta:Athlete &#x3D; new Athlete;
+  @Input() atleta:Atleta &#x3D; new Atleta;
   @Input() selectable:boolean &#x3D; false;
+  @Input() editable:boolean &#x3D; false;
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }
 </code></pre>
@@ -320,6 +349,9 @@ export class AtletaPreviewComponent implements OnInit {
     &lt;/div&gt;
     &lt;div fxFlex&gt;&lt;/div&gt;
     &lt;mat-checkbox *ngIf&#x3D;&quot;selectable&quot; style&#x3D;&quot;margin-right: 24px;margin-top: 5px;&quot;&gt;&lt;/mat-checkbox&gt;
+    &lt;button mat-flat-button *ngIf&#x3D;&quot;editable&quot; [routerLink]&#x3D;&quot;[&#x27;/Atleta/&#x27;, atleta.id]&quot; routerLinkActive&#x3D;&quot;activebutton&quot;&gt;
+        &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;listaTest&quot;&gt;edit&lt;/mat-icon&gt;
+    &lt;/button&gt;
 &lt;/div&gt;</code></pre>
     </div>
 
@@ -355,9 +387,9 @@ export class AtletaPreviewComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div fxLayout="row" fxLayoutAlign="start stretch" style="height: 100%; margin-top: 2px; margin-bottom: 2px; background-color: rgba(255,255,255,0.5)">    <div style="margin-left: 24px;font-size: large;">        <b>{{atleta.fullName}}</b><br>        {{atleta.age}} - {{atleta.category}}    </div>    <div fxFlex></div>    <mat-checkbox *ngIf="selectable" style="margin-right: 24px;margin-top: 5px;"></mat-checkbox></div></div>'
-    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AthleteComponent', 'selector': 'app-athlete'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
-    var DIRECTIVES = [];
+        var COMPONENT_TEMPLATE = '<div><div fxLayout="row" fxLayoutAlign="start stretch" style="height: 100%; margin-top: 2px; margin-bottom: 2px; background-color: rgba(255,255,255,0.5)">    <div style="margin-left: 24px;font-size: large;">        <b>{{atleta.fullName}}</b><br>        {{atleta.age}} - {{atleta.category}}    </div>    <div fxFlex></div>    <mat-checkbox *ngIf="selectable" style="margin-right: 24px;margin-top: 5px;"></mat-checkbox>    <button mat-flat-button *ngIf="editable" [routerLink]="[\'/Atleta/\', atleta.id]" routerLinkActive="activebutton">        <mat-icon aria-hidden="false" aria-label="listaTest">edit</mat-icon>    </button></div></div>'
+    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentiLandingComponent', 'selector': 'app-allenamenti-landing'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoLandingComponent', 'selector': 'app-allenamento-landing'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AnagraficaAtletaComponent', 'selector': 'app-anagrafica-atleta'},{'name': 'AnagraficaTestComponent', 'selector': 'app-anagrafica-test'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AtletaComponent', 'selector': 'app-athlete'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAllenamentiLandingComponent', 'selector': 'app-lista-allenamenti-landing'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
+    var DIRECTIVES = [{'name': 'BackButtonDirective', 'selector': '[backButton]'}];
     var ACTUAL_COMPONENT = {'name': 'AtletaPreviewComponent'};
 </script>
 <script src="../js/tree.js"></script>

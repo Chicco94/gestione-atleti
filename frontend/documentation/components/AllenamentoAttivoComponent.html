@@ -189,7 +189,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -268,8 +268,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:25</a></div>
                 </td>
             </tr>
 
@@ -305,8 +305,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="68"
-                            class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:68</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:66</a></div>
                 </td>
             </tr>
 
@@ -374,8 +374,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:36</a></div>
                 </td>
             </tr>
 
@@ -458,7 +458,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:13</a></div>
                         </td>
                     </tr>
 
@@ -489,7 +489,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:14</a></div>
                         </td>
                     </tr>
 
@@ -520,7 +520,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -551,7 +551,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/allenamenti/components/allenamento-attivo/allenamento-attivo.component.ts:16</a></div>
                         </td>
                     </tr>
 
@@ -566,10 +566,8 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { ActivatedRoute } from &#x27;@angular/router&#x27;;
-import { Athlete } from &#x27;src/app/shared/models/athlete.model&#x27;;
+import { Atleta } from &#x27;src/app/shared/models/atleta.model&#x27;;
 import { Allenamento } from &#x27;../../models/allenamento.model&#x27;;
-import { Risultato } from &#x27;../../models/risultato.model&#x27;;
-import { Test } from &#x27;../../models/test.model&#x27;;
 import { AllenamentoService } from &#x27;../../services/allenamento.service&#x27;;
 
 @Component({
@@ -602,24 +600,24 @@ export class AllenamentoAttivoComponent implements OnInit {
    * @param allenamento allenamento da cui recuperare i risultati
    */
   prepareTableDataSource(allenamento:Allenamento){
-    let a1 &#x3D; new Athlete();
-		a1.name &#x3D; &quot;Enrico&quot;;
-		a1.surname &#x3D; &quot;Cominato&quot;;
-		let a2 &#x3D; new Athlete();
-		a2.name &#x3D; &quot;Eleonora&quot;;
-		a2.surname &#x3D; &quot;Barcaro&quot;;
-		let a3 &#x3D; new Athlete();
-		a3.name &#x3D; &quot;Matteo&quot;;
-		a3.surname &#x3D; &quot;Grigolato&quot;;
-		let a4 &#x3D; new Athlete();
-		a4.name &#x3D; &quot;Elisabetta&quot;;
-		a4.surname &#x3D; &quot;Greggio&quot;;
-		let a5 &#x3D; new Athlete();
-		a5.name &#x3D; &quot;Elena&quot;;
-		a5.surname &#x3D; &quot;Crepaldi&quot;;
-		let a6 &#x3D; new Athlete();
-		a6.name &#x3D; &quot;Miracle&quot;;
-		a6.surname &#x3D; &quot;Aighimien&quot;;
+    let a1 &#x3D; new Atleta();
+		a1.nome &#x3D; &quot;Enrico&quot;;
+		a1.cognome &#x3D; &quot;Cominato&quot;;
+		let a2 &#x3D; new Atleta();
+		a2.nome &#x3D; &quot;Eleonora&quot;;
+		a2.cognome &#x3D; &quot;Barcaro&quot;;
+		let a3 &#x3D; new Atleta();
+		a3.nome &#x3D; &quot;Matteo&quot;;
+		a3.cognome &#x3D; &quot;Grigolato&quot;;
+		let a4 &#x3D; new Atleta();
+		a4.nome &#x3D; &quot;Elisabetta&quot;;
+		a4.cognome &#x3D; &quot;Greggio&quot;;
+		let a5 &#x3D; new Atleta();
+		a5.nome &#x3D; &quot;Elena&quot;;
+		a5.cognome &#x3D; &quot;Crepaldi&quot;;
+		let a6 &#x3D; new Atleta();
+		a6.nome &#x3D; &quot;Miracle&quot;;
+		a6.cognome &#x3D; &quot;Aighimien&quot;;
 
     return [
       {atleta:a1.fullName,result_1:4        ,result_2:undefined,result_3:undefined},
@@ -768,8 +766,8 @@ export enum ColumnTypeEnum{
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div style="height: calc(100% - 96px - 48px); max-width: 100%;overflow: auto;">	<table mat-table [dataSource]="dataSource" class="allenamento-table">		<ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef" [sticky]="column.sticky">			<th mat-header-cell *matHeaderCellDef>				{{column.header}}			</th>			<td mat-cell *matCellDef="let row">				<div fxLayout="row" fxLayoutAlign="start stretch">					<app-input-text *ngIf="column.type == \'text\'" [placeholder]="column.header" [(model)]="row[column.key]" ></app-input-text>					<app-input-number [placeholder]="column.header" [(model)]="row[column.key]" *ngIf="column.type == \'number\'"></app-input-number>					<div *ngIf="column.type == \'plain\'">{{column.cell(row)}}</div>				</div>			</td>		</ng-container>	  		<tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>		<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>	  </table></div><div fxLayout="row" fxLayoutAlign="space-evenly center" style="height: 96px;">	<button mat-icon-button class="circle-button-small" [routerLink]="[\'/listaAllenamenti/\']" routerLinkActive="activebutton">		<mat-icon aria-hidden="false" aria-label="listaAllenamenti">save</mat-icon>	</button>	<button mat-icon-button class="circle-button-small-green" [routerLink]="[\'/allenamenti/\']" routerLinkActive="activebutton">		<mat-icon aria-hidden="false" aria-label="listaAllenamenti">verified</mat-icon>	</button></div></div>'
-    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AthleteComponent', 'selector': 'app-athlete'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
-    var DIRECTIVES = [];
+    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentiLandingComponent', 'selector': 'app-allenamenti-landing'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoLandingComponent', 'selector': 'app-allenamento-landing'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AnagraficaAtletaComponent', 'selector': 'app-anagrafica-atleta'},{'name': 'AnagraficaTestComponent', 'selector': 'app-anagrafica-test'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AtletaComponent', 'selector': 'app-athlete'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAllenamentiLandingComponent', 'selector': 'app-lista-allenamenti-landing'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
+    var DIRECTIVES = [{'name': 'BackButtonDirective', 'selector': '[backButton]'}];
     var ACTUAL_COMPONENT = {'name': 'AllenamentoAttivoComponent'};
 </script>
 <script src="../js/tree.js"></script>

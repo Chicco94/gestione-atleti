@@ -28,17 +28,18 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content component">
+               <div class="content directive">
                    <div class="content-data">
 
 
 
 
+
+
+
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li
-  >
-  InputTimeComponent</li>
+  <li>Directives</li>
+  <li >BackButtonDirective</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -48,80 +49,36 @@
         <li >
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
         </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
-        </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
-    <h3>File</h3>
-</p>
-<p class="comment">
-    <code>src/app/base/components/input-time/input-time.component.ts</code>
-</p>
-
-
-
-
-    <p class="comment">
-        <h3>Implements</h3>
-    </p>
-    <p class="comment">
-                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
-    </p>
-
-
-<section>
-    <h3>Metadata</h3>
-    <table class="table table-sm table-hover metadata">
-        <tbody>
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/base/directives/backbutton.directive.ts</code>
+        </p>
 
 
 
 
 
+        <section>
+            <h3>Metadata</h3>
+            <table class="table table-sm table-hover metadata">
+                <tbody>
 
+                    <tr>
+                        <td class="col-md-3">Selector</td>
+                        <td class="col-md-9"><code>[backButton]</code></td>
+                    </tr>
 
+                </tbody>
+            </table>
+        </section>
 
-
-
-
-            <tr>
-                <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-input-time</code></td>
-            </tr>
-
-            <tr>
-                <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./input-time.component.scss</code></td>
-            </tr>
-
-
-
-            <tr>
-                <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./input-time.component.html</code></td>
-            </tr>
-
-
-
-
-
-
-
-
-        </tbody>
-    </table>
-</section>
-
-    <section>
+            <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -135,7 +92,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#ngOnInit" >ngOnInit</a>
+                                <a href="#back" >back</a>
                             </li>
                         </ul>
                     </td>
@@ -144,26 +101,70 @@
 
 
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#click" >click</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
         </tbody>
     </table>
 </section>
 
-    <section>
+            <section>
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(navigation: <a href="../injectables/NavigationService.html" target="_self">NavigationService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/base/components/input-time/input-time.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/base/directives/backbutton.directive.ts:7</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>navigation</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/NavigationService.html" target="_self" >NavigationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -171,8 +172,34 @@
 
 
 
+            <section>
+    <h3>HostListeners</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="click"></a>
+                    <span class="name">
+                        <b>
+                            click
+                        </b>
+                        <a href="#click"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
 
-    <section>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="12"
+                            class="link-to-prism">src/app/base/directives/backbutton.directive.ts:12</a></div>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+            <section>
     
     <h3 id="methods">
         Methods
@@ -181,24 +208,31 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="ngOnInit"></a>
+                    <a name="back"></a>
                     <span class="name">
-                        <span ><b>ngOnInit</b></span>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>back</b></span>
+                        <a href="#back"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>ngOnInit()</code>
+<code>back()</code>
                 </td>
             </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@HostListener(&#x27;click&#x27;)<br /></code>
+                </td>
+            </tr>
 
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/base/components/input-time/input-time.component.ts:12</a></div>
+                            class="link-to-prism">src/app/base/directives/backbutton.directive.ts:12</a></div>
                 </td>
             </tr>
 
@@ -216,74 +250,30 @@
     </table>
 </section>
 
-</div>
+
+    </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Directive, HostListener } from &#x27;@angular/core&#x27;;
+import { NavigationService } from &#x27;../services/navigation.service&#x27;;
 
-@Component({
-  selector: &#x27;app-input-time&#x27;,
-  templateUrl: &#x27;./input-time.component.html&#x27;,
-  styleUrls: [&#x27;./input-time.component.scss&#x27;]
+@Directive({
+  selector: &#x27;[backButton]&#x27;
 })
-export class InputTimeComponent implements OnInit {
+export class BackButtonDirective {
 
-  constructor() { }
+  constructor(private navigation:NavigationService) { }
 
-  ngOnInit(): void {
+  @HostListener(&#x27;click&#x27;)
+  back(): void {
+    this.navigation.back()
   }
-
 }
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;input-time works!&lt;/p&gt;
-</code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-styleData">
-                <p class="comment">
-                    <code>./input-time.component.scss</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-tree">
-        <div id="tree-container"></div>
-        <div class="tree-legend">
-            <div class="title">
-                <b>Legend</b>
-            </div>
-            <div>
-                <div class="color htmlelement"></div><span>Html element</span>
-            </div>
-            <div>
-                <div class="color component"></div><span>Component</span>
-            </div>
-            <div>
-                <div class="color directive"></div><span>Html element with directive</span>
-            </div>
-        </div>
-    </div>
-
-    
 </div>
-
-<script src="../js/libs/vis.min.js"></script>
-<script src="../js/libs/htmlparser.js"></script>
-<script src="../js/libs/deep-iterator.js"></script>
-<script>
-        var COMPONENT_TEMPLATE = '<div><p>input-time works!</p></div>'
-    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentiLandingComponent', 'selector': 'app-allenamenti-landing'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoLandingComponent', 'selector': 'app-allenamento-landing'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AnagraficaAtletaComponent', 'selector': 'app-anagrafica-atleta'},{'name': 'AnagraficaTestComponent', 'selector': 'app-anagrafica-test'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AtletaComponent', 'selector': 'app-athlete'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAllenamentiLandingComponent', 'selector': 'app-lista-allenamenti-landing'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
-    var DIRECTIVES = [{'name': 'BackButtonDirective', 'selector': '[backButton]'}];
-    var ACTUAL_COMPONENT = {'name': 'InputTimeComponent'};
-</script>
-<script src="../js/tree.js"></script>
-
-
-
 
 
 
@@ -322,8 +312,8 @@ export class InputTimeComponent implements OnInit {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'InputTimeComponent.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'directive';
+            var COMPODOC_CURRENT_PAGE_URL = 'BackButtonDirective.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
