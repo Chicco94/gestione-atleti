@@ -1,0 +1,6 @@
+<mat-form-field fxFlex>
+    <mat-label>{{placeholder}}</mat-label>
+    <mat-select [(ngModel)]="model" (click)="$event.stopPropagation();"  >
+        <mat-option *ngFor="let item of sideEnum | enumToArray" [value]="item">{{item}}</mat-option>
+    </mat-select>
+</mat-form-field>
