@@ -10,4 +10,7 @@
     <button mat-flat-button *ngIf="removable" (click)="remove()">
         <mat-icon aria-hidden="false" aria-label="removeFromAllenamento">delete</mat-icon>
     </button>
+    <button mat-flat-button *ngIf="editable" [routerLink]="['./', test.id]" routerLinkActive="activebutton">
+        <mat-icon aria-hidden="false" aria-label="modifica">edit</mat-icon>
+    </button>
 </div>

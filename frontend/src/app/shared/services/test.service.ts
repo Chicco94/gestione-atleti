@@ -10,10 +10,14 @@ export class TestService {
 		Object.setPrototypeOf(this, TestService.prototype);
 	}
 
-	fetchTests(){
-		this.socket.emit('fetchTests');
-	}
-	OnFetchTests() {
-		return this.socket.fromEvent('fetchTests');
-	}
+
+
+	fetchTests(){this.socket.emit('fetchTests');}
+	addTest(atleta:Test){this.socket.emit('addTest',atleta);}
+	updateTest(atleta:Test){this.socket.emit('updateTest',atleta);}
+	deleteTest(id:number){this.socket.emit('deleteTest',id);}
+	getTest(id:number){this.socket.emit('getTest',id);}
+
+	OnFetchTests() {return this.socket.fromEvent('fetchTests');}
+	OnGetTest() {return this.socket.fromEvent('getTest');}
 }

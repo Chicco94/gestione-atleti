@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AtletaComponent } from './components/athlete/athlete.component';
 
 import { BaseModule } from '../base/base.module';
 import { AtletaPreviewComponent } from './components/lista-atleti/atleta-preview/atleta-preview.component';
@@ -12,7 +11,6 @@ import { AnagraficaTestComponent } from './components/anagrafica-test/anagrafica
 
 @NgModule({
   declarations: [
-    AtletaComponent,
     AnagraficaAtletaComponent,
     AnagraficaTestComponent,
     AtletaPreviewComponent,

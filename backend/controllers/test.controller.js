@@ -7,6 +7,12 @@ const fetchTests = (socket) => {
 		.catch(logError)
 }
 
+const getTest = (socket,id) => {
+	Test.findByPk(id)
+		.then(test => socket.emit('getTest', test))
+		.catch(logError)
+}
+
 const addTest = (socket, data) => {
 	Test.create(data)
 		.then(() => fetchTests(socket)) // fetch updated tests
@@ -33,5 +39,6 @@ module.exports = {
 	fetchTests,
 	updateTest,
 	deleteTest,
-	addTest
+	addTest,
+	getTest
 }

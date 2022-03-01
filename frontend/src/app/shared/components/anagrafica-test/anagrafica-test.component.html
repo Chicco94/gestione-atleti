@@ -1,1 +1,11 @@
-<p>anagrafica-test works!</p>
+<div fxLayout="column" fxLayoutAlign="start stretch" fxFlex layout-padding style="margin-left: 10px;margin-right: 10px;height: calc(100vh - 48px);overflow-y: scroll;">
+	<form fxLayout="column" fxLayoutAlign="start stretch" fxFlex>
+		<app-input-text placeholder="Descrizione" [(model)]="test.descr"></app-input-text>
+		<app-input-text placeholder="Gruppo" [(model)]="test.gruppo"></app-input-text>
+	</form>
+</div>
+<div fxLayout="row" fxLayoutAlign="end center" style="height: 96px;">
+	<button mat-icon-button class="circle-button-small" (click)="save()">
+		<mat-icon aria-hidden="false" aria-label="salva">save</mat-icon>
+	</button>
+</div>

@@ -22,7 +22,7 @@ export class AnagraficaAtletaComponent implements OnInit {
 
 	ngOnInit(): void {
     	this.atletaService.OnGetAtleta().subscribe((data:any) => {
-			this.atleta = new Atleta().deserialize(data);
+			if (data != null && data['id'] > 0) this.atleta = new Atleta().deserialize(data);
     	});
 	}
 
