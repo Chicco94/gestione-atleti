@@ -13,11 +13,15 @@ import { AnagraficaTestComponent } from './shared/components/anagrafica-test/ana
 import { AllenamentiLandingComponent } from './allenamenti/components/allenamenti-landing/allenamenti-landing.component';
 import { AllenamentoLandingComponent } from './allenamenti/components/allenamento-landing/allenamento-landing.component';
 import { ListaAllenamentiLandingComponent } from './allenamenti/components/lista-allenamenti-landing/lista-allenamenti-landing.component';
+import { GestioneLandingComponent } from './gestione/components/gestione-landing/gestione-landing.component';
+import { GestioneTestLandingComponent } from './gestione/components/gestione-test-landing/gestione-test-landing.component';
+import { GestioneAtletiLandingComponent } from './gestione/components/gestione-atleti-landing/gestione-atleti-landing.component';
 
 const routes: Routes = [
 	{path: 'home', component:HomeComponent},
 
-	{
+
+	{	// ALLENA
 		path: 'allena', 
 		component:AllenamentiLandingComponent,
 		children: [
@@ -42,11 +46,32 @@ const routes: Routes = [
 		]
 	},
 
-	{path: 'gestione', component:GestioneComponent},
-	{path: 'listaAtleti/:editable', component:ListaAtletiComponent},
-	{path: 'listaTest/:editable', component:ListaTestComponent},
-	{path: 'Atleta/:id', component:AnagraficaAtletaComponent},
-	{path: 'Test', component:AnagraficaTestComponent},
+	{	// GESTIONE
+		path: 'gestione', 
+		component:GestioneLandingComponent,
+		children: [
+			{path: '', component:GestioneComponent},
+			{
+				path: 'listaAtleti/:editable', 
+				component:GestioneAtletiLandingComponent,
+				children: [
+					{path: '', component:ListaAtletiComponent},
+					{path: ':id', component:AnagraficaAtletaComponent},
+				]
+			},
+			{
+				path: 'listaTest/:editable', 
+				component:GestioneTestLandingComponent,
+				children: [
+					{path: '', component:ListaTestComponent},
+					{path: ':id', component:AnagraficaTestComponent},
+				]
+			},
+
+		]
+	},
+
+	// WILDCARDS
 	{path: '', redirectTo:'/home', pathMatch: 'full'},
 	{path: '**', redirectTo:'/home' }
 ];

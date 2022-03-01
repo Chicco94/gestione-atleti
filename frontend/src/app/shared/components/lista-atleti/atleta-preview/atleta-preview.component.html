@@ -6,7 +6,7 @@
     </div>
     <div fxFlex></div>
     <mat-checkbox *ngIf="selectable" style="margin-right: 24px;margin-top: 5px;"></mat-checkbox>
-    <button mat-flat-button *ngIf="editable" [routerLink]="['/Atleta/', atleta.id]" routerLinkActive="activebutton">
+    <button mat-flat-button *ngIf="editable" [routerLink]="['./', atleta.id]" routerLinkActive="activebutton">
         <mat-icon aria-hidden="false" aria-label="listaTest">edit</mat-icon>
     </button>
 </div>
