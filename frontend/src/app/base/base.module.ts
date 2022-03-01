@@ -20,7 +20,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material/core';
+import {DateAdapter, MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material/core';
 import {MatTableModule} from '@angular/material/table';
 import {MatDividerModule} from '@angular/material/divider';
 import {AppRoutingModule} from '../app-routing.module';
@@ -41,6 +41,7 @@ import { BackButtonDirective } from './directives/backbutton.directive';
 // Pipes
 import { SearchPipe } from './pipes/search.pipe';
 import { EnumToArrayPipe } from './pipes/enum-to-array.pipe';
+import { CustomDateAdapter } from './services/custom.date.adapter';
 
 
 @NgModule({
@@ -122,6 +123,9 @@ import { EnumToArrayPipe } from './pipes/enum-to-array.pipe';
     SearchPipe,
     EnumToArrayPipe
   ],
-  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'it-IT' }]
+  providers: [
+    { provide: DateAdapter, useClass: CustomDateAdapter },
+    { provide: MAT_DATE_LOCALE, useValue: 'it-IT' }
+  ]
 })
 export class BaseModule { }
