@@ -1,11 +1,11 @@
 <div fxLayout="column" fxLayoutAlign="space-evenly stretch" style="height: calc(100vh - 48px);">
     <div fxLayout="row" fxLayoutAlign="end center" style="height: 100%; margin-right: 40px;">
-        <button mat-icon-button class="circle-button" [routerLink]="['listaAtleti/',true]" routerLinkActive="activebutton">
+        <button mat-icon-button class="circle-button" [routerLink]="['../listaAtleti/',allenamento.id,true]" routerLinkActive="activebutton">
             <mat-icon aria-hidden="false" aria-label="listaAtleti">directions_run</mat-icon>
         </button>
     </div>
     <div fxLayout="row" fxLayoutAlign="start center" style="height: 100%; margin-left: 40px;">
-        <button mat-icon-button class="circle-button" [routerLink]="['listaTest/',true]" routerLinkActive="activebutton">
+        <button mat-icon-button class="circle-button" [routerLink]="['../listaTest/',allenamento.id,true]" routerLinkActive="activebutton">
             <mat-icon aria-hidden="false" aria-label="listaTest">assignment</mat-icon>
         </button>
     </div>

@@ -2,8 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Allenamento } from 'src/app/allenamenti/models/allenamento.model';
 import { Test } from 'src/app/shared/models/test.model';
-import { AllenamentoService } from 'src/app/allenamenti/services/allenamento.service';
 import { TestService } from 'src/app/shared/services/test.service';
+import { TestAllenamentoService } from '../../services/test-allenamento.service';
 
 @Component({
   selector: 'app-lista-test',
@@ -15,14 +15,13 @@ export class ListaTestComponent implements OnInit {
   @Input() addable:boolean=false;
   @Input() editable:boolean=false;
   @Input() idallenamento:number=0;
-  allenamento:Allenamento = new Allenamento();
   possible_tests:Test[] = [];
-  added_tests:Test[] = [];
+  selected_tests:Test[] = [];
   searchString:string="";
 
   constructor(
     private route:ActivatedRoute,
-    private allenamentoService:AllenamentoService,
+    private testAllenamentoService:TestAllenamentoService,
     private testService:TestService
   ) {
     this.route.params.subscribe(params => {
@@ -30,7 +29,8 @@ export class ListaTestComponent implements OnInit {
       this.editable = params['editable'] === 'true';
       this.addable = !this.editable;
       this.idallenamento = params['idallenamento'];
-      this.allenamentoService.getAllenamento(this.idallenamento);
+      console.log(params);
+      this.testAllenamentoService.getTestAllenamentoByAllenamento(this.idallenamento);
     });
   }
 
@@ -39,7 +39,9 @@ export class ListaTestComponent implements OnInit {
     this.testService.OnFetchTests().subscribe((data:any) => {
       this.possible_tests = data.map((single_data:any) => new Test().deserialize(single_data));
     });
-    this.added_tests = this.allenamento.test || [];
+    this.testAllenamentoService.OnGetTestAllenamentoByAllenamento().subscribe((data:any) => {
+      this.selected_tests = data.map((single_data:any) => new Test().deserialize(single_data));
+    });
   }
 
 }

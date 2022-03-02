@@ -1,4 +1,4 @@
-const { Allenamento } = require('../models')
+const { Allenamento, AtletaAllenamento, TestAllenamento } = require('../models')
 const { logError } = require('../utils') 
 
 const fetchAllenamenti = (socket) => {
