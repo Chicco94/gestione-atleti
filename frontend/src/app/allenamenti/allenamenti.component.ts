@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BeforeAllenamentoComponent } from './components/before-allenamento/before-allenamento.component';
 import { Allenamento } from './models/allenamento.model';
+import { AllenamentoService } from './services/allenamento.service';
 
 @Component({
 	selector: 'app-allenamenti',
@@ -14,6 +15,7 @@ export class AllenamentiComponent implements OnInit {
 	constructor(
 		private route: ActivatedRoute,
 		private router: Router,
+		private allenamentoService:AllenamentoService,
 		public dialog: MatDialog
 		) { }
 
@@ -28,8 +30,10 @@ export class AllenamentiComponent implements OnInit {
 
 		dialogRef.afterClosed().subscribe(result => {
 			if (result){
-				result.id = 0
-				this.router.navigate(['allenamento',result.id],{ relativeTo: this.route });
+				this.allenamentoService.addAllenamento(result);
+				this.allenamentoService.OnGetAllenamento().subscribe((data:any) => {
+					if (data != null && data['id'] > 0) this.router.navigate(['allenamento',data['id']],{ relativeTo: this.route });
+				});
 			}
 		});
 	}

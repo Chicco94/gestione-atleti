@@ -1,5 +1,6 @@
 const { fetchAtleti, addAtleta, updateAtleta, deleteAtleta, getAtleta } = require('../controllers/atleta.controller');
 const { fetchTests, addTest, updateTest, deleteTest, getTest } = require('../controllers/test.controller');
+const { fetchAllenamenti, addAllenamento, updateAllenamento, deleteAllenamento, getAllenamento } = require('../controllers/allenamento.controller');
 
 module.exports = (io) => {
 
@@ -20,6 +21,12 @@ module.exports = (io) => {
 		socket.on('updateTest', (data) => updateTest(socket, data));
 		socket.on('deleteTest', (id) => deleteTest(socket, id));
 		socket.on('getTest', (id) => getTest(socket, id));
+
+		socket.on('fetchAllenamenti', () => fetchAllenamenti(socket));
+		socket.on('addAllenamento', (data) => addAllenamento(socket, data));
+		socket.on('updateAllenamento', (data) => updateAllenamento(socket, data));
+		socket.on('deleteAllenamento', (id) => deleteAllenamento(socket, id));
+		socket.on('getAllenamento', (id) => getAllenamento(socket, id));
 		
 		
 	})

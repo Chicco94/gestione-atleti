@@ -16,7 +16,10 @@ export class ListaAllenamentiComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.allenamenti = this.allenamentoService.list;
+    this.allenamentoService.fetchAllenamenti();
+    this.allenamentoService.OnFetchAllenamenti().subscribe((data:any) => {
+      this.allenamenti = data.map((single_data:any) => new Allenamento().deserialize(single_data));
+    });
   }
 
 }

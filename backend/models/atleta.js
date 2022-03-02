@@ -36,6 +36,7 @@ module.exports = (sequelize, DataTypes) => {
     piede_stacco_alto: DataTypes.STRING
   }, {
     sequelize,
+    freezeTableName: true,
     modelName: 'Atleta',
   });
   return Atleta;

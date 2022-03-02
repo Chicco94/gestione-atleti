@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import { SexEnum } from 'src/app/base/models/enumerations';
-import { Atleta } from 'src/app/shared/models/atleta.model';
+import { Socket } from 'ngx-socket-io';
 import { Allenamento } from '../models/allenamento.model';
-import { Risultato } from '../models/risultato.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,52 +9,16 @@ export class AllenamentoService {
   
   list:Allenamento[] = [];
 
-  constructor() {
+  constructor(private socket: Socket) {
     Object.setPrototypeOf(this, AllenamentoService.prototype);
-		let a1 = new Allenamento();
-		a1.descr = "Allenamento di esempio 1";
-    a1.data = new Date();
-		let a2 = new Allenamento();
-		a2.descr = "Allenamento di esempio 2";
-    a2.data = new Date();
-    let a3 = new Allenamento();
-		a3.descr = "Allenamento di esempio 3";
-    a3.data = new Date();
-    a3.completato = true;
-		for (let i=0;i<100;i++){
-			this.list.push(a1);
-			this.list.push(a2);
-			this.list.push(a3);
-		}
   }
 
-  getAllenamento(id:number):Allenamento{
-    let temp = new Allenamento();
-    temp.id = id;
+  fetchAllenamenti(){this.socket.emit('fetchAllenamenti');}
+	addAllenamento(atleta:Allenamento){this.socket.emit('addAllenamento',atleta);}
+	updateAllenamento(atleta:Allenamento){this.socket.emit('updateAllenamento',atleta);}
+	deleteAllenamento(id:number){this.socket.emit('deleteAllenamento',id);}
+	getAllenamento(id:number){this.socket.emit('getAllenamento',id);}
 
-    let a1 = new Atleta();
-		a1.nome = "Enrico";
-		a1.cognome = "Cominato";
-		a1.sesso = SexEnum.male;
-		a1.data_nascita = new Date("1994-02-07");
-		let a2 = new Atleta();
-		a2.nome = "Eleonora";
-		a2.cognome = "Barcaro";
-		a2.sesso = SexEnum.female;
-		a2.data_nascita = new Date("2008-10-10");
-    temp.atleti.push(a1);
-    temp.atleti.push(a2);
-
-    let r1 = new Risultato();
-    r1.atleta = a1;
-    r1.risultato = 4;
-
-    temp.risultati.push(r1);
-
-    return temp;
-  }
-
-  getAllenamenti():Allenamento[]{
-    return this.list;
-  }
+	OnFetchAllenamenti() {return this.socket.fromEvent('fetchAllenamenti');}
+	OnGetAllenamento() {return this.socket.fromEvent('getAllenamento');}
 }

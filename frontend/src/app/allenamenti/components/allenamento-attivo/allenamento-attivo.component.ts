@@ -19,7 +19,7 @@ export class AllenamentoAttivoComponent implements OnInit {
     private route:ActivatedRoute,
     private allenamentoService:AllenamentoService
   ) {
-    this.route.params.subscribe(params => {this.allenamento = this.allenamentoService.getAllenamento(params['id']);});
+    this.route.params.subscribe(params => {this.allenamentoService.getAllenamento(params['id']);});
   }
 
   ngOnInit(): void {

@@ -30,7 +30,7 @@ export class ListaTestComponent implements OnInit {
       this.editable = params['editable'] === 'true';
       this.addable = !this.editable;
       this.idallenamento = params['idallenamento'];
-      this.allenamento = this.allenamentoService.getAllenamento(this.idallenamento);
+      this.allenamentoService.getAllenamento(this.idallenamento);
     });
   }
 
