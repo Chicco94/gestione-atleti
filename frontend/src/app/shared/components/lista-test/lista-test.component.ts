@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Allenamento } from 'src/app/allenamenti/models/allenamento.model';
+import { Subscription } from 'rxjs';
 import { Test } from 'src/app/shared/models/test.model';
 import { TestService } from 'src/app/shared/services/test.service';
 import { TestAllenamentoService } from '../../services/test-allenamento.service';
@@ -10,7 +10,7 @@ import { TestAllenamentoService } from '../../services/test-allenamento.service'
   templateUrl: './lista-test.component.html',
   styleUrls: ['./lista-test.component.scss']
 })
-export class ListaTestComponent implements OnInit {
+export class ListaTestComponent implements OnInit,OnDestroy {
   @Input() selectable:boolean=false;
   @Input() addable:boolean=false;
   @Input() editable:boolean=false;
@@ -18,6 +18,10 @@ export class ListaTestComponent implements OnInit {
   possible_tests:Test[] = [];
   selected_tests:Test[] = [];
   searchString:string="";
+
+  __OnFetchTests__:Subscription = new Subscription();
+  __OnGetTest__:Subscription = new Subscription();
+  __OnGetTestAllenamentoByAllenamento__:Subscription = new Subscription();
 
   constructor(
     private route:ActivatedRoute,
@@ -29,19 +33,34 @@ export class ListaTestComponent implements OnInit {
       this.editable = params['editable'] === 'true';
       this.addable = !this.editable;
       this.idallenamento = params['idallenamento'];
-      console.log(params);
-      this.testAllenamentoService.getTestAllenamentoByAllenamento(this.idallenamento);
+
+      this.testAllenamentoService.getTestAllenamentoByAllenamento(this.idallenamento);    
+      this.testService.fetchTests();
     });
   }
 
   ngOnInit(): void {
-    this.testService.fetchTests();
-    this.testService.OnFetchTests().subscribe((data:any) => {
+    this.__OnFetchTests__ = this.testService.OnFetchTests().subscribe((data:any) => {
       this.possible_tests = data.map((single_data:any) => new Test().deserialize(single_data));
     });
-    this.testAllenamentoService.OnGetTestAllenamentoByAllenamento().subscribe((data:any) => {
-      this.selected_tests = data.map((single_data:any) => new Test().deserialize(single_data));
+    this.__OnGetTest__ = this.testService.OnGetTest().subscribe((data:any) => {
+      this.selected_tests =[...this.selected_tests,new Test().deserialize(data)];
     });
+    this.__OnGetTestAllenamentoByAllenamento__ = this.testAllenamentoService.OnGetTestAllenamentoByAllenamento().subscribe((data:any) => {
+      data.forEach( (element:any) => {
+        this.testService.getTest(element.idtest);
+      });
+    })
+  }
+
+  ngOnDestroy():void{
+    this.__OnFetchTests__.unsubscribe();
+    this.__OnGetTest__.unsubscribe();
+    this.__OnGetTestAllenamentoByAllenamento__.unsubscribe();
+  }
+
+  confirm(){
+    this.testAllenamentoService.setTestToAllenamento(this.idallenamento, this.selected_tests);
   }
 
 }
