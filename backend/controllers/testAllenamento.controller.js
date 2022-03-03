@@ -9,7 +9,6 @@ const getTestAllenamentoByAllenamento = (socket,idallenamento) => {
 	  }
 	TestAllenamento.findAll(query)
 		.then(testAllenamenti => {
-			console.log(testAllenamenti);
 			socket.emit('getTestAllenamentoByAllenamento', testAllenamenti)
 		})
 		.catch(logError)
@@ -17,8 +16,6 @@ const getTestAllenamentoByAllenamento = (socket,idallenamento) => {
 
 const setTestToAllenamento = (socket, data) => {
 	// elimino i test attuali
-	console.log(data);
-
 	TestAllenamento.destroy({
 		where: {idallenamento: data.idallenamento}
 	})
@@ -33,7 +30,6 @@ const setTestToAllenamento = (socket, data) => {
 		TestAllenamento.create(element)
 			.catch(logError)
 	});
-	
 }
 
 module.exports = {

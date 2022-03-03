@@ -12,6 +12,22 @@ const getAtletaAllenamentoByAllenamento = (socket,idallenamento) => {
 }
 
 
+const setAtletaToAllenamento = (socket, data) => {
+	// elimino i test attuali
+	AtletaAllenamento.destroy({
+		where: {idallenamento: data.idallenamento}
+	})
+	data.lista_atleti.forEach(element => {
+		// trasformo test in testAllenamento
+		temp = {
+			idallenamento: data.idallenamento
+			,idatleta: element
+		}
+		AtletaAllenamento.create(temp)
+			.catch(logError)
+	});
+}
 module.exports = {
-	getAtletaAllenamentoByAllenamento
+	getAtletaAllenamentoByAllenamento,
+	setAtletaToAllenamento
 }
