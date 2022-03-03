@@ -1,7 +1,7 @@
 const { fetchAtleti, addAtleta, updateAtleta, deleteAtleta, getAtleta } = require('../controllers/atleta.controller');
 const { fetchTests, addTest, updateTest, deleteTest, getTest } = require('../controllers/test.controller');
-const { fetchAllenamenti, addAllenamento, updateAllenamento, deleteAllenamento, getAllenamento } = require('../controllers/allenamento.controller');
-const { fetchRisultati, addRisultato, updateRisultato, deleteRisultato, getRisultato } = require('../controllers/risultato.controller');
+const { fetchAllenamenti, addAllenamento,buildAllenamento, updateAllenamento, deleteAllenamento, getAllenamento } = require('../controllers/allenamento.controller');
+const { fetchRisultati, addRisultato, updateRisultato, deleteRisultato, getRisultato, getRisultatoByAllenamento } = require('../controllers/risultato.controller');
 const { getAtletaAllenamentoByAllenamento,setAtletaToAllenamento } = require('../controllers/atletaAllenamento.controller');
 const { getTestAllenamentoByAllenamento,setTestToAllenamento } = require('../controllers/testAllenamento.controller');
 
@@ -31,6 +31,7 @@ module.exports = (io) => {
 		// ALLENAMENTO
 		socket.on('fetchAllenamenti', () => fetchAllenamenti(socket));
 		socket.on('addAllenamento', (data) => addAllenamento(socket, data));
+		socket.on('buildAllenamento', (id) => buildAllenamento(socket, id));
 		socket.on('updateAllenamento', (data) => updateAllenamento(socket, data));
 		socket.on('deleteAllenamento', (id) => deleteAllenamento(socket, id));
 		socket.on('getAllenamento', (id) => getAllenamento(socket, id));
@@ -45,6 +46,7 @@ module.exports = (io) => {
 		socket.on('updateRisultato', (data) => updateRisultato(socket, data));
 		socket.on('deleteRisultato', (id) => deleteRisultato(socket, id));
 		socket.on('getRisultato', (id) => getRisultato(socket, id));
+		socket.on('getRisultatoByAllenamento', (idallenamento) => getRisultatoByAllenamento(socket, idallenamento));
 
 
 

@@ -49,5 +49,6 @@ module.exports = {
 	updateRisultato,
 	deleteRisultato,
 	addRisultato,
-	getRisultato
+	getRisultato,
+	getRisultatoByAllenamento
 }

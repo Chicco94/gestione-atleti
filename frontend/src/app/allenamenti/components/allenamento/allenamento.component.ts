@@ -25,4 +25,8 @@ export class AllenamentoComponent implements OnInit {
 			if (data != null && data['id'] > 0) this.allenamento = new Allenamento().deserialize(data);
     });
   }
+
+  confirm():void{
+    this.allenamentoService.buildAllenamento(this.allenamento.id);
+  }
 }

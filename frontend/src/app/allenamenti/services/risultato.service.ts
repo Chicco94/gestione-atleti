@@ -16,7 +16,9 @@ export class RisultatoService {
 	updateRisultato(atleta:Risultato){this.socket.emit('updateRisultato',atleta);}
 	deleteRisultato(id:number){this.socket.emit('deleteRisultato',id);}
 	getRisultato(id:number){this.socket.emit('getRisultato',id);}
+	getRisultatoByAllenamento(idallenamento:number){this.socket.emit('getRisultato',idallenamento);}
 
 	OnFetchRisultati() {return this.socket.fromEvent('fetchRisultati');}
 	OnGetRisultato() {return this.socket.fromEvent('getRisultato');}
+	OnGetRisultatoByAllenamento() {return this.socket.fromEvent('getRisultatoByAllenamento');}
 }

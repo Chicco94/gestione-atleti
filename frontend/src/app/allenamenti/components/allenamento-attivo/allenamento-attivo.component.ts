@@ -14,18 +14,23 @@ export class AllenamentoAttivoComponent implements OnInit {
   columns:TableColumn[] = [];
   dataSource:any[] = [];
   displayedColumns:string[] = [];
-  
+
   constructor(
     private route:ActivatedRoute,
-    private allenamentoService:AllenamentoService
+    private allenamentoService:AllenamentoService,
   ) {
-    this.route.params.subscribe(params => {this.allenamentoService.getAllenamento(params['id']);});
+    this.route.params.subscribe(params => {
+      this.allenamentoService.getAllenamento(params['id']);
+    });
   }
 
   ngOnInit(): void {
     this.dataSource = this.prepareTableDataSource(this.allenamento);
     this.columns = this.prepareTableColumns(this.dataSource)
     this.displayedColumns = this.columns.map(c => c.columnDef);
+    this.allenamentoService.OnGetAllenamento().subscribe((data:any) => {
+			if (data != null && data['id'] > 0) this.allenamento = new Allenamento().deserialize(data);
+    });
   }
 
   /**

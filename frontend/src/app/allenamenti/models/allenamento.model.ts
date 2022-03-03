@@ -14,8 +14,6 @@ export class Allenamento extends IdBase{
     descr:string= "";
     date:Date=new Date();
     completato:boolean=false;
-    atleti:Atleta[] = [];
-    test:Test[] = [];
-    risultati:Risultato[] = [];
+    risultati:any[] = [];
 
 }
