@@ -29,6 +29,7 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true },
     descr: DataTypes.STRING,
     date: DataTypes.DATE,
+    completato: DataTypes.BOOLEAN,
   }, {
     sequelize,
     freezeTableName: true,

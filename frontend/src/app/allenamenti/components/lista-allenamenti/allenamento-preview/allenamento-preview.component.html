@@ -4,7 +4,7 @@
         {{allenamento.date | date:"dd/mm/yy"}}
     </div>
     <div fxFlex></div>
-    <button mat-flat-button [routerLink]="['../allenamento/', allenamento.id]" routerLinkActive="activebutton">
+    <button *ngIf="!allenamento.completato" mat-flat-button [routerLink]="['../allenamento/', allenamento.id]" routerLinkActive="activebutton">
         <mat-icon aria-hidden="false" aria-label="allenamentoAttivo">edit</mat-icon>
     </button>
     <button mat-flat-button [routerLink]="['./', allenamento.id]" routerLinkActive="activebutton">
