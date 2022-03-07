@@ -7,7 +7,7 @@
 			<td mat-cell *matCellDef="let row">
 				<div fxLayout="row" fxLayoutAlign="start stretch">
 					<app-input-text *ngIf="column.type == 'text'" [placeholder]="column.header" [(model)]="row[column.key]" ></app-input-text>
-					<app-input-number [placeholder]="column.header" [(model)]="row[column.key]" *ngIf="column.type == 'number'"></app-input-number>
+					<app-input-number [placeholder]="column.header" [(model)]="row[column.key].risultato" *ngIf="column.type == 'number'"></app-input-number>
 					<div *ngIf="column.type == 'plain'">{{column.cell(row)}}</div>
 				</div>
 			</td>
@@ -19,10 +19,10 @@
 </div>
 
 <div fxLayout="row" fxLayoutAlign="space-evenly center" style="height: 96px;">
-	<button mat-icon-button class="circle-button-small" [routerLink]="['/listaAllenamenti/']" routerLinkActive="activebutton">
+	<button mat-icon-button class="circle-button-small" (click)="save()">
 		<mat-icon aria-hidden="false" aria-label="listaAllenamenti">save</mat-icon>
 	</button>
-	<button mat-icon-button class="circle-button-small-green" [routerLink]="['/allenamenti/']" routerLinkActive="activebutton">
+	<button mat-icon-button class="circle-button-small-green" (click)="confirm()">
 		<mat-icon aria-hidden="false" aria-label="listaAllenamenti">verified</mat-icon>
 	</button>
 </div>

@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { Atleta } from 'src/app/shared/models/atleta.model';
 import { Allenamento } from '../../models/allenamento.model';
 import { AllenamentoService } from '../../services/allenamento.service';
+import { RisultatoService } from '../../services/risultato.service';
 
 @Component({
 	selector: 'app-allenamento-attivo',
@@ -21,6 +22,7 @@ export class AllenamentoAttivoComponent implements OnInit,OnDestroy {
 
 	constructor(
 		private route:ActivatedRoute,
+		private risultatoService:RisultatoService,
 		private allenamentoService:AllenamentoService,
 	) {
 		this.route.params.subscribe(params => {
@@ -49,75 +51,60 @@ export class AllenamentoAttivoComponent implements OnInit,OnDestroy {
 	 * @param allenamento allenamento da cui recuperare i risultati
 	 */
 	prepareTableDataSource(allenamento:Allenamento){
-		//allenamento.risultati.map(risultati_atleta => 
-		//	({atleta:risultati_atleta.atleta.fullName,
-		//		result_1:4				,result_2:undefined,result_3:undefined})
-		//)
-		
-		let a1 = new Atleta();
-		a1.nome = "Enrico";
-		a1.cognome = "Cominato";
-		let a2 = new Atleta();
-		a2.nome = "Eleonora";
-		a2.cognome = "Barcaro";
-		let a3 = new Atleta();
-		a3.nome = "Matteo";
-		a3.cognome = "Grigolato";
-		let a4 = new Atleta();
-		a4.nome = "Elisabetta";
-		a4.cognome = "Greggio";
-		let a5 = new Atleta();
-		a5.nome = "Elena";
-		a5.cognome = "Crepaldi";
-		let a6 = new Atleta();
-		a6.nome = "Miracle";
-		a6.cognome = "Aighimien";
-
-		return [
-			{atleta:a1.fullName,result_1:4				,result_2:undefined,result_3:undefined},
-			{atleta:a2.fullName,result_1:undefined,result_2:undefined,result_3:undefined},
-			{atleta:a3.fullName,result_1:undefined,result_2:undefined,result_3:undefined},
-			{atleta:a4.fullName,result_1:undefined,result_2:undefined,result_3:undefined},
-			{atleta:a5.fullName,result_1:undefined,result_2:undefined,result_3:undefined},
-			{atleta:a6.fullName,result_1:undefined,result_2:undefined,result_3:undefined},
-		]
+		allenamento.risultati.forEach(element => {
+			element.atleta = new Atleta().deserialize(element.atleta)
+		});
+		return allenamento.risultati;
 	}
 
 	prepareTableColumns(datasource:any):TableColumn[]{
-		return [
-			{
-				columnDef: 'atleta',
-				header: "Atleta",
-				sticky: true,
-				key: 'atleta',
-				type: ColumnTypeEnum.plain,
-				cell: (d_row) => `${d_row.atleta}`,
-			},
-			{
-				columnDef: 'test_1',
-				header: "30 metri",
+		let row = datasource[0];
+		let structure = [{
+			columnDef: 'atleta',
+			header: "Atleta",
+			sticky: true,
+			key: 'atleta',
+			type: ColumnTypeEnum.plain,
+			cell: (d_row:any) => `${d_row.atleta.fullName}`,
+		}];
+		let sequenza=1;
+		while (row['result_'+sequenza]){
+			structure.push({
+				columnDef: 'test_'+sequenza,
+				header: row['result_'+sequenza].Test.descr,
 				sticky: false,
-				key: 'result_1',
+				key: 'result_'+sequenza,
 				type: ColumnTypeEnum.number,
-				cell: (d_row) => `${d_row.result_1}`,
-			},
-			{
-				columnDef: 'test_2',
-				header: "40 metri",
-				sticky: false,
-				key: 'result_2',
-				type: ColumnTypeEnum.number,
-				cell: (d_row) => `${d_row.result_2}`,
-			},
-			{
-				columnDef: 'test_3',
-				header: "50 metri",
-				sticky: false,
-				key: 'result_3',
-				type: ColumnTypeEnum.number,
-				cell: (d_row) => `${d_row.result_3}`,
-			},
-		]
+				cell: (d_row) => `${d_row['result_'+sequenza].risultato}`,
+			})
+			sequenza += 1;
+		}
+		return structure;
+	}
+
+	/**
+	 * @author Enrico
+	 * @description salva i risultati a database
+	 */
+	public save(){
+		this.allenamento.risultati.forEach( risultati_atleta => {
+			let sequenza=1;
+			while (risultati_atleta['result_'+sequenza]){
+				this.risultatoService.updateRisultato(risultati_atleta['result_'+sequenza])
+				sequenza += 1;
+			}
+		})
+	}
+
+
+	/**
+	 * @author Enrico
+	 * @description salva i risultati a database e completa l'allenamento
+	 */
+	public confirm(){
+		this.save();
+		this.allenamento.completato = true;
+		this.allenamentoService.updateAllenamento(this.allenamento);
 	}
 }
 
