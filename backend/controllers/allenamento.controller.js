@@ -25,8 +25,8 @@ const getAllenamento = (socket,idallenamento) => {
 		// creo una matrice con prima colonna gli atleti, 
 		// ogni altra colonna i risultati dei test nella sequenza prevista
 		return atletiAllenamenti.map(atletaAllenamento => {
-			temp = JSON.parse(JSON.stringify(response_line));
 			return Atleta.findByPk(atletaAllenamento.idatleta).then(atleta =>{
+				let temp = JSON.parse(JSON.stringify(response_line));
 				temp.atleta = atleta;
 				return temp;
 			}).catch(logError);
