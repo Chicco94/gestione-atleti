@@ -1,4 +1,4 @@
-const { Allenamento, AtletaAllenamento, TestAllenamento, Risultato, Atleta } = require('../models')
+const { Allenamento, AtletaAllenamento, TestAllenamento, Risultato, Atleta, Test } = require('../models')
 const { logError } = require('../utils') 
 
 const fetchAllenamenti = (socket) => {
@@ -8,39 +8,44 @@ const fetchAllenamenti = (socket) => {
 }
 
 const getAllenamento = (socket,idallenamento) => {
-	let query = {
-		where: {idallenamento: idallenamento}
-	}
-
+	
 	// Prendo tutti i test previsti
-	let response_line = {};
-	TestAllenamento.findAll(query).then(testAllenamenti => {
-		testAllenamenti.forEach(test => {
-			response_line['result_'+test.sequenza] = 0;
+	let response_line = TestAllenamento.findAll({
+		where: {idallenamento: idallenamento}
+	})
+	// preparo la struttura dati
+	.then(testAllenamenti => {
+		let _response_line = {};
+		testAllenamenti.forEach(element => {
+			_response_line['result_'+element.sequenza] = 0
 		})
-	}).catch(logError)
+		return _response_line;
+	});
 
-	// Prendo tutti gli atleti selezionati
-	AtletaAllenamento.findAll(query).then( atletiAllenamenti => {
-		// creo una matrice con prima colonna gli atleti, 
+	AtletaAllenamento.findAll({
+		where: {idallenamento: idallenamento},
+		include: [{ model: Atleta }]
+	})
+	.then( atletiAllenamenti => {
+		// creo una matrice con prima colonna gli atleti,
 		// ogni altra colonna i risultati dei test nella sequenza prevista
 		return atletiAllenamenti.map(atletaAllenamento => {
-			return Atleta.findByPk(atletaAllenamento.idatleta).then(atleta =>{
-				let temp = JSON.parse(JSON.stringify(response_line));
-				temp.atleta = atleta;
-				return temp;
-			}).catch(logError);
-		})
-	}).then( _risultati_temp => {
-		return Promise.all(_risultati_temp).then(risultati_temp => {
-			return risultati_temp.map(risultato_temp => {
-				return Risultato.findAll({where:{idallenamento:idallenamento,idatleta:risultato_temp.atleta.id}}).then(risultati_atleta => {
-					for (let i=0; i< risultati_atleta.length; i++){
-						let risultato_atleta = risultati_atleta[i];
-						risultato_temp['result_'+risultato_atleta.sequenza] = risultato_atleta;
-					}
-					return JSON.parse(JSON.stringify(risultato_temp));
-				})
+			let temp = JSON.parse(JSON.stringify(response_line));
+			temp.atleta = atletaAllenamento.Atletum;
+			return temp;
+		});
+	})
+	.then(risultati_temp => {
+		return risultati_temp.map(risultato_temp => {
+			return Risultato.findAll({
+								where:{idallenamento:idallenamento,idatleta:risultato_temp.atleta.id},
+								include: [{ model: Test }]
+				}).then(risultati_atleta => {
+				for (let i=0; i < risultati_atleta.length; i++){
+					let risultato_atleta = risultati_atleta[i];
+					risultato_temp['result_'+risultato_atleta.sequenza] = risultato_atleta;
+				}
+				return JSON.parse(JSON.stringify(risultato_temp));
 			})
 		})
 	})
@@ -56,7 +61,7 @@ const getAllenamento = (socket,idallenamento) => {
 					risultati: risultati})
 			}).catch(logError);
 		})
-	}).catch(logError);
+	}).catch(logError)
 }
 
 const buildAllenamento = (socket, idallenamento) => {
