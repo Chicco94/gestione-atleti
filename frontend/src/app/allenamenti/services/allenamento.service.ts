@@ -14,9 +14,9 @@ export class AllenamentoService {
   }
 
   fetchAllenamenti(){this.socket.emit('fetchAllenamenti');}
-	addAllenamento(atleta:Allenamento){this.socket.emit('addAllenamento',atleta);}
+	addAllenamento(allenamento:Allenamento){this.socket.emit('addAllenamento',allenamento);}
 	buildAllenamento(idallenamento:number){this.socket.emit('buildAllenamento',idallenamento);}
-	updateAllenamento(atleta:Allenamento){this.socket.emit('updateAllenamento',atleta);}
+	updateAllenamento(allenamento:Allenamento){this.socket.emit('updateAllenamento',allenamento);}
 	deleteAllenamento(id:number){this.socket.emit('deleteAllenamento',id);}
 	getAllenamento(id:number){this.socket.emit('getAllenamento',id);}
 

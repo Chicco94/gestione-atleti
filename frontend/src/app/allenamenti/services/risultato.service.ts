@@ -12,8 +12,8 @@ export class RisultatoService {
   }
   
   fetchRisultati(){this.socket.emit('fetchRisultati');}
-	addRisultato(atleta:Risultato){this.socket.emit('addRisultato',atleta);}
-	updateRisultato(atleta:Risultato){this.socket.emit('updateRisultato',atleta);}
+	addRisultato(risultato:Risultato){this.socket.emit('addRisultato',risultato);}
+	updateRisultato(risultato:Risultato){this.socket.emit('updateRisultato',risultato);}
 	deleteRisultato(id:number){this.socket.emit('deleteRisultato',id);}
 	getRisultato(id:number){this.socket.emit('getRisultato',id);}
 	getRisultatoByAllenamento(idallenamento:number){this.socket.emit('getRisultato',idallenamento);}
