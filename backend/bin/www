@@ -6,7 +6,8 @@
 
 var { app, io } = require('../app'); 
 var debug = require('debug')('server:server');
-var http = require('http');
+var https = require('https');
+var fs = require('fs');
 
 /**
  * Get port from environment and store in Express.
@@ -18,14 +19,19 @@ app.set('port', port);
 /**
  * Create HTTP server.
  */
+var server = https.createServer({
+  key: fs.readFileSync("/var/www/html/gestione_atleti/backend/certs/privkey1.pem"),
+  cert: fs.readFileSync("/var/www/html/gestione_atleti/backend/certs/cert1.pem")
+});
 
-var server = http.createServer(app);
+// var server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
  */
 
 server.listen(port);
+console.log("listening on "+0+":"+port)
 server.on('error', onError);
 server.on('listening', onListening);
 
@@ -98,4 +104,5 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+  console.log('Listening on' + bind);
 }

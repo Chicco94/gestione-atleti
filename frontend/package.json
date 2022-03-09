@@ -1,6 +1,9 @@
 {
   "name": "frontend",
-  "version": "0.0.0",
+  "displayName": "GestioneAtleti",
+  "version": "1.0.0",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host 192.168.1.54 --port 4200",
@@ -9,6 +12,9 @@
     "test": "ng test",
     "compodoc": "npx compodoc -p tsconfig.doc.json"
   },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.2.0",
@@ -36,6 +42,7 @@
     "@angular/compiler-cli": "~13.2.0",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
+    "cordova-android": "^10.1.1",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
@@ -43,5 +50,10 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.5.2"
+  },
+  "cordova": {
+    "platforms": [
+      "android"
+    ]
   }
 }

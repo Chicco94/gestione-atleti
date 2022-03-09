@@ -1,4 +1,4 @@
-const env = process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV || 'production';
 
 const config = { 
     development: {
@@ -11,10 +11,10 @@ const config = {
         logging: false
     },
     production: {
-        host: "localhost",
-        database: "socket_crud",
-        username: "root",
-        password: "",
+        host: "test.ubware.it",
+        database: "custom_enrico",
+        username: "devdb",
+        password: "devdb",
         dialect: "mysql",
         operatorsAliases: "false",
         logging: false
