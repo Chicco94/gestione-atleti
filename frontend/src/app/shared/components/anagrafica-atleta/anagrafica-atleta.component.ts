@@ -33,4 +33,8 @@ export class AnagraficaAtletaComponent implements OnInit {
 			this.atletaService.addAtleta(this.atleta);
 		}
 	}
+
+	delete(){
+		this.atletaService.deleteAtleta(this.atleta.id);
+	}
 }

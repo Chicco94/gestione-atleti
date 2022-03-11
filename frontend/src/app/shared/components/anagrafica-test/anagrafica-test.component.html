@@ -4,8 +4,12 @@
 		<app-input-text placeholder="Gruppo" [(model)]="test.gruppo"></app-input-text>
 	</form>
 </div>
-<div fxLayout="row" fxLayoutAlign="end center" style="height: 96px;">
+<div fxLayout="column" fxLayoutAlign="start center" style="height: calc(100vh - 48px)">
 	<button mat-icon-button class="circle-button-small" (click)="save()">
 		<mat-icon aria-hidden="false" aria-label="salva">save</mat-icon>
+	</button>
+	<div fxFlex></div>
+	<button backButton mat-icon-button class="circle-button-small" >
+		<mat-icon aria-hidden="false" aria-label="salva">arrow_back</mat-icon>
 	</button>
 </div>

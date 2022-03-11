@@ -31,5 +31,8 @@ export class AnagraficaTestComponent implements OnInit {
 			this.testService.addTest(this.test);
 		}
 	}
+	delete(){
+		this.testService.deleteTest(this.test.id);
+	}
 
 }
