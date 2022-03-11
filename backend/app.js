@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var helmet = require('helmet');
+var cors = require('cors');
 
 // require socket.io
 const io = require('socket.io')();
@@ -24,6 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(helmet());
+app.use(cors());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

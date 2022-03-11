@@ -1,23 +1,10 @@
 {
   "development": {
-    "username": "devdb",
-    "password": "devdb",
-    "database": "custom_enrico",
-    "host": "test.ubware.it",
-    "dialect": "mysql"
-  },
-  "test": {
-    "username": "devdb",
-    "password": "devdb",
-    "database": "custom_enrico",
-    "host": "test.ubware.it",
-    "dialect": "mysql"
+    "dialect": "sqlite",
+    "storage": "db/database.sqlite"
   },
   "production": {
-    "username": "devdb",
-    "password": "devdb",
-    "database": "custom_enrico",
-    "host": "test.ubware.it",
-    "dialect": "mysql"
+    "dialect": "sqlite",
+    "storage": "db/database.sqlite"
   }
 }

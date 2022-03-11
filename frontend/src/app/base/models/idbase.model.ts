@@ -1,7 +1,7 @@
 import { Base } from "./base.model";
 
 export class IdBase extends Base{
-	id:number=0;
+	id!: number;
 	createdAt:Date = new Date;
 	updatedAt:Date = new Date;
 

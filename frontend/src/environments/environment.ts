@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  socketUrl: 'https://test.ubware.it:3000'
+  socketUrl: 'https://gestione-atleti.herokuapp.com/'//'http://192.168.1.54:3001'
 };
 
 /*
