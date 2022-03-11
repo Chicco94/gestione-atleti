@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { TestTypeEnum } from 'src/app/base/models/enumerations';
 import { Atleta } from 'src/app/shared/models/atleta.model';
 import { Allenamento } from '../../models/allenamento.model';
 import { AllenamentoService } from '../../services/allenamento.service';
@@ -34,7 +35,6 @@ export class AllenamentoAttivoComponent implements OnInit,OnDestroy {
 		this.__OnGetAllenamento__ = this.allenamentoService.OnGetAllenamento().subscribe((data:any) => {
 			if (data == null || data['id'] <= 0) return
 			this.allenamento = new Allenamento().deserialize(data);
-			console.log(this.allenamento)
 			this.dataSource = this.prepareTableDataSource(this.allenamento);
 			this.columns = this.prepareTableColumns(this.dataSource)
 			this.displayedColumns = this.columns.map(c => c.columnDef);
@@ -74,7 +74,7 @@ export class AllenamentoAttivoComponent implements OnInit,OnDestroy {
 				header: row['result_'+sequenza].Test.descr,
 				sticky: false,
 				key: 'result_'+sequenza,
-				type: ColumnTypeEnum.number,
+				type: row['result_'+sequenza].Test.tipo == TestTypeEnum.Crono ? ColumnTypeEnum.time : ColumnTypeEnum.number,
 				cell: (d_row) => `${d_row['result_'+sequenza].risultato}`,
 			})
 			sequenza += 1;

@@ -7,8 +7,8 @@
 			<td mat-cell *matCellDef="let row">
 				<div fxLayout="row" fxLayoutAlign="start stretch">
 					<app-input-text *ngIf="column.type == 'text'" [placeholder]="column.header" [(model)]="row[column.key]" ></app-input-text>
-					<app-input-number [placeholder]="column.header" [(model)]="row[column.key].risultato" *ngIf="column.type == 'number'"></app-input-number>
-					<app-input-time [placeholder]="column.header" [(model)]="row[column.key].risultato" *ngIf="column.type == 'time'"></app-input-time>
+					<app-input-number *ngIf="column.type == 'number'" [placeholder]="column.header" [(model)]="row[column.key].risultato"></app-input-number>
+					<app-input-time *ngIf="column.type == 'time'" [placeholder]="column.header" [(model)]="row[column.key].risultato"></app-input-time>
 					<div *ngIf="column.type == 'plain'">{{column.cell(row)}}</div>
 				</div>
 			</td>

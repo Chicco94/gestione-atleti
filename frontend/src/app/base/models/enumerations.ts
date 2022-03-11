@@ -53,6 +53,12 @@ export enum SexEnum{
 	Femmina = "Femmina"
 }
 
+export enum TestTypeEnum{
+	Crono = 'Crono',
+	Distanza = "Distanza",
+	Generico = "Generico"
+}
+
 export enum SideEnum{
 	dx='Destro',
 	sx="Sinistro"

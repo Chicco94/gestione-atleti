@@ -9,4 +9,5 @@ export class Test extends IdBase{
 
     descr:string = "";
     gruppo:string = "";
+	tipo:string= "";
 }

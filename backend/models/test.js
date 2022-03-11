@@ -29,6 +29,7 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true },
     descr: DataTypes.STRING,
     gruppo: DataTypes.STRING,
+    tipo: DataTypes.STRING,
   }, {
     sequelize,
     freezeTableName: true,
