@@ -13,7 +13,7 @@ export class Atleta extends IdBase{
 	cognome:string = "";
 	tessera:string = "";
 	data_nascita:Date = new Date();
-	sesso:SexEnum = SexEnum.male;
+	sesso:string = SexEnum.Maschio;
 	
 	// VELOCITA'
 	piede_partenza_blocchi:SideEnum = SideEnum.dx;
@@ -61,19 +61,19 @@ export class Atleta extends IdBase{
 	 */
 	get category():CategoryEnum{
 		switch(true) { 
-			case (this.age < 13): { return this.sesso == SexEnum.male ? CategoryEnum.RM : CategoryEnum.RF; }
-			case (this.age < 15): { return this.sesso == SexEnum.male ? CategoryEnum.CM : CategoryEnum.CF; }
-			case (this.age < 17): { return this.sesso == SexEnum.male ? CategoryEnum.AM : CategoryEnum.AF; }
-			case (this.age < 19): { return this.sesso == SexEnum.male ? CategoryEnum.JM : CategoryEnum.JF; }
-			case (this.age < 24): { return this.sesso == SexEnum.male ? CategoryEnum.PM : CategoryEnum.PF; }
-			case (this.age < 34): { return this.sesso == SexEnum.male ? CategoryEnum.SM : CategoryEnum.SF; }
-			case (this.age < 40): { return this.sesso == SexEnum.male ? CategoryEnum.MM35 : CategoryEnum.MF35; }
-			case (this.age < 45): { return this.sesso == SexEnum.male ? CategoryEnum.MM40 : CategoryEnum.MF40; }
-			case (this.age < 50): { return this.sesso == SexEnum.male ? CategoryEnum.MM45 : CategoryEnum.MF45; }
-			case (this.age < 55): { return this.sesso == SexEnum.male ? CategoryEnum.MM50 : CategoryEnum.MF50; }
-			case (this.age < 60): { return this.sesso == SexEnum.male ? CategoryEnum.MM55 : CategoryEnum.MF55; }
-			case (this.age < 65): { return this.sesso == SexEnum.male ? CategoryEnum.MM60 : CategoryEnum.MF60; }
-			case (this.age >= 65): { return this.sesso == SexEnum.male ? CategoryEnum.MM65 : CategoryEnum.MF65; }
+			case (this.age < 13): { return this.isMale ? CategoryEnum.RM : CategoryEnum.RF; }
+			case (this.age < 15): { return this.isMale ? CategoryEnum.CM : CategoryEnum.CF; }
+			case (this.age < 17): { return this.isMale ? CategoryEnum.AM : CategoryEnum.AF; }
+			case (this.age < 19): { return this.isMale ? CategoryEnum.JM : CategoryEnum.JF; }
+			case (this.age < 24): { return this.isMale ? CategoryEnum.PM : CategoryEnum.PF; }
+			case (this.age < 34): { return this.isMale ? CategoryEnum.SM : CategoryEnum.SF; }
+			case (this.age < 40): { return this.isMale ? CategoryEnum.MM35 : CategoryEnum.MF35; }
+			case (this.age < 45): { return this.isMale ? CategoryEnum.MM40 : CategoryEnum.MF40; }
+			case (this.age < 50): { return this.isMale ? CategoryEnum.MM45 : CategoryEnum.MF45; }
+			case (this.age < 55): { return this.isMale ? CategoryEnum.MM50 : CategoryEnum.MF50; }
+			case (this.age < 60): { return this.isMale ? CategoryEnum.MM55 : CategoryEnum.MF55; }
+			case (this.age < 65): { return this.isMale ? CategoryEnum.MM60 : CategoryEnum.MF60; }
+			case (this.age >= 65): { return this.isMale ? CategoryEnum.MM65 : CategoryEnum.MF65; }
 			default: { console.error("categoria non trovata",this);return CategoryEnum.AF;} 
 		}
 	}
@@ -86,6 +86,6 @@ export class Atleta extends IdBase{
 	 * @returns if the athlete is male or not
 	 */
 	get isMale():boolean{
-		return this.sesso == SexEnum.male;
+		return this.sesso == SexEnum.Maschio;
 	}
 }

@@ -49,8 +49,8 @@ export enum SpecialityEnum{
 }
 
 export enum SexEnum{
-	male='Maschio',
-	female="Femmina"
+	Maschio = 'Maschio',
+	Femmina = "Femmina"
 }
 
 export enum SideEnum{

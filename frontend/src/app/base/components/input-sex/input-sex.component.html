@@ -1,0 +1,12 @@
+<div style="margin-left: 10px;margin-right: 10px; background-color: white;border-radius: 15px;">
+    <mat-form-field fxFlex style="margin-left: 10px;margin-right: 10px;">
+        <mat-label>{{placeholder}}</mat-label>
+        <mat-select 
+                [(ngModel)]="model" 
+                (ngModelChange)="onModelChange(model)"
+                [ngModelOptions]="{standalone: true}" 
+                (click)="$event.stopPropagation();"  >
+            <mat-option *ngFor="let item of enumKeys" [value]="item">{{item}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
