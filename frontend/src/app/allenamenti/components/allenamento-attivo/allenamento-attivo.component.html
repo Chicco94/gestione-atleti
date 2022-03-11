@@ -8,6 +8,7 @@
 				<div fxLayout="row" fxLayoutAlign="start stretch">
 					<app-input-text *ngIf="column.type == 'text'" [placeholder]="column.header" [(model)]="row[column.key]" ></app-input-text>
 					<app-input-number [placeholder]="column.header" [(model)]="row[column.key].risultato" *ngIf="column.type == 'number'"></app-input-number>
+					<app-input-time [placeholder]="column.header" [(model)]="row[column.key].risultato" *ngIf="column.type == 'time'"></app-input-time>
 					<div *ngIf="column.type == 'plain'">{{column.cell(row)}}</div>
 				</div>
 			</td>

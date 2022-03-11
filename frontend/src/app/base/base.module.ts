@@ -43,6 +43,7 @@ import { SearchPipe } from './pipes/search.pipe';
 import { EnumToArrayPipe } from './pipes/enum-to-array.pipe';
 import { CustomDateAdapter } from './services/custom.date.adapter';
 import { InputSexComponent } from './components/input-sex/input-sex.component';
+import { InputTimeComponent } from './components/input-time/input-time.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { InputSexComponent } from './components/input-sex/input-sex.component';
     InputTextComponent,
     InputDateComponent,
     InputNumberComponent,
+    InputTimeComponent,
     InputSideComponent,
     InputSexComponent,
     BackButtonDirective,
@@ -118,6 +120,7 @@ import { InputSexComponent } from './components/input-sex/input-sex.component';
     InputNumberComponent,
     InputSideComponent,
     InputSexComponent,
+    InputTimeComponent,
 
     // Directives
     BackButtonDirective,

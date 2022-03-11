@@ -1,1 +1,15 @@
-<p>input-time works!</p>
+<div style="margin-left: 10px;margin-right: 10px; background-color: white;border-radius: 15px;">
+    <mat-form-field fxFlex style="margin-left: 10px;margin-right: 10px; width: 50px;">
+        <input 
+            matInput 
+            type="number" 
+            [placeholder]="placeholder" 
+            [(ngModel)]="model" 
+            (ngModelChange)="onModelChange(model)"
+            [ngModelOptions]="{standalone: true}"
+        >
+    </mat-form-field>
+    <button mat-icon-button class="circle-button-small" (click)="timer()">
+        <mat-icon aria-hidden="false" aria-label="salva">alarm</mat-icon>
+    </button>
+</div>
