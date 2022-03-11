@@ -1,10 +1,32 @@
 {
   "development": {
-    "dialect": "sqlite",
-    "storage": "db/database.sqlite"
+    "database": "d1tp4v2bojt3vs",
+    "username": "xatcjiusolmcou",
+    "password": "9df525fe3907148c6e67e07b71051baa54b091601a13308b641903c0b88c24f4",
+    "host": "ec2-52-211-158-144.eu-west-1.compute.amazonaws.com",
+    "port": 5432,
+    "dialect": "postgres",
+    "protocol": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
   },
   "production": {
-    "dialect": "sqlite",
-    "storage": "db/database.sqlite"
+    "database": "d1tp4v2bojt3vs",
+    "username": "xatcjiusolmcou",
+    "password": "9df525fe3907148c6e67e07b71051baa54b091601a13308b641903c0b88c24f4",
+    "host": "ec2-52-211-158-144.eu-west-1.compute.amazonaws.com",
+    "port": 5432,
+    "dialect": "postgres",
+    "protocol": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
   }
 }

@@ -8,12 +8,7 @@ const env = process.env.NODE_ENV || 'production';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
-let sequelize;
-if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
-} else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
+const sequelize = new Sequelize("postgres://xatcjiusolmcou:9df525fe3907148c6e67e07b71051baa54b091601a13308b641903c0b88c24f4@ec2-52-211-158-144.eu-west-1.compute.amazonaws.com:5432/d1tp4v2bojt3vs", config);
 
 fs
   .readdirSync(__dirname)
