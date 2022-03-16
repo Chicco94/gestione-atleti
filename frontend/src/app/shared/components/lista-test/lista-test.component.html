@@ -2,7 +2,7 @@
     <app-input-text placeholder="Cerca" [(model)]="searchString"></app-input-text>
 </div>
 
-<cdk-virtual-scroll-viewport itemSize="50" style="height: calc(50% - 115px);">
+<cdk-virtual-scroll-viewport itemSize="50" [ngStyle]="{'height': editable ? 'calc(100% - 115px)' : 'calc(50% - 115px)'}">
     <div *cdkVirtualFor="let test of possible_tests | search:'descr,gruppo':searchString" #test>
         <app-test-preview [test]="test" [(testList)]="selected_tests" [addable]="addable" [editable]="editable"></app-test-preview>
     </div>
