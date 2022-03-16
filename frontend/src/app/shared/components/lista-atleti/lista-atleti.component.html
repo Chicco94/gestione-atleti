@@ -3,7 +3,7 @@
 </div>
 
 <mat-selection-list #list [(ngModel)]="selezionati" (ngModelChange)="onNgModelChange($event)">
-    <mat-list-option *ngFor="let atleta of atleti | search:'id,name,cognome,category':searchString" [value]="atleta.id" [ngClass]="{'hide-checkbox': !selectable}">
+    <mat-list-option *ngFor="let atleta of atleti | search:'id,nome,cognome,category':searchString" [value]="atleta.id" [ngClass]="{'hide-checkbox': !selectable}">
         <app-atleta-preview [atleta]="atleta" [editable]="editable"></app-atleta-preview>
     </mat-list-option>
 </mat-selection-list>
