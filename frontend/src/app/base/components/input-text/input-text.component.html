@@ -1,12 +1,15 @@
-<div style="margin-left: 10px;margin-right: 10px; background-color: white;border-radius: 15px;">
-    <mat-form-field fxFlex style="margin-left: 10px;margin-right: 10px;">
+<div fxLayout="row" fxLayoutAlign="start stretch" style="margin-left: 10px;margin-right: 10px; background-color: white;border-radius: 15px;">
+    <mat-form-field  fxFlex [ngStyle]="{'margin-left': '10px','margin-right': '10px','width': hiddenCharacters ? '140px': '180px'}">
         <input 
             matInput 
-            type="text" 
+            [type]="inputType" 
             [placeholder]="placeholder" 
             [(ngModel)]="model" 
             (ngModelChange)="onModelChange(model)"
             [ngModelOptions]="{standalone: true}"
         >
     </mat-form-field>
+    <button mat-icon-button (click)="toggleHiddenChars()" *ngIf="hiddenCharacters" style="margin-top:10px">
+        <mat-icon aria-hidden="false" aria-label="toggleHiddenChars">visibility</mat-icon>
+    </button>
 </div>

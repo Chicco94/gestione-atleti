@@ -1,3 +1,4 @@
+const { login, fetchUtenti, addUtente, updateUtente, deleteUtente, getUtente } = require('../controllers/utenti.controller');
 const { fetchAtleti, addAtleta, updateAtleta, deleteAtleta, getAtleta } = require('../controllers/atleta.controller');
 const { fetchTests, addTest, updateTest, deleteTest, getTest } = require('../controllers/test.controller');
 const { fetchAllenamenti, addAllenamento,buildAllenamento, updateAllenamento, deleteAllenamento, getAllenamento } = require('../controllers/allenamento.controller');
@@ -13,6 +14,16 @@ module.exports = (io) => {
 		console.log(`Socket ${socket.id} has connected`) 
 		
 		socket.on('disconnect', () => console.log(`Socket ${socket.id} has disconnected`)); 
+
+		// LOGIN
+		socket.on('login',(data) => login(socket,data));
+
+		//	UTENTI
+		socket.on('fetchUtenti', () => fetchUtenti(socket));
+		socket.on('addUtente', (data) => addUtente(socket, data));
+		socket.on('updateUtente', (data) => updateUtente(socket, data));
+		socket.on('deleteUtente', (id) => deleteUtente(socket, id));
+		socket.on('getUtente', (id) => getUtente(socket, id));
 
 		//	ATLETI
 		socket.on('fetchAtleti', () => fetchAtleti(socket));

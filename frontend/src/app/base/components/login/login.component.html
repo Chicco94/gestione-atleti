@@ -1,0 +1,8 @@
+
+<div fxLayout="column" fxLayoutAlign="center center" style="height:100%;width:100%">
+    <app-input-text placeholder="username" [(model)]="username"></app-input-text>
+    <app-input-text placeholder="password" [(model)]="password" [hiddenCharacters]="true"></app-input-text>
+    <button mat-flat-button style="margin-top: 10px;" (click)="login()">
+        LOGIN
+    </button>
+</div>

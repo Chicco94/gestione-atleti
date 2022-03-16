@@ -16,9 +16,12 @@ import { ListaAllenamentiLandingComponent } from './allenamenti/components/lista
 import { GestioneLandingComponent } from './gestione/components/gestione-landing/gestione-landing.component';
 import { GestioneTestLandingComponent } from './gestione/components/gestione-test-landing/gestione-test-landing.component';
 import { GestioneAtletiLandingComponent } from './gestione/components/gestione-atleti-landing/gestione-atleti-landing.component';
+import { LoginComponent } from './base/components/login/login.component';
+import { LoginGuard } from './base/guards/login.guard';
 
 const routes: Routes = [
-	{path: 'home', component:HomeComponent},
+	{path: 'home', component:HomeComponent, canActivate: [LoginGuard]},
+    { path: 'login', component: LoginComponent },
 
 
 	{	// ALLENA

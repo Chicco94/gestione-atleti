@@ -8,7 +8,9 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 export class InputTextComponent implements OnInit {
   @Input() placeholder:string = "";
   @Input() model:string = ""
+  @Input() hiddenCharacters:boolean = false;
   @Output() modelChange:EventEmitter<string> = new EventEmitter<string>();
+  
   constructor() { }
 
   ngOnInit(): void {
@@ -16,6 +18,14 @@ export class InputTextComponent implements OnInit {
 
   onModelChange(value: string) {
     this.modelChange.emit(value);
+  }
+
+  toggleHiddenChars(){
+    this.hiddenCharacters = !this.hiddenCharacters;
+  }
+
+  get inputType():string{
+    return this.hiddenCharacters ? 'password' : 'text';
   }
 
 }

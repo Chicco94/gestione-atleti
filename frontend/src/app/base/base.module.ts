@@ -45,11 +45,13 @@ import { CustomDateAdapter } from './services/custom.date.adapter';
 import { InputSexComponent } from './components/input-sex/input-sex.component';
 import { InputTimeComponent } from './components/input-time/input-time.component';
 import { InputTestTypeComponent } from './components/input-test-type/input-test-type.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
+    LoginComponent,
     InputTextComponent,
     InputDateComponent,
     InputNumberComponent,
@@ -57,7 +59,9 @@ import { InputTestTypeComponent } from './components/input-test-type/input-test-
     InputSideComponent,
     InputSexComponent,
     InputTestTypeComponent,
+
     BackButtonDirective,
+    
     SearchPipe,
     EnumToArrayPipe
   ],
@@ -117,6 +121,7 @@ import { InputTestTypeComponent } from './components/input-test-type/input-test-
     MatDividerModule,
 
     // Components
+    LoginComponent,
     InputTextComponent,
     InputDateComponent,
     InputNumberComponent,

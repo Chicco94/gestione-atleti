@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  socketUrl: 'https://gestione-atleti.herokuapp.com/'//'http://192.168.1.54:3001'
+  socketUrl: 'http://192.168.1.54:3001'
 };
 
 /*

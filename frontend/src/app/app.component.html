@@ -1,6 +1,10 @@
-<div fxLayout="row" fxLayoutAlign="start center">
+<div fxLayout="row" fxLayoutAlign="start center" *ngIf="currentUser">
     <button mat-icon-button class="circle-button-very-small" [routerLink]="'home'" routerLinkActive="active" style="margin-left: 20px;">
         <mat-icon aria-hidden="false" aria-label="Home">home</mat-icon>
+    </button>
+    <div fxFlex></div>
+    <button mat-icon-button class="circle-button-very-small"  style="margin-right: 20px;" (click)="logout()">
+        <mat-icon aria-hidden="false" aria-label="Home">logout</mat-icon>
     </button>
 </div>
 <div id="bg">
