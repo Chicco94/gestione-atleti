@@ -5,13 +5,6 @@
 		<app-input-text placeholder="Tessera" [(model)]="atleta.tessera"></app-input-text>
 		<app-input-date placeholder="Data di nascita" [(model)]="atleta.data_nascita"></app-input-date>
 		<app-input-sex placeholder="Sesso" [(model)]="atleta.sesso"></app-input-sex>
-		<!--
-		<mat-form-field fxFlex>
-			<mat-label>Sesso</mat-label>
-			<mat-select [(ngModel)]="atleta.sesso" (click)="$event.stopPropagation();"  >
-				<mat-option *ngFor="let item of sexEnum | enumToArray" [value]="item">{{item}}</mat-option>
-			</mat-select>
-		</mat-form-field>-->
 		
 		<mat-divider></mat-divider>
 		

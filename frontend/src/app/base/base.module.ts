@@ -28,10 +28,14 @@ import {AppRoutingModule} from '../app-routing.module';
 
 // Components
 import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+
 import { InputTextComponent } from './components/input-text/input-text.component';
 import { InputDateComponent } from './components/input-date/input-date.component';
 import { InputNumberComponent } from './components/input-number/input-number.component';
-import { InputSideComponent } from './components/input-side/input-side.component';
+import { InputSexComponent } from './components/input-sex/input-sex.component';
+import { InputTimeComponent } from './components/input-time/input-time.component';
+import { InputTestTypeComponent } from './components/input-test-type/input-test-type.component';
 
 
 // Directives
@@ -40,12 +44,7 @@ import { BackButtonDirective } from './directives/backbutton.directive';
 
 // Pipes
 import { SearchPipe } from './pipes/search.pipe';
-import { EnumToArrayPipe } from './pipes/enum-to-array.pipe';
 import { CustomDateAdapter } from './services/custom.date.adapter';
-import { InputSexComponent } from './components/input-sex/input-sex.component';
-import { InputTimeComponent } from './components/input-time/input-time.component';
-import { InputTestTypeComponent } from './components/input-test-type/input-test-type.component';
-import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -56,14 +55,12 @@ import { LoginComponent } from './components/login/login.component';
     InputDateComponent,
     InputNumberComponent,
     InputTimeComponent,
-    InputSideComponent,
     InputSexComponent,
     InputTestTypeComponent,
 
     BackButtonDirective,
     
-    SearchPipe,
-    EnumToArrayPipe
+    SearchPipe
   ],
   imports: [
     CommonModule,
@@ -125,7 +122,6 @@ import { LoginComponent } from './components/login/login.component';
     InputTextComponent,
     InputDateComponent,
     InputNumberComponent,
-    InputSideComponent,
     InputSexComponent,
     InputTimeComponent,
     InputTestTypeComponent,
@@ -134,8 +130,7 @@ import { LoginComponent } from './components/login/login.component';
     BackButtonDirective,
 
     // Pipes
-    SearchPipe,
-    EnumToArrayPipe
+    SearchPipe
   ],
   providers: [
     { provide: DateAdapter, useClass: CustomDateAdapter },
