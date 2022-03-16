@@ -5,3 +5,7 @@ MODIFICARE IL FILE DELLA MIGRAZIONE
 
 AVVIARE LA MIGRAZIONE
 npx sequelize-cli db:migrate
+
+
+heroku login
+heroku pg:psql
