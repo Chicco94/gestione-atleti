@@ -23,6 +23,8 @@ import { AnagraficaTestComponent } from './components/anagrafica-test/anagrafica
     BaseModule
   ],
   exports:[
+    ListaTestComponent,
+    ListaAtletiComponent
   ]
 })
 export class SharedModule { }

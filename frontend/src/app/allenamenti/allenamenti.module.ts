@@ -12,6 +12,7 @@ import { BeforeAllenamentoComponent } from './components/before-allenamento/befo
 import { AllenamentiLandingComponent } from './components/allenamenti-landing/allenamenti-landing.component';
 import { AllenamentoLandingComponent } from './components/allenamento-landing/allenamento-landing.component';
 import { ListaAllenamentiLandingComponent } from './components/lista-allenamenti-landing/lista-allenamenti-landing.component';
+import { AllenamentoSelectTestComponent } from './components/allenamento-select-test/allenamento-select-test.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ListaAllenamentiLandingComponent } from './components/lista-allenamenti
     AllenamentiComponent,
     ListaAllenamentiComponent,
     AllenamentoComponent,
+    AllenamentoSelectTestComponent,
     AllenamentoAttivoComponent,
     AllenamentoPreviewComponent,
     BeforeAllenamentoComponent

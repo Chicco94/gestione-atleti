@@ -8,13 +8,13 @@ import { Test } from 'src/app/shared/models/test.model';
 })
 export class TestPreviewComponent implements OnInit {
   @Input() test:Test = new Test();
-  @Input() testList:Test[] = [];
+  @Input() targetTestList:Test[] = [];
 
   @Input() addable?:boolean = false;
   @Input() removable?:boolean = false;
   @Input() editable?:boolean = false;
 
-  @Output() testListChange:EventEmitter<Test[]> = new EventEmitter<Test[]>();
+  @Output() targetTestListChange:EventEmitter<Test[]> = new EventEmitter<Test[]>();
 
   constructor() { }
 
@@ -22,12 +22,12 @@ export class TestPreviewComponent implements OnInit {
   }
 
   add = ()=>{
-    this.testList = [...this.testList,this.test];
-    this.testListChange.emit(this.testList);
+    this.targetTestList = [...this.targetTestList,this.test];
+    this.targetTestListChange.emit(this.targetTestList);
   };
 
   remove = ()=>{
-    this.testList.splice(this.testList.indexOf(this.test));
-    this.testListChange.emit(this.testList);
+    this.targetTestList.splice(this.targetTestList.indexOf(this.test));
+    this.targetTestListChange.emit(this.targetTestList);
   };
 }

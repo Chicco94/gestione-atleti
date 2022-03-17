@@ -1,0 +1,14 @@
+<app-lista-test [sourceTestList]="possible_tests" [(targetTestList)]="selected_tests" (targetTestListChange)="getChanges($event)" [searchable]="true" [addable]="true"></app-lista-test>
+
+<mat-divider style="margin: 2px"></mat-divider>
+
+<app-lista-test [sourceTestList]="selected_tests" [targetTestList]="selected_tests" (targetTestListChange)="getChanges($event)" [removable]="true"></app-lista-test>
+
+<div fxLayout="row" fxLayoutAlign="end center">
+    <button mat-icon-button class="circle-button-green" *ngIf="editable" style="position: absolute;bottom: -10px;left:-10px" [routerLink]="['./', 0]" routerLinkActive="activebutton">
+        <mat-icon aria-hidden="false" aria-label="listaTest">add</mat-icon>
+    </button>
+    <button backButton mat-icon-button class="circle-button-green" style="position: absolute;bottom: -10px;right:-10px" (click)="confirm()">
+        <mat-icon aria-hidden="false" aria-label="listaTest">check</mat-icon>
+    </button>
+</div>
