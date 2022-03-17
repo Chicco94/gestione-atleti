@@ -46,8 +46,8 @@ const routes: Routes = [
 				component:AllenamentoLandingComponent,
 				children: [
 					{path: ':idallenamento', component:AllenamentoComponent},
-					{path: 'listaAtleti/:idallenamento/:selectable', component:AllenamentoSelectAtletaComponent},
-					{path: 'listaTest/:idallenamento/:selectable', component:AllenamentoSelectTestComponent},
+					{path: 'listaAtleti/:idallenamento', component:AllenamentoSelectAtletaComponent},
+					{path: 'listaTest/:idallenamento', component:AllenamentoSelectTestComponent},
 				]
 			},
 		]
