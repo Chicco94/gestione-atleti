@@ -20,6 +20,8 @@ import { LoginComponent } from './base/components/login/login.component';
 import { LoginGuard } from './base/guards/login.guard';
 import { AllenamentoSelectTestComponent } from './allenamenti/components/allenamento-select-test/allenamento-select-test.component';
 import { GestioneTestComponent } from './gestione/components/gestione-test/gestione-test.component';
+import { GestioneAtletiComponent } from './gestione/components/gestione-atleti/gestione-atleti.component';
+import { AllenamentoSelectAtletaComponent } from './allenamenti/components/allenamento-select-atleta/allenamento-select-atleta.component';
 
 const routes: Routes = [
 	{path: 'home', component:HomeComponent, canActivate: [LoginGuard]},
@@ -44,7 +46,7 @@ const routes: Routes = [
 				component:AllenamentoLandingComponent,
 				children: [
 					{path: ':idallenamento', component:AllenamentoComponent},
-					{path: 'listaAtleti/:idallenamento/:selectable', component:ListaAtletiComponent},
+					{path: 'listaAtleti/:idallenamento/:selectable', component:AllenamentoSelectAtletaComponent},
 					{path: 'listaTest/:idallenamento/:selectable', component:AllenamentoSelectTestComponent},
 				]
 			},
@@ -60,7 +62,7 @@ const routes: Routes = [
 				path: 'gestioneAtleti', 
 				component:GestioneAtletiLandingComponent,
 				children: [
-					{path: '', component:ListaAtletiComponent},
+					{path: '', component:GestioneAtletiComponent},
 					{path: ':id', component:AnagraficaAtletaComponent},
 				]
 			},

@@ -8,6 +8,7 @@ import { GestioneLandingComponent } from './components/gestione-landing/gestione
 import { GestioneTestLandingComponent } from './components/gestione-test-landing/gestione-test-landing.component';
 import { GestioneAtletiLandingComponent } from './components/gestione-atleti-landing/gestione-atleti-landing.component';
 import { GestioneTestComponent } from './components/gestione-test/gestione-test.component';
+import { GestioneAtletiComponent } from './components/gestione-atleti/gestione-atleti.component';
 
 
 
@@ -18,6 +19,7 @@ import { GestioneTestComponent } from './components/gestione-test/gestione-test.
     GestioneTestLandingComponent,
     GestioneTestComponent,
     GestioneAtletiLandingComponent,
+    GestioneAtletiComponent
   ],
   imports: [
     CommonModule,
