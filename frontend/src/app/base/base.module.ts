@@ -5,6 +5,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 // MATERIAL
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
@@ -75,6 +76,7 @@ import { CustomDateAdapter } from './services/custom.date.adapter';
     MatInputModule,
     FormsModule,
     MatGridListModule,
+    MatSlideToggleModule,
     MatListModule,
     MatButtonModule,
     MatIconModule,
@@ -102,6 +104,7 @@ import { CustomDateAdapter } from './services/custom.date.adapter';
     MatInputModule,
     FormsModule,
     MatGridListModule,
+    MatSlideToggleModule,
     MatListModule,
     MatButtonModule,
     MatIconModule,
