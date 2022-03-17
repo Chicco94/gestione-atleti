@@ -25,21 +25,17 @@ export class AuthenticationService {
       this.onLoginUnsuccesful();
   }
   onLoginSuccesful(){
-    console.log('onLoginSuccesful');
     return this.socket.fromEvent('loginSuccesful').subscribe((data)=>{
       // store user details and jwt token in local storage to keep user logged in between page refreshes
       localStorage.setItem('currentUser', JSON.stringify(data));
       this.currentUserSubject.next(data);
-      console.log(data);
       this.router.navigate(['/']);
       return data;
     })
   }
   onLoginUnsuccesful(){
-    console.log('onLoginUnsuccesful');
     return this.socket.fromEvent('loginUnsuccesful').subscribe((data)=>{
       // Need to alert the user of unsuccesful login
-      console.log(data);
       return data;
     })
   }
