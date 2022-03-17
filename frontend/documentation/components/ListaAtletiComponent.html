@@ -134,13 +134,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#atleti" >atleti</a>
-                            </li>
-                            <li>
                                 <a href="#searchString" >searchString</a>
-                            </li>
-                            <li>
-                                <a href="#selezionati" >selezionati</a>
                             </li>
                         </ul>
                     </td>
@@ -154,6 +148,9 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
+                            <li>
+                                <a href="#getChanges" >getChanges</a>
+                            </li>
                             <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
                             </li>
@@ -176,15 +173,35 @@
                                 <a href="#editable" >editable</a>
                             </li>
                             <li>
-                                <a href="#idallenamento" >idallenamento</a>
+                                <a href="#searchable" >searchable</a>
                             </li>
                             <li>
                                 <a href="#selectable" >selectable</a>
+                            </li>
+                            <li>
+                                <a href="#sourceAtletaList" >sourceAtletaList</a>
+                            </li>
+                            <li>
+                                <a href="#targetAtletaList" >targetAtletaList</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#targetAtletaListChange" >targetAtletaListChange</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -198,57 +215,15 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, athleteService: <a href="../injectables/AtletaService.html" target="_self">AtletaService</a>)</code>
+<code>constructor()</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/shared/components/lista-atleti/lista-atleti.component.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/shared/components/lista-atleti/lista-atleti.component.ts:25</a></div>
                             </td>
                         </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>route</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>athleteService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/AtletaService.html" target="_self" >AtletaService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
             </tbody>
         </table>
 </section>
@@ -276,7 +251,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/shared/components/lista-atleti/lista-atleti.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/components/lista-atleti/lista-atleti.component.ts:15</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -302,7 +277,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/shared/components/lista-atleti/lista-atleti.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/shared/components/lista-atleti/lista-atleti.component.ts:17</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -311,24 +286,24 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="idallenamento"></a>
-                        <b>idallenamento</b>
+                        <a name="searchable"></a>
+                        <b>searchable</b>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>0</code>
+                        <i>Default value : </i><code>false</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/components/lista-atleti/lista-atleti.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/shared/components/lista-atleti/lista-atleti.component.ts:18</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -354,7 +329,83 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/shared/components/lista-atleti/lista-atleti.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/components/lista-atleti/lista-atleti.component.ts:16</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sourceAtletaList"></a>
+                        <b>sourceAtletaList</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Atleta.html" target="_self" >Atleta[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/shared/components/lista-atleti/lista-atleti.component.ts:20</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="targetAtletaList"></a>
+                        <b>targetAtletaList</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/shared/components/lista-atleti/lista-atleti.component.ts:21</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="targetAtletaListChange"></a>
+                        <b>targetAtletaListChange</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;number[]&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/shared/components/lista-atleti/lista-atleti.component.ts:23</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -362,12 +413,80 @@
 </section>
 
 
-
     <section>
     
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getChanges"></a>
+                    <span class="name">
+                        <span ><b>getChanges</b></span>
+                        <a href="#getChanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getChanges(targetAtletaList: number[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/shared/components/lista-atleti/lista-atleti.component.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>targetAtletaList</td>
+                                    <td>
+                                            <code>number[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -388,8 +507,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/shared/components/lista-atleti/lista-atleti.component.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/shared/components/lista-atleti/lista-atleti.component.ts:29</a></div>
                 </td>
             </tr>
 
@@ -415,37 +534,6 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="atleti"></a>
-                    <span class="name">
-                        <span ><b>atleti</b></span>
-                        <a href="#atleti"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../classes/Atleta.html" target="_self" >Atleta[]</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>[]</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/shared/components/lista-atleti/lista-atleti.component.ts:17</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="searchString"></a>
                     <span class="name">
                         <span ><b>searchString</b></span>
@@ -466,38 +554,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/shared/components/lista-atleti/lista-atleti.component.ts:18</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="selezionati"></a>
-                    <span class="name">
-                        <span ><b>selezionati</b></span>
-                        <a href="#selezionati"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../classes/Atleta.html" target="_self" >Atleta[]</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>[]</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/components/lista-atleti/lista-atleti.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/shared/components/lista-atleti/lista-atleti.component.ts:25</a></div>
                         </td>
                     </tr>
 
@@ -510,9 +567,11 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, EventEmitter, Input, OnInit, Output } from &#x27;@angular/core&#x27;;
 import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
 import { Atleta } from &#x27;../../models/atleta.model&#x27;;
+import { AtletaAllenamentoService } from &#x27;../../services/atleta-allenamento.service&#x27;;
 import { AtletaService } from &#x27;../../services/atleta.service&#x27;;
 
 @Component({
@@ -521,31 +580,26 @@ import { AtletaService } from &#x27;../../services/atleta.service&#x27;;
   styleUrls: [&#x27;./lista-atleti.component.scss&#x27;]
 })
 export class ListaAtletiComponent implements OnInit {
-  @Input() selectable:boolean&#x3D;false;
+
   @Input() addable:boolean&#x3D;false;
+  @Input() selectable:boolean&#x3D;false;
   @Input() editable:boolean&#x3D;false;
-  @Input() idallenamento:number&#x3D;0;
-  selezionati:Atleta[] &#x3D; [];
-  atleti:Atleta[] &#x3D; [];
+  @Input() searchable:boolean&#x3D;false;
+  
+  @Input() sourceAtletaList:Atleta[] &#x3D; [];
+  @Input() targetAtletaList:number[] &#x3D; [];
+
+  @Output() targetAtletaListChange:EventEmitter&lt;number[]&gt; &#x3D; new EventEmitter&lt;number[]&gt;();
+
   searchString:string&#x3D;&quot;&quot;;
 
-  constructor(
-    private route:ActivatedRoute,
-    private athleteService:AtletaService
-  ) {
-    this.route.params.subscribe(params &#x3D;&gt; {
-      this.idallenamento &#x3D; params[&#x27;idallenamento&#x27;];
-      this.selectable &#x3D; params[&#x27;selectable&#x27;] &#x3D;&#x3D;&#x3D; &#x27;true&#x27;;
-      this.editable &#x3D; params[&#x27;editable&#x27;] &#x3D;&#x3D;&#x3D; &#x27;true&#x27;;
-      this.addable &#x3D; !this.editable;
-    });
-  }
+  constructor() {}
 
   ngOnInit(): void {
-    this.athleteService.fetchAtleti();
-    this.athleteService.OnFetchAtleti().subscribe((data:any) &#x3D;&gt; {
-      this.atleti &#x3D; data.map((single_data:any) &#x3D;&gt; new Atleta().deserialize(single_data));
-    });
+  }
+
+  getChanges(targetAtletaList:number[]){
+    this.targetAtletaListChange.emit(targetAtletaList);
   }
 
 }
@@ -553,24 +607,15 @@ export class ListaAtletiComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div style&#x3D;&quot;height: 48px;&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div style&#x3D;&quot;height: 48px;&quot; *ngIf&#x3D;&quot;searchable&quot;&gt;
     &lt;app-input-text placeholder&#x3D;&quot;Cerca&quot; [(model)]&#x3D;&quot;searchString&quot;&gt;&lt;/app-input-text&gt;
 &lt;/div&gt;
 
-&lt;cdk-virtual-scroll-viewport itemSize&#x3D;&quot;50&quot; style&#x3D;&quot;height: calc(100% - 240px);&quot;&gt;
-    &lt;div *cdkVirtualFor&#x3D;&quot;let atleta of atleti | search:&#x27;id,name,cognome,category&#x27;:searchString&quot; #atleti&gt;
-        &lt;app-atleta-preview [atleta]&#x3D;&quot;atleta&quot; [selectable]&#x3D;&quot;selectable&quot; [editable]&#x3D;&quot;editable&quot;&gt;&lt;/app-atleta-preview&gt;
-    &lt;/div&gt;
-&lt;/cdk-virtual-scroll-viewport&gt;
-
-&lt;div&gt;
-    &lt;button mat-icon-button class&#x3D;&quot;circle-button-green&quot; *ngIf&#x3D;&quot;editable&quot; style&#x3D;&quot;position: absolute;bottom: -10px;left:-10px&quot; [routerLink]&#x3D;&quot;[&#x27;./&#x27;, 0]&quot; routerLinkActive&#x3D;&quot;activebutton&quot;&gt;
-        &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;listaTest&quot;&gt;add&lt;/mat-icon&gt;
-    &lt;/button&gt;
-    &lt;button backButton mat-icon-button class&#x3D;&quot;circle-button-green&quot; style&#x3D;&quot;position: absolute;bottom: -10px;right:-10px&quot;&gt;
-        &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;listaTest&quot;&gt;check&lt;/mat-icon&gt;
-    &lt;/button&gt;
-&lt;/div&gt;
+&lt;mat-selection-list #list [(ngModel)]&#x3D;&quot;targetAtletaList&quot; (ngModelChange)&#x3D;&quot;getChanges(targetAtletaList)&quot;&gt;
+    &lt;mat-list-option *ngFor&#x3D;&quot;let atleta of sourceAtletaList | search:&#x27;id,nome,cognome,category&#x27;:searchString&quot; [value]&#x3D;&quot;atleta.id&quot; [ngClass]&#x3D;&quot;{&#x27;hide-checkbox&#x27;: !selectable}&quot;&gt;
+        &lt;app-atleta-preview [atleta]&#x3D;&quot;atleta&quot; [editable]&#x3D;&quot;editable&quot;&gt;&lt;/app-atleta-preview&gt;
+    &lt;/mat-list-option&gt;
+&lt;/mat-selection-list&gt;
 
 </code></pre>
     </div>
@@ -579,7 +624,7 @@ export class ListaAtletiComponent implements OnInit {
                 <p class="comment">
                     <code>./lista-atleti.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">::ng-deep .hide-checkbox .mat-pseudo-checkbox { display: none; }</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -607,8 +652,8 @@ export class ListaAtletiComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div style="height: 48px;">    <app-input-text placeholder="Cerca" [(model)]="searchString"></app-input-text></div><cdk-virtual-scroll-viewport itemSize="50" style="height: calc(100% - 240px);">    <div *cdkVirtualFor="let atleta of atleti | search:\'id,name,cognome,category\':searchString" #atleti>        <app-atleta-preview [atleta]="atleta" [selectable]="selectable" [editable]="editable"></app-atleta-preview>    </div></cdk-virtual-scroll-viewport><div>    <button mat-icon-button class="circle-button-green" *ngIf="editable" style="position: absolute;bottom: -10px;left:-10px" [routerLink]="[\'./\', 0]" routerLinkActive="activebutton">        <mat-icon aria-hidden="false" aria-label="listaTest">add</mat-icon>    </button>    <button backButton mat-icon-button class="circle-button-green" style="position: absolute;bottom: -10px;right:-10px">        <mat-icon aria-hidden="false" aria-label="listaTest">check</mat-icon>    </button></div></div>'
-    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentiLandingComponent', 'selector': 'app-allenamenti-landing'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoLandingComponent', 'selector': 'app-allenamento-landing'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AnagraficaAtletaComponent', 'selector': 'app-anagrafica-atleta'},{'name': 'AnagraficaTestComponent', 'selector': 'app-anagrafica-test'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AtletaComponent', 'selector': 'app-athlete'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'GestioneAtletiLandingComponent', 'selector': 'app-gestione-atleti-landing'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'GestioneLandingComponent', 'selector': 'app-gestione-landing'},{'name': 'GestioneTestLandingComponent', 'selector': 'app-gestione-test-landing'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAllenamentiLandingComponent', 'selector': 'app-lista-allenamenti-landing'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
+        var COMPONENT_TEMPLATE = '<div><div style="height: 48px;" *ngIf="searchable">    <app-input-text placeholder="Cerca" [(model)]="searchString"></app-input-text></div><mat-selection-list #list [(ngModel)]="targetAtletaList" (ngModelChange)="getChanges(targetAtletaList)">    <mat-list-option *ngFor="let atleta of sourceAtletaList | search:\'id,nome,cognome,category\':searchString" [value]="atleta.id" [ngClass]="{\'hide-checkbox\': !selectable}">        <app-atleta-preview [atleta]="atleta" [editable]="editable"></app-atleta-preview>    </mat-list-option></mat-selection-list></div>'
+    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentiLandingComponent', 'selector': 'app-allenamenti-landing'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoLandingComponent', 'selector': 'app-allenamento-landing'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AllenamentoSelectAtletaComponent', 'selector': 'app-allenamento-select-atleta'},{'name': 'AllenamentoSelectTestComponent', 'selector': 'app-allenamento-select-test'},{'name': 'AnagraficaAtletaComponent', 'selector': 'app-anagrafica-atleta'},{'name': 'AnagraficaTestComponent', 'selector': 'app-anagrafica-test'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'GestioneAtletiComponent', 'selector': 'app-gestione-atleti'},{'name': 'GestioneAtletiLandingComponent', 'selector': 'app-gestione-atleti-landing'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'GestioneLandingComponent', 'selector': 'app-gestione-landing'},{'name': 'GestioneTestComponent', 'selector': 'app-gestione-test'},{'name': 'GestioneTestLandingComponent', 'selector': 'app-gestione-test-landing'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputSexComponent', 'selector': 'app-input-sex'},{'name': 'InputTestTypeComponent', 'selector': 'app-input-test-type'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAllenamentiLandingComponent', 'selector': 'app-lista-allenamenti-landing'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
     var DIRECTIVES = [{'name': 'BackButtonDirective', 'selector': '[backButton]'}];
     var ACTUAL_COMPONENT = {'name': 'ListaAtletiComponent'};
 </script>

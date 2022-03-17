@@ -149,6 +149,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#confirm" >confirm</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
                             </li>
                         </ul>
@@ -237,6 +240,43 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="confirm"></a>
+                    <span class="name">
+                        <span ><b>confirm</b></span>
+                        <a href="#confirm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>confirm()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/allenamenti/components/allenamento/allenamento.component.ts:29</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="ngOnInit"></a>
                     <span class="name">
                         <span ><b>ngOnInit</b></span>
@@ -253,8 +293,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/allenamenti/components/allenamento/allenamento.component.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/allenamenti/components/allenamento/allenamento.component.ts:23</a></div>
                 </td>
             </tr>
 
@@ -329,10 +369,20 @@ export class AllenamentoComponent implements OnInit {
     private route:ActivatedRoute,
     private allenamentoService:AllenamentoService
   ) {
-    this.route.params.subscribe(params &#x3D;&gt; {this.allenamento &#x3D; this.allenamentoService.getAllenamento(params[&#x27;id&#x27;]);});
+    this.route.params.subscribe(params &#x3D;&gt; {
+      this.allenamentoService.getAllenamento(params[&#x27;idallenamento&#x27;]);
+      this.allenamento.id &#x3D; params[&#x27;idallenamento&#x27;];
+    });
   }
 
   ngOnInit(): void {
+    this.allenamentoService.OnGetAllenamento().subscribe((data:any) &#x3D;&gt; {
+			if (data !&#x3D; null &amp;&amp; data[&#x27;id&#x27;] &gt; 0) this.allenamento &#x3D; new Allenamento().deserialize(data);
+    });
+  }
+
+  confirm():void{
+    this.allenamentoService.buildAllenamento(this.allenamento.id);
   }
 }
 </code></pre>
@@ -341,17 +391,17 @@ export class AllenamentoComponent implements OnInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div fxLayout&#x3D;&quot;column&quot; fxLayoutAlign&#x3D;&quot;space-evenly stretch&quot; style&#x3D;&quot;height: calc(100vh - 48px);&quot;&gt;
     &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;end center&quot; style&#x3D;&quot;height: 100%; margin-right: 40px;&quot;&gt;
-        &lt;button mat-icon-button class&#x3D;&quot;circle-button&quot; [routerLink]&#x3D;&quot;[&#x27;listaAtleti/&#x27;,true]&quot; routerLinkActive&#x3D;&quot;activebutton&quot;&gt;
+        &lt;button mat-icon-button class&#x3D;&quot;circle-button&quot; [routerLink]&#x3D;&quot;[&#x27;../listaAtleti/&#x27;,allenamento.id]&quot; routerLinkActive&#x3D;&quot;activebutton&quot;&gt;
             &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;listaAtleti&quot;&gt;directions_run&lt;/mat-icon&gt;
         &lt;/button&gt;
     &lt;/div&gt;
     &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;start center&quot; style&#x3D;&quot;height: 100%; margin-left: 40px;&quot;&gt;
-        &lt;button mat-icon-button class&#x3D;&quot;circle-button&quot; [routerLink]&#x3D;&quot;[&#x27;listaTest/&#x27;,true]&quot; routerLinkActive&#x3D;&quot;activebutton&quot;&gt;
+        &lt;button mat-icon-button class&#x3D;&quot;circle-button&quot; [routerLink]&#x3D;&quot;[&#x27;../listaTest/&#x27;,allenamento.id]&quot; routerLinkActive&#x3D;&quot;activebutton&quot;&gt;
             &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;listaTest&quot;&gt;assignment&lt;/mat-icon&gt;
         &lt;/button&gt;
     &lt;/div&gt;
     &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;end center&quot; style&#x3D;&quot;height: 100%; margin-right: 40px;&quot;&gt;
-        &lt;button mat-icon-button class&#x3D;&quot;circle-button-green&quot; [routerLink]&#x3D;&quot;[&#x27;../../&#x27;]&quot; &gt;
+        &lt;button mat-icon-button class&#x3D;&quot;circle-button-green&quot; [routerLink]&#x3D;&quot;[&#x27;../../&#x27;]&quot; (click)&#x3D;&quot;confirm()&quot;&gt;
             &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;listaTest&quot;&gt;check&lt;/mat-icon&gt;
         &lt;/button&gt;
     &lt;/div&gt;
@@ -390,8 +440,8 @@ export class AllenamentoComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div fxLayout="column" fxLayoutAlign="space-evenly stretch" style="height: calc(100vh - 48px);">    <div fxLayout="row" fxLayoutAlign="end center" style="height: 100%; margin-right: 40px;">        <button mat-icon-button class="circle-button" [routerLink]="[\'listaAtleti/\',true]" routerLinkActive="activebutton">            <mat-icon aria-hidden="false" aria-label="listaAtleti">directions_run</mat-icon>        </button>    </div>    <div fxLayout="row" fxLayoutAlign="start center" style="height: 100%; margin-left: 40px;">        <button mat-icon-button class="circle-button" [routerLink]="[\'listaTest/\',true]" routerLinkActive="activebutton">            <mat-icon aria-hidden="false" aria-label="listaTest">assignment</mat-icon>        </button>    </div>    <div fxLayout="row" fxLayoutAlign="end center" style="height: 100%; margin-right: 40px;">        <button mat-icon-button class="circle-button-green" [routerLink]="[\'../../\']" >            <mat-icon aria-hidden="false" aria-label="listaTest">check</mat-icon>        </button>    </div></div></div>'
-    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentiLandingComponent', 'selector': 'app-allenamenti-landing'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoLandingComponent', 'selector': 'app-allenamento-landing'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AnagraficaAtletaComponent', 'selector': 'app-anagrafica-atleta'},{'name': 'AnagraficaTestComponent', 'selector': 'app-anagrafica-test'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AtletaComponent', 'selector': 'app-athlete'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'GestioneAtletiLandingComponent', 'selector': 'app-gestione-atleti-landing'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'GestioneLandingComponent', 'selector': 'app-gestione-landing'},{'name': 'GestioneTestLandingComponent', 'selector': 'app-gestione-test-landing'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAllenamentiLandingComponent', 'selector': 'app-lista-allenamenti-landing'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
+        var COMPONENT_TEMPLATE = '<div><div fxLayout="column" fxLayoutAlign="space-evenly stretch" style="height: calc(100vh - 48px);">    <div fxLayout="row" fxLayoutAlign="end center" style="height: 100%; margin-right: 40px;">        <button mat-icon-button class="circle-button" [routerLink]="[\'../listaAtleti/\',allenamento.id]" routerLinkActive="activebutton">            <mat-icon aria-hidden="false" aria-label="listaAtleti">directions_run</mat-icon>        </button>    </div>    <div fxLayout="row" fxLayoutAlign="start center" style="height: 100%; margin-left: 40px;">        <button mat-icon-button class="circle-button" [routerLink]="[\'../listaTest/\',allenamento.id]" routerLinkActive="activebutton">            <mat-icon aria-hidden="false" aria-label="listaTest">assignment</mat-icon>        </button>    </div>    <div fxLayout="row" fxLayoutAlign="end center" style="height: 100%; margin-right: 40px;">        <button mat-icon-button class="circle-button-green" [routerLink]="[\'../../\']" (click)="confirm()">            <mat-icon aria-hidden="false" aria-label="listaTest">check</mat-icon>        </button>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentiLandingComponent', 'selector': 'app-allenamenti-landing'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoLandingComponent', 'selector': 'app-allenamento-landing'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AllenamentoSelectAtletaComponent', 'selector': 'app-allenamento-select-atleta'},{'name': 'AllenamentoSelectTestComponent', 'selector': 'app-allenamento-select-test'},{'name': 'AnagraficaAtletaComponent', 'selector': 'app-anagrafica-atleta'},{'name': 'AnagraficaTestComponent', 'selector': 'app-anagrafica-test'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'GestioneAtletiComponent', 'selector': 'app-gestione-atleti'},{'name': 'GestioneAtletiLandingComponent', 'selector': 'app-gestione-atleti-landing'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'GestioneLandingComponent', 'selector': 'app-gestione-landing'},{'name': 'GestioneTestComponent', 'selector': 'app-gestione-test'},{'name': 'GestioneTestLandingComponent', 'selector': 'app-gestione-test-landing'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputSexComponent', 'selector': 'app-input-sex'},{'name': 'InputTestTypeComponent', 'selector': 'app-input-test-type'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAllenamentiLandingComponent', 'selector': 'app-lista-allenamenti-landing'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
     var DIRECTIVES = [{'name': 'BackButtonDirective', 'selector': '[backButton]'}];
     var ACTUAL_COMPONENT = {'name': 'AllenamentoComponent'};
 </script>

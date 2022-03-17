@@ -173,12 +173,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, dialog: MatDialog)</code>
+<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, allenamentoService: <a href="../injectables/AllenamentoService.html" target="_self">AllenamentoService</a>, dialog: MatDialog)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/allenamenti/allenamenti.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/allenamenti/allenamenti.component.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -212,6 +212,18 @@
                                                   
                                                         <td>
                                                                         <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>allenamentoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AllenamentoService.html" target="_self" >AllenamentoService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -269,8 +281,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/allenamenti/allenamenti.component.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/allenamenti/allenamenti.component.ts:25</a></div>
                 </td>
             </tr>
 
@@ -306,8 +318,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/allenamenti/allenamenti.component.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/allenamenti/allenamenti.component.ts:22</a></div>
                 </td>
             </tr>
 
@@ -349,7 +361,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/allenamenti/allenamenti.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/allenamenti/allenamenti.component.ts:19</a></div>
                         </td>
                     </tr>
 
@@ -367,6 +379,7 @@ import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
 import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
 import { BeforeAllenamentoComponent } from &#x27;./components/before-allenamento/before-allenamento.component&#x27;;
 import { Allenamento } from &#x27;./models/allenamento.model&#x27;;
+import { AllenamentoService } from &#x27;./services/allenamento.service&#x27;;
 
 @Component({
 	selector: &#x27;app-allenamenti&#x27;,
@@ -378,6 +391,7 @@ export class AllenamentiComponent implements OnInit {
 	constructor(
 		private route: ActivatedRoute,
 		private router: Router,
+		private allenamentoService:AllenamentoService,
 		public dialog: MatDialog
 		) { }
 
@@ -392,8 +406,10 @@ export class AllenamentiComponent implements OnInit {
 
 		dialogRef.afterClosed().subscribe(result &#x3D;&gt; {
 			if (result){
-				result.id &#x3D; 0
-				this.router.navigate([&#x27;allenamento&#x27;,result.id],{ relativeTo: this.route });
+				this.allenamentoService.addAllenamento(result);
+				this.allenamentoService.OnGetAllenamento().subscribe((data:any) &#x3D;&gt; {
+					if (data !&#x3D; null &amp;&amp; data[&#x27;id&#x27;] &gt; 0) this.router.navigate([&#x27;allenamento&#x27;,data[&#x27;id&#x27;]],{ relativeTo: this.route });
+				});
 			}
 		});
 	}
@@ -449,7 +465,7 @@ export class AllenamentiComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div fxLayout="column" fxLayoutAlign="space-evenly stretch" style="height: calc(100vh - 48px);">    <div fxLayout="row" fxLayoutAlign="end center" style="height: 100%; margin-right: 40px;">        <button mat-icon-button class="circle-button" (click)="newAllenamento()">            <mat-icon aria-hidden="false" aria-label="newAllenamento">add</mat-icon>        </button>    </div>    <div fxLayout="row" fxLayoutAlign="start center" style="height: 100%; margin-left: 40px;">        <button mat-icon-button class="circle-button" [routerLink]="[\'listaAllenamenti/\']" routerLinkActive="activebutton">            <mat-icon aria-hidden="false" aria-label="listaAllenamenti">restart_alt</mat-icon>        </button>    </div></div></div>'
-    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentiLandingComponent', 'selector': 'app-allenamenti-landing'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoLandingComponent', 'selector': 'app-allenamento-landing'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AnagraficaAtletaComponent', 'selector': 'app-anagrafica-atleta'},{'name': 'AnagraficaTestComponent', 'selector': 'app-anagrafica-test'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AtletaComponent', 'selector': 'app-athlete'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'GestioneAtletiLandingComponent', 'selector': 'app-gestione-atleti-landing'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'GestioneLandingComponent', 'selector': 'app-gestione-landing'},{'name': 'GestioneTestLandingComponent', 'selector': 'app-gestione-test-landing'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAllenamentiLandingComponent', 'selector': 'app-lista-allenamenti-landing'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
+    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentiLandingComponent', 'selector': 'app-allenamenti-landing'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoLandingComponent', 'selector': 'app-allenamento-landing'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AllenamentoSelectAtletaComponent', 'selector': 'app-allenamento-select-atleta'},{'name': 'AllenamentoSelectTestComponent', 'selector': 'app-allenamento-select-test'},{'name': 'AnagraficaAtletaComponent', 'selector': 'app-anagrafica-atleta'},{'name': 'AnagraficaTestComponent', 'selector': 'app-anagrafica-test'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'GestioneAtletiComponent', 'selector': 'app-gestione-atleti'},{'name': 'GestioneAtletiLandingComponent', 'selector': 'app-gestione-atleti-landing'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'GestioneLandingComponent', 'selector': 'app-gestione-landing'},{'name': 'GestioneTestComponent', 'selector': 'app-gestione-test'},{'name': 'GestioneTestLandingComponent', 'selector': 'app-gestione-test-landing'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputSexComponent', 'selector': 'app-input-sex'},{'name': 'InputTestTypeComponent', 'selector': 'app-input-test-type'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAllenamentiLandingComponent', 'selector': 'app-lista-allenamenti-landing'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
     var DIRECTIVES = [{'name': 'BackButtonDirective', 'selector': '[backButton]'}];
     var ACTUAL_COMPONENT = {'name': 'AllenamentiComponent'};
 </script>

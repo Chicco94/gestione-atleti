@@ -28,7 +28,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content class">
+               <div class="content injectable">
                    <div class="content-data">
 
 
@@ -38,13 +38,9 @@
 
 
 
-
-
-
-
 <ol class="breadcrumb">
-  <li>Classes</li>
-  <li >IdBase</li>
+  <li>Injectables</li>
+  <li >AtletaAllenamentoService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -62,17 +58,10 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/base/models/idbase.model.ts</code>
+            <code>src/app/shared/services/atleta-allenamento.service.ts</code>
         </p>
 
 
-
-            <p class="comment">
-                <h3>Extends</h3>
-            </p>
-            <p class="comment">
-                        <code><a href="../classes/Base.html" target="_self" >Base</a></code>
-            </p>
 
 
 
@@ -80,26 +69,6 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Properties</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#createdAt" >createdAt</a>
-                            </li>
-                            <li>
-                                <a href="#id" >id</a>
-                            </li>
-                            <li>
-                                <a href="#updatedAt" >updatedAt</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -110,11 +79,13 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier"></span>
-                                <a href="#equal" >equal</a>
+                                <a href="#getAtletaAllenamentoByAllenamento" >getAtletaAllenamentoByAllenamento</a>
                             </li>
                             <li>
-                                <a href="#deserialize" >deserialize</a>
+                                <a href="#OnGetAtletaAllenamentoByAllenamento" >OnGetAtletaAllenamentoByAllenamento</a>
+                            </li>
+                            <li>
+                                <a href="#setAtletaToAllenamento" >setAtletaToAllenamento</a>
                             </li>
                         </ul>
                     </td>
@@ -134,112 +105,47 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(socket: Socket)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">src/app/base/models/idbase.model.ts:6</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/shared/services/atleta-allenamento.service.ts:8</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>socket</td>
+                                                  
+                                                        <td>
+                                                                    <code>Socket</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
-</section>
-
-            <section>
-    
-    <h3 id="inputs">
-        Properties
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="createdAt"></a>
-                    <span class="name">
-                        <span ><b>createdAt</b></span>
-                        <a href="#createdAt"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>new Date</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">src/app/base/models/idbase.model.ts:5</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="id"></a>
-                    <span class="name">
-                        <span ><b>id</b></span>
-                        <a href="#id"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="4" class="link-to-prism">src/app/base/models/idbase.model.ts:4</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="updatedAt"></a>
-                    <span class="name">
-                        <span ><b>updatedAt</b></span>
-                        <a href="#updatedAt"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>new Date</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">src/app/base/models/idbase.model.ts:6</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
 </section>
 
             <section>
@@ -251,43 +157,27 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="equal"></a>
+                    <a name="getAtletaAllenamentoByAllenamento"></a>
                     <span class="name">
-                        <span class="modifier"></span>
-                        <span ><b>equal</b></span>
-                        <a href="#equal"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>getAtletaAllenamentoByAllenamento</b></span>
+                        <a href="#getAtletaAllenamentoByAllenamento"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>equal(object: Model)</code>
+<code>getAtletaAllenamentoByAllenamento(idallenamento: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Inherited from         <code><a href="../classes/Base.html" target="_self" >Base</a></code>
-</div>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/Base.html#source" target="_self" >Base:14</a></code>
-</div>
+                    <div class="io-line">Defined in <a href="" data-line="14"
+                            class="link-to-prism">src/app/shared/services/atleta-allenamento.service.ts:14</a></div>
                 </td>
             </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <b>Type parameters :</b>
-                    <ul class="type-parameters">
-                        <li>Model</li>
-                    </ul>
-                </td>
-            </tr>
 
             <tr>
                 <td class="col-md-4">
@@ -305,9 +195,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>object</td>
+                                    <td>idallenamento</td>
                                     <td>
-                                            <code>Model</code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                     </td>
 
                                     <td>
@@ -322,7 +212,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                     </div>
                     <div class="io-description">
@@ -336,30 +226,61 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="deserialize"></a>
+                    <a name="OnGetAtletaAllenamentoByAllenamento"></a>
                     <span class="name">
-                        <span ><b>deserialize</b></span>
-                        <a href="#deserialize"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>OnGetAtletaAllenamentoByAllenamento</b></span>
+                        <a href="#OnGetAtletaAllenamentoByAllenamento"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>deserialize(input: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+<code>OnGetAtletaAllenamentoByAllenamento()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Inherited from         <code><a href="../classes/Base.html" target="_self" >Base</a></code>
-</div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/shared/services/atleta-allenamento.service.ts:20</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setAtletaToAllenamento"></a>
+                    <span class="name">
+                        <span ><b>setAtletaToAllenamento</b></span>
+                        <a href="#setAtletaToAllenamento"><span class="icon ion-ios-link"></span></a>
+                    </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/Base.html#source" target="_self" >Base:17</a></code>
-</div>
+<code>setAtletaToAllenamento(idallenamento: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, lista_atleti: number[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/app/shared/services/atleta-allenamento.service.ts:17</a></div>
                 </td>
             </tr>
 
@@ -376,14 +297,13 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
-                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>input</td>
+                                    <td>idallenamento</td>
                                     <td>
-                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                     </td>
 
                                     <td>
@@ -391,15 +311,30 @@
                                     </td>
 
 
+                                </tr>
+                                <tr>
+                                    <td>lista_atleti</td>
                                     <td>
-                                        <p>object to deserialize</p>
-
+                                            <code>number[]</code>
                                     </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -407,33 +342,40 @@
     </table>
 </section>
 
-
-
-
-
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Base } from &quot;./base.model&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { Socket } from &#x27;ngx-socket-io&#x27;;
+import { Atleta } from &#x27;../models/atleta.model&#x27;;
 
-export class IdBase extends Base{
-	id!: number;
-	createdAt:Date &#x3D; new Date;
-	updatedAt:Date &#x3D; new Date;
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class AtletaAllenamentoService {
 
-	constructor () {
-		super();
-		Object.setPrototypeOf(this, IdBase.prototype);
-	}
-
+  constructor(private socket: Socket) {
+		Object.setPrototypeOf(this, AtletaAllenamentoService.prototype);
+  }
 	
-	override equal&lt;Model extends IdBase&gt;(object:Model){
-		return this.id &#x3D;&#x3D; object.id;
+  getAtletaAllenamentoByAllenamento(idallenamento:number){
+		this.socket.emit(&#x27;getAtletaAllenamentoByAllenamento&#x27;,idallenamento);
 	}
-}</code></pre>
+	setAtletaToAllenamento(idallenamento:number, lista_atleti:number[]){
+		this.socket.emit(&#x27;setAtletaToAllenamento&#x27;,{idallenamento:idallenamento,lista_atleti:lista_atleti});
+	}
+	OnGetAtletaAllenamentoByAllenamento() {return this.socket.fromEvent(&#x27;getAtletaAllenamentoByAllenamento&#x27;);}
+
+}
+</code></pre>
     </div>
+
 </div>
+
+
+
+
 
 
 
@@ -467,8 +409,8 @@ export class IdBase extends Base{
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'IdBase.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'AtletaAllenamentoService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

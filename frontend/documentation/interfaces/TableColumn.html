@@ -339,123 +339,130 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnDestroy, OnInit } from &#x27;@angular/core&#x27;;
 import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+import { TestTypeEnum } from &#x27;src/app/base/models/enumerations&#x27;;
 import { Atleta } from &#x27;src/app/shared/models/atleta.model&#x27;;
 import { Allenamento } from &#x27;../../models/allenamento.model&#x27;;
 import { AllenamentoService } from &#x27;../../services/allenamento.service&#x27;;
+import { RisultatoService } from &#x27;../../services/risultato.service&#x27;;
 
 @Component({
-  selector: &#x27;app-allenamento-attivo&#x27;,
-  templateUrl: &#x27;./allenamento-attivo.component.html&#x27;,
-  styleUrls: [&#x27;./allenamento-attivo.component.scss&#x27;]
+	selector: &#x27;app-allenamento-attivo&#x27;,
+	templateUrl: &#x27;./allenamento-attivo.component.html&#x27;,
+	styleUrls: [&#x27;./allenamento-attivo.component.scss&#x27;]
 })
-export class AllenamentoAttivoComponent implements OnInit {
-  allenamento:Allenamento &#x3D; new Allenamento();
-  columns:TableColumn[] &#x3D; [];
-  dataSource:any[] &#x3D; [];
-  displayedColumns:string[] &#x3D; [];
-  
-  constructor(
-    private route:ActivatedRoute,
-    private allenamentoService:AllenamentoService
-  ) {
-    this.route.params.subscribe(params &#x3D;&gt; {this.allenamento &#x3D; this.allenamentoService.getAllenamento(params[&#x27;id&#x27;]);});
-  }
+export class AllenamentoAttivoComponent implements OnInit,OnDestroy {
+	allenamento:Allenamento &#x3D; new Allenamento();
+	columns:TableColumn[] &#x3D; [];
+	dataSource:any[] &#x3D; [];
+	displayedColumns:string[] &#x3D; [];
 
-  ngOnInit(): void {
-    this.dataSource &#x3D; this.prepareTableDataSource(this.allenamento);
-    this.columns &#x3D; this.prepareTableColumns(this.dataSource)
-    this.displayedColumns &#x3D; this.columns.map(c &#x3D;&gt; c.columnDef);
-  }
+	
+	__OnGetAllenamento__:Subscription &#x3D; new Subscription();
 
-  /**
-   * @author Enrico
-   * @description trasforma un allenamento in un datasource per una tabella
-   * @param allenamento allenamento da cui recuperare i risultati
-   */
-  prepareTableDataSource(allenamento:Allenamento){
-    let a1 &#x3D; new Atleta();
-		a1.nome &#x3D; &quot;Enrico&quot;;
-		a1.cognome &#x3D; &quot;Cominato&quot;;
-		let a2 &#x3D; new Atleta();
-		a2.nome &#x3D; &quot;Eleonora&quot;;
-		a2.cognome &#x3D; &quot;Barcaro&quot;;
-		let a3 &#x3D; new Atleta();
-		a3.nome &#x3D; &quot;Matteo&quot;;
-		a3.cognome &#x3D; &quot;Grigolato&quot;;
-		let a4 &#x3D; new Atleta();
-		a4.nome &#x3D; &quot;Elisabetta&quot;;
-		a4.cognome &#x3D; &quot;Greggio&quot;;
-		let a5 &#x3D; new Atleta();
-		a5.nome &#x3D; &quot;Elena&quot;;
-		a5.cognome &#x3D; &quot;Crepaldi&quot;;
-		let a6 &#x3D; new Atleta();
-		a6.nome &#x3D; &quot;Miracle&quot;;
-		a6.cognome &#x3D; &quot;Aighimien&quot;;
+	constructor(
+		private route:ActivatedRoute,
+		private risultatoService:RisultatoService,
+		private allenamentoService:AllenamentoService,
+	) {
+		this.route.params.subscribe(params &#x3D;&gt; {
+			this.allenamentoService.getAllenamento(params[&#x27;id&#x27;]);
+		});
+	}
 
-    return [
-      {atleta:a1.fullName,result_1:4        ,result_2:undefined,result_3:undefined},
-      {atleta:a2.fullName,result_1:undefined,result_2:undefined,result_3:undefined},
-      {atleta:a3.fullName,result_1:undefined,result_2:undefined,result_3:undefined},
-      {atleta:a4.fullName,result_1:undefined,result_2:undefined,result_3:undefined},
-      {atleta:a5.fullName,result_1:undefined,result_2:undefined,result_3:undefined},
-      {atleta:a6.fullName,result_1:undefined,result_2:undefined,result_3:undefined},
-    ]
-  }
+	ngOnInit(): void {
+		this.__OnGetAllenamento__ &#x3D; this.allenamentoService.OnGetAllenamento().subscribe((data:any) &#x3D;&gt; {
+			if (data &#x3D;&#x3D; null || data[&#x27;id&#x27;] &lt;&#x3D; 0) return
+			this.allenamento &#x3D; new Allenamento().deserialize(data);
+			this.dataSource &#x3D; this.prepareTableDataSource(this.allenamento);
+			this.columns &#x3D; this.prepareTableColumns(this.dataSource)
+			this.displayedColumns &#x3D; this.columns.map(c &#x3D;&gt; c.columnDef);
+		});
+	}
 
-  prepareTableColumns(datasource:any):TableColumn[]{
-    return [
-      {
-        columnDef: &#x27;atleta&#x27;,
-        header: &quot;Atleta&quot;,
-        sticky: true,
-        key: &#x27;atleta&#x27;,
-        type: ColumnTypeEnum.plain,
-        cell: (d_row) &#x3D;&gt; &#x60;${d_row.atleta}&#x60;,
-      },
-      {
-        columnDef: &#x27;test_1&#x27;,
-        header: &quot;30 metri&quot;,
-        sticky: false,
-        key: &#x27;result_1&#x27;,
-        type: ColumnTypeEnum.number,
-        cell: (d_row) &#x3D;&gt; &#x60;${d_row.result_1}&#x60;,
-      },
-      {
-        columnDef: &#x27;test_2&#x27;,
-        header: &quot;40 metri&quot;,
-        sticky: false,
-        key: &#x27;result_2&#x27;,
-        type: ColumnTypeEnum.number,
-        cell: (d_row) &#x3D;&gt; &#x60;${d_row.result_2}&#x60;,
-      },
-      {
-        columnDef: &#x27;test_3&#x27;,
-        header: &quot;50 metri&quot;,
-        sticky: false,
-        key: &#x27;result_3&#x27;,
-        type: ColumnTypeEnum.number,
-        cell: (d_row) &#x3D;&gt; &#x60;${d_row.result_3}&#x60;,
-      },
-    ]
-  }
+	ngOnDestroy():void{
+		this.__OnGetAllenamento__.unsubscribe();
+	}
+
+	/**
+	 * @author Enrico
+	 * @description trasforma un allenamento in un datasource per una tabella
+	 * @param allenamento allenamento da cui recuperare i risultati
+	 */
+	prepareTableDataSource(allenamento:Allenamento){
+		allenamento.risultati.forEach(element &#x3D;&gt; {
+			element.atleta &#x3D; new Atleta().deserialize(element.atleta)
+		});
+		return allenamento.risultati;
+	}
+
+	prepareTableColumns(datasource:any):TableColumn[]{
+		let row &#x3D; datasource[0];
+		let structure &#x3D; [{
+			columnDef: &#x27;atleta&#x27;,
+			header: &quot;Atleta&quot;,
+			sticky: true,
+			key: &#x27;atleta&#x27;,
+			type: ColumnTypeEnum.plain,
+			cell: (d_row:any) &#x3D;&gt; &#x60;${d_row.atleta.fullName}&#x60;,
+		}];
+		let sequenza&#x3D;1;
+		while (row[&#x27;result_&#x27;+sequenza]){
+			structure.push({
+				columnDef: &#x27;test_&#x27;+sequenza,
+				header: row[&#x27;result_&#x27;+sequenza].Test.descr,
+				sticky: false,
+				key: &#x27;result_&#x27;+sequenza,
+				type: row[&#x27;result_&#x27;+sequenza].Test.tipo &#x3D;&#x3D; TestTypeEnum.Crono ? ColumnTypeEnum.time : ColumnTypeEnum.number,
+				cell: (d_row) &#x3D;&gt; &#x60;${d_row[&#x27;result_&#x27;+sequenza].risultato}&#x60;,
+			})
+			sequenza +&#x3D; 1;
+		}
+		return structure;
+	}
+
+	/**
+	 * @author Enrico
+	 * @description salva i risultati a database
+	 */
+	public save(){
+		this.allenamento.risultati.forEach( risultati_atleta &#x3D;&gt; {
+			let sequenza&#x3D;1;
+			while (risultati_atleta[&#x27;result_&#x27;+sequenza]){
+				this.risultatoService.updateRisultato(risultati_atleta[&#x27;result_&#x27;+sequenza])
+				sequenza +&#x3D; 1;
+			}
+		})
+	}
+
+
+	/**
+	 * @author Enrico
+	 * @description salva i risultati a database e completa l&#x27;allenamento
+	 */
+	public confirm(){
+		this.save();
+		this.allenamento.completato &#x3D; true;
+		this.allenamentoService.updateAllenamento(this.allenamento);
+	}
 }
 
 export interface TableColumn {
-  columnDef: string;
-  header: string;
-  sticky?: boolean;
-  key: string;
-  type: ColumnTypeEnum
-  cell: (model:any)&#x3D;&gt;string;
+	columnDef: string;
+	header: string;
+	sticky?: boolean;
+	key: string;
+	type: ColumnTypeEnum
+	cell: (model:any)&#x3D;&gt;string;
 }
 
 export enum ColumnTypeEnum{
-  plain&#x3D;&quot;plain&quot;,
-  number&#x3D;&quot;number&quot;,
-  text&#x3D;&quot;text&quot;,
-  time&#x3D;&quot;time&quot;
+	plain&#x3D;&quot;plain&quot;,
+	number&#x3D;&quot;number&quot;,
+	text&#x3D;&quot;text&quot;,
+	time&#x3D;&quot;time&quot;
 } </code></pre>
     </div>
 </div>

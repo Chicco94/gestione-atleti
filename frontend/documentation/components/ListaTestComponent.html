@@ -134,15 +134,6 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#added_tests" >added_tests</a>
-                            </li>
-                            <li>
-                                <a href="#allenamento" >allenamento</a>
-                            </li>
-                            <li>
-                                <a href="#possible_tests" >possible_tests</a>
-                            </li>
-                            <li>
                                 <a href="#searchString" >searchString</a>
                             </li>
                         </ul>
@@ -157,6 +148,9 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
+                            <li>
+                                <a href="#getChanges" >getChanges</a>
+                            </li>
                             <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
                             </li>
@@ -179,15 +173,35 @@
                                 <a href="#editable" >editable</a>
                             </li>
                             <li>
-                                <a href="#idallenamento" >idallenamento</a>
+                                <a href="#removable" >removable</a>
                             </li>
                             <li>
-                                <a href="#selectable" >selectable</a>
+                                <a href="#searchable" >searchable</a>
+                            </li>
+                            <li>
+                                <a href="#sourceTestList" >sourceTestList</a>
+                            </li>
+                            <li>
+                                <a href="#targetTestList" >targetTestList</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#targetTestListChange" >targetTestListChange</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -201,7 +215,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, allenamentoService: <a href="../injectables/AllenamentoService.html" target="_self">AllenamentoService</a>, testService: <a href="../injectables/TestService.html" target="_self">TestService</a>)</code>
+<code>constructor()</code>
                     </td>
                 </tr>
                         <tr>
@@ -210,60 +224,6 @@
                             </td>
                         </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>route</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>allenamentoService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/AllenamentoService.html" target="_self" >AllenamentoService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>testService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/TestService.html" target="_self" >TestService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
             </tbody>
         </table>
 </section>
@@ -291,7 +251,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/components/lista-test/lista-test.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/components/lista-test/lista-test.component.ts:11</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -317,7 +277,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/components/lista-test/lista-test.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/shared/components/lista-test/lista-test.component.ts:13</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -326,24 +286,24 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="idallenamento"></a>
-                        <b>idallenamento</b>
+                        <a name="removable"></a>
+                        <b>removable</b>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>0</code>
+                        <i>Default value : </i><code>false</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/shared/components/lista-test/lista-test.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/shared/components/lista-test/lista-test.component.ts:12</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -352,8 +312,8 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="selectable"></a>
-                        <b>selectable</b>
+                        <a name="searchable"></a>
+                        <b>searchable</b>
                     </td>
                 </tr>
                 <tr>
@@ -374,8 +334,83 @@
                         </tr>
             </tbody>
         </table>
-</section>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sourceTestList"></a>
+                        <b>sourceTestList</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Test.html" target="_self" >Test[]</a></code>
 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/components/lista-test/lista-test.component.ts:16</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="targetTestList"></a>
+                        <b>targetTestList</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Test.html" target="_self" >Test[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/shared/components/lista-test/lista-test.component.ts:17</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="targetTestListChange"></a>
+                        <b>targetTestListChange</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Test.html" target="_self" >EventEmitter&lt;Test[]&gt;</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/shared/components/lista-test/lista-test.component.ts:19</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
 
 
     <section>
@@ -383,6 +418,75 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getChanges"></a>
+                    <span class="name">
+                        <span ><b>getChanges</b></span>
+                        <a href="#getChanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getChanges(targetTestList: <a href="../classes/Test.html" target="_self">Test[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/shared/components/lista-test/lista-test.component.ts:28</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>targetTestList</td>
+                                    <td>
+                                                <code><a href="../classes/Test.html" target="_self" >Test[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -403,8 +507,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/app/shared/components/lista-test/lista-test.component.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/shared/components/lista-test/lista-test.component.ts:25</a></div>
                 </td>
             </tr>
 
@@ -426,99 +530,6 @@
     <h3 id="inputs">
         Properties
     </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="added_tests"></a>
-                    <span class="name">
-                        <span ><b>added_tests</b></span>
-                        <a href="#added_tests"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../classes/Test.html" target="_self" >Test[]</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>[]</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/shared/components/lista-test/lista-test.component.ts:20</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="allenamento"></a>
-                    <span class="name">
-                        <span ><b>allenamento</b></span>
-                        <a href="#allenamento"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../classes/Allenamento.html" target="_self" >Allenamento</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>new Allenamento()</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/shared/components/lista-test/lista-test.component.ts:18</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="possible_tests"></a>
-                    <span class="name">
-                        <span ><b>possible_tests</b></span>
-                        <a href="#possible_tests"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../classes/Test.html" target="_self" >Test[]</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>[]</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/shared/components/lista-test/lista-test.component.ts:19</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -556,12 +567,8 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, OnInit } from &#x27;@angular/core&#x27;;
-import { ActivatedRoute } from &#x27;@angular/router&#x27;;
-import { Allenamento } from &#x27;src/app/allenamenti/models/allenamento.model&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, EventEmitter, Input, OnInit, Output } from &#x27;@angular/core&#x27;;
 import { Test } from &#x27;src/app/shared/models/test.model&#x27;;
-import { AllenamentoService } from &#x27;src/app/allenamenti/services/allenamento.service&#x27;;
-import { TestService } from &#x27;src/app/shared/services/test.service&#x27;;
 
 @Component({
   selector: &#x27;app-lista-test&#x27;,
@@ -569,68 +576,41 @@ import { TestService } from &#x27;src/app/shared/services/test.service&#x27;;
   styleUrls: [&#x27;./lista-test.component.scss&#x27;]
 })
 export class ListaTestComponent implements OnInit {
-  @Input() selectable:boolean&#x3D;false;
+  
   @Input() addable:boolean&#x3D;false;
+  @Input() removable:boolean&#x3D;false;
   @Input() editable:boolean&#x3D;false;
-  @Input() idallenamento:number&#x3D;0;
-  allenamento:Allenamento &#x3D; new Allenamento();
-  possible_tests:Test[] &#x3D; [];
-  added_tests:Test[] &#x3D; [];
+  @Input() searchable:boolean&#x3D;false;
+
+  @Input() sourceTestList:Test[] &#x3D; [];
+  @Input() targetTestList:Test[] &#x3D; [];
+  
+  @Output() targetTestListChange:EventEmitter&lt;Test[]&gt; &#x3D; new EventEmitter&lt;Test[]&gt;();
+
   searchString:string&#x3D;&quot;&quot;;
 
-  constructor(
-    private route:ActivatedRoute,
-    private allenamentoService:AllenamentoService,
-    private testService:TestService
-  ) {
-    this.route.params.subscribe(params &#x3D;&gt; {
-      this.selectable &#x3D; params[&#x27;selectable&#x27;] &#x3D;&#x3D;&#x3D; &#x27;true&#x27;;
-      this.editable &#x3D; params[&#x27;editable&#x27;] &#x3D;&#x3D;&#x3D; &#x27;true&#x27;;
-      this.addable &#x3D; !this.editable;
-      this.idallenamento &#x3D; params[&#x27;idallenamento&#x27;];
-      this.allenamento &#x3D; this.allenamentoService.getAllenamento(this.idallenamento);
-    });
-  }
+  constructor() {}
 
   ngOnInit(): void {
-    this.testService.fetchTests();
-    this.testService.OnFetchTests().subscribe((data:any) &#x3D;&gt; {
-      this.possible_tests &#x3D; data.map((single_data:any) &#x3D;&gt; new Test().deserialize(single_data));
-    });
-    this.added_tests &#x3D; this.allenamento.test || [];
   }
 
+  getChanges(targetTestList:Test[]){
+    this.targetTestListChange.emit(targetTestList);
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div style&#x3D;&quot;height: 48px;&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div style&#x3D;&quot;height: 48px;&quot; *ngIf&#x3D;&quot;searchable&quot; &gt;
     &lt;app-input-text placeholder&#x3D;&quot;Cerca&quot; [(model)]&#x3D;&quot;searchString&quot;&gt;&lt;/app-input-text&gt;
 &lt;/div&gt;
 
-&lt;cdk-virtual-scroll-viewport itemSize&#x3D;&quot;50&quot; style&#x3D;&quot;height: calc(50% - 115px);&quot;&gt;
-    &lt;div *cdkVirtualFor&#x3D;&quot;let test of possible_tests | search:&#x27;descr,gruppo&#x27;:searchString&quot; #test&gt;
-        &lt;app-test-preview [test]&#x3D;&quot;test&quot; [(testList)]&#x3D;&quot;allenamento.test&quot; [addable]&#x3D;&quot;addable&quot; [editable]&#x3D;&quot;editable&quot;&gt;&lt;/app-test-preview&gt;
+&lt;cdk-virtual-scroll-viewport itemSize&#x3D;&quot;50&quot; [ngStyle]&#x3D;&quot;{&#x27;height&#x27;: editable ? &#x27;calc(100% - 115px)&#x27; : &#x27;calc(50% - 115px)&#x27;}&quot;&gt;
+    &lt;div *cdkVirtualFor&#x3D;&quot;let test of sourceTestList | search:&#x27;descr,gruppo&#x27;:searchString&quot; #test&gt;
+        &lt;app-test-preview [test]&#x3D;&quot;test&quot; [targetTestList]&#x3D;&quot;targetTestList&quot; (targetTestListChange)&#x3D;&quot;getChanges($event)&quot; [addable]&#x3D;&quot;addable&quot; [editable]&#x3D;&quot;editable&quot; [removable]&#x3D;&quot;removable&quot;&gt;&lt;/app-test-preview&gt;
     &lt;/div&gt;
-&lt;/cdk-virtual-scroll-viewport&gt;
-
-&lt;mat-divider *ngIf&#x3D;&quot;!editable&quot; style&#x3D;&quot;margin: 2px&quot;&gt;&lt;/mat-divider&gt;
-
-&lt;cdk-virtual-scroll-viewport *ngIf&#x3D;&quot;!editable&quot; itemSize&#x3D;&quot;50&quot; style&#x3D;&quot;height: calc(50% - 115px);&quot;&gt;
-    &lt;div *cdkVirtualFor&#x3D;&quot;let test of allenamento.test | search:&#x27;descr,gruppo&#x27;:searchString&quot; #added&gt;
-        &lt;app-test-preview [test]&#x3D;&quot;test&quot; [(testList)]&#x3D;&quot;allenamento.test&quot; [removable]&#x3D;&quot;true&quot;&gt;&lt;/app-test-preview&gt;
-    &lt;/div&gt;
-&lt;/cdk-virtual-scroll-viewport&gt;
-
-&lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;end center&quot;&gt;
-    &lt;button mat-icon-button class&#x3D;&quot;circle-button-green&quot; *ngIf&#x3D;&quot;editable&quot; style&#x3D;&quot;position: absolute;bottom: -10px;left:-10px&quot;&gt;
-        &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;listaTest&quot;&gt;add&lt;/mat-icon&gt;
-    &lt;/button&gt;
-    &lt;button backButton mat-icon-button class&#x3D;&quot;circle-button-green&quot; style&#x3D;&quot;position: absolute;bottom: -10px;right:-10px&quot;&gt;
-        &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;listaTest&quot;&gt;check&lt;/mat-icon&gt;
-    &lt;/button&gt;
-&lt;/div&gt;</code></pre>
+&lt;/cdk-virtual-scroll-viewport&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -665,8 +645,8 @@ export class ListaTestComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div style="height: 48px;">    <app-input-text placeholder="Cerca" [(model)]="searchString"></app-input-text></div><cdk-virtual-scroll-viewport itemSize="50" style="height: calc(50% - 115px);">    <div *cdkVirtualFor="let test of possible_tests | search:\'descr,gruppo\':searchString" #test>        <app-test-preview [test]="test" [(testList)]="allenamento.test" [addable]="addable" [editable]="editable"></app-test-preview>    </div></cdk-virtual-scroll-viewport><mat-divider *ngIf="!editable" style="margin: 2px"></mat-divider><cdk-virtual-scroll-viewport *ngIf="!editable" itemSize="50" style="height: calc(50% - 115px);">    <div *cdkVirtualFor="let test of allenamento.test | search:\'descr,gruppo\':searchString" #added>        <app-test-preview [test]="test" [(testList)]="allenamento.test" [removable]="true"></app-test-preview>    </div></cdk-virtual-scroll-viewport><div fxLayout="row" fxLayoutAlign="end center">    <button mat-icon-button class="circle-button-green" *ngIf="editable" style="position: absolute;bottom: -10px;left:-10px">        <mat-icon aria-hidden="false" aria-label="listaTest">add</mat-icon>    </button>    <button backButton mat-icon-button class="circle-button-green" style="position: absolute;bottom: -10px;right:-10px">        <mat-icon aria-hidden="false" aria-label="listaTest">check</mat-icon>    </button></div></div>'
-    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentiLandingComponent', 'selector': 'app-allenamenti-landing'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoLandingComponent', 'selector': 'app-allenamento-landing'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AnagraficaAtletaComponent', 'selector': 'app-anagrafica-atleta'},{'name': 'AnagraficaTestComponent', 'selector': 'app-anagrafica-test'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AtletaComponent', 'selector': 'app-athlete'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'GestioneAtletiLandingComponent', 'selector': 'app-gestione-atleti-landing'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'GestioneLandingComponent', 'selector': 'app-gestione-landing'},{'name': 'GestioneTestLandingComponent', 'selector': 'app-gestione-test-landing'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAllenamentiLandingComponent', 'selector': 'app-lista-allenamenti-landing'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
+        var COMPONENT_TEMPLATE = '<div><div style="height: 48px;" *ngIf="searchable" >    <app-input-text placeholder="Cerca" [(model)]="searchString"></app-input-text></div><cdk-virtual-scroll-viewport itemSize="50" [ngStyle]="{\'height\': editable ? \'calc(100% - 115px)\' : \'calc(50% - 115px)\'}">    <div *cdkVirtualFor="let test of sourceTestList | search:\'descr,gruppo\':searchString" #test>        <app-test-preview [test]="test" [targetTestList]="targetTestList" (targetTestListChange)="getChanges($event)" [addable]="addable" [editable]="editable" [removable]="removable"></app-test-preview>    </div></cdk-virtual-scroll-viewport></div>'
+    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentiLandingComponent', 'selector': 'app-allenamenti-landing'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoLandingComponent', 'selector': 'app-allenamento-landing'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AllenamentoSelectAtletaComponent', 'selector': 'app-allenamento-select-atleta'},{'name': 'AllenamentoSelectTestComponent', 'selector': 'app-allenamento-select-test'},{'name': 'AnagraficaAtletaComponent', 'selector': 'app-anagrafica-atleta'},{'name': 'AnagraficaTestComponent', 'selector': 'app-anagrafica-test'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'GestioneAtletiComponent', 'selector': 'app-gestione-atleti'},{'name': 'GestioneAtletiLandingComponent', 'selector': 'app-gestione-atleti-landing'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'GestioneLandingComponent', 'selector': 'app-gestione-landing'},{'name': 'GestioneTestComponent', 'selector': 'app-gestione-test'},{'name': 'GestioneTestLandingComponent', 'selector': 'app-gestione-test-landing'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputSexComponent', 'selector': 'app-input-sex'},{'name': 'InputTestTypeComponent', 'selector': 'app-input-test-type'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAllenamentiLandingComponent', 'selector': 'app-lista-allenamenti-landing'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
     var DIRECTIVES = [{'name': 'BackButtonDirective', 'selector': '[backButton]'}];
     var ACTUAL_COMPONENT = {'name': 'ListaTestComponent'};
 </script>

@@ -90,9 +90,16 @@ import { ListaAllenamentiLandingComponent } from &#x27;./allenamenti/components/
 import { GestioneLandingComponent } from &#x27;./gestione/components/gestione-landing/gestione-landing.component&#x27;;
 import { GestioneTestLandingComponent } from &#x27;./gestione/components/gestione-test-landing/gestione-test-landing.component&#x27;;
 import { GestioneAtletiLandingComponent } from &#x27;./gestione/components/gestione-atleti-landing/gestione-atleti-landing.component&#x27;;
+import { LoginComponent } from &#x27;./base/components/login/login.component&#x27;;
+import { LoginGuard } from &#x27;./base/guards/login.guard&#x27;;
+import { AllenamentoSelectTestComponent } from &#x27;./allenamenti/components/allenamento-select-test/allenamento-select-test.component&#x27;;
+import { GestioneTestComponent } from &#x27;./gestione/components/gestione-test/gestione-test.component&#x27;;
+import { GestioneAtletiComponent } from &#x27;./gestione/components/gestione-atleti/gestione-atleti.component&#x27;;
+import { AllenamentoSelectAtletaComponent } from &#x27;./allenamenti/components/allenamento-select-atleta/allenamento-select-atleta.component&#x27;;
 
 const routes: Routes &#x3D; [
-	{path: &#x27;home&#x27;, component:HomeComponent},
+	{path: &#x27;home&#x27;, component:HomeComponent, canActivate: [LoginGuard]},
+    { path: &#x27;login&#x27;, component: LoginComponent },
 
 
 	{	// ALLENA
@@ -109,12 +116,12 @@ const routes: Routes &#x3D; [
 				]
 			},
 			{
-				path: &#x27;allenamento/:idallenamento&#x27;, 
+				path: &#x27;allenamento&#x27;, 
 				component:AllenamentoLandingComponent,
 				children: [
-					{path: &#x27;&#x27;, component:AllenamentoComponent},
-					{path: &#x27;listaAtleti/:selectable&#x27;, component:ListaAtletiComponent},
-					{path: &#x27;listaTest/:selectable&#x27;, component:ListaTestComponent},
+					{path: &#x27;:idallenamento&#x27;, component:AllenamentoComponent},
+					{path: &#x27;listaAtleti/:idallenamento&#x27;, component:AllenamentoSelectAtletaComponent},
+					{path: &#x27;listaTest/:idallenamento&#x27;, component:AllenamentoSelectTestComponent},
 				]
 			},
 		]
@@ -126,18 +133,18 @@ const routes: Routes &#x3D; [
 		children: [
 			{path: &#x27;&#x27;, component:GestioneComponent},
 			{
-				path: &#x27;listaAtleti/:editable&#x27;, 
+				path: &#x27;gestioneAtleti&#x27;, 
 				component:GestioneAtletiLandingComponent,
 				children: [
-					{path: &#x27;&#x27;, component:ListaAtletiComponent},
+					{path: &#x27;&#x27;, component:GestioneAtletiComponent},
 					{path: &#x27;:id&#x27;, component:AnagraficaAtletaComponent},
 				]
 			},
 			{
-				path: &#x27;listaTest/:editable&#x27;, 
+				path: &#x27;gestioneTest&#x27;, 
 				component:GestioneTestLandingComponent,
 				children: [
-					{path: &#x27;&#x27;, component:ListaTestComponent},
+					{path: &#x27;&#x27;, component:GestioneTestComponent},
 					{path: &#x27;:id&#x27;, component:AnagraficaTestComponent},
 				]
 			},

@@ -62,7 +62,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/shared/pipes/pipes.ts</code>
+            <code>src/app/base/pipes/search.pipe.ts</code>
         </p>
 
 
@@ -107,8 +107,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/shared/pipes/pipes.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="14"
+                            class="link-to-prism">src/app/base/pipes/search.pipe.ts:14</a></div>
                 </td>
             </tr>
 
@@ -202,14 +202,6 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Pipe, PipeTransform } from &#x27;@angular/core&#x27;;
 
-@Pipe({ name: &#x27;filter&#x27; })
-export class FilterPipe implements PipeTransform {
-	transform(array: Object[],filterFunction:(o:Object)&#x3D;&gt;boolean,...args: any[]) {
-		return array.filter(item &#x3D;&gt; filterFunction(item));
-	}
-}
-
-
 @Pipe({
   name: &#x27;search&#x27;
 })
@@ -223,21 +215,10 @@ export class SearchPipe implements PipeTransform {
    */
   public transform(value:any[], keys: string, term: string) {
     if (!term) return value;
-    return (value || []).filter(item &#x3D;&gt; keys.split(&#x27;,&#x27;).some(key &#x3D;&gt; item.hasOwnProperty(key) &amp;&amp; new RegExp(term, &#x27;gi&#x27;).test(item[key])));
+    return (value || []).filter(item &#x3D;&gt; keys.split(&#x27;,&#x27;).some(key &#x3D;&gt; item.hasOwnProperty(key) &amp;&amp; String(item[key]).toLowerCase().includes(term.toLowerCase())));
 
   }
-}
-
-
-@Pipe({
-	name: &#x27;enumToArray&#x27;
-  })
-  export class EnumToArrayPipe implements PipeTransform {
-	transform(data: Object) {
-		if (data &#x3D;&#x3D;&#x3D; undefined) return [];
-		return  Object.keys(data);
-	}
-  }</code></pre>
+}</code></pre>
     </div>
 
 </div>
