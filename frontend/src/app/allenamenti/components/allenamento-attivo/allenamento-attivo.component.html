@@ -1,4 +1,4 @@
-<div style="height: calc(100% - 96px - 48px); max-width: 100%;overflow: auto;">
+<div [ngStyle]="{'height': allenamento.completato ? 'calc(100% - 48px)' : 'calc(100% - 96px - 48px)', 'max-width': '100%','overflow': 'auto'}">
 	<table mat-table [dataSource]="dataSource" class="allenamento-table">
 		<ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef" [sticky]="column.sticky">
 			<th mat-header-cell *matHeaderCellDef>
@@ -19,7 +19,7 @@
 	  </table>
 </div>
 
-<div fxLayout="row" fxLayoutAlign="space-evenly center" style="height: 96px;">
+<div fxLayout="row" *ngIf="!allenamento.completato" fxLayoutAlign="space-evenly center" style="height: 96px;">
 	<button mat-icon-button class="circle-button-small" (click)="save()">
 		<mat-icon aria-hidden="false" aria-label="listaAllenamenti">save</mat-icon>
 	</button>

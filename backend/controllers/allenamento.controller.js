@@ -56,6 +56,7 @@ const getAllenamento = (socket,idallenamento) => {
 					id: allenamento.id,
 					descr: allenamento.descr,
 					date: allenamento.date,
+					completato: allenamento.completato,
 					createdAt: allenamento.createdAt,
 					updatedAt: allenamento.updatedAt,
 					risultati: risultati})
