@@ -3,17 +3,17 @@ import { Socket } from 'ngx-socket-io';
 import { Allenamento } from '../models/allenamento.model';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class AllenamentoService {
-  
-  list:Allenamento[] = [];
+	
+	list:Allenamento[] = [];
 
-  constructor(private socket: Socket) {
-    Object.setPrototypeOf(this, AllenamentoService.prototype);
-  }
+	constructor(private socket: Socket) {
+		Object.setPrototypeOf(this, AllenamentoService.prototype);
+	}
 
-  fetchAllenamenti(){this.socket.emit('fetchAllenamenti');}
+	fetchAllenamenti(){this.socket.emit('fetchAllenamenti');}
 	addAllenamento(allenamento:Allenamento){this.socket.emit('addAllenamento',allenamento);}
 	buildAllenamento(idallenamento:number){this.socket.emit('buildAllenamento',idallenamento);}
 	updateAllenamento(allenamento:Allenamento){this.socket.emit('updateAllenamento',allenamento);}
