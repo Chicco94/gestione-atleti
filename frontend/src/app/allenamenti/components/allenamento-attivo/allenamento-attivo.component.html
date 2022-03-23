@@ -1,22 +1,30 @@
 <div [ngStyle]="{'height': allenamento.completato ? 'calc(100% - 48px)' : 'calc(100% - 96px - 48px)', 'max-width': '100%','overflow': 'auto'}">
-	<table mat-table [dataSource]="dataSource" class="allenamento-table">
-		<ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef" [sticky]="column.sticky">
-			<th mat-header-cell *matHeaderCellDef>
-				{{column.header}}
-			</th>
-			<td mat-cell *matCellDef="let row">
-				<div fxLayout="row" fxLayoutAlign="start stretch">
-					<app-input-text *ngIf="column.type == 'text'" [placeholder]="column.header" [(model)]="row[column.key]" ></app-input-text>
-					<app-input-number *ngIf="column.type == 'number'" [placeholder]="column.header" [(model)]="row[column.key].risultato"></app-input-number>
-					<app-input-time *ngIf="column.type == 'time'" [placeholder]="column.header" [(model)]="row[column.key].risultato"></app-input-time>
-					<div *ngIf="column.type == 'plain'">{{column.cell(row)}}</div>
-				</div>
-			</td>
-		</ng-container>
-	  
-		<tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
-		<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-	  </table>
+	<div>
+		<h1 fxFlex="40" style="background-color: white;">
+			Atleta
+		</h1>
+		<div fxFlex="60" fxLayout="row" fxLayoutAlign="start stretch" style="background-color: white;">
+			<button mat-icon-button (click)="prevTest()">
+				<mat-icon aria-hidden="false" aria-label="prevTest">chevron_left</mat-icon>
+			</button>
+			<h1>
+				{{currentTest.descr}}
+			</h1>
+			<button mat-icon-button (click)="nextTest()">
+				<mat-icon aria-hidden="false" aria-label="nextTest">chevron_right</mat-icon>
+			</button>
+		</div>
+	</div>
+	<div *ngFor="let risultato of dataSource">
+		<div fxFlex="40">
+			<app-atleta-preview [atleta]="risultato.atleta"></app-atleta-preview>
+		</div>
+		<div fxFlex="60" style="margin-top: 10px">
+			<app-input-text *ngIf="getTestFromRisultato(risultato).tipo == 'Generico'" [placeholder]="getTestFromRisultato(risultato).descr" [(model)]="risultato['result_'+(this.currentTestIndex)].risultato" ></app-input-text>
+			<app-input-time *ngIf="getTestFromRisultato(risultato).tipo == 'Crono'" [placeholder]="getTestFromRisultato(risultato).descr" [(model)]="risultato['result_'+(this.currentTestIndex)].risultato"></app-input-time>
+			<app-input-number *ngIf="getTestFromRisultato(risultato).tipo == 'Distanza'" [placeholder]="getTestFromRisultato(risultato).descr" [(model)]="risultato['result_'+(this.currentTestIndex)].risultato"></app-input-number>
+		</div>
+	</div>
 </div>
 
 <div fxLayout="row" *ngIf="!allenamento.completato" fxLayoutAlign="space-evenly center" style="height: 96px;">

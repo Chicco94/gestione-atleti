@@ -24,7 +24,8 @@ import { AnagraficaTestComponent } from './components/anagrafica-test/anagrafica
   ],
   exports:[
     ListaTestComponent,
-    ListaAtletiComponent
+    ListaAtletiComponent,
+    AtletaPreviewComponent,
   ]
 })
 export class SharedModule { }

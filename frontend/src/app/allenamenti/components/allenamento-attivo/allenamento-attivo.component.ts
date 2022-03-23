@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { TestTypeEnum } from 'src/app/base/models/enumerations';
 import { Atleta } from 'src/app/shared/models/atleta.model';
+import { Test } from 'src/app/shared/models/test.model';
 import { Allenamento } from '../../models/allenamento.model';
 import { AllenamentoService } from '../../services/allenamento.service';
 import { RisultatoService } from '../../services/risultato.service';
@@ -14,11 +15,10 @@ import { RisultatoService } from '../../services/risultato.service';
 })
 export class AllenamentoAttivoComponent implements OnInit,OnDestroy {
 	allenamento:Allenamento = new Allenamento();
-	columns:TableColumn[] = [];
 	dataSource:any[] = [];
-	displayedColumns:string[] = [];
+	currentTest:Test = new Test();
+	currentTestIndex:number = 1;
 
-	
 	__OnGetAllenamento__:Subscription = new Subscription();
 
 	constructor(
@@ -30,14 +30,13 @@ export class AllenamentoAttivoComponent implements OnInit,OnDestroy {
 			this.allenamentoService.getAllenamento(params['id']);
 		});
 	}
-
+	value:number=0;
 	ngOnInit(): void {
 		this.__OnGetAllenamento__ = this.allenamentoService.OnGetAllenamento().subscribe((data:any) => {
 			if (data == null || data['id'] <= 0) return
 			this.allenamento = new Allenamento().deserialize(data);
-			this.dataSource = this.prepareTableDataSource(this.allenamento);
-			this.columns = this.prepareTableColumns(this.dataSource)
-			this.displayedColumns = this.columns.map(c => c.columnDef);
+			this.dataSource = this.prepareDataSource(this.allenamento);
+			this.currentTest = this.dataSource[0]['result_'+this.currentTestIndex].Test;
 		});
 	}
 
@@ -50,36 +49,33 @@ export class AllenamentoAttivoComponent implements OnInit,OnDestroy {
 	 * @description trasforma un allenamento in un datasource per una tabella
 	 * @param allenamento allenamento da cui recuperare i risultati
 	 */
-	prepareTableDataSource(allenamento:Allenamento){
+	prepareDataSource(allenamento:Allenamento){
 		allenamento.risultati.forEach(element => {
 			element.atleta = new Atleta().deserialize(element.atleta)
 		});
 		return allenamento.risultati;
 	}
 
-	prepareTableColumns(datasource:any):TableColumn[]{
-		let row = datasource[0];
-		let structure = [{
-			columnDef: 'atleta',
-			header: "Atleta",
-			sticky: true,
-			key: 'atleta',
-			type: ColumnTypeEnum.plain,
-			cell: (d_row:any) => `${d_row.atleta.fullName}`,
-		}];
-		let sequenza=1;
-		while (row['result_'+sequenza]){
-			structure.push({
-				columnDef: 'test_'+sequenza,
-				header: row['result_'+sequenza].Test.descr,
-				sticky: false,
-				key: 'result_'+sequenza,
-				type: row['result_'+sequenza].Test.tipo == TestTypeEnum.Crono ? ColumnTypeEnum.time : ColumnTypeEnum.number,
-				cell: (d_row) => `${d_row['result_'+sequenza].risultato}`,
-			})
-			sequenza += 1;
-		}
-		return structure;
+	nextTest(){
+		try{
+			this.currentTest = this.dataSource[0]['result_'+(this.currentTestIndex+1)].Test;
+			this.currentTestIndex += 1;
+		} catch (Error) { 
+			alert("hai finito i test!");
+		} 
+	}
+
+	prevTest(){
+		try{
+			this.currentTest = this.dataSource[0]['result_'+(this.currentTestIndex-1)].Test;
+			this.currentTestIndex -= 1;
+		} catch (Error) {  
+			alert("questo è il primo test!"); 
+		} 
+	}
+
+	getTestFromRisultato(risultato:any){
+		return risultato['result_'+(this.currentTestIndex)].Test
 	}
 
 	/**
@@ -107,19 +103,3 @@ export class AllenamentoAttivoComponent implements OnInit,OnDestroy {
 		this.allenamentoService.updateAllenamento(this.allenamento);
 	}
 }
-
-export interface TableColumn {
-	columnDef: string;
-	header: string;
-	sticky?: boolean;
-	key: string;
-	type: ColumnTypeEnum
-	cell: (model:any)=>string;
-}
-
-export enum ColumnTypeEnum{
-	plain="plain",
-	number="number",
-	text="text",
-	time="time"
-} 
