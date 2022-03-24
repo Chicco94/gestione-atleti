@@ -5,6 +5,8 @@ export class Base implements Deserializable{
 		Object.setPrototypeOf(this, Base.prototype);
 	}
 
+	selected:boolean = false;
+	
 	equal(o:Object){
 		return false;
 	}

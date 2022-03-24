@@ -1,36 +1,58 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { SearchPipe } from 'src/app/base/pipes/search.pipe';
 import { Atleta } from '../../models/atleta.model';
-import { AtletaAllenamentoService } from '../../services/atleta-allenamento.service';
-import { AtletaService } from '../../services/atleta.service';
 
 @Component({
-  selector: 'app-lista-atleti',
-  templateUrl: './lista-atleti.component.html',
-  styleUrls: ['./lista-atleti.component.scss']
+	selector: 'app-lista-atleti',
+	templateUrl: './lista-atleti.component.html',
+	styleUrls: ['./lista-atleti.component.scss']
 })
 export class ListaAtletiComponent implements OnInit {
 
-  @Input() addable:boolean=false;
-  @Input() selectable:boolean=false;
-  @Input() editable:boolean=false;
-  @Input() searchable:boolean=false;
-  
-  @Input() sourceAtletaList:Atleta[] = [];
-  @Input() targetAtletaList:number[] = [];
+	@Input() addable:boolean=false;
+	@Input() selectable:boolean=false;
+	@Input() editable:boolean=false;
+	@Input() searchable:boolean=false;
+	
+	@Input() sourceAtletaList:Atleta[] = [];
+	@Input() targetAtletaList:number[] = [];
 
-  @Output() targetAtletaListChange:EventEmitter<number[]> = new EventEmitter<number[]>();
+	@Output() targetAtletaListChange:EventEmitter<number[]> = new EventEmitter<number[]>();
 
-  searchString:string="";
+	searchString:string="";
+	searchPipe:SearchPipe = new SearchPipe();
+	allSelected=false;
 
-  constructor() {}
+	constructor() {}
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {
+	}
 
-  getChanges(targetAtletaList:number[]){
-    this.targetAtletaListChange.emit(targetAtletaList);
-  }
+	public onSelectedOptionsChange() {
+		setTimeout(() => {
+			this.targetAtletaListChange.emit(
+				this.sourceAtletaList
+				.filter(item => { return item.selected; })
+				.map(item =>item.id)
+			);
+		})
+	}
+
+	toggleAllSelection() {
+		if (!this.allSelected) {
+			this.searchPipe.transform(this.sourceAtletaList,'id,nome,cognome',this.searchString)
+				.forEach((item: Atleta) => item.selected = true)
+			this.allSelected = true;
+		} else {
+			this.searchPipe.transform(this.sourceAtletaList,'id,nome,cognome',this.searchString)
+				.forEach((item: Atleta) => item.selected = false)
+			this.allSelected = false
+		}
+	}
+	optionClick(atleta:Atleta) {
+		atleta.selected = !atleta.selected;
+		// se c'e' che un atleta non selezionato
+		this.allSelected = !(this.sourceAtletaList.filter((item: Atleta) => !item.selected).length > 0);
+	}
 
 }

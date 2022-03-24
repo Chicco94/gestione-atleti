@@ -39,6 +39,11 @@ export class AllenamentoSelectAtletaComponent implements OnInit {
     });
     this.__OnGetAtleta__ = this.atletaService.OnGetAtleta().subscribe((data:any) => {
       this.selezionati =[...this.selezionati,data.id];
+      let value = this.atleti.find((atleta:Atleta) => atleta.id == data.id) || null;
+      if (value){
+        value.selected = true;
+      }
+
     });
     this.__OnGetAtletaAllenamentoByAllenamento__ = this.atletaAllenamentoService.OnGetAtletaAllenamentoByAllenamento().subscribe((data:any) => {
       data.forEach( (element:any) => {
