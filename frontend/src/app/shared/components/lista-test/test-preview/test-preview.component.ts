@@ -27,7 +27,7 @@ export class TestPreviewComponent implements OnInit {
   };
 
   remove = ()=>{
-    this.targetTestList.splice(this.targetTestList.indexOf(this.test));
+    this.targetTestList.splice(this.targetTestList.indexOf(this.test),1);
     this.targetTestListChange.emit(this.targetTestList);
   };
 }
