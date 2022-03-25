@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class InputTimeComponent implements OnInit {
   @Input() placeholder:string = "";
   @Input() model:number = 0;
+  @Input() disabled:boolean = false;
   @Output() modelChange:EventEmitter<number> = new EventEmitter<number>();
   
   timer_started:boolean = false;

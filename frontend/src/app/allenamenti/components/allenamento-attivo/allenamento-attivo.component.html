@@ -20,9 +20,9 @@
 			<app-atleta-preview [atleta]="risultato.atleta"></app-atleta-preview>
 		</div>
 		<div fxFlex="60" style="margin-top: 10px">
-			<app-input-text *ngIf="getTestFromRisultato(risultato).tipo == 'Generico'" [placeholder]="getTestFromRisultato(risultato).descr" [(model)]="risultato['result_'+(this.currentTestIndex)].risultato" ></app-input-text>
-			<app-input-time *ngIf="getTestFromRisultato(risultato).tipo == 'Crono'" [placeholder]="getTestFromRisultato(risultato).descr" [(model)]="risultato['result_'+(this.currentTestIndex)].risultato"></app-input-time>
-			<app-input-number *ngIf="getTestFromRisultato(risultato).tipo == 'Distanza'" [placeholder]="getTestFromRisultato(risultato).descr" [(model)]="risultato['result_'+(this.currentTestIndex)].risultato"></app-input-number>
+			<app-input-text *ngIf="getTestFromRisultato(risultato).tipo == 'Generico'" [placeholder]="getTestFromRisultato(risultato).descr" [(model)]="risultato['result_'+(this.currentTestIndex)].risultato"  [disabled]="allenamento.completato"></app-input-text>
+			<app-input-time *ngIf="getTestFromRisultato(risultato).tipo == 'Crono'" [placeholder]="getTestFromRisultato(risultato).descr" [(model)]="risultato['result_'+(this.currentTestIndex)].risultato" [disabled]="allenamento.completato"></app-input-time>
+			<app-input-number *ngIf="getTestFromRisultato(risultato).tipo == 'Distanza'" [placeholder]="getTestFromRisultato(risultato).descr" [(model)]="risultato['result_'+(this.currentTestIndex)].risultato" [disabled]="allenamento.completato"></app-input-number>
 		</div>
 	</div>
 </div>

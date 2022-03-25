@@ -8,6 +8,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 export class InputTextComponent implements OnInit {
   @Input() placeholder:string = "";
   @Input() model:string = ""
+  @Input() disabled:boolean = false;
   @Input() hiddenCharacters:boolean = false;
   @Output() modelChange:EventEmitter<string> = new EventEmitter<string>();
   
