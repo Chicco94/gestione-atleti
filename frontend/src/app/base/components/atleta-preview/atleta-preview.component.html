@@ -5,7 +5,7 @@
         {{atleta.age}} - {{atleta.category}}
     </div>
     <div fxFlex></div>
-    <button mat-flat-button *ngIf="editable" [routerLink]="['./', atleta.id]" routerLinkActive="activebutton">
+    <button mat-flat-button *ngIf="editable" (click)="goToAtleta(atleta.id)">
         <mat-icon aria-hidden="false" aria-label="modifica">edit</mat-icon>
     </button>
 </div>

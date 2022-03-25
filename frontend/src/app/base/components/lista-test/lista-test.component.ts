@@ -15,6 +15,7 @@ export class ListaTestComponent implements OnInit {
 
   @Input() sourceTestList:Test[] = [];
   @Input() targetTestList:Test[] = [];
+	@Input() goToTest:(idtest:number)=>void=()=>{}
   
   @Output() targetTestListChange:EventEmitter<Test[]> = new EventEmitter<Test[]>();
 

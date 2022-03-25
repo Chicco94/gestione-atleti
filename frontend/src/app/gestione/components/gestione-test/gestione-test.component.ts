@@ -28,4 +28,7 @@ export class GestioneTestComponent implements OnInit {
   confirm(){
     
   }
+  goToTest(idtest:number){
+    this.testService.goToTest(idtest);
+  }
 }

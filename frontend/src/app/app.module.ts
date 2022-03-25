@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // CUSTOM
-import { BaseModule } from './base/base.module';
 import { GestioneModule } from './gestione/gestione.module';
 import { AllenamentiModule } from './allenamenti/allenamenti.module';
 import { SharedModule } from './shared/shared.module';
@@ -29,10 +27,8 @@ const config: SocketIoConfig = {
 
     // Custom
     AllenamentiModule,
-    SharedModule,
     GestioneModule,
-    BaseModule,
-    AppRoutingModule,
+    SharedModule,
 
     SocketIoModule.forRoot(config)
   ],

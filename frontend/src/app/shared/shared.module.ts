@@ -2,22 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { BaseModule } from '../base/base.module';
-import { AtletaPreviewComponent } from './components/lista-atleti/atleta-preview/atleta-preview.component';
-import { TestPreviewComponent } from './components/lista-test/test-preview/test-preview.component';
-import { ListaAtletiComponent } from './components/lista-atleti/lista-atleti.component';
-import { ListaTestComponent } from './components/lista-test/lista-test.component';
 import { AnagraficaAtletaComponent } from './components/anagrafica-atleta/anagrafica-atleta.component';
 import { AnagraficaTestComponent } from './components/anagrafica-test/anagrafica-test.component';
-import { AppRoutingModule } from '../app-routing.module';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { BackButtonDirective } from './directives/backbutton.directive';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
+    HomeComponent,
+    LoginComponent,
     AnagraficaAtletaComponent,
     AnagraficaTestComponent,
-    AtletaPreviewComponent,
-    TestPreviewComponent,
-    ListaAtletiComponent,
-    ListaTestComponent
+
+    BackButtonDirective,
   ],
   imports: [
     CommonModule,
@@ -25,9 +24,10 @@ import { AppRoutingModule } from '../app-routing.module';
     BaseModule
   ],
   exports:[
-    ListaTestComponent,
-    ListaAtletiComponent,
-    AtletaPreviewComponent,
+    BaseModule,
+    AppRoutingModule,
+
+    BackButtonDirective
   ]
 })
 export class SharedModule { }

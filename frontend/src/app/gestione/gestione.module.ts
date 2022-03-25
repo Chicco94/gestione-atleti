@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from '../shared/shared.module';
 import { BaseModule } from '../base/base.module';
 
 import { GestioneComponent } from './gestione.component';
@@ -9,7 +8,7 @@ import { GestioneTestLandingComponent } from './components/gestione-test-landing
 import { GestioneAtletiLandingComponent } from './components/gestione-atleti-landing/gestione-atleti-landing.component';
 import { GestioneTestComponent } from './components/gestione-test/gestione-test.component';
 import { GestioneAtletiComponent } from './components/gestione-atleti/gestione-atleti.component';
-import { AppRoutingModule } from '../app-routing.module';
+import { GestioneRoutingModule } from './gestione-routing.module';
 
 
 
@@ -23,9 +22,8 @@ import { AppRoutingModule } from '../app-routing.module';
     GestioneAtletiComponent
   ],
   imports: [
-    AppRoutingModule,
+    GestioneRoutingModule,
     CommonModule,
-    SharedModule,
     BaseModule,
   ],
   exports:[

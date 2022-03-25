@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SearchPipe } from 'src/app/base/pipes/search.pipe';
-import { Atleta } from '../../models/atleta.model';
+import { Atleta } from '../../../shared/models/atleta.model';
 
 @Component({
 	selector: 'app-lista-atleti',
@@ -16,6 +16,7 @@ export class ListaAtletiComponent implements OnInit {
 	
 	@Input() sourceAtletaList:Atleta[] = [];
 	@Input() targetAtletaList:number[] = [];
+	@Input() goToAtleta:(idatleta:number)=>void=()=>{}
 
 	@Output() targetAtletaListChange:EventEmitter<number[]> = new EventEmitter<number[]>();
 

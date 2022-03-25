@@ -33,7 +33,6 @@ import { AllenamentiRoutingModule } from './allenamenti-routing.module';
   imports: [
 		AllenamentiRoutingModule,
     CommonModule,
-    SharedModule,
     BaseModule
   ],
   exports:[

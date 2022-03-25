@@ -24,23 +24,19 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {DateAdapter, MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material/core';
 import {MatTableModule} from '@angular/material/table';
 import {MatDividerModule} from '@angular/material/divider';
-import {AppRoutingModule} from '../app-routing.module';
 
 
 // Components
-import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
-
 import { InputTextComponent } from './components/input-text/input-text.component';
 import { InputDateComponent } from './components/input-date/input-date.component';
 import { InputNumberComponent } from './components/input-number/input-number.component';
 import { InputSexComponent } from './components/input-sex/input-sex.component';
 import { InputTimeComponent } from './components/input-time/input-time.component';
 import { InputTestTypeComponent } from './components/input-test-type/input-test-type.component';
-
-
-// Directives
-import { BackButtonDirective } from './directives/backbutton.directive';
+import { AtletaPreviewComponent } from './components/atleta-preview/atleta-preview.component';
+import { ListaAtletiComponent } from './components/lista-atleti/lista-atleti.component';
+import { ListaTestComponent } from './components/lista-test/lista-test.component';
+import { TestPreviewComponent } from './components/test-preview/test-preview.component';
 
 
 // Pipes
@@ -50,8 +46,6 @@ import { CustomDateAdapter } from './services/custom.date.adapter';
 
 @NgModule({
   declarations: [
-    HomeComponent,
-    LoginComponent,
     InputTextComponent,
     InputDateComponent,
     InputNumberComponent,
@@ -59,13 +53,15 @@ import { CustomDateAdapter } from './services/custom.date.adapter';
     InputSexComponent,
     InputTestTypeComponent,
 
-    BackButtonDirective,
+    AtletaPreviewComponent,
+    ListaAtletiComponent,
+    TestPreviewComponent,
+    ListaTestComponent,
     
     SearchPipe
   ],
   imports: [
     CommonModule,
-    AppRoutingModule,
 
     FlexLayoutModule,
 
@@ -126,8 +122,10 @@ import { CustomDateAdapter } from './services/custom.date.adapter';
     InputTimeComponent,
     InputTestTypeComponent,
 
-    // Directives
-    BackButtonDirective,
+    AtletaPreviewComponent,
+    ListaAtletiComponent,
+    TestPreviewComponent,
+    ListaTestComponent,
 
     // Pipes
     SearchPipe

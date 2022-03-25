@@ -11,7 +11,7 @@
         Seleziona tutti
     </mat-list-option>
     <mat-list-option *ngFor="let atleta of sourceAtletaList | search:'id,nome,cognome':searchString" [value]="atleta.id" [selected]="atleta.selected" (click)="optionClick(atleta)" [ngClass]="{'hide-checkbox': !selectable}">
-        <app-atleta-preview [atleta]="atleta" [editable]="editable"></app-atleta-preview>
+        <app-atleta-preview [atleta]="atleta" [editable]="editable" [goToAtleta]="goToAtleta"></app-atleta-preview>
     </mat-list-option>
 </mat-selection-list>
 

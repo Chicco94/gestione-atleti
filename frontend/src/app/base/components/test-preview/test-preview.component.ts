@@ -13,6 +13,7 @@ export class TestPreviewComponent implements OnInit {
   @Input() addable?:boolean = false;
   @Input() removable?:boolean = false;
   @Input() editable?:boolean = false;
+	@Input() goToTest:(idtest:number)=>void=()=>{}
 
   @Output() targetTestListChange:EventEmitter<Test[]> = new EventEmitter<Test[]>();
 

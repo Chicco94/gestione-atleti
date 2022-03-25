@@ -30,4 +30,7 @@ export class GestioneAtletiComponent implements OnInit {
   confirm(){
   }
 
+  goToAtleta(idatleta:number){
+    
+  }
 }
