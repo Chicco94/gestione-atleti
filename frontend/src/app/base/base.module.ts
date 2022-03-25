@@ -93,8 +93,6 @@ import { CustomDateAdapter } from './services/custom.date.adapter';
     MatDividerModule,
   ],
   exports:[
-    AppRoutingModule,
-
     FlexLayoutModule,
 
     // Material
@@ -121,7 +119,6 @@ import { CustomDateAdapter } from './services/custom.date.adapter';
     MatDividerModule,
 
     // Components
-    LoginComponent,
     InputTextComponent,
     InputDateComponent,
     InputNumberComponent,

@@ -14,6 +14,7 @@ import { AllenamentoLandingComponent } from './components/allenamento-landing/al
 import { ListaAllenamentiLandingComponent } from './components/lista-allenamenti-landing/lista-allenamenti-landing.component';
 import { AllenamentoSelectTestComponent } from './components/allenamento-select-test/allenamento-select-test.component';
 import { AllenamentoSelectAtletaComponent } from './components/allenamento-select-atleta/allenamento-select-atleta.component';
+import { AllenamentiRoutingModule } from './allenamenti-routing.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { AllenamentoSelectAtletaComponent } from './components/allenamento-selec
     BeforeAllenamentoComponent
   ],
   imports: [
+		AllenamentiRoutingModule,
     CommonModule,
     SharedModule,
     BaseModule

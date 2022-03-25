@@ -24,15 +24,15 @@ const config: SocketIoConfig = {
     AppComponent
   ],
   imports: [
-    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
 
     // Custom
-    BaseModule,
-    SharedModule,
     AllenamentiModule,
+    SharedModule,
     GestioneModule,
+    BaseModule,
+    AppRoutingModule,
 
     SocketIoModule.forRoot(config)
   ],

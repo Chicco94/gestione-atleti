@@ -9,6 +9,7 @@ import { GestioneTestLandingComponent } from './components/gestione-test-landing
 import { GestioneAtletiLandingComponent } from './components/gestione-atleti-landing/gestione-atleti-landing.component';
 import { GestioneTestComponent } from './components/gestione-test/gestione-test.component';
 import { GestioneAtletiComponent } from './components/gestione-atleti/gestione-atleti.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -22,9 +23,10 @@ import { GestioneAtletiComponent } from './components/gestione-atleti/gestione-a
     GestioneAtletiComponent
   ],
   imports: [
+    AppRoutingModule,
     CommonModule,
+    SharedModule,
     BaseModule,
-    SharedModule
   ],
   exports:[
     GestioneComponent

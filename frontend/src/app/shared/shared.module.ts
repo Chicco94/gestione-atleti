@@ -8,6 +8,7 @@ import { ListaAtletiComponent } from './components/lista-atleti/lista-atleti.com
 import { ListaTestComponent } from './components/lista-test/lista-test.component';
 import { AnagraficaAtletaComponent } from './components/anagrafica-atleta/anagrafica-atleta.component';
 import { AnagraficaTestComponent } from './components/anagrafica-test/anagrafica-test.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AnagraficaTestComponent } from './components/anagrafica-test/anagrafica
   ],
   imports: [
     CommonModule,
+    AppRoutingModule,
     BaseModule
   ],
   exports:[
