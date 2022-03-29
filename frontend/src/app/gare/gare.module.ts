@@ -2,12 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { GareRoutingModule } from './gare-routing.module';
-import { GareLandingComponent } from './gare-landing/gare-landing.component';
-import { GareComponent } from './gare/gare.component';
-import { ListaGareComponent } from './lista-gare/lista-gare.component';
-import { ListaGareLandingComponent } from './lista-gare-landing/lista-gare-landing.component';
-import { CostruisciComponent } from './costruisci/costruisci.component';
-import { GareggiaComponent } from './gareggia/gareggia.component';
+import { BaseModule } from '../base/base.module';
+import { GareLandingComponent } from './components/gare-landing/gare-landing.component';
+import { GareComponent } from './components/gare/gare.component';
+import { ListaGareComponent } from './components/lista-gare/lista-gare.component';
+import { ListaGareLandingComponent } from './components/lista-gare-landing/lista-gare-landing.component';
+import { CostruisciComponent } from './components/costruisci/costruisci.component';
+import { GareggiaComponent } from './components/gareggia/gareggia.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { GareggiaComponent } from './gareggia/gareggia.component';
 	],
 	imports: [
 		CommonModule,
-		GareRoutingModule
+		GareRoutingModule,
+		BaseModule
 	]
 })
 export class GareModule { }
