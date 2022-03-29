@@ -21,8 +21,8 @@ import { GareggiaComponent } from './components/gareggia/gareggia.component';
 		GareggiaComponent
 	],
 	imports: [
-		CommonModule,
 		GareRoutingModule,
+		CommonModule,
 		BaseModule
 	]
 })

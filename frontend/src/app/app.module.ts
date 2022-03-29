@@ -28,8 +28,8 @@ const config: SocketIoConfig = {
 
 		// Custom
 		AllenamentiModule,
-		GestioneModule,
 		GareModule,
+		GestioneModule,
 		SharedModule,
 
 		SocketIoModule.forRoot(config)
