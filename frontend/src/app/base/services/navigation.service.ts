@@ -12,14 +12,12 @@ export class NavigationService {
 		this.router.events.subscribe((event) => {
 			if (event instanceof NavigationEnd) {
 				this.history.push(event.urlAfterRedirects)
-				console.log(this.history);
 			}
 		})
 	}
 
 	back(): void {
 		let value = this.history.pop();
-		console.log(value)
 		if (this.history.length > 0) {
 			this.location.back()
 		} else {
