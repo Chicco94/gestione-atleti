@@ -6,7 +6,6 @@ import { AnagraficaAtletaComponent } from './components/anagrafica-atleta/anagra
 import { AnagraficaTestComponent } from './components/anagrafica-test/anagrafica-test.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { BackButtonDirective } from './directives/backbutton.directive';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -16,7 +15,6 @@ import { AppRoutingModule } from './app-routing.module';
 		AnagraficaAtletaComponent,
 		AnagraficaTestComponent,
 
-		BackButtonDirective,
 	],
 	imports: [
 		CommonModule,
@@ -26,8 +24,6 @@ import { AppRoutingModule } from './app-routing.module';
 	exports:[
 		BaseModule,
 		AppRoutingModule,
-
-		BackButtonDirective
 	]
 })
 export class SharedModule { }

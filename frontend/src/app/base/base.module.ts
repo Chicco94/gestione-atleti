@@ -42,6 +42,7 @@ import { TestPreviewComponent } from './components/test-preview/test-preview.com
 // Pipes
 import { SearchPipe } from './pipes/search.pipe';
 import { CustomDateAdapter } from './services/custom.date.adapter';
+import { BackButtonDirective } from './directives/backbutton.directive';
 
 
 @NgModule({
@@ -57,6 +58,8 @@ import { CustomDateAdapter } from './services/custom.date.adapter';
 		ListaAtletiComponent,
 		TestPreviewComponent,
 		ListaTestComponent,
+
+		BackButtonDirective,
 		
 		SearchPipe
 	],
@@ -127,6 +130,8 @@ import { CustomDateAdapter } from './services/custom.date.adapter';
 		TestPreviewComponent,
 		ListaTestComponent,
 
+		BackButtonDirective,
+		
 		// Pipes
 		SearchPipe
 	],
