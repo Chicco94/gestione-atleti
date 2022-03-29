@@ -3,15 +3,15 @@ import { Socket } from 'ngx-socket-io';
 import { Atleta } from '../models/atleta.model';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class AtletaAllenamentoService {
 
-  constructor(private socket: Socket) {
+	constructor(private socket: Socket) {
 		Object.setPrototypeOf(this, AtletaAllenamentoService.prototype);
-  }
+	}
 	
-  getAtletaAllenamentoByAllenamento(idallenamento:number){
+	getAtletaAllenamentoByAllenamento(idallenamento:number){
 		this.socket.emit('getAtletaAllenamentoByAllenamento',idallenamento);
 	}
 	setAtletaToAllenamento(idallenamento:number, lista_atleti:number[]){

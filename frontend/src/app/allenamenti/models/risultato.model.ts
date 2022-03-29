@@ -10,9 +10,9 @@ export class Risultato extends IdBase{
 		Object.setPrototypeOf(this, Risultato.prototype);
 	}
 
-    atleta:Atleta = new Atleta();
-    test:Test = new Test();
-    allenamento:Allenamento = new Allenamento();
+		atleta:Atleta = new Atleta();
+		test:Test = new Test();
+		allenamento:Allenamento = new Allenamento();
 	sequenza:number = 0;
 	risultato:number = 0;
 }

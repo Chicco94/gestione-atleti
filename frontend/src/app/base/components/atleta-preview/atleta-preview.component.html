@@ -1,11 +1,11 @@
 
 <div fxLayout="row" fxLayoutAlign="start stretch" style="height: 100%; margin-top: 2px; margin-bottom: 2px; background-color: rgba(255,255,255,0.5)">
-    <div style="margin-left: 24px;font-size: large;">
-        <b>{{atleta.fullName}}</b><br>
-        {{atleta.age}} - {{atleta.category}}
-    </div>
-    <div fxFlex></div>
-    <button mat-flat-button *ngIf="editable" (click)="goToAtleta(atleta.id)">
-        <mat-icon aria-hidden="false" aria-label="modifica">edit</mat-icon>
-    </button>
+		<div style="margin-left: 24px;font-size: large;">
+				<b>{{atleta.fullName}}</b><br>
+				{{atleta.age}} - {{atleta.category}}
+		</div>
+		<div fxFlex></div>
+		<button mat-flat-button *ngIf="editable" (click)="goToAtleta(atleta.id)">
+				<mat-icon aria-hidden="false" aria-label="modifica">edit</mat-icon>
+		</button>
 </div>

@@ -1,21 +1,21 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-input-date',
-  templateUrl: './input-date.component.html',
-  styleUrls: ['./input-date.component.scss']
+	selector: 'app-input-date',
+	templateUrl: './input-date.component.html',
+	styleUrls: ['./input-date.component.scss']
 })
 export class InputDateComponent implements OnInit {
-  @Input() placeholder:string = "";
-  @Input() model:Date = new Date();
-  @Output() modelChange:EventEmitter<Date> = new EventEmitter<Date>();
+	@Input() placeholder:string = "";
+	@Input() model:Date = new Date();
+	@Output() modelChange:EventEmitter<Date> = new EventEmitter<Date>();
 
-  constructor() { }
+	constructor() { }
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {
+	}
 
-  onModelChange(value: Date) {
-    this.modelChange.emit(value);
-  }
+	onModelChange(value: Date) {
+		this.modelChange.emit(value);
+	}
 }

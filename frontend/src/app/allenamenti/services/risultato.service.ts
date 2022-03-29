@@ -3,15 +3,15 @@ import { Socket } from 'ngx-socket-io';
 import { Risultato } from '../models/risultato.model';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class RisultatoService {
 
-  constructor(private socket: Socket) {
-    Object.setPrototypeOf(this, RisultatoService.prototype);
-  }
-  
-  fetchRisultati(){this.socket.emit('fetchRisultati');}
+	constructor(private socket: Socket) {
+		Object.setPrototypeOf(this, RisultatoService.prototype);
+	}
+	
+	fetchRisultati(){this.socket.emit('fetchRisultati');}
 	addRisultato(risultato:Risultato){this.socket.emit('addRisultato',risultato);}
 	updateRisultato(risultato:Risultato){this.socket.emit('updateRisultato',risultato);}
 	deleteRisultato(id:number){this.socket.emit('deleteRisultato',id);}

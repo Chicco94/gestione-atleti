@@ -18,21 +18,21 @@ const config: SocketIoConfig = {
 
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
+	declarations: [
+		AppComponent
+	],
+	imports: [
+		BrowserModule,
+		BrowserAnimationsModule,
 
-    // Custom
-    AllenamentiModule,
-    GestioneModule,
-    SharedModule,
+		// Custom
+		AllenamentiModule,
+		GestioneModule,
+		SharedModule,
 
-    SocketIoModule.forRoot(config)
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+		SocketIoModule.forRoot(config)
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

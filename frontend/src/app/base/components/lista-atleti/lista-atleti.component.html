@@ -1,17 +1,17 @@
 <div style="height: 48px;" *ngIf="searchable">
-    <app-input-text placeholder="Cerca" [(model)]="searchString"></app-input-text>
+		<app-input-text placeholder="Cerca" [(model)]="searchString"></app-input-text>
 </div>
 
 <mat-selection-list #select [(ngModel)]="targetAtletaList" (selectionChange)="onSelectedOptionsChange()" style="max-height: calc(100vh - 80px); overflow-y:auto">
-    <mat-list-option 
-        *ngIf="selectable"
-        (click)="toggleAllSelection()"
-        [value]="allSelected"
-        [selected]="allSelected">
-        Seleziona tutti
-    </mat-list-option>
-    <mat-list-option *ngFor="let atleta of sourceAtletaList | search:'id,nome,cognome':searchString" [value]="atleta.id" [selected]="atleta.selected" (click)="optionClick(atleta)" [ngClass]="{'hide-checkbox': !selectable}">
-        <app-atleta-preview [atleta]="atleta" [editable]="editable" [goToAtleta]="goToAtleta"></app-atleta-preview>
-    </mat-list-option>
+		<mat-list-option 
+				*ngIf="selectable"
+				(click)="toggleAllSelection()"
+				[value]="allSelected"
+				[selected]="allSelected">
+				Seleziona tutti
+		</mat-list-option>
+		<mat-list-option *ngFor="let atleta of sourceAtletaList | search:'id,nome,cognome':searchString" [value]="atleta.id" [selected]="atleta.selected" (click)="optionClick(atleta)" [ngClass]="{'hide-checkbox': !selectable}">
+				<app-atleta-preview [atleta]="atleta" [editable]="editable" [goToAtleta]="goToAtleta"></app-atleta-preview>
+		</mat-list-option>
 </mat-selection-list>
 

@@ -3,11 +3,11 @@ import { Socket } from 'ngx-socket-io';
 import { Test } from '../models/test.model';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class TestAllenamentoService {
 
-  constructor(private socket: Socket) {
+	constructor(private socket: Socket) {
 		Object.setPrototypeOf(this, TestAllenamentoService.prototype);
 	}
 

@@ -1,9 +1,9 @@
 <div style="height: 48px;" *ngIf="searchable" >
-    <app-input-text placeholder="Cerca" [(model)]="searchString"></app-input-text>
+		<app-input-text placeholder="Cerca" [(model)]="searchString"></app-input-text>
 </div>
 
 <cdk-virtual-scroll-viewport itemSize="50" [ngStyle]="{'height': editable ? 'calc(100% - 115px)' : 'calc(50% - 115px)'}">
-    <div *cdkVirtualFor="let test of sourceTestList | search:'descr,gruppo':searchString" #test>
-        <app-test-preview [test]="test" [targetTestList]="targetTestList" (targetTestListChange)="getChanges($event)" [addable]="addable" [editable]="editable" [removable]="removable" [goToTest]="goToTest"></app-test-preview>
-    </div>
+		<div *cdkVirtualFor="let test of sourceTestList | search:'descr,gruppo':searchString" #test>
+				<app-test-preview [test]="test" [targetTestList]="targetTestList" (targetTestListChange)="getChanges($event)" [addable]="addable" [editable]="editable" [removable]="removable" [goToTest]="goToTest"></app-test-preview>
+		</div>
 </cdk-virtual-scroll-viewport>

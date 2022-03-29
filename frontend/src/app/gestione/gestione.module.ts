@@ -13,21 +13,21 @@ import { GestioneRoutingModule } from './gestione-routing.module';
 
 
 @NgModule({
-  declarations: [
-    GestioneComponent,
-    GestioneLandingComponent,
-    GestioneTestLandingComponent,
-    GestioneTestComponent,
-    GestioneAtletiLandingComponent,
-    GestioneAtletiComponent
-  ],
-  imports: [
-    GestioneRoutingModule,
-    CommonModule,
-    BaseModule,
-  ],
-  exports:[
-    GestioneComponent
-  ]
+	declarations: [
+		GestioneComponent,
+		GestioneLandingComponent,
+		GestioneTestLandingComponent,
+		GestioneTestComponent,
+		GestioneAtletiLandingComponent,
+		GestioneAtletiComponent
+	],
+	imports: [
+		GestioneRoutingModule,
+		CommonModule,
+		BaseModule,
+	],
+	exports:[
+		GestioneComponent
+	]
 })
 export class GestioneModule { }

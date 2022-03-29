@@ -69,7 +69,7 @@ export class AllenamentoAttivoComponent implements OnInit,OnDestroy {
 		try{
 			this.currentTest = this.dataSource[0]['result_'+(this.currentTestIndex-1)].Test;
 			this.currentTestIndex -= 1;
-		} catch (Error) {  
+		} catch (Error) {	
 			alert("questo è il primo test!"); 
 		} 
 	}

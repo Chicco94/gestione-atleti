@@ -32,7 +32,7 @@ const allenamentiRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(allenamentiRoutes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forChild(allenamentiRoutes)],
+	exports: [RouterModule]
 })
 export class AllenamentiRoutingModule { }

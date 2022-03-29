@@ -10,24 +10,24 @@ import { BackButtonDirective } from './directives/backbutton.directive';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [
-    HomeComponent,
-    LoginComponent,
-    AnagraficaAtletaComponent,
-    AnagraficaTestComponent,
+	declarations: [
+		HomeComponent,
+		LoginComponent,
+		AnagraficaAtletaComponent,
+		AnagraficaTestComponent,
 
-    BackButtonDirective,
-  ],
-  imports: [
-    CommonModule,
-    AppRoutingModule,
-    BaseModule
-  ],
-  exports:[
-    BaseModule,
-    AppRoutingModule,
+		BackButtonDirective,
+	],
+	imports: [
+		CommonModule,
+		AppRoutingModule,
+		BaseModule
+	],
+	exports:[
+		BaseModule,
+		AppRoutingModule,
 
-    BackButtonDirective
-  ]
+		BackButtonDirective
+	]
 })
 export class SharedModule { }

@@ -4,7 +4,7 @@ import { Socket } from 'ngx-socket-io';
 import { Test } from '../models/test.model';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class TestService {
 	constructor(private socket: Socket,private router:Router) {
@@ -21,6 +21,6 @@ export class TestService {
 	OnGetTest() {return this.socket.fromEvent('getTest');}
 
 	goToTest(id:number){
-      this.router.navigate(['/gestione/gestioneTest', id]);
+			this.router.navigate(['/gestione/gestioneTest', id]);
 	}
 }

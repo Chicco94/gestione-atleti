@@ -7,9 +7,9 @@ export class Allenamento extends IdBase{
 		Object.setPrototypeOf(this, Allenamento.prototype);
 	}
 
-    descr:string= "";
-    date:Date=new Date();
-    completato:boolean=false;
-    risultati:any[] = [];
+		descr:string= "";
+		date:Date=new Date();
+		completato:boolean=false;
+		risultati:any[] = [];
 
 }

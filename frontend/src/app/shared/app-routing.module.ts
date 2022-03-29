@@ -6,9 +6,9 @@ import { LoginGuard } from './guards/login.guard';
 
 const appRoutes: Routes = [
 	{path: 'home', component:HomeComponent, canActivate: [LoginGuard]},
-    { path: 'login', component: LoginComponent },
-    { path: 'allena', loadChildren:()=>import('../allenamenti/allenamenti.module').then(m=>m.AllenamentiModule) },
-    { path: 'gestione', loadChildren:()=>import('../gestione/gestione.module').then(m=>m.GestioneModule) },
+		{ path: 'login', component: LoginComponent },
+		{ path: 'allena', loadChildren:()=>import('../allenamenti/allenamenti.module').then(m=>m.AllenamentiModule) },
+		{ path: 'gestione', loadChildren:()=>import('../gestione/gestione.module').then(m=>m.GestioneModule) },
 
 	// WILDCARDS
 	{path: '', redirectTo:'/home', pathMatch: 'full'},
@@ -16,7 +16,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(appRoutes)],
+	exports: [RouterModule]
 })
 export class AppRoutingModule { }

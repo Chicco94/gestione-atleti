@@ -45,94 +45,94 @@ import { CustomDateAdapter } from './services/custom.date.adapter';
 
 
 @NgModule({
-  declarations: [
-    InputTextComponent,
-    InputDateComponent,
-    InputNumberComponent,
-    InputTimeComponent,
-    InputSexComponent,
-    InputTestTypeComponent,
+	declarations: [
+		InputTextComponent,
+		InputDateComponent,
+		InputNumberComponent,
+		InputTimeComponent,
+		InputSexComponent,
+		InputTestTypeComponent,
 
-    AtletaPreviewComponent,
-    ListaAtletiComponent,
-    TestPreviewComponent,
-    ListaTestComponent,
-    
-    SearchPipe
-  ],
-  imports: [
-    CommonModule,
+		AtletaPreviewComponent,
+		ListaAtletiComponent,
+		TestPreviewComponent,
+		ListaTestComponent,
+		
+		SearchPipe
+	],
+	imports: [
+		CommonModule,
 
-    FlexLayoutModule,
+		FlexLayoutModule,
 
-    // Material
-    MatToolbarModule,
-    MatCardModule,
-    MatDialogModule,
-    MatInputModule,
-    FormsModule,
-    MatGridListModule,
-    MatSlideToggleModule,
-    MatListModule,
-    MatButtonModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatMenuModule,
-    MatSelectModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatTabsModule,
-    MatProgressSpinnerModule,
-    ScrollingModule,
-    MatCheckboxModule,
-    MatTableModule,
-    MatDividerModule,
-  ],
-  exports:[
-    FlexLayoutModule,
+		// Material
+		MatToolbarModule,
+		MatCardModule,
+		MatDialogModule,
+		MatInputModule,
+		FormsModule,
+		MatGridListModule,
+		MatSlideToggleModule,
+		MatListModule,
+		MatButtonModule,
+		MatIconModule,
+		MatFormFieldModule,
+		MatMenuModule,
+		MatSelectModule,
+		MatDatepickerModule,
+		MatNativeDateModule,
+		MatTabsModule,
+		MatProgressSpinnerModule,
+		ScrollingModule,
+		MatCheckboxModule,
+		MatTableModule,
+		MatDividerModule,
+	],
+	exports:[
+		FlexLayoutModule,
 
-    // Material
-    MatToolbarModule,
-    MatCardModule,
-    MatDialogModule,
-    MatInputModule,
-    FormsModule,
-    MatGridListModule,
-    MatSlideToggleModule,
-    MatListModule,
-    MatButtonModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatMenuModule,
-    MatSelectModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatTabsModule,
-    MatProgressSpinnerModule,
-    ScrollingModule,
-    MatCheckboxModule,
-    MatTableModule,
-    MatDividerModule,
+		// Material
+		MatToolbarModule,
+		MatCardModule,
+		MatDialogModule,
+		MatInputModule,
+		FormsModule,
+		MatGridListModule,
+		MatSlideToggleModule,
+		MatListModule,
+		MatButtonModule,
+		MatIconModule,
+		MatFormFieldModule,
+		MatMenuModule,
+		MatSelectModule,
+		MatDatepickerModule,
+		MatNativeDateModule,
+		MatTabsModule,
+		MatProgressSpinnerModule,
+		ScrollingModule,
+		MatCheckboxModule,
+		MatTableModule,
+		MatDividerModule,
 
-    // Components
-    InputTextComponent,
-    InputDateComponent,
-    InputNumberComponent,
-    InputSexComponent,
-    InputTimeComponent,
-    InputTestTypeComponent,
+		// Components
+		InputTextComponent,
+		InputDateComponent,
+		InputNumberComponent,
+		InputSexComponent,
+		InputTimeComponent,
+		InputTestTypeComponent,
 
-    AtletaPreviewComponent,
-    ListaAtletiComponent,
-    TestPreviewComponent,
-    ListaTestComponent,
+		AtletaPreviewComponent,
+		ListaAtletiComponent,
+		TestPreviewComponent,
+		ListaTestComponent,
 
-    // Pipes
-    SearchPipe
-  ],
-  providers: [
-    { provide: DateAdapter, useClass: CustomDateAdapter },
-    { provide: MAT_DATE_LOCALE, useValue: 'it-IT' }
-  ]
+		// Pipes
+		SearchPipe
+	],
+	providers: [
+		{ provide: DateAdapter, useClass: CustomDateAdapter },
+		{ provide: MAT_DATE_LOCALE, useValue: 'it-IT' }
+	]
 })
 export class BaseModule { }

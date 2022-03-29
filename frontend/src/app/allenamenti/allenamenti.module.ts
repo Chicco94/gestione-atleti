@@ -17,25 +17,25 @@ import { AllenamentoSelectAtletaComponent } from './components/allenamento-selec
 import { AllenamentiRoutingModule } from './allenamenti-routing.module';
 
 @NgModule({
-  declarations: [
-    AllenamentiLandingComponent,
-    AllenamentoLandingComponent,
-    ListaAllenamentiLandingComponent,
-    AllenamentiComponent,
-    ListaAllenamentiComponent,
-    AllenamentoComponent,
-    AllenamentoSelectTestComponent,
-    AllenamentoSelectAtletaComponent,
-    AllenamentoAttivoComponent,
-    AllenamentoPreviewComponent,
-    BeforeAllenamentoComponent
-  ],
-  imports: [
+	declarations: [
+		AllenamentiLandingComponent,
+		AllenamentoLandingComponent,
+		ListaAllenamentiLandingComponent,
+		AllenamentiComponent,
+		ListaAllenamentiComponent,
+		AllenamentoComponent,
+		AllenamentoSelectTestComponent,
+		AllenamentoSelectAtletaComponent,
+		AllenamentoAttivoComponent,
+		AllenamentoPreviewComponent,
+		BeforeAllenamentoComponent
+	],
+	imports: [
 		AllenamentiRoutingModule,
-    CommonModule,
-    BaseModule
-  ],
-  exports:[
-  ]
+		CommonModule,
+		BaseModule
+	],
+	exports:[
+	]
 })
 export class AllenamentiModule { }

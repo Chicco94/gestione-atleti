@@ -37,7 +37,7 @@ const gestioneRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(gestioneRoutes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forChild(gestioneRoutes)],
+	exports: [RouterModule]
 })
 export class GestioneRoutingModule { }

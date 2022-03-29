@@ -1,13 +1,13 @@
 <div fxLayout="row" fxLayoutAlign="start stretch" style="height: 100%; margin-top: 2px; margin-bottom: 2px;" [ngStyle]="{'background-color': allenamento.completato ? 'rgba(0,255,0,0.5)' : 'rgba(255,255,255,0.5)'}">
-    <div style="margin-left: 24px;font-size: large;">
-        <b>{{allenamento.descr}}</b><br>
-        {{allenamento.date | date:"dd/MM/yy"}}
-    </div>
-    <div fxFlex></div>
-    <button *ngIf="!allenamento.completato" mat-flat-button [routerLink]="['../allenamento/', allenamento.id]" routerLinkActive="activebutton">
-        <mat-icon aria-hidden="false" aria-label="allenamentoAttivo">edit</mat-icon>
-    </button>
-    <button mat-flat-button [routerLink]="['./', allenamento.id]" routerLinkActive="activebutton">
-        <mat-icon aria-hidden="false" aria-label="allenamentoAttivo">play_arrow</mat-icon>
-    </button>
+		<div style="margin-left: 24px;font-size: large;">
+				<b>{{allenamento.descr}}</b><br>
+				{{allenamento.date | date:"dd/MM/yy"}}
+		</div>
+		<div fxFlex></div>
+		<button *ngIf="!allenamento.completato" mat-flat-button [routerLink]="['../allenamento/', allenamento.id]" routerLinkActive="activebutton">
+				<mat-icon aria-hidden="false" aria-label="allenamentoAttivo">edit</mat-icon>
+		</button>
+		<button mat-flat-button [routerLink]="['./', allenamento.id]" routerLinkActive="activebutton">
+				<mat-icon aria-hidden="false" aria-label="allenamentoAttivo">play_arrow</mat-icon>
+		</button>
 </div>

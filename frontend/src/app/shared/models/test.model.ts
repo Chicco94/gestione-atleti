@@ -7,7 +7,7 @@ export class Test extends IdBase{
 		Object.setPrototypeOf(this, Test.prototype);
 	}
 
-    descr:string = "";
-    gruppo:string = "";
+		descr:string = "";
+		gruppo:string = "";
 	tipo:string= "";
 }
