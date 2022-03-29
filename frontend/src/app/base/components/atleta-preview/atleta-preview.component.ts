@@ -14,9 +14,7 @@ export class AtletaPreviewComponent implements OnInit {
 
 	@Input() editable:boolean = false;
 
-	@Input() goToAtleta:(idatleta:number)=>void=()=>{}
-
-	
+	@Output() goToAtleta:EventEmitter<number> = new EventEmitter<number>();
 	@Output() selectedChange:EventEmitter<boolean> = new EventEmitter<boolean>();
 	constructor() { }
 
@@ -26,5 +24,7 @@ export class AtletaPreviewComponent implements OnInit {
 		this.selectedChange.emit(this.selected);
 	}
 
-
+	go = () =>{
+		this.goToAtleta.emit(this.atleta.id);
+	}
 }

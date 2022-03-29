@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Socket } from 'ngx-socket-io';
-import { Atleta } from 'src/app/shared/models/atleta.model';
+import { Atleta } from '../models/atleta.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -21,6 +21,6 @@ export class AtletaService {
 	OnGetAtleta() {return this.socket.fromEvent('getAtleta');}
 	
 	goToAtleta(id:number){
-		this.router.navigate(['/gestione/gestioneAtleta', id]);
+		this.router.navigate(['/gestione/gestioneAtleti', id]);
 	}
 }

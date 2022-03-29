@@ -16,8 +16,8 @@ export class ListaAtletiComponent implements OnInit {
 	
 	@Input() sourceAtletaList:Atleta[] = [];
 	@Input() targetAtletaList:number[] = [];
-	@Input() goToAtleta:(idatleta:number)=>void=()=>{}
 
+	@Output() goToAtleta:EventEmitter<number> = new EventEmitter<number>();
 	@Output() targetAtletaListChange:EventEmitter<number[]> = new EventEmitter<number[]>();
 
 	searchString:string="";
@@ -55,5 +55,7 @@ export class ListaAtletiComponent implements OnInit {
 		// se c'e' che un atleta non selezionato
 		this.allSelected = !(this.sourceAtletaList.filter((item: Atleta) => !item.selected).length > 0);
 	}
-
+	go(idatleta:number){
+		this.goToAtleta.emit(idatleta);
+	}
 }

@@ -10,12 +10,12 @@ import { AtletaService } from 'src/app/shared/services/atleta.service';
 })
 export class GestioneAtletiComponent implements OnInit {
 	atleti:Atleta[] = [];
-	
+
 	__OnFetchAtleti__:Subscription = new Subscription();
-	constructor(
-		private atletaService:AtletaService) { 
-			this.atletaService.fetchAtleti();
-		}
+
+	constructor(private atletaService:AtletaService) { 
+		this.atletaService.fetchAtleti();
+	}
 
 	ngOnInit(): void {
 		this.__OnFetchAtleti__ = this.atletaService.OnFetchAtleti().subscribe((data:any) => {
@@ -30,7 +30,7 @@ export class GestioneAtletiComponent implements OnInit {
 	confirm(){
 	}
 
-	goToAtleta(idatleta:number){
-		
+	go(idatleta:number){
+		this.atletaService.goToAtleta(idatleta);
 	}
 }
