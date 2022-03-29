@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Socket } from 'ngx-socket-io';
 import { Atleta } from 'src/app/shared/models/atleta.model';
 
@@ -6,7 +7,7 @@ import { Atleta } from 'src/app/shared/models/atleta.model';
 	providedIn: 'root'
 })
 export class AtletaService {
-	constructor(private socket: Socket) {
+	constructor(private socket: Socket,private router:Router) {
 		Object.setPrototypeOf(this, AtletaService.prototype);
 	}
 
@@ -18,4 +19,8 @@ export class AtletaService {
 
 	OnFetchAtleti() {return this.socket.fromEvent('fetchAtleti');}
 	OnGetAtleta() {return this.socket.fromEvent('getAtleta');}
+	
+	goToAtleta(id:number){
+		this.router.navigate(['/gestione/gestioneAtleta', id]);
+	}
 }

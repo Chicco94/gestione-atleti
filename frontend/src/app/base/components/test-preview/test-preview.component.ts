@@ -13,8 +13,8 @@ export class TestPreviewComponent implements OnInit {
 	@Input() addable?:boolean = false;
 	@Input() removable?:boolean = false;
 	@Input() editable?:boolean = false;
-	@Input() goToTest:(idtest:number)=>void=()=>{}
-
+	
+	@Output() goToTest:EventEmitter<number> = new EventEmitter<number>();
 	@Output() targetTestListChange:EventEmitter<Test[]> = new EventEmitter<Test[]>();
 
 	constructor() { }
@@ -31,4 +31,8 @@ export class TestPreviewComponent implements OnInit {
 		this.targetTestList.splice(this.targetTestList.indexOf(this.test),1);
 		this.targetTestListChange.emit(this.targetTestList);
 	};
+
+	go = () =>{
+		this.goToTest.emit(this.test.id);
+	}
 }

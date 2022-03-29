@@ -22,13 +22,15 @@ export class GestioneTestComponent implements OnInit {
 			this.tests = data.map((single_data:any) => new Test().deserialize(single_data));
 		});
 	}
+
 	ngOnDestroy():void{
 		this.__OnFetchTests__.unsubscribe();
 	}
+
 	confirm(){
-		
 	}
-	goToTest(idtest:number){
+	
+	go(idtest:number){
 		this.testService.goToTest(idtest);
 	}
 }

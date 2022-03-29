@@ -15,8 +15,8 @@ export class ListaTestComponent implements OnInit {
 
 	@Input() sourceTestList:Test[] = [];
 	@Input() targetTestList:Test[] = [];
-	@Input() goToTest:(idtest:number)=>void=()=>{}
 	
+	@Output() goToTest:EventEmitter<number> = new EventEmitter<number>();
 	@Output() targetTestListChange:EventEmitter<Test[]> = new EventEmitter<Test[]>();
 
 	searchString:string="";
@@ -28,5 +28,8 @@ export class ListaTestComponent implements OnInit {
 
 	getChanges(targetTestList:Test[]){
 		this.targetTestListChange.emit(targetTestList);
+	}
+	go(idtest:number){
+		this.goToTest.emit(idtest);
 	}
 }

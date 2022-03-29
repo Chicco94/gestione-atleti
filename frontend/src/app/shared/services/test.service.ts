@@ -21,6 +21,6 @@ export class TestService {
 	OnGetTest() {return this.socket.fromEvent('getTest');}
 
 	goToTest(id:number){
-			this.router.navigate(['/gestione/gestioneTest', id]);
+		this.router.navigate(['/gestione/gestioneTest', id]);
 	}
 }
