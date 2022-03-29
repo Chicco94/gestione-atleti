@@ -2,6 +2,7 @@ const { login, fetchUtenti, addUtente, updateUtente, deleteUtente, getUtente } =
 const { fetchAtleti, addAtleta, updateAtleta, deleteAtleta, getAtleta } = require('../controllers/atleta.controller');
 const { fetchTests, addTest, updateTest, deleteTest, getTest } = require('../controllers/test.controller');
 const { fetchAllenamenti, addAllenamento,buildAllenamento, updateAllenamento, deleteAllenamento, getAllenamento } = require('../controllers/allenamento.controller');
+const { fetchGare } = require('../controllers/gara.controller');
 const { fetchRisultati, addRisultato, updateRisultato, deleteRisultato, getRisultato, getRisultatoByAllenamento } = require('../controllers/risultato.controller');
 const { getAtletaAllenamentoByAllenamento,setAtletaToAllenamento } = require('../controllers/atletaAllenamento.controller');
 const { getTestAllenamentoByAllenamento,setTestToAllenamento } = require('../controllers/testAllenamento.controller');
@@ -50,6 +51,9 @@ module.exports = (io) => {
 		socket.on('setAtletaToAllenamento', (data) => setAtletaToAllenamento(socket, data));
 		socket.on('getTestAllenamentoByAllenamento', (id) => getTestAllenamentoByAllenamento(socket, id));
 		socket.on('setTestToAllenamento', (data) => setTestToAllenamento(socket, data));
+		
+		// GARE
+		socket.on('fetchGare', () => fetchGare(socket));
 
 		// RISULTATI
 		socket.on('fetchRisultati', () => fetchRisultati(socket));

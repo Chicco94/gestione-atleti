@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Allenamento } from 'src/app/allenamenti/models/allenamento.model';
 import { AllenamentoService } from 'src/app/allenamenti/services/allenamento.service';
+import { Gara } from '../../models/gara.model';
+import { GaraService } from '../../services/gara.service';
 
 @Component({
 	selector: 'app-lista-gare',
@@ -8,30 +9,30 @@ import { AllenamentoService } from 'src/app/allenamenti/services/allenamento.ser
 	styleUrls: ['./lista-gare.component.scss']
 })
 export class ListaGareComponent implements OnInit {
-	filteredAllenamenti:Allenamento[] = [];
-	allenamenti:Allenamento[] = [];
+	filteredGare:Gara[] = [];
+	gare:Gara[] = [];
 	searchString:string = "";
 	showCompletati:boolean = false;
 
 	constructor(
-		private allenamentoService:AllenamentoService
+		private garaService:GaraService
 	) {}
 
 	ngOnInit(): void {
-		this.allenamentoService.fetchAllenamenti();
-		this.allenamentoService.OnFetchAllenamenti().subscribe((data:any) => {
-			this.allenamenti = data.map((single_data:any) => new Allenamento().deserialize(single_data));
-			this.filteredAllenamenti = this.allenamenti.filter(item=>this.filterAllenamento(item,this.showCompletati));
+		this.garaService.fetchGare();
+		this.garaService.OnFetchGare().subscribe((data:any) => {
+			this.gare = data.map((single_data:any) => new Gara().deserialize(single_data));
+			this.filteredGare = this.gare.filter(item=>this.filterGara(item,this.showCompletati));
 		});
 	}
 
 	changeShowCompletati(){
 		this.showCompletati = !this.showCompletati;
-		this.filteredAllenamenti = this.allenamenti.filter(item=>this.filterAllenamento(item,this.showCompletati));
+		this.filteredGare = this.gare.filter(item=>this.filterGara(item,this.showCompletati));
 	}
 
-	filterAllenamento(allenamento:Allenamento,showCompletati:boolean):boolean{
-		if (allenamento.completato && !showCompletati) return false
+	filterGara(gara:Gara,showCompletati:boolean):boolean{
+		if (gara.completato && !showCompletati) return false
 		return true
 	}
 }

@@ -2,7 +2,7 @@ const { Allenamento, AtletaAllenamento, TestAllenamento, Risultato, Atleta, Test
 const { logError } = require('../utils') 
 
 const fetchAllenamenti = (socket) => {
-	Allenamento.findAll()
+	Allenamento.findAll({where: {is_gara: false}})
 		.then(allenamenti => socket.emit('fetchAllenamenti', allenamenti))
 		.catch(logError)
 }

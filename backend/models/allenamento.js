@@ -30,6 +30,7 @@ module.exports = (sequelize, DataTypes) => {
     descr: DataTypes.STRING,
     date: DataTypes.DATE,
     completato: DataTypes.BOOLEAN,
+    is_gara: DataTypes.BOOLEAN,
   }, {
     sequelize,
     freezeTableName: true,

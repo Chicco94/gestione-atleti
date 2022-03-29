@@ -4,8 +4,7 @@
 </div>
 
 <cdk-virtual-scroll-viewport itemSize="50" style="height: calc(100% - 96px);">
-	<div *cdkVirtualFor="let allenamento of filteredAllenamenti | search:'descr,gruppo':searchString" #test>
-		<b>{{allenamento.descr}}</b><br>
-				{{allenamento.date | date:"dd/MM/yy"}}
+	<div *cdkVirtualFor="let gara of filteredGare | search:'descr,gruppo':searchString" #test>
+		<app-gara-preview [gara]="gara"></app-gara-preview>
 	</div>
 </cdk-virtual-scroll-viewport>

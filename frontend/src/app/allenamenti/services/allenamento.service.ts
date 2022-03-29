@@ -6,10 +6,7 @@ import { Allenamento } from '../models/allenamento.model';
 	providedIn: 'root'
 })
 export class AllenamentoService {
-	
-	list:Allenamento[] = [];
-
-	constructor(private socket: Socket) {
+	constructor(protected socket: Socket) {
 		Object.setPrototypeOf(this, AllenamentoService.prototype);
 	}
 

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CostruisciComponent } from './components/costruisci/costruisci.component';
+import { GaraLandingComponent } from './components/gara-landing/gara-landing.component';
 import { GareLandingComponent } from './components/gare-landing/gare-landing.component';
 import { GareComponent } from './components/gare/gare.component';
 import { GareggiaComponent } from './components/gareggia/gareggia.component';
@@ -11,13 +12,17 @@ const routes: Routes = [
 	{path: 'gare', component:GareLandingComponent,
 		children: [
 			{path: '', component:GareComponent},
-			{path: 'listaAllenamenti', component:ListaGareLandingComponent,
+			{path: 'listaGare', component:ListaGareLandingComponent,
 				children: [
 					{path: '', component:ListaGareComponent},
 					{path: ':id', component:GareggiaComponent},
 				]
 			},
-			{path: 'allenamento', component:CostruisciComponent },
+			{path: 'costruisci', component:GaraLandingComponent,
+				children: [
+					{path: ':idgara', component:CostruisciComponent},
+				]
+			},
 		]
 	},
 ];
