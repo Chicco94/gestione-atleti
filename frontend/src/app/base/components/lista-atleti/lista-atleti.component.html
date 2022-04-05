@@ -2,9 +2,9 @@
 	<app-input-text placeholder="Cerca" [(model)]="searchString"></app-input-text>
 </div>
 
-<mat-selection-list #select [(ngModel)]="targetAtletaList" (selectionChange)="onSelectedOptionsChange()" style="max-height: calc(100vh - 80px); overflow-y:auto">
+<mat-selection-list #select [(ngModel)]="targetAtletaList" (selectionChange)="onSelectedOptionsChange()" [ngStyle]="{'max-height': 'calc('+maxHeight+'vh - 80px)', 'overflow-y':'auto'}">
 	<mat-list-option 
-		*ngIf="selectable"
+		*ngIf="allowSelectAll"
 		(click)="toggleAllSelection()"
 		[value]="allSelected"
 		[selected]="allSelected">

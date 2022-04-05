@@ -14,6 +14,9 @@ export class ListaAtletiComponent implements OnInit {
 	@Input() editable:boolean=false;
 	@Input() searchable:boolean=false;
 	
+	@Input() allowSelectAll:boolean=this.selectable;
+	@Input() maxHeight:number=100;
+
 	@Input() sourceAtletaList:Atleta[] = [];
 	@Input() targetAtletaList:number[] = [];
 
