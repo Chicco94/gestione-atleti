@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         onUpdate: 'CASCADE'
       });
       Test.hasMany(models.Risultato,{
-        foreignKey: 'idatleta',
+        foreignKey: 'idtest',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       });

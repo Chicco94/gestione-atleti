@@ -1,4 +1,4 @@
-const { Risultato } = require('../models')
+const { Risultato,Atleta,Test,Allenamento } = require('../models')
 const { logError } = require('../utils') 
 
 const fetchRisultati = (socket) => {
@@ -8,15 +8,30 @@ const fetchRisultati = (socket) => {
 }
 
 const getRisultato = (socket,id) => {
-	Risultato.findByPk(id)
-		.then(risultato => socket.emit('getRisultato', risultato))
-		.catch(logError)
+	Risultato.findOne({
+		where: {id: id}
+	})
+	.then(risultato => socket.emit('getRisultato', risultato))
+	.catch(logError)
 }
 
-const getRisultatoByAllenamento = (socket,idallenamento) => {
+const getRisultatoByAllenamento = (socket,_idallenamento) => {
 	let query = {
-		where: {idallenamento: idallenamento}
-	  }
+		include: [{
+			model: Allenamento,
+			where: { id: _idallenamento },
+			as: 'allenamento'
+		},
+		{
+			model: Atleta,
+			as: 'atleta'
+		},
+		{
+			model: Test,
+			as: 'test'
+		}]
+	}
+	console.log(query);
 	Risultato.findAll(query)
 		.then(risultati => socket.emit('getRisultatoByAllenamento', risultati))
 		.catch(logError)

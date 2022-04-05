@@ -16,6 +16,11 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       });
+      Allenamento.hasMany(models.AtletaAllenamento,{
+        foreignKey: 'idallenamento',
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
+      });
       Allenamento.hasMany(models.Risultato,{
         foreignKey: 'idallenamento',
         onDelete: 'CASCADE',

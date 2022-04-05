@@ -14,17 +14,20 @@ module.exports = (sequelize, DataTypes) => {
       Risultato.belongsTo(models.Atleta,{
         foreignKey: 'idatleta',
         onDelete: 'CASCADE',
-        onUpdate: 'CASCADE'
+        onUpdate: 'CASCADE',
+		as: 'atleta'
       });
       Risultato.belongsTo(models.Test,{
         foreignKey: 'idtest',
         onDelete: 'CASCADE',
-        onUpdate: 'CASCADE'
+        onUpdate: 'CASCADE',
+		as: 'test'
       });
       Risultato.belongsTo(models.Allenamento,{
         foreignKey: 'idallenamento',
         onDelete: 'CASCADE',
-        onUpdate: 'CASCADE'
+        onUpdate: 'CASCADE',
+		as: 'allenamento'
       });
     }
   }
