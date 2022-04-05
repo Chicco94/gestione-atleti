@@ -15,6 +15,7 @@ export class ListaTestComponent implements OnInit {
 	@Input() searchable:boolean=false;
 
 	@Input() allowSelectAll:boolean=this.selectable;
+	@Input() subheader:boolean = true;
 
 	@Input() maxHeight:number=this.editable ? 100 : 50;
 

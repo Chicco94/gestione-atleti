@@ -13,8 +13,10 @@ export class ListaAtletiComponent implements OnInit {
 	@Input() selectable:boolean=false;
 	@Input() editable:boolean=false;
 	@Input() searchable:boolean=false;
+
+	@Input() subheader:boolean=true;
 	
-	@Input() allowSelectAll:boolean=this.selectable;
+	@Input() allowSelectAll:boolean=true;
 	@Input() maxHeight:number=100;
 
 	@Input() sourceAtletaList:Atleta[] = [];

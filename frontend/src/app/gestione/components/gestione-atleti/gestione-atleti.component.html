@@ -1,4 +1,9 @@
-<app-lista-atleti [sourceAtletaList]="atleti" [searchable]="true" [editable]="true" (goToAtleta)="go($event)"></app-lista-atleti>
+<app-lista-atleti 
+	[sourceAtletaList]="atleti" 
+	[searchable]="true" 
+	[editable]="true" 
+	(goToAtleta)="go($event)">
+</app-lista-atleti>
 
 <div fxLayout="row" fxLayoutAlign="end center">
 	<button mat-icon-button class="circle-button-green" style="position: absolute;bottom: -10px;left:-10px" [routerLink]="['./', 0]" routerLinkActive="activebutton">

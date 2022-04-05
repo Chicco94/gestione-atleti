@@ -7,6 +7,10 @@ import { Risultato } from 'src/app/allenamenti/models/risultato.model';
 	styleUrls: ['./lista-risultati.component.scss']
 })
 export class ListaRisultatiComponent implements OnInit {
+	@Input() showAtleta:boolean=true;
+	@Input() showTest:boolean=true;
+	@Input() showResult:boolean=true;
+	
 	@Input() addable:boolean=false;
 	@Input() removable:boolean=false;
 	@Input() editable:boolean=false;

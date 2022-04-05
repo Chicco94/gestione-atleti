@@ -4,6 +4,16 @@
 
 <cdk-virtual-scroll-viewport itemSize="50" [ngStyle]="{'height': 'calc('+maxHeight+'vh - 115px)'}">
 	<div *cdkVirtualFor="let test of sourceTestList | search:'descr,gruppo':searchString" #test>
-		<app-test-preview [test]="test" [targetTestList]="targetTestList" (targetTestListChange)="getChanges($event)" (goToTest)="go($event)" [addable]="addable" [editable]="editable" [removable]="removable" [selectable]="selectable"></app-test-preview>
+		<app-test-preview 
+			[test]="test" 
+			[targetTestList]="targetTestList" 
+			(targetTestListChange)="getChanges($event)" 
+			(goToTest)="go($event)" 
+			[addable]="addable" 
+			[editable]="editable" 
+			[removable]="removable" 
+			[selectable]="selectable"
+			[subheader]="subheader">
+		</app-test-preview>
 	</div>
 </cdk-virtual-scroll-viewport>

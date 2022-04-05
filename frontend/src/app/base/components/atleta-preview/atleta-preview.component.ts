@@ -12,6 +12,8 @@ export class AtletaPreviewComponent implements OnInit {
 	@Input() selected:boolean = false;
 	@Input() selectable:boolean = false;
 
+	@Input() subheader:boolean = true;
+
 	@Input() editable:boolean = false;
 
 	@Output() goToAtleta:EventEmitter<number> = new EventEmitter<number>();

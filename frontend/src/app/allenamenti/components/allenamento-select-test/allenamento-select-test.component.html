@@ -1,8 +1,19 @@
-<app-lista-test [sourceTestList]="possible_tests" [(targetTestList)]="selected_tests" (targetTestListChange)="getChanges($event)" [searchable]="true" [addable]="true"></app-lista-test>
+<app-lista-test 
+	[sourceTestList]="possible_tests" 
+	[(targetTestList)]="selected_tests" 
+	(targetTestListChange)="getChanges($event)" 
+	[searchable]="true" 
+	[addable]="true">
+</app-lista-test>
 
 <mat-divider style="margin: 2px"></mat-divider>
 
-<app-lista-test [sourceTestList]="selected_tests" [targetTestList]="selected_tests" (targetTestListChange)="getChanges($event)" [removable]="true"></app-lista-test>
+<app-lista-test 
+	[sourceTestList]="selected_tests" 
+	[targetTestList]="selected_tests" 
+	(targetTestListChange)="getChanges($event)" 
+	[removable]="true">
+</app-lista-test>
 
 <div fxLayout="row" fxLayoutAlign="end center">
 		<button mat-icon-button class="circle-button-green" *ngIf="editable" style="position: absolute;bottom: -10px;left:-10px" [routerLink]="['./', 0]" routerLinkActive="activebutton">

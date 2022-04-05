@@ -1,4 +1,9 @@
-<app-lista-test [sourceTestList]="tests" [searchable]="true" [editable]="true" (goToTest)="go($event)"></app-lista-test>
+<app-lista-test 
+	[sourceTestList]="tests" 
+	[searchable]="true" 
+	[editable]="true"  
+	(goToTest)="go($event)">
+</app-lista-test>
 
 <div fxLayout="row" fxLayoutAlign="end center">
 	<button mat-icon-button class="circle-button-green" style="position: absolute;bottom: -10px;left:-10px" [routerLink]="['./', 0]" routerLinkActive="activebutton">

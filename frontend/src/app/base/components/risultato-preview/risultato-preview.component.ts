@@ -9,6 +9,7 @@ import { Risultato } from 'src/app/allenamenti/models/risultato.model';
 export class RisultatoPreviewComponent implements OnInit {
 	@Input() showAtleta:boolean=true;
 	@Input() showTest:boolean=true;
+	@Input() showResult:boolean=true;
 	@Input() disabled:boolean=false;
 	@Input() removable:boolean=false;
 	@Input() editable:boolean=false;
