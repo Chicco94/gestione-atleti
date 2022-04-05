@@ -7,6 +7,7 @@ import { AnagraficaTestComponent } from './components/anagrafica-test/anagrafica
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AnagraficaRisultatoComponent } from './components/anagrafica-risultato/anagrafica-risultato.component';
 
 @NgModule({
 	declarations: [
@@ -14,7 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 		LoginComponent,
 		AnagraficaAtletaComponent,
 		AnagraficaTestComponent,
-
+		AnagraficaRisultatoComponent,
 	],
 	imports: [
 		CommonModule,
