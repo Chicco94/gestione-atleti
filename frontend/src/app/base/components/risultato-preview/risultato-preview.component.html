@@ -1,0 +1,6 @@
+<div fxLayout="row" fxLayoutAlign="start stretch" style="height: 100%; margin-top: 2px; margin-bottom: 2px; background-color: rgba(255,255,255,0.5)">
+	<app-atleta-preview [atleta]="risultato.atleta" *ngIf="showAtleta"></app-atleta-preview>
+	<app-test-preview [test]="risultato.test" *ngIf="showTest"></app-test-preview>
+	<app-input-time *ngIf="risultato.test.tipo == 'Crono'" [(model)]="risultato.risultato" [disabled]="disabled" fxFlex="50"></app-input-time>
+	<app-input-number *ngIf="risultato.test.tipo == 'Distanza'" [(model)]="risultato.risultato" [disabled]="disabled" fxFlex="50"></app-input-number>
+</div>

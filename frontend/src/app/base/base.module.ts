@@ -43,6 +43,8 @@ import { TestPreviewComponent } from './components/test-preview/test-preview.com
 import { SearchPipe } from './pipes/search.pipe';
 import { CustomDateAdapter } from './services/custom.date.adapter';
 import { BackButtonDirective } from './directives/backbutton.directive';
+import { RisultatoPreviewComponent } from './components/risultato-preview/risultato-preview.component';
+import { ListaRisultatiComponent } from './components/lista-risultati/lista-risultati.component';
 
 
 @NgModule({
@@ -58,10 +60,12 @@ import { BackButtonDirective } from './directives/backbutton.directive';
 		ListaAtletiComponent,
 		TestPreviewComponent,
 		ListaTestComponent,
+		RisultatoPreviewComponent,
+		ListaRisultatiComponent,
 
 		BackButtonDirective,
 		
-		SearchPipe
+		SearchPipe,
 	],
 	imports: [
 		CommonModule,
@@ -129,6 +133,8 @@ import { BackButtonDirective } from './directives/backbutton.directive';
 		ListaAtletiComponent,
 		TestPreviewComponent,
 		ListaTestComponent,
+		RisultatoPreviewComponent,
+		ListaRisultatiComponent,
 
 		BackButtonDirective,
 		
