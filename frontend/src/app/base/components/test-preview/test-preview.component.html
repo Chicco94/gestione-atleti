@@ -4,6 +4,13 @@
 		{{test.gruppo || " "}}
 	</div>
 	<div fxFlex></div>
+	<mat-checkbox 
+		*ngIf="selectable" 
+		aria-hidden="false" 
+		aria-label="selectTest"
+		style="padding-right: 16px;padding-top: 8px;"
+		(click)="select()">
+	</mat-checkbox>
 	<button mat-flat-button *ngIf="addable" (click)="add()">
 			<mat-icon aria-hidden="false" aria-label="addToAllenamento">add</mat-icon>
 	</button>

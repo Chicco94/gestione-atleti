@@ -13,6 +13,7 @@ export class TestPreviewComponent implements OnInit {
 	@Input() addable?:boolean = false;
 	@Input() removable?:boolean = false;
 	@Input() editable?:boolean = false;
+	@Input() selectable?:boolean = false;
 	
 	@Output() goToTest:EventEmitter<number> = new EventEmitter<number>();
 	@Output() targetTestListChange:EventEmitter<Test[]> = new EventEmitter<Test[]>();
@@ -21,6 +22,16 @@ export class TestPreviewComponent implements OnInit {
 
 	ngOnInit(): void {
 	}
+
+	select = ()=>{
+		if (this.test.selected){
+			this.test.selected = false;
+			this.remove()
+		} else {
+			this.test.selected = true;
+			this.add();
+		}
+	};
 
 	add = ()=>{
 		this.targetTestList = [...this.targetTestList,this.test];

@@ -11,7 +11,12 @@ export class ListaTestComponent implements OnInit {
 	@Input() addable:boolean=false;
 	@Input() removable:boolean=false;
 	@Input() editable:boolean=false;
+	@Input() selectable:boolean=false;
 	@Input() searchable:boolean=false;
+
+	@Input() allowSelectAll:boolean=this.selectable;
+
+	@Input() maxHeight:number=this.editable ? 100 : 50;
 
 	@Input() sourceTestList:Test[] = [];
 	@Input() targetTestList:Test[] = [];
