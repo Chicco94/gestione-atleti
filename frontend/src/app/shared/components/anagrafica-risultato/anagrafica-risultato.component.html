@@ -1,8 +1,29 @@
-<h1 mat-dialog-title>Nuova risultato</h1>
-<div mat-dialog-content>
-	
+<app-lista-atleti 
+	[sourceAtletaList]="atleti" 
+	[(targetAtletaList)]="selected_atleti" 
+	[searchable]="true" 
+	[editable]="false" 
+	[selectable]="true" 
+	[allowSelectAll]="false"
+	[maxHeight]="48">
+</app-lista-atleti>
+
+<mat-divider style="margin: 2px"></mat-divider>
+
+<app-lista-test 
+	[sourceTestList]="tests" 
+	[(targetTestList)]="selected_tests"
+	[searchable]="true" 
+	[editable]="false"
+	[selectable]="true"
+	[maxHeight]="48">
+</app-lista-test>
+
+<div fxLayout="row" fxLayoutAlign="space-evenly center" style="height: 96px;">
+	<button backButton mat-icon-button class="circle-button-small">
+		<mat-icon aria-hidden="false" aria-label="listaAtleti">arrow_back</mat-icon>
+	</button>
+	<button backButton mat-icon-button class="circle-button-small-green" (click)="confirm()">
+		<mat-icon aria-hidden="false" aria-label="conferma">check</mat-icon>
+	</button>
 </div>
-<div mat-dialog-actions>
-	<button mat-button (click)="onNoClick()">Annulla</button>
-	<button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
-</div>	

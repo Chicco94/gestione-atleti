@@ -59,18 +59,6 @@ export class CostruisciComponent implements OnInit {
 	addRisultato(): void {
 		let temp = new Risultato();
 		temp.idallenamento = this.gara.id;
-		temp.idatleta = this.gara.id;
-		temp.idtest = this.gara.id;
-		const dialogRef = this.dialog.open(AnagraficaRisultatoComponent, {
-			width: '250px',
-			data: temp,
-		});
-
-		dialogRef.afterClosed().subscribe(result => {
-			if (result){
-				this.risultatoService.addRisultato(result);
-			}
-		});
 	}
 	confirm(){
 		this.risultatoService.addRisultato(this.risultati[0]);

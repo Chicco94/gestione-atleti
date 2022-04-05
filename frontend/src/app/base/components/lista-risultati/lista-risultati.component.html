@@ -2,7 +2,7 @@
 	<app-input-text placeholder="Cerca" [(model)]="searchString"></app-input-text>
 </div>
 
-<cdk-virtual-scroll-viewport itemSize="50" [ngStyle]="{'height': 'calc(100% - 115px)'}">
+<cdk-virtual-scroll-viewport itemSize="50" [ngStyle]="{'height': 'calc('+maxHeight+'vh - 80px)', 'overflow-y':'auto'}">
 	<div *cdkVirtualFor="let risultato of sourceRisultatiList | search:'descr,gruppo':searchString" #risultati>
 		<app-risultato-preview [risultato]="risultato" [editable]="editable" [removable]="removable"></app-risultato-preview>
 	</div>

@@ -11,6 +11,8 @@ export class ListaRisultatiComponent implements OnInit {
 	@Input() removable:boolean=false;
 	@Input() editable:boolean=false;
 	@Input() searchable:boolean=false;
+	
+	@Input() maxHeight:number=100;
 
 	@Input() sourceRisultatiList:Risultato[] = [];
 	@Input() targetRisultatiList:Risultato[] = [];

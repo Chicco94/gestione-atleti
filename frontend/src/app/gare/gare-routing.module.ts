@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AnagraficaRisultatoComponent } from '../shared/components/anagrafica-risultato/anagrafica-risultato.component';
 import { CostruisciComponent } from './components/costruisci/costruisci.component';
 import { GaraLandingComponent } from './components/gara-landing/gara-landing.component';
 import { GareLandingComponent } from './components/gare-landing/gare-landing.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
 			},
 			{path: 'costruisci', component:GaraLandingComponent,
 				children: [
+					{path: ':idgara/:idrisultato', component:AnagraficaRisultatoComponent},
 					{path: ':idgara', component:CostruisciComponent},
 				]
 			},
