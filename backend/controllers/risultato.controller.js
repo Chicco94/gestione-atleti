@@ -31,7 +31,6 @@ const getRisultatoByAllenamento = (socket,_idallenamento) => {
 			as: 'test'
 		}]
 	}
-	console.log(query);
 	Risultato.findAll(query)
 		.then(risultati => socket.emit('getRisultatoByAllenamento', risultati))
 		.catch(logError)
