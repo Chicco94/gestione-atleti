@@ -62,7 +62,6 @@ export class AnagraficaRisultatoComponent implements OnInit {
 		this.risultato.idatleta = this.selected_atleti[0];
 		this.risultato.idtest = this.selected_tests[0].id;
 		this.risultato.idallenamento = this.idgara;
-		console.log(this.risultato);
 		if (this.risultato.id){
 			this.risultatoService.updateRisultato(this.risultato);
 		} else {

@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Risultato } from 'src/app/allenamenti/models/risultato.model';
 import { RisultatoService } from 'src/app/allenamenti/services/risultato.service';
-import { AnagraficaRisultatoComponent } from 'src/app/shared/components/anagrafica-risultato/anagrafica-risultato.component';
 import { Atleta } from 'src/app/shared/models/atleta.model';
 import { Test } from 'src/app/shared/models/test.model';
 import { Gara } from '../../models/gara.model';
@@ -26,8 +24,7 @@ export class CostruisciComponent implements OnInit {
 	constructor(
 		private risultatoService:RisultatoService,
 		private garaService:GaraService,
-		private route:ActivatedRoute,
-		public dialog: MatDialog) {
+		private route:ActivatedRoute) {
 		this.route.params.subscribe(params => {
 			//this.garaService.getGara(params['idgara']);
 			this.risultatoService.getRisultatoByAllenamento(params['idgara'])
@@ -47,7 +44,6 @@ export class CostruisciComponent implements OnInit {
 				risultato.gara = new Gara().deserialize(element.allenament0)
 				this.risultati = [...this.risultati , risultato]
 			});
-			console.log(this.risultati);
 		});
 	}
 

@@ -1,1 +1,19 @@
-<p>gareggia works!</p>
+<app-lista-risultati 
+	[sourceRisultatiList]="risultati" 
+	[(targetRisultatiList)]="risultati"
+	[searchable]="true" 
+	[disabled]="gara.completato"
+	[removable]="false"
+	[subheader]="false"
+	[showResult]="true"
+	[maxHeight]="90">
+</app-lista-risultati>
+
+<div fxLayout="row" *ngIf="!gara.completato" fxLayoutAlign="space-evenly center" style="height: 96px;">
+	<button backButton mat-icon-button class="circle-button-small" (click)="save()">
+		<mat-icon aria-hidden="false" aria-label="nuovoRisultato">save</mat-icon>
+	</button>
+	<button backButton mat-icon-button class="circle-button-small-green" (click)="confirm()">
+		<mat-icon aria-hidden="false" aria-label="conferma">check</mat-icon>
+	</button>
+</div>

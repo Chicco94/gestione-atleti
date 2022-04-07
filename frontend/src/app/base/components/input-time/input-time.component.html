@@ -1,5 +1,5 @@
-<div style="margin-left: 10px;margin-right: 10px; background-color: white;border-radius: 15px;">
-		<mat-form-field fxFlex style="margin-left: 10px;margin-right: 10px; width: 50px;">
+<div style="margin-left: 10px;margin-right: 10px; background-color: white;border-radius: 15px;width: 80%;">
+		<mat-form-field fxFlex style="margin-left: 10px;margin-right: 10px; min-width: 50px;">
 				<input 
 						matInput 
 						type="number" 
@@ -10,7 +10,7 @@
 						[disabled]="disabled"
 				>
 		</mat-form-field>
-		<button mat-icon-button class="circle-button-small" *ngIf="!disabled" (click)="timer()">
+		<button mat-icon-button class="circle-button-small" *ngIf="!disabled && chrono" (click)="timer()">
 				<mat-icon aria-hidden="false" aria-label="salva">alarm</mat-icon>
 		</button>
 </div>

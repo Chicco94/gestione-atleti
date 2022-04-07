@@ -16,7 +16,7 @@ const routes: Routes = [
 			{path: 'listaGare', component:ListaGareLandingComponent,
 				children: [
 					{path: '', component:ListaGareComponent},
-					{path: ':id', component:GareggiaComponent},
+					{path: ':idgara', component:GareggiaComponent},
 				]
 			},
 			{path: 'costruisci', component:GaraLandingComponent,

@@ -13,8 +13,11 @@ export class ListaRisultatiComponent implements OnInit {
 	
 	@Input() addable:boolean=false;
 	@Input() removable:boolean=false;
-	@Input() editable:boolean=false;
 	@Input() searchable:boolean=false;
+
+	@Input() disabled:boolean=false;
+	
+	@Input() subheader:boolean=true;
 	
 	@Input() maxHeight:number=100;
 
@@ -30,8 +33,6 @@ export class ListaRisultatiComponent implements OnInit {
 	constructor() {}
 
 	ngOnInit(): void {
-		console.log(this.sourceRisultatiList)
-		console.log(this.targetRisultatiList)
 	}
 
 	getChanges(targetRisultatoList:Risultato[]){

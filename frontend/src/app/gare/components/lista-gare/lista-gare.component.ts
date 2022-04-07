@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AllenamentoService } from 'src/app/allenamenti/services/allenamento.service';
 import { Gara } from '../../models/gara.model';
 import { GaraService } from '../../services/gara.service';
 

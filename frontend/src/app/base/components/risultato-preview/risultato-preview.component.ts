@@ -12,7 +12,8 @@ export class RisultatoPreviewComponent implements OnInit {
 	@Input() showResult:boolean=true;
 	@Input() disabled:boolean=false;
 	@Input() removable:boolean=false;
-	@Input() editable:boolean=false;
+
+	@Input() subheader:boolean=true;
 
 	@Input() risultato:Risultato=new Risultato()
 
@@ -24,5 +25,16 @@ export class RisultatoPreviewComponent implements OnInit {
 
 	remove(): void{
 		this.removeRisultato.emit(this.risultato.id);
+	}
+
+	getLenght(showField1:boolean,showField2:boolean,removable:boolean):number{
+		if (showField1 && showField2 && removable) return 25;
+		if (showField1 && showField2) return 30;
+		if (showField1 && removable) return 40;
+		if (showField2 && removable) return 40;
+		if (showField1) return 45;
+		if (showField2) return 45;
+		if (removable) return 80;
+		return 100;
 	}
 }
