@@ -21,7 +21,8 @@ export class ListaRisultatiComponent implements OnInit {
 	@Input() sourceRisultatiList:Risultato[] = [];
 	@Input() targetRisultatiList:Risultato[] = [];
 	
-	@Output() goToTest:EventEmitter<number> = new EventEmitter<number>();
+	@Output() goToRisultato:EventEmitter<number> = new EventEmitter<number>();
+	@Output() removeRisultato:EventEmitter<number> = new EventEmitter<number>();
 	@Output() targetRisultatiListChange:EventEmitter<Risultato[]> = new EventEmitter<Risultato[]>();
 
 	searchString:string="";
@@ -36,7 +37,10 @@ export class ListaRisultatiComponent implements OnInit {
 	getChanges(targetRisultatoList:Risultato[]){
 		this.targetRisultatiListChange.emit(targetRisultatoList);
 	}
+	remove(idrisultato:number){
+		this.removeRisultato.emit(idrisultato);
+	}
 	go(idrisultato:number){
-		this.goToTest.emit(idrisultato);
+		this.goToRisultato.emit(idrisultato);
 	}
 }

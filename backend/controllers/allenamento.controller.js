@@ -39,7 +39,7 @@ const getAllenamento = (socket,idallenamento) => {
 		return risultati_temp.map(risultato_temp => {
 			return Risultato.findAll({
 								where:{idallenamento:idallenamento,idatleta:risultato_temp.atleta.id},
-								include: [{ model: Test }]
+								include: [{ model: Test, as:'test' }]
 				}).then(risultati_atleta => {
 				for (let i=0; i < risultati_atleta.length; i++){
 					let risultato_atleta = risultati_atleta[i];

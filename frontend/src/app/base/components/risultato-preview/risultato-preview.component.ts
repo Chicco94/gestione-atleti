@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Risultato } from 'src/app/allenamenti/models/risultato.model';
 
 @Component({
@@ -15,9 +15,14 @@ export class RisultatoPreviewComponent implements OnInit {
 	@Input() editable:boolean=false;
 
 	@Input() risultato:Risultato=new Risultato()
+
+	@Output() removeRisultato:EventEmitter<number> = new EventEmitter<number>();
 	constructor() { }
 
 	ngOnInit():	void {
-		console.log(this.risultato);
+	}
+
+	remove(): void{
+		this.removeRisultato.emit(this.risultato.id);
 	}
 }

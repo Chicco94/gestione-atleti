@@ -1,8 +1,10 @@
 <app-lista-risultati 
 	[sourceRisultatiList]="risultati" 
 	[(targetRisultatiList)]="risultati" 
+	(removeRisultato)="removeRisultato($event)"
 	[searchable]="true" 
 	[editable]="false"
+	[removable]="true"
 	[showResult]="false"
 	[maxHeight]="90">
 </app-lista-risultati>

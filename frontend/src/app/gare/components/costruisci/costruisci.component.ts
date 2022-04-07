@@ -56,11 +56,9 @@ export class CostruisciComponent implements OnInit {
 		this.__OnGetRisultatoByAllenamento__.unsubscribe()
 	}
 
-	addRisultato(): void {
-		let temp = new Risultato();
-		temp.idallenamento = this.gara.id;
+	removeRisultato(idrisultato:number){
+		this.risultatoService.deleteRisultato(idrisultato);
 	}
 	confirm(){
-		this.risultatoService.addRisultato(this.risultati[0]);
 	}
 }

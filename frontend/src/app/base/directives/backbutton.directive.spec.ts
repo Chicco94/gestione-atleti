@@ -1,8 +1,8 @@
-import { BackbuttonDirective } from './backbutton.directive';
+import { BackButtonDirective } from './backbutton.directive';
 
-describe('BackbuttonDirective', () => {
+describe('BackButtonDirective', () => {
 	it('should create an instance', () => {
-		const directive = new BackbuttonDirective();
+		const directive = new BackButtonDirective();
 		expect(directive).toBeTruthy();
 	});
 });

@@ -1,6 +1,17 @@
 <div fxLayout="row" fxLayoutAlign="start stretch" style="height: 100%; margin-top: 2px; margin-bottom: 2px; background-color: rgba(255,255,255,0.5)">
-	<app-atleta-preview [atleta]="risultato.atleta" *ngIf="showAtleta"></app-atleta-preview>
-	<app-test-preview [test]="risultato.test" *ngIf="showTest"></app-test-preview>
-	<app-input-time *ngIf="risultato.test.tipo == 'Crono' && showResult" [(model)]="risultato.risultato" [disabled]="disabled" fxFlex="50"></app-input-time>
-	<app-input-number *ngIf="risultato.test.tipo == 'Distanza' && showResult" [(model)]="risultato.risultato" [disabled]="disabled" fxFlex="50"></app-input-number>
+	<div *ngIf="showAtleta" fxFlex="50">
+		<app-atleta-preview [atleta]="risultato.atleta"></app-atleta-preview>
+	</div>
+	<div *ngIf="showTest" fxFlex="50">
+		<app-test-preview [test]="risultato.test"></app-test-preview>
+	</div>
+	<div *ngIf="showResult" fxFlex="50">
+		<app-input-time *ngIf="risultato.test.tipo == 'Crono' && showResult" [(model)]="risultato.risultato" [disabled]="disabled" fxFlex="50"></app-input-time>
+		<app-input-number *ngIf="risultato.test.tipo == 'Distanza' && showResult" [(model)]="risultato.risultato" [disabled]="disabled" fxFlex="50"></app-input-number>
+	</div>
+	<div *ngIf="removable">
+		<button mat-flat-button  (click)="remove()">
+			<mat-icon aria-hidden="false" aria-label="removeFromAllenamento">delete</mat-icon>
+		</button>
+	</div>
 </div>

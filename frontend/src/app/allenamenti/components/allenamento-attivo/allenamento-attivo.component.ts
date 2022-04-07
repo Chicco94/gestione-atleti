@@ -36,7 +36,7 @@ export class AllenamentoAttivoComponent implements OnInit,OnDestroy {
 			if (data == null || data['id'] <= 0) return
 			this.allenamento = new Allenamento().deserialize(data);
 			this.dataSource = this.prepareDataSource(this.allenamento);
-			this.currentTest = this.dataSource[0]['result_'+this.currentTestIndex].Test;
+			this.currentTest = this.dataSource[0]['result_'+this.currentTestIndex].test;
 		});
 	}
 
@@ -58,7 +58,7 @@ export class AllenamentoAttivoComponent implements OnInit,OnDestroy {
 
 	nextTest(){
 		try{
-			this.currentTest = this.dataSource[0]['result_'+(this.currentTestIndex+1)].Test;
+			this.currentTest = this.dataSource[0]['result_'+(this.currentTestIndex+1)].test;
 			this.currentTestIndex += 1;
 		} catch (Error) { 
 			alert("hai finito i test!");
@@ -67,7 +67,7 @@ export class AllenamentoAttivoComponent implements OnInit,OnDestroy {
 
 	prevTest(){
 		try{
-			this.currentTest = this.dataSource[0]['result_'+(this.currentTestIndex-1)].Test;
+			this.currentTest = this.dataSource[0]['result_'+(this.currentTestIndex-1)].test;
 			this.currentTestIndex -= 1;
 		} catch (Error) {	
 			alert("questo è il primo test!"); 
@@ -75,7 +75,7 @@ export class AllenamentoAttivoComponent implements OnInit,OnDestroy {
 	}
 
 	getTestFromRisultato(risultato:any){
-		return risultato['result_'+(this.currentTestIndex)].Test
+		return risultato['result_'+(this.currentTestIndex)].test
 	}
 
 	/**
