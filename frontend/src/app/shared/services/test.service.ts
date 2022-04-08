@@ -24,3 +24,6 @@ export class TestService {
 		this.router.navigate(['/gestione/gestioneTest', id]);
 	}
 }
+
+export class MockTestService {
+}

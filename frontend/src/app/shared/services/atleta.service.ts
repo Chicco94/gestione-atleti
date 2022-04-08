@@ -24,3 +24,7 @@ export class AtletaService {
 		this.router.navigate(['/gestione/gestioneAtleti', id]);
 	}
 }
+
+export class MockAtletaService {
+	public fetchAtleti(){}
+}

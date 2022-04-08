@@ -11,18 +11,18 @@ export class AuthenticationService {
 	public currentUser: Observable<any>;
 
 	constructor(private socket: Socket,private router:Router) {
-			this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentUser') || 'false'));
-			this.currentUser = this.currentUserSubject.asObservable();
+		this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentUser') || 'false'));
+		this.currentUser = this.currentUserSubject.asObservable();
 	}
 
 	public get currentUserValue() {
-			return this.currentUserSubject.value;
+		return this.currentUserSubject.value;
 	}
 
 	login(username:string, password:string) {
-			this.socket.emit('login',{username,password});
-			this.onLoginSuccesful();
-			this.onLoginUnsuccesful();
+		this.socket.emit('login',{username,password});
+		this.onLoginSuccesful();
+		this.onLoginUnsuccesful();
 	}
 	onLoginSuccesful(){
 		return this.socket.fromEvent('loginSuccesful').subscribe((data)=>{
@@ -41,8 +41,13 @@ export class AuthenticationService {
 	}
 
 	logout() {
-			// remove user from local storage and set current user to null
-			localStorage.removeItem('currentUser');
-			this.currentUserSubject.next(null);
+		// remove user from local storage and set current user to null
+		localStorage.removeItem('currentUser');
+		this.currentUserSubject.next(null);
 	}
+}
+
+export class MockAuthenticationService {
+	isLoggedIn = true;
+	user = { name: 'Test User'};
 }

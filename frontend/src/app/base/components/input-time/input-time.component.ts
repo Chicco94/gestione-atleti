@@ -19,6 +19,7 @@ export class InputTimeComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit(): void {
+		
 	}
 
 	onModelChange(value: number) {
@@ -29,8 +30,8 @@ export class InputTimeComponent implements OnInit {
 		if (this.timer_started){
 			this.timer_started = false;
 			// trasformo il valore in secondi con 2 cifre decimali math.round(num*100)/100
-			let time = Math.round((new Date().valueOf() - this.timer_started_at.valueOf())/10)/100;
-			this.onModelChange(time);
+			this.model = Math.round((new Date().valueOf() - this.timer_started_at.valueOf())/10)/100;
+			this.onModelChange(this.model);
 		} else {
 			this.timer_started = true;
 			this.timer_started_at = new Date();

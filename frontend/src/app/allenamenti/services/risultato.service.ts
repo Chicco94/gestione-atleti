@@ -22,3 +22,6 @@ export class RisultatoService {
 	OnGetRisultato() {return this.socket.fromEvent('getRisultato');}
 	OnGetRisultatoByAllenamento() {return this.socket.fromEvent('getRisultatoByAllenamento');}
 }
+
+export class MockRisultatoService {
+}

@@ -20,3 +20,7 @@ export class AllenamentoService {
 	OnFetchAllenamenti() {return this.socket.fromEvent('fetchAllenamenti');}
 	OnGetAllenamento() {return this.socket.fromEvent('getAllenamento');}
 }
+
+export class MockAllenamentoService{
+	
+}

@@ -20,6 +20,7 @@ export class AllenamentiComponent implements OnInit {
 		) { }
 
 	ngOnInit(): void {
+	
 	}
 
 	newAllenamento(): void {

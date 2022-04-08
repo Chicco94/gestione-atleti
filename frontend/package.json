@@ -8,6 +8,7 @@
     "ng": "ng",
     "start": "ng serve --host 192.168.1.54 --port 4200",
     "build": "ng build",
+    "android": "ng build;cordova build android",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "compodoc": "npx compodoc -p tsconfig.doc.json"
