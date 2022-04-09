@@ -20,3 +20,5 @@ export class TestAllenamentoService {
 	}
 	OnGetTestAllenamentoByAllenamento() {return this.socket.fromEvent('getTestAllenamentoByAllenamento');}
 }
+
+export class MockTestAllenamentoService {}

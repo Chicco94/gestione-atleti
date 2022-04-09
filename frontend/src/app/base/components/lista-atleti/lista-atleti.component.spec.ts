@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SearchPipe } from '../../pipes/search.pipe';
 
 import { ListaAtletiComponent } from './lista-atleti.component';
 
@@ -8,15 +9,15 @@ describe('ListaAtletiComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [ ListaAtletiComponent ]
+			declarations: [ ListaAtletiComponent, SearchPipe ],
+			providers:[
+				ListaAtletiComponent,
+			]
 		})
-		.compileComponents();
-	});
-
-	beforeEach(() => {
-		fixture = TestBed.createComponent(ListaAtletiComponent);
-		component = fixture.componentInstance;
-		fixture.detectChanges();
+		.compileComponents().then(()=>{
+			fixture = TestBed.createComponent(ListaAtletiComponent);
+			component = fixture.componentInstance;
+		});
 	});
 
 	it('should create', () => {

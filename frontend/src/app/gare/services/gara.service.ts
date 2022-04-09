@@ -21,3 +21,5 @@ export class GaraService {
 	OnFetchGare() {return this.allenamentoService.OnFetchAllenamenti();}
 	OnGetGara() {return this.allenamentoService.OnGetAllenamento();}
 }
+
+export class MockGaraService {}

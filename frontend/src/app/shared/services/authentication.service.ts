@@ -48,6 +48,9 @@ export class AuthenticationService {
 }
 
 export class MockAuthenticationService {
+	private currentUserSubject: BehaviorSubject<any> = new BehaviorSubject<any>({'username':'test','password':'test'});
+	public currentUser: Observable<any> = this.currentUserSubject.asObservable();
+
 	isLoggedIn = true;
 	user = { name: 'Test User'};
 }

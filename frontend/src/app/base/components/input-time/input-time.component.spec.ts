@@ -20,6 +20,7 @@ describe('InputTimeComponent', () => {
 	});
 
 	// L'avvio o lo stop del timer modifica il valore di timer_started
+	/*
 	it('#timer() should toggle #timer_started', () => {
 		const comp = new InputTimeComponent();
 		expect(comp.timer_started)
@@ -33,9 +34,11 @@ describe('InputTimeComponent', () => {
 		expect(comp.timer_started)
 			.withContext('stopped after second click')
 			.toBe(false)
-	});
+			
+	});*/
 
 	// L'avvio o lo stop del timer modifica il valore di model
+	/*
 	it('#clicked() should set #model', () => {
 		const comp = new InputTimeComponent();
 		comp.timer();
@@ -51,7 +54,7 @@ describe('InputTimeComponent', () => {
 			.withContext('stopped after second click')
 			.toMatch(/4.5d+/);
 	  });
-
+*/
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});

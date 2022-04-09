@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SearchPipe } from 'src/app/base/pipes/search.pipe';
+import { AllenamentoService, MockAllenamentoService } from '../../services/allenamento.service';
 
 import { ListaAllenamentiComponent } from './lista-allenamenti.component';
 
@@ -8,15 +10,16 @@ describe('ListaAllenamentiComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [ ListaAllenamentiComponent ]
+			declarations: [ ListaAllenamentiComponent, SearchPipe ],
+			providers:[
+				ListaAllenamentiComponent,
+				{provide: AllenamentoService, useClass: MockAllenamentoService },
+			]
 		})
-		.compileComponents();
-	});
-
-	beforeEach(() => {
-		fixture = TestBed.createComponent(ListaAllenamentiComponent);
-		component = fixture.componentInstance;
-		fixture.detectChanges();
+		.compileComponents().then(()=>{
+			fixture = TestBed.createComponent(ListaAllenamentiComponent);
+			component = fixture.componentInstance;
+		});
 	});
 
 	it('should create', () => {

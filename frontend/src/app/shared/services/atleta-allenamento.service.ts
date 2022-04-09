@@ -20,3 +20,5 @@ export class AtletaAllenamentoService {
 	OnGetAtletaAllenamentoByAllenamento() {return this.socket.fromEvent('getAtletaAllenamentoByAllenamento');}
 
 }
+
+export class MockAtletaAllenamentoService {}
