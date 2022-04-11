@@ -675,26 +675,28 @@ import { Socket } from &#x27;ngx-socket-io&#x27;;
 import { Risultato } from &#x27;../models/risultato.model&#x27;;
 
 @Injectable({
-  providedIn: &#x27;root&#x27;
+	providedIn: &#x27;root&#x27;
 })
 export class RisultatoService {
 
-  constructor(private socket: Socket) {
-    Object.setPrototypeOf(this, RisultatoService.prototype);
-  }
-  
-  fetchRisultati(){this.socket.emit(&#x27;fetchRisultati&#x27;);}
+	constructor(private socket: Socket) {
+		Object.setPrototypeOf(this, RisultatoService.prototype);
+	}
+	
+	fetchRisultati(){this.socket.emit(&#x27;fetchRisultati&#x27;);}
 	addRisultato(risultato:Risultato){this.socket.emit(&#x27;addRisultato&#x27;,risultato);}
 	updateRisultato(risultato:Risultato){this.socket.emit(&#x27;updateRisultato&#x27;,risultato);}
 	deleteRisultato(id:number){this.socket.emit(&#x27;deleteRisultato&#x27;,id);}
 	getRisultato(id:number){this.socket.emit(&#x27;getRisultato&#x27;,id);}
-	getRisultatoByAllenamento(idallenamento:number){this.socket.emit(&#x27;getRisultato&#x27;,idallenamento);}
+	getRisultatoByAllenamento(idallenamento:number){this.socket.emit(&#x27;getRisultatoByAllenamento&#x27;,idallenamento);}
 
 	OnFetchRisultati() {return this.socket.fromEvent(&#x27;fetchRisultati&#x27;);}
 	OnGetRisultato() {return this.socket.fromEvent(&#x27;getRisultato&#x27;);}
 	OnGetRisultatoByAllenamento() {return this.socket.fromEvent(&#x27;getRisultatoByAllenamento&#x27;);}
 }
-</code></pre>
+
+export class MockRisultatoService {
+}</code></pre>
     </div>
 
 </div>

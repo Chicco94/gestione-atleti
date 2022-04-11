@@ -58,7 +58,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/base/services/authentication.service.ts</code>
+            <code>src/app/shared/services/authentication.service.ts</code>
         </p>
 
 
@@ -146,7 +146,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/base/services/authentication.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/services/authentication.service.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -222,7 +222,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/base/services/authentication.service.ts:22</a></div>
+                            class="link-to-prism">src/app/shared/services/authentication.service.ts:22</a></div>
                 </td>
             </tr>
 
@@ -303,7 +303,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">src/app/base/services/authentication.service.ts:43</a></div>
+                            class="link-to-prism">src/app/shared/services/authentication.service.ts:43</a></div>
                 </td>
             </tr>
 
@@ -340,7 +340,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/base/services/authentication.service.ts:27</a></div>
+                            class="link-to-prism">src/app/shared/services/authentication.service.ts:27</a></div>
                 </td>
             </tr>
 
@@ -377,7 +377,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/app/base/services/authentication.service.ts:36</a></div>
+                            class="link-to-prism">src/app/shared/services/authentication.service.ts:36</a></div>
                 </td>
             </tr>
 
@@ -419,7 +419,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/base/services/authentication.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/services/authentication.service.ts:11</a></div>
                         </td>
                     </tr>
 
@@ -446,7 +446,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/base/services/authentication.service.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/shared/services/authentication.service.ts:10</a></div>
                         </td>
                     </tr>
 
@@ -475,7 +475,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/base/services/authentication.service.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/shared/services/authentication.service.ts:18</a></div>
                                 </td>
                             </tr>
 
@@ -492,47 +492,55 @@ import { Socket } from &#x27;ngx-socket-io&#x27;;
 import { BehaviorSubject, Observable } from &#x27;rxjs&#x27;;
 
 @Injectable({
-  providedIn: &#x27;root&#x27;
+	providedIn: &#x27;root&#x27;
 })
 export class AuthenticationService {
-  private currentUserSubject: BehaviorSubject&lt;any&gt;;
-  public currentUser: Observable&lt;any&gt;;
+	private currentUserSubject: BehaviorSubject&lt;any&gt;;
+	public currentUser: Observable&lt;any&gt;;
 
-  constructor(private socket: Socket,private router:Router) {
-      this.currentUserSubject &#x3D; new BehaviorSubject&lt;any&gt;(JSON.parse(localStorage.getItem(&#x27;currentUser&#x27;) || &#x27;false&#x27;));
-      this.currentUser &#x3D; this.currentUserSubject.asObservable();
-  }
+	constructor(private socket: Socket,private router:Router) {
+		this.currentUserSubject &#x3D; new BehaviorSubject&lt;any&gt;(JSON.parse(localStorage.getItem(&#x27;currentUser&#x27;) || &#x27;false&#x27;));
+		this.currentUser &#x3D; this.currentUserSubject.asObservable();
+	}
 
-  public get currentUserValue() {
-      return this.currentUserSubject.value;
-  }
+	public get currentUserValue() {
+		return this.currentUserSubject.value;
+	}
 
-  login(username:string, password:string) {
-      this.socket.emit(&#x27;login&#x27;,{username,password});
-      this.onLoginSuccesful();
-      this.onLoginUnsuccesful();
-  }
-  onLoginSuccesful(){
-    return this.socket.fromEvent(&#x27;loginSuccesful&#x27;).subscribe((data)&#x3D;&gt;{
-      // store user details and jwt token in local storage to keep user logged in between page refreshes
-      localStorage.setItem(&#x27;currentUser&#x27;, JSON.stringify(data));
-      this.currentUserSubject.next(data);
-      this.router.navigate([&#x27;/&#x27;]);
-      return data;
-    })
-  }
-  onLoginUnsuccesful(){
-    return this.socket.fromEvent(&#x27;loginUnsuccesful&#x27;).subscribe((data)&#x3D;&gt;{
-      // Need to alert the user of unsuccesful login
-      return data;
-    })
-  }
+	login(username:string, password:string) {
+		this.socket.emit(&#x27;login&#x27;,{username,password});
+		this.onLoginSuccesful();
+		this.onLoginUnsuccesful();
+	}
+	onLoginSuccesful(){
+		return this.socket.fromEvent(&#x27;loginSuccesful&#x27;).subscribe((data)&#x3D;&gt;{
+			// store user details and jwt token in local storage to keep user logged in between page refreshes
+			localStorage.setItem(&#x27;currentUser&#x27;, JSON.stringify(data));
+			this.currentUserSubject.next(data);
+			this.router.navigate([&#x27;/&#x27;]);
+			return data;
+		})
+	}
+	onLoginUnsuccesful(){
+		return this.socket.fromEvent(&#x27;loginUnsuccesful&#x27;).subscribe((data)&#x3D;&gt;{
+			// Need to alert the user of unsuccesful login
+			return data;
+		})
+	}
 
-  logout() {
-      // remove user from local storage and set current user to null
-      localStorage.removeItem(&#x27;currentUser&#x27;);
-      this.currentUserSubject.next(null);
-  }
+	logout() {
+		// remove user from local storage and set current user to null
+		localStorage.removeItem(&#x27;currentUser&#x27;);
+		this.currentUserSubject.next(null);
+	}
+}
+
+export class MockAuthenticationService {
+	private currentUserSubject: BehaviorSubject&lt;any&gt; &#x3D; new BehaviorSubject&lt;any&gt;({&#x27;username&#x27;:&#x27;test&#x27;,&#x27;password&#x27;:&#x27;test&#x27;});
+	public currentUser: Observable&lt;any&gt; &#x3D; this.currentUserSubject.asObservable();
+
+	isLoggedIn &#x3D; true;
+	user &#x3D; { name: &#x27;Test User&#x27;};
 }
 </code></pre>
     </div>

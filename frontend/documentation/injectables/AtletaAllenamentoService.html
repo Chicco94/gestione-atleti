@@ -351,15 +351,15 @@ import { Socket } from &#x27;ngx-socket-io&#x27;;
 import { Atleta } from &#x27;../models/atleta.model&#x27;;
 
 @Injectable({
-  providedIn: &#x27;root&#x27;
+	providedIn: &#x27;root&#x27;
 })
 export class AtletaAllenamentoService {
 
-  constructor(private socket: Socket) {
+	constructor(private socket: Socket) {
 		Object.setPrototypeOf(this, AtletaAllenamentoService.prototype);
-  }
+	}
 	
-  getAtletaAllenamentoByAllenamento(idallenamento:number){
+	getAtletaAllenamentoByAllenamento(idallenamento:number){
 		this.socket.emit(&#x27;getAtletaAllenamentoByAllenamento&#x27;,idallenamento);
 	}
 	setAtletaToAllenamento(idallenamento:number, lista_atleti:number[]){
@@ -368,6 +368,8 @@ export class AtletaAllenamentoService {
 	OnGetAtletaAllenamentoByAllenamento() {return this.socket.fromEvent(&#x27;getAtletaAllenamentoByAllenamento&#x27;);}
 
 }
+
+export class MockAtletaAllenamentoService {}
 </code></pre>
     </div>
 

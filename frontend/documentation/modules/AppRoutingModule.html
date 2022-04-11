@@ -55,7 +55,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/app-routing.module.ts</code>
+            <code>src/app/shared/app-routing.module.ts</code>
         </p>
 
 
@@ -74,92 +74,21 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
-import { AllenamentiComponent } from &#x27;./allenamenti/allenamenti.component&#x27;;
-import { GestioneComponent } from &#x27;./gestione/gestione.component&#x27;;
-import { HomeComponent } from &#x27;./base/components/home/home.component&#x27;;
-import { AllenamentoComponent } from &#x27;./allenamenti/components/allenamento/allenamento.component&#x27;;
-import { ListaAllenamentiComponent } from &#x27;./allenamenti/components/lista-allenamenti/lista-allenamenti.component&#x27;;
-import { ListaAtletiComponent } from &#x27;./shared/components/lista-atleti/lista-atleti.component&#x27;;
-import { ListaTestComponent } from &#x27;./shared/components/lista-test/lista-test.component&#x27;;
-import { AllenamentoAttivoComponent } from &#x27;./allenamenti/components/allenamento-attivo/allenamento-attivo.component&#x27;;
-import { AnagraficaAtletaComponent } from &#x27;./shared/components/anagrafica-atleta/anagrafica-atleta.component&#x27;;
-import { AnagraficaTestComponent } from &#x27;./shared/components/anagrafica-test/anagrafica-test.component&#x27;;
-import { AllenamentiLandingComponent } from &#x27;./allenamenti/components/allenamenti-landing/allenamenti-landing.component&#x27;;
-import { AllenamentoLandingComponent } from &#x27;./allenamenti/components/allenamento-landing/allenamento-landing.component&#x27;;
-import { ListaAllenamentiLandingComponent } from &#x27;./allenamenti/components/lista-allenamenti-landing/lista-allenamenti-landing.component&#x27;;
-import { GestioneLandingComponent } from &#x27;./gestione/components/gestione-landing/gestione-landing.component&#x27;;
-import { GestioneTestLandingComponent } from &#x27;./gestione/components/gestione-test-landing/gestione-test-landing.component&#x27;;
-import { GestioneAtletiLandingComponent } from &#x27;./gestione/components/gestione-atleti-landing/gestione-atleti-landing.component&#x27;;
-import { LoginComponent } from &#x27;./base/components/login/login.component&#x27;;
-import { LoginGuard } from &#x27;./base/guards/login.guard&#x27;;
-import { AllenamentoSelectTestComponent } from &#x27;./allenamenti/components/allenamento-select-test/allenamento-select-test.component&#x27;;
-import { GestioneTestComponent } from &#x27;./gestione/components/gestione-test/gestione-test.component&#x27;;
-import { GestioneAtletiComponent } from &#x27;./gestione/components/gestione-atleti/gestione-atleti.component&#x27;;
-import { AllenamentoSelectAtletaComponent } from &#x27;./allenamenti/components/allenamento-select-atleta/allenamento-select-atleta.component&#x27;;
+import { HomeComponent } from &#x27;./components/home/home.component&#x27;;
+import { LoginComponent } from &#x27;./components/login/login.component&#x27;;
+import { LoginGuard } from &#x27;./guards/login.guard&#x27;;
 
-const routes: Routes &#x3D; [
+const appRoutes: Routes &#x3D; [
 	{path: &#x27;home&#x27;, component:HomeComponent, canActivate: [LoginGuard]},
-    { path: &#x27;login&#x27;, component: LoginComponent },
-
-
-	{	// ALLENA
-		path: &#x27;allena&#x27;, 
-		component:AllenamentiLandingComponent,
-		children: [
-			{path: &#x27;&#x27;, component:AllenamentiComponent},
-			{
-				path: &#x27;listaAllenamenti&#x27;, 
-				component:ListaAllenamentiLandingComponent,
-				children: [
-					{path: &#x27;&#x27;, component:ListaAllenamentiComponent},
-					{path: &#x27;:id&#x27;, component:AllenamentoAttivoComponent},
-				]
-			},
-			{
-				path: &#x27;allenamento&#x27;, 
-				component:AllenamentoLandingComponent,
-				children: [
-					{path: &#x27;:idallenamento&#x27;, component:AllenamentoComponent},
-					{path: &#x27;listaAtleti/:idallenamento&#x27;, component:AllenamentoSelectAtletaComponent},
-					{path: &#x27;listaTest/:idallenamento&#x27;, component:AllenamentoSelectTestComponent},
-				]
-			},
-		]
-	},
-
-	{	// GESTIONE
-		path: &#x27;gestione&#x27;, 
-		component:GestioneLandingComponent,
-		children: [
-			{path: &#x27;&#x27;, component:GestioneComponent},
-			{
-				path: &#x27;gestioneAtleti&#x27;, 
-				component:GestioneAtletiLandingComponent,
-				children: [
-					{path: &#x27;&#x27;, component:GestioneAtletiComponent},
-					{path: &#x27;:id&#x27;, component:AnagraficaAtletaComponent},
-				]
-			},
-			{
-				path: &#x27;gestioneTest&#x27;, 
-				component:GestioneTestLandingComponent,
-				children: [
-					{path: &#x27;&#x27;, component:GestioneTestComponent},
-					{path: &#x27;:id&#x27;, component:AnagraficaTestComponent},
-				]
-			},
-
-		]
-	},
-
+	{ path: &#x27;login&#x27;, component: LoginComponent },
 	// WILDCARDS
 	{path: &#x27;&#x27;, redirectTo:&#x27;/home&#x27;, pathMatch: &#x27;full&#x27;},
 	{path: &#x27;**&#x27;, redirectTo:&#x27;/home&#x27; }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(appRoutes)],
+	exports: [RouterModule]
 })
 export class AppRoutingModule { }
 </code></pre>

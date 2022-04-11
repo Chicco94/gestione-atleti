@@ -784,84 +784,95 @@ import { TestAllenamentoService } from &#x27;src/app/shared/services/test-allena
 import { TestService } from &#x27;src/app/shared/services/test.service&#x27;;
 
 @Component({
-  selector: &#x27;app-allenamento-select-test&#x27;,
-  templateUrl: &#x27;./allenamento-select-test.component.html&#x27;,
-  styleUrls: [&#x27;./allenamento-select-test.component.scss&#x27;]
+	selector: &#x27;app-allenamento-select-test&#x27;,
+	templateUrl: &#x27;./allenamento-select-test.component.html&#x27;,
+	styleUrls: [&#x27;./allenamento-select-test.component.scss&#x27;]
 })
 export class AllenamentoSelectTestComponent implements OnInit {
-  @Input() selectable:boolean&#x3D;false;
-  @Input() addable:boolean&#x3D;false;
-  @Input() editable:boolean&#x3D;false;
-  @Input() idallenamento:number&#x3D;0;
-  possible_tests:Test[] &#x3D; [];
-  selected_tests:Test[] &#x3D; [];
-  searchString:string&#x3D;&quot;&quot;;
+	@Input() selectable:boolean&#x3D;false;
+	@Input() addable:boolean&#x3D;false;
+	@Input() editable:boolean&#x3D;false;
+	@Input() idallenamento:number&#x3D;0;
+	possible_tests:Test[] &#x3D; [];
+	selected_tests:Test[] &#x3D; [];
+	searchString:string&#x3D;&quot;&quot;;
 
-  __OnFetchTests__:Subscription &#x3D; new Subscription();
-  __OnGetTest__:Subscription &#x3D; new Subscription();
-  __OnGetTestAllenamentoByAllenamento__:Subscription &#x3D; new Subscription();
+	__OnFetchTests__:Subscription &#x3D; new Subscription();
+	__OnGetTest__:Subscription &#x3D; new Subscription();
+	__OnGetTestAllenamentoByAllenamento__:Subscription &#x3D; new Subscription();
 
-  constructor(
-    private route:ActivatedRoute,
-    private testAllenamentoService:TestAllenamentoService,
-    private testService:TestService
-  ) {
-    this.route.params.subscribe(params &#x3D;&gt; {
-      this.selectable &#x3D; params[&#x27;selectable&#x27;] &#x3D;&#x3D;&#x3D; &#x27;true&#x27;;
-      this.editable &#x3D; params[&#x27;editable&#x27;] &#x3D;&#x3D;&#x3D; &#x27;true&#x27;;
-      this.addable &#x3D; !this.editable;
-      this.idallenamento &#x3D; params[&#x27;idallenamento&#x27;];
+	constructor(
+		private route:ActivatedRoute,
+		private testAllenamentoService:TestAllenamentoService,
+		private testService:TestService
+	) {
+		this.route.params.subscribe(params &#x3D;&gt; {
+			this.selectable &#x3D; params[&#x27;selectable&#x27;] &#x3D;&#x3D;&#x3D; &#x27;true&#x27;;
+			this.editable &#x3D; params[&#x27;editable&#x27;] &#x3D;&#x3D;&#x3D; &#x27;true&#x27;;
+			this.addable &#x3D; !this.editable;
+			this.idallenamento &#x3D; params[&#x27;idallenamento&#x27;];
 
-      this.testAllenamentoService.getTestAllenamentoByAllenamento(this.idallenamento);    
-      this.testService.fetchTests();
-    });
-  }
+			this.testAllenamentoService.getTestAllenamentoByAllenamento(this.idallenamento);		
+			this.testService.fetchTests();
+		});
+	}
 
-  ngOnInit(): void {
-    this.__OnFetchTests__ &#x3D; this.testService.OnFetchTests().subscribe((data:any) &#x3D;&gt; {
-      this.possible_tests &#x3D; data.map((single_data:any) &#x3D;&gt; new Test().deserialize(single_data));
-    });
-    this.__OnGetTest__ &#x3D; this.testService.OnGetTest().subscribe((data:any) &#x3D;&gt; {
-      this.selected_tests &#x3D;[...this.selected_tests,new Test().deserialize(data)];
-    });
-    this.__OnGetTestAllenamentoByAllenamento__ &#x3D; this.testAllenamentoService.OnGetTestAllenamentoByAllenamento().subscribe((data:any) &#x3D;&gt; {
-      data.forEach( (element:any) &#x3D;&gt; {
-        this.testService.getTest(element.idtest);
-      });
-    })
-  }
+	ngOnInit(): void {
+		this.__OnFetchTests__ &#x3D; this.testService.OnFetchTests().subscribe((data:any) &#x3D;&gt; {
+			this.possible_tests &#x3D; data.map((single_data:any) &#x3D;&gt; new Test().deserialize(single_data));
+		});
+		this.__OnGetTest__ &#x3D; this.testService.OnGetTest().subscribe((data:any) &#x3D;&gt; {
+			this.selected_tests &#x3D;[...this.selected_tests,new Test().deserialize(data)];
+		});
+		this.__OnGetTestAllenamentoByAllenamento__ &#x3D; this.testAllenamentoService.OnGetTestAllenamentoByAllenamento().subscribe((data:any) &#x3D;&gt; {
+			data.forEach( (element:any) &#x3D;&gt; {
+				this.testService.getTest(element.idtest);
+			});
+		})
+	}
 
-  getChanges(updatedSelectedTests:Test[]){
-    this.selected_tests &#x3D; [...updatedSelectedTests];
-  }
+	getChanges(updatedSelectedTests:Test[]){
+		this.selected_tests &#x3D; [...updatedSelectedTests];
+	}
 
-  ngOnDestroy():void{
-    this.__OnFetchTests__.unsubscribe();
-    this.__OnGetTest__.unsubscribe();
-    this.__OnGetTestAllenamentoByAllenamento__.unsubscribe();
-  }
+	ngOnDestroy():void{
+		this.__OnFetchTests__.unsubscribe();
+		this.__OnGetTest__.unsubscribe();
+		this.__OnGetTestAllenamentoByAllenamento__.unsubscribe();
+	}
 
-  confirm(){
-    this.testAllenamentoService.setTestToAllenamento(this.idallenamento, this.selected_tests);
-  }
+	confirm(){
+		this.testAllenamentoService.setTestToAllenamento(this.idallenamento, this.selected_tests);
+	}
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;app-lista-test [sourceTestList]&#x3D;&quot;possible_tests&quot; [(targetTestList)]&#x3D;&quot;selected_tests&quot; (targetTestListChange)&#x3D;&quot;getChanges($event)&quot; [searchable]&#x3D;&quot;true&quot; [addable]&#x3D;&quot;true&quot;&gt;&lt;/app-lista-test&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;app-lista-test 
+	[sourceTestList]&#x3D;&quot;possible_tests&quot; 
+	[(targetTestList)]&#x3D;&quot;selected_tests&quot; 
+	(targetTestListChange)&#x3D;&quot;getChanges($event)&quot; 
+	[searchable]&#x3D;&quot;true&quot; 
+	[addable]&#x3D;&quot;true&quot;&gt;
+&lt;/app-lista-test&gt;
 
 &lt;mat-divider style&#x3D;&quot;margin: 2px&quot;&gt;&lt;/mat-divider&gt;
 
-&lt;app-lista-test [sourceTestList]&#x3D;&quot;selected_tests&quot; [targetTestList]&#x3D;&quot;selected_tests&quot; (targetTestListChange)&#x3D;&quot;getChanges($event)&quot; [removable]&#x3D;&quot;true&quot;&gt;&lt;/app-lista-test&gt;
+&lt;app-lista-test 
+	[sourceTestList]&#x3D;&quot;selected_tests&quot; 
+	[targetTestList]&#x3D;&quot;selected_tests&quot; 
+	(targetTestListChange)&#x3D;&quot;getChanges($event)&quot; 
+	[removable]&#x3D;&quot;true&quot;&gt;
+&lt;/app-lista-test&gt;
 
 &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;end center&quot;&gt;
-    &lt;button mat-icon-button class&#x3D;&quot;circle-button-green&quot; *ngIf&#x3D;&quot;editable&quot; style&#x3D;&quot;position: absolute;bottom: -10px;left:-10px&quot; [routerLink]&#x3D;&quot;[&#x27;./&#x27;, 0]&quot; routerLinkActive&#x3D;&quot;activebutton&quot;&gt;
-        &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;listaTest&quot;&gt;add&lt;/mat-icon&gt;
-    &lt;/button&gt;
-    &lt;button backButton mat-icon-button class&#x3D;&quot;circle-button-green&quot; style&#x3D;&quot;position: absolute;bottom: -10px;right:-10px&quot; (click)&#x3D;&quot;confirm()&quot;&gt;
-        &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;listaTest&quot;&gt;check&lt;/mat-icon&gt;
-    &lt;/button&gt;
+		&lt;button mat-icon-button class&#x3D;&quot;circle-button-green&quot; *ngIf&#x3D;&quot;editable&quot; style&#x3D;&quot;position: absolute;bottom: -10px;left:-10px&quot; [routerLink]&#x3D;&quot;[&#x27;./&#x27;, 0]&quot; routerLinkActive&#x3D;&quot;activebutton&quot;&gt;
+				&lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;listaTest&quot;&gt;add&lt;/mat-icon&gt;
+		&lt;/button&gt;
+		&lt;button backButton mat-icon-button class&#x3D;&quot;circle-button-green&quot; style&#x3D;&quot;position: absolute;bottom: -10px;right:-10px&quot; (click)&#x3D;&quot;confirm()&quot;&gt;
+				&lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;listaTest&quot;&gt;check&lt;/mat-icon&gt;
+		&lt;/button&gt;
 &lt;/div&gt;</code></pre>
     </div>
 
@@ -897,8 +908,8 @@ export class AllenamentoSelectTestComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-lista-test [sourceTestList]="possible_tests" [(targetTestList)]="selected_tests" (targetTestListChange)="getChanges($event)" [searchable]="true" [addable]="true"></app-lista-test><mat-divider style="margin: 2px"></mat-divider><app-lista-test [sourceTestList]="selected_tests" [targetTestList]="selected_tests" (targetTestListChange)="getChanges($event)" [removable]="true"></app-lista-test><div fxLayout="row" fxLayoutAlign="end center">    <button mat-icon-button class="circle-button-green" *ngIf="editable" style="position: absolute;bottom: -10px;left:-10px" [routerLink]="[\'./\', 0]" routerLinkActive="activebutton">        <mat-icon aria-hidden="false" aria-label="listaTest">add</mat-icon>    </button>    <button backButton mat-icon-button class="circle-button-green" style="position: absolute;bottom: -10px;right:-10px" (click)="confirm()">        <mat-icon aria-hidden="false" aria-label="listaTest">check</mat-icon>    </button></div></div>'
-    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentiLandingComponent', 'selector': 'app-allenamenti-landing'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoLandingComponent', 'selector': 'app-allenamento-landing'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AllenamentoSelectAtletaComponent', 'selector': 'app-allenamento-select-atleta'},{'name': 'AllenamentoSelectTestComponent', 'selector': 'app-allenamento-select-test'},{'name': 'AnagraficaAtletaComponent', 'selector': 'app-anagrafica-atleta'},{'name': 'AnagraficaTestComponent', 'selector': 'app-anagrafica-test'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'GestioneAtletiComponent', 'selector': 'app-gestione-atleti'},{'name': 'GestioneAtletiLandingComponent', 'selector': 'app-gestione-atleti-landing'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'GestioneLandingComponent', 'selector': 'app-gestione-landing'},{'name': 'GestioneTestComponent', 'selector': 'app-gestione-test'},{'name': 'GestioneTestLandingComponent', 'selector': 'app-gestione-test-landing'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputSexComponent', 'selector': 'app-input-sex'},{'name': 'InputTestTypeComponent', 'selector': 'app-input-test-type'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAllenamentiLandingComponent', 'selector': 'app-lista-allenamenti-landing'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
+        var COMPONENT_TEMPLATE = '<div><app-lista-test 	[sourceTestList]="possible_tests" 	[(targetTestList)]="selected_tests" 	(targetTestListChange)="getChanges($event)" 	[searchable]="true" 	[addable]="true"></app-lista-test><mat-divider style="margin: 2px"></mat-divider><app-lista-test 	[sourceTestList]="selected_tests" 	[targetTestList]="selected_tests" 	(targetTestListChange)="getChanges($event)" 	[removable]="true"></app-lista-test><div fxLayout="row" fxLayoutAlign="end center">		<button mat-icon-button class="circle-button-green" *ngIf="editable" style="position: absolute;bottom: -10px;left:-10px" [routerLink]="[\'./\', 0]" routerLinkActive="activebutton">				<mat-icon aria-hidden="false" aria-label="listaTest">add</mat-icon>		</button>		<button backButton mat-icon-button class="circle-button-green" style="position: absolute;bottom: -10px;right:-10px" (click)="confirm()">				<mat-icon aria-hidden="false" aria-label="listaTest">check</mat-icon>		</button></div></div>'
+    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentiLandingComponent', 'selector': 'app-allenamenti-landing'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoLandingComponent', 'selector': 'app-allenamento-landing'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AllenamentoSelectAtletaComponent', 'selector': 'app-allenamento-select-atleta'},{'name': 'AllenamentoSelectTestComponent', 'selector': 'app-allenamento-select-test'},{'name': 'AnagraficaAtletaComponent', 'selector': 'app-anagrafica-atleta'},{'name': 'AnagraficaRisultatoComponent', 'selector': 'app-anagrafica-risultato'},{'name': 'AnagraficaTestComponent', 'selector': 'app-anagrafica-test'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'BeforeGaraComponent', 'selector': 'app-before-gara'},{'name': 'CostruisciComponent', 'selector': 'app-costruisci'},{'name': 'GaraLandingComponent', 'selector': 'app-gara-landing'},{'name': 'GaraPreviewComponent', 'selector': 'app-gara-preview'},{'name': 'GareComponent', 'selector': 'app-gare'},{'name': 'GareggiaComponent', 'selector': 'app-gareggia'},{'name': 'GareLandingComponent', 'selector': 'app-gare-landing'},{'name': 'GestioneAtletiComponent', 'selector': 'app-gestione-atleti'},{'name': 'GestioneAtletiLandingComponent', 'selector': 'app-gestione-atleti-landing'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'GestioneLandingComponent', 'selector': 'app-gestione-landing'},{'name': 'GestioneTestComponent', 'selector': 'app-gestione-test'},{'name': 'GestioneTestLandingComponent', 'selector': 'app-gestione-test-landing'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputSexComponent', 'selector': 'app-input-sex'},{'name': 'InputTestTypeComponent', 'selector': 'app-input-test-type'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAllenamentiLandingComponent', 'selector': 'app-lista-allenamenti-landing'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaGareComponent', 'selector': 'app-lista-gare'},{'name': 'ListaGareLandingComponent', 'selector': 'app-lista-gare-landing'},{'name': 'ListaRisultatiComponent', 'selector': 'app-lista-risultati'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'RisultatoPreviewComponent', 'selector': 'app-risultato-preview'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
     var DIRECTIVES = [{'name': 'BackButtonDirective', 'selector': '[backButton]'}];
     var ACTUAL_COMPONENT = {'name': 'AllenamentoSelectTestComponent'};
 </script>

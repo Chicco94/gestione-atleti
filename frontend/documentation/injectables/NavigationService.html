@@ -260,27 +260,27 @@ import { Injectable } from &#x27;@angular/core&#x27;;
 import { NavigationEnd, Router } from &#x27;@angular/router&#x27;;
 
 @Injectable({
-  providedIn: &#x27;root&#x27;
+	providedIn: &#x27;root&#x27;
 })
 export class NavigationService {
-  private history: string[] &#x3D; []
+	private history: string[] &#x3D; []
 
-  constructor(private router: Router, private location: Location) {
-    this.router.events.subscribe((event) &#x3D;&gt; {
-      if (event instanceof NavigationEnd) {
-        this.history.push(event.urlAfterRedirects)
-      }
-    })
-  }
+	constructor(private router: Router, private location: Location) {
+		this.router.events.subscribe((event) &#x3D;&gt; {
+			if (event instanceof NavigationEnd) {
+				this.history.push(event.urlAfterRedirects)
+			}
+		})
+	}
 
-  back(): void {
-    this.history.pop()
-    if (this.history.length &gt; 0) {
-      this.location.back()
-    } else {
-      this.router.navigateByUrl(&#x27;/&#x27;)
-    }
-  }
+	back(): void {
+		let value &#x3D; this.history.pop();
+		if (this.history.length &gt; 0) {
+			this.location.back()
+		} else {
+			this.router.navigateByUrl(&#x27;/&#x27;)
+		}
+	}
 }
 </code></pre>
     </div>

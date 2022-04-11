@@ -483,42 +483,42 @@
 import { TestTypeEnum } from &#x27;../../models/enumerations&#x27;;
 
 @Component({
-  selector: &#x27;app-input-test-type&#x27;,
-  templateUrl: &#x27;./input-test-type.component.html&#x27;,
-  styleUrls: [&#x27;./input-test-type.component.scss&#x27;]
+	selector: &#x27;app-input-test-type&#x27;,
+	templateUrl: &#x27;./input-test-type.component.html&#x27;,
+	styleUrls: [&#x27;./input-test-type.component.scss&#x27;]
 })
 export class InputTestTypeComponent implements OnInit {
-  @Input() placeholder:string &#x3D; &quot;&quot;;
-  @Input() model:string &#x3D; TestTypeEnum.Crono;
-  testTypeEnum &#x3D; TestTypeEnum;
-  enumKeys:string[]&#x3D;[];
-  @Output() modelChange:EventEmitter&lt;string&gt; &#x3D; new EventEmitter&lt;string&gt;();
+	@Input() placeholder:string &#x3D; &quot;&quot;;
+	@Input() model:string &#x3D; TestTypeEnum.Crono;
+	testTypeEnum &#x3D; TestTypeEnum;
+	enumKeys:string[]&#x3D;[];
+	@Output() modelChange:EventEmitter&lt;string&gt; &#x3D; new EventEmitter&lt;string&gt;();
 
-  constructor() { }
+	constructor() { }
 
-  ngOnInit(): void {
-    this.enumKeys&#x3D;Object.keys(this.testTypeEnum);
-  }
+	ngOnInit(): void {
+		this.enumKeys&#x3D;Object.keys(this.testTypeEnum);
+	}
 
-  onModelChange(value: string) {
-    this.modelChange.emit(value);
-  }
+	onModelChange(value: string) {
+		this.modelChange.emit(value);
+	}
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div style&#x3D;&quot;margin-left: 10px;margin-right: 10px; background-color: white;border-radius: 15px;&quot;&gt;
-    &lt;mat-form-field fxFlex style&#x3D;&quot;margin-left: 10px;margin-right: 10px;&quot;&gt;
-        &lt;mat-label&gt;{{placeholder}}&lt;/mat-label&gt;
-        &lt;mat-select 
-                [(ngModel)]&#x3D;&quot;model&quot; 
-                (ngModelChange)&#x3D;&quot;onModelChange(model)&quot;
-                [ngModelOptions]&#x3D;&quot;{standalone: true}&quot; 
-                (click)&#x3D;&quot;$event.stopPropagation();&quot;  &gt;
-            &lt;mat-option *ngFor&#x3D;&quot;let item of enumKeys&quot; [value]&#x3D;&quot;item&quot;&gt;{{item}}&lt;/mat-option&gt;
-        &lt;/mat-select&gt;
-    &lt;/mat-form-field&gt;
+		&lt;mat-form-field fxFlex style&#x3D;&quot;margin-left: 10px;margin-right: 10px;&quot;&gt;
+				&lt;mat-label&gt;{{placeholder}}&lt;/mat-label&gt;
+				&lt;mat-select 
+								[(ngModel)]&#x3D;&quot;model&quot; 
+								(ngModelChange)&#x3D;&quot;onModelChange(model)&quot;
+								[ngModelOptions]&#x3D;&quot;{standalone: true}&quot; 
+								(click)&#x3D;&quot;$event.stopPropagation();&quot;	&gt;
+						&lt;mat-option *ngFor&#x3D;&quot;let item of enumKeys&quot; [value]&#x3D;&quot;item&quot;&gt;{{item}}&lt;/mat-option&gt;
+				&lt;/mat-select&gt;
+		&lt;/mat-form-field&gt;
 &lt;/div&gt;</code></pre>
     </div>
 
@@ -554,8 +554,8 @@ export class InputTestTypeComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div style="margin-left: 10px;margin-right: 10px; background-color: white;border-radius: 15px;">    <mat-form-field fxFlex style="margin-left: 10px;margin-right: 10px;">        <mat-label>{{placeholder}}</mat-label>        <mat-select                 [(ngModel)]="model"                 (ngModelChange)="onModelChange(model)"                [ngModelOptions]="{standalone: true}"                 (click)="$event.stopPropagation();"  >            <mat-option *ngFor="let item of enumKeys" [value]="item">{{item}}</mat-option>        </mat-select>    </mat-form-field></div></div>'
-    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentiLandingComponent', 'selector': 'app-allenamenti-landing'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoLandingComponent', 'selector': 'app-allenamento-landing'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AllenamentoSelectAtletaComponent', 'selector': 'app-allenamento-select-atleta'},{'name': 'AllenamentoSelectTestComponent', 'selector': 'app-allenamento-select-test'},{'name': 'AnagraficaAtletaComponent', 'selector': 'app-anagrafica-atleta'},{'name': 'AnagraficaTestComponent', 'selector': 'app-anagrafica-test'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'GestioneAtletiComponent', 'selector': 'app-gestione-atleti'},{'name': 'GestioneAtletiLandingComponent', 'selector': 'app-gestione-atleti-landing'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'GestioneLandingComponent', 'selector': 'app-gestione-landing'},{'name': 'GestioneTestComponent', 'selector': 'app-gestione-test'},{'name': 'GestioneTestLandingComponent', 'selector': 'app-gestione-test-landing'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputSexComponent', 'selector': 'app-input-sex'},{'name': 'InputTestTypeComponent', 'selector': 'app-input-test-type'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAllenamentiLandingComponent', 'selector': 'app-lista-allenamenti-landing'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
+        var COMPONENT_TEMPLATE = '<div><div style="margin-left: 10px;margin-right: 10px; background-color: white;border-radius: 15px;">		<mat-form-field fxFlex style="margin-left: 10px;margin-right: 10px;">				<mat-label>{{placeholder}}</mat-label>				<mat-select 								[(ngModel)]="model" 								(ngModelChange)="onModelChange(model)"								[ngModelOptions]="{standalone: true}" 								(click)="$event.stopPropagation();"	>						<mat-option *ngFor="let item of enumKeys" [value]="item">{{item}}</mat-option>				</mat-select>		</mat-form-field></div></div>'
+    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentiLandingComponent', 'selector': 'app-allenamenti-landing'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoLandingComponent', 'selector': 'app-allenamento-landing'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AllenamentoSelectAtletaComponent', 'selector': 'app-allenamento-select-atleta'},{'name': 'AllenamentoSelectTestComponent', 'selector': 'app-allenamento-select-test'},{'name': 'AnagraficaAtletaComponent', 'selector': 'app-anagrafica-atleta'},{'name': 'AnagraficaRisultatoComponent', 'selector': 'app-anagrafica-risultato'},{'name': 'AnagraficaTestComponent', 'selector': 'app-anagrafica-test'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'BeforeGaraComponent', 'selector': 'app-before-gara'},{'name': 'CostruisciComponent', 'selector': 'app-costruisci'},{'name': 'GaraLandingComponent', 'selector': 'app-gara-landing'},{'name': 'GaraPreviewComponent', 'selector': 'app-gara-preview'},{'name': 'GareComponent', 'selector': 'app-gare'},{'name': 'GareggiaComponent', 'selector': 'app-gareggia'},{'name': 'GareLandingComponent', 'selector': 'app-gare-landing'},{'name': 'GestioneAtletiComponent', 'selector': 'app-gestione-atleti'},{'name': 'GestioneAtletiLandingComponent', 'selector': 'app-gestione-atleti-landing'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'GestioneLandingComponent', 'selector': 'app-gestione-landing'},{'name': 'GestioneTestComponent', 'selector': 'app-gestione-test'},{'name': 'GestioneTestLandingComponent', 'selector': 'app-gestione-test-landing'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputSexComponent', 'selector': 'app-input-sex'},{'name': 'InputTestTypeComponent', 'selector': 'app-input-test-type'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAllenamentiLandingComponent', 'selector': 'app-lista-allenamenti-landing'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaGareComponent', 'selector': 'app-lista-gare'},{'name': 'ListaGareLandingComponent', 'selector': 'app-lista-gare-landing'},{'name': 'ListaRisultatiComponent', 'selector': 'app-lista-risultati'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'RisultatoPreviewComponent', 'selector': 'app-risultato-preview'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
     var DIRECTIVES = [{'name': 'BackButtonDirective', 'selector': '[backButton]'}];
     var ACTUAL_COMPONENT = {'name': 'InputTestTypeComponent'};
 </script>

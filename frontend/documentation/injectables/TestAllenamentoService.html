@@ -351,11 +351,11 @@ import { Socket } from &#x27;ngx-socket-io&#x27;;
 import { Test } from &#x27;../models/test.model&#x27;;
 
 @Injectable({
-  providedIn: &#x27;root&#x27;
+	providedIn: &#x27;root&#x27;
 })
 export class TestAllenamentoService {
 
-  constructor(private socket: Socket) {
+	constructor(private socket: Socket) {
 		Object.setPrototypeOf(this, TestAllenamentoService.prototype);
 	}
 
@@ -368,7 +368,8 @@ export class TestAllenamentoService {
 	}
 	OnGetTestAllenamentoByAllenamento() {return this.socket.fromEvent(&#x27;getTestAllenamentoByAllenamento&#x27;);}
 }
-</code></pre>
+
+export class MockTestAllenamentoService {}</code></pre>
     </div>
 
 </div>

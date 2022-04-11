@@ -91,6 +91,9 @@
                                 <a href="#getTest" >getTest</a>
                             </li>
                             <li>
+                                <a href="#goToTest" >goToTest</a>
+                            </li>
+                            <li>
                                 <a href="#OnFetchTests" >OnFetchTests</a>
                             </li>
                             <li>
@@ -117,12 +120,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(socket: Socket)</code>
+<code>constructor(socket: Socket, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/shared/services/test.service.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/shared/services/test.service.ts:9</a></div>
                             </td>
                         </tr>
 
@@ -144,6 +147,18 @@
                                                   
                                                         <td>
                                                                     <code>Socket</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -178,15 +193,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>addTest(atleta: <a href="../classes/Test.html" target="_self">Test</a>)</code>
+<code>addTest(test: <a href="../classes/Test.html" target="_self">Test</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/app/shared/services/test.service.ts:16</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">src/app/shared/services/test.service.ts:15</a></div>
                 </td>
             </tr>
 
@@ -207,7 +222,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>atleta</td>
+                                    <td>test</td>
                                     <td>
                                                 <code><a href="../classes/Test.html" target="_self" >Test</a></code>
                                     </td>
@@ -254,8 +269,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/shared/services/test.service.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/app/shared/services/test.service.ts:17</a></div>
                 </td>
             </tr>
 
@@ -323,8 +338,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/app/shared/services/test.service.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="14"
+                            class="link-to-prism">src/app/shared/services/test.service.ts:14</a></div>
                 </td>
             </tr>
 
@@ -360,8 +375,77 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/shared/services/test.service.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/shared/services/test.service.ts:18</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goToTest"></a>
+                    <span class="name">
+                        <span ><b>goToTest</b></span>
+                        <a href="#goToTest"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goToTest(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/shared/services/test.service.ts:23</a></div>
                 </td>
             </tr>
 
@@ -429,8 +513,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="21"
-                            class="link-to-prism">src/app/shared/services/test.service.ts:21</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/shared/services/test.service.ts:20</a></div>
                 </td>
             </tr>
 
@@ -466,8 +550,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/shared/services/test.service.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="21"
+                            class="link-to-prism">src/app/shared/services/test.service.ts:21</a></div>
                 </td>
             </tr>
 
@@ -496,15 +580,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>updateTest(atleta: <a href="../classes/Test.html" target="_self">Test</a>)</code>
+<code>updateTest(test: <a href="../classes/Test.html" target="_self">Test</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/shared/services/test.service.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="16"
+                            class="link-to-prism">src/app/shared/services/test.service.ts:16</a></div>
                 </td>
             </tr>
 
@@ -525,7 +609,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>atleta</td>
+                                    <td>test</td>
                                     <td>
                                                 <code><a href="../classes/Test.html" target="_self" >Test</a></code>
                                     </td>
@@ -559,29 +643,34 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
 import { Socket } from &#x27;ngx-socket-io&#x27;;
 import { Test } from &#x27;../models/test.model&#x27;;
 
 @Injectable({
-  providedIn: &#x27;root&#x27;
+	providedIn: &#x27;root&#x27;
 })
 export class TestService {
-	constructor(private socket: Socket) {
+	constructor(private socket: Socket,private router:Router) {
 		Object.setPrototypeOf(this, TestService.prototype);
 	}
 
-
-
 	fetchTests(){this.socket.emit(&#x27;fetchTests&#x27;);}
-	addTest(atleta:Test){this.socket.emit(&#x27;addTest&#x27;,atleta);}
-	updateTest(atleta:Test){this.socket.emit(&#x27;updateTest&#x27;,atleta);}
+	addTest(test:Test){this.socket.emit(&#x27;addTest&#x27;,test);}
+	updateTest(test:Test){this.socket.emit(&#x27;updateTest&#x27;,test);}
 	deleteTest(id:number){this.socket.emit(&#x27;deleteTest&#x27;,id);}
 	getTest(id:number){this.socket.emit(&#x27;getTest&#x27;,id);}
 
 	OnFetchTests() {return this.socket.fromEvent(&#x27;fetchTests&#x27;);}
 	OnGetTest() {return this.socket.fromEvent(&#x27;getTest&#x27;);}
+
+	goToTest(id:number){
+		this.router.navigate([&#x27;/gestione/gestioneTest&#x27;, id]);
+	}
 }
-</code></pre>
+
+export class MockTestService {
+}</code></pre>
     </div>
 
 </div>

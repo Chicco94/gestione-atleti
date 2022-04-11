@@ -259,16 +259,16 @@
 import { NavigationService } from &#x27;../services/navigation.service&#x27;;
 
 @Directive({
-  selector: &#x27;[backButton]&#x27;
+	selector: &#x27;[backButton]&#x27;
 })
 export class BackButtonDirective {
 
-  constructor(private navigation:NavigationService) { }
+	constructor(private navigation:NavigationService) { }
 
-  @HostListener(&#x27;click&#x27;)
-  back(): void {
-    this.navigation.back()
-  }
+	@HostListener(&#x27;click&#x27;)
+	back(): void {
+		this.navigation.back()
+	}
 }
 </code></pre>
     </div>

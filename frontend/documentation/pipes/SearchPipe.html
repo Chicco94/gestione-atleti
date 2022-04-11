@@ -203,21 +203,21 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Pipe, PipeTransform } from &#x27;@angular/core&#x27;;
 
 @Pipe({
-  name: &#x27;search&#x27;
+	name: &#x27;search&#x27;
 })
 export class SearchPipe implements PipeTransform {
-  /**
-   * @description Data una lista di elementi omogenei, degli attributi degli elementi ed una stringa da cercare ritorna tutti gli elementi della lista passata in cui l&#x27;elemento da cercare compare tra gli attributi indicati
-   * @param value lista di elementi omogenei
-   * @param keys nomi degli attributi tra cui cercare divisi da &quot;,&quot;
-   * @param term stringa da ricercare
-   * @returns lista degli elementi in cui compare la stringa cercata negli attributi indicati
-   */
-  public transform(value:any[], keys: string, term: string) {
-    if (!term) return value;
-    return (value || []).filter(item &#x3D;&gt; keys.split(&#x27;,&#x27;).some(key &#x3D;&gt; item.hasOwnProperty(key) &amp;&amp; String(item[key]).toLowerCase().includes(term.toLowerCase())));
+	/**
+	 * @description Data una lista di elementi omogenei, degli attributi degli elementi ed una stringa da cercare ritorna tutti gli elementi della lista passata in cui l&#x27;elemento da cercare compare tra gli attributi indicati
+	 * @param value lista di elementi omogenei
+	 * @param keys nomi degli attributi tra cui cercare divisi da &quot;,&quot;
+	 * @param term stringa da ricercare
+	 * @returns lista degli elementi in cui compare la stringa cercata negli attributi indicati
+	 */
+	public transform(value:any[], keys: string, term: string) {
+		if (!term) return value;
+		return (value || []).filter(item &#x3D;&gt; keys.split(&#x27;,&#x27;).some(key &#x3D;&gt; item.hasOwnProperty(key) &amp;&amp; String(item[key]).toLowerCase().includes(term.toLowerCase())));
 
-  }
+	}
 }</code></pre>
     </div>
 

@@ -64,7 +64,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/base/components/login/login.component.ts</code>
+    <code>src/app/shared/components/login/login.component.ts</code>
 </p>
 
 
@@ -183,7 +183,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/base/components/login/login.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/shared/components/login/login.component.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -275,7 +275,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/app/base/components/login/login.component.ts:29</a></div>
+                            class="link-to-prism">src/app/shared/components/login/login.component.ts:29</a></div>
                 </td>
             </tr>
 
@@ -312,7 +312,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/app/base/components/login/login.component.ts:24</a></div>
+                            class="link-to-prism">src/app/shared/components/login/login.component.ts:24</a></div>
                 </td>
             </tr>
 
@@ -358,7 +358,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/base/components/login/login.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/shared/components/login/login.component.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -389,7 +389,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/base/components/login/login.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/shared/components/login/login.component.ts:13</a></div>
                         </td>
                     </tr>
 
@@ -420,7 +420,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/base/components/login/login.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/components/login/login.component.ts:11</a></div>
                         </td>
                     </tr>
 
@@ -438,32 +438,32 @@ import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
 import { AuthenticationService } from &#x27;../../services/authentication.service&#x27;;
 
 @Component({
-  selector: &#x27;app-login&#x27;,
-  templateUrl: &#x27;./login.component.html&#x27;,
-  styleUrls: [&#x27;./login.component.scss&#x27;]
+	selector: &#x27;app-login&#x27;,
+	templateUrl: &#x27;./login.component.html&#x27;,
+	styleUrls: [&#x27;./login.component.scss&#x27;]
 })
 export class LoginComponent implements OnInit {
-  username:string&#x3D;&#x27;&#x27;;
-  password:string&#x3D;&#x27;&#x27;;
-  returnUrl:string&#x3D;&#x27;&#x27;;
+	username:string&#x3D;&#x27;&#x27;;
+	password:string&#x3D;&#x27;&#x27;;
+	returnUrl:string&#x3D;&#x27;&#x27;;
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private authenticationService: AuthenticationService) { 
-      // redirect to home if already logged in
-      if (this.authenticationService.currentUserValue) { 
-          this.router.navigate([&#x27;/&#x27;]);
-      }}
+	constructor(
+		private route: ActivatedRoute,
+		private router: Router,
+		private authenticationService: AuthenticationService) { 
+			// redirect to home if already logged in
+			if (this.authenticationService.currentUserValue) { 
+					this.router.navigate([&#x27;/&#x27;]);
+			}}
 
-  ngOnInit(): void {        
-    // get return url from route parameters or default to &#x27;/&#x27;
-    this.returnUrl &#x3D; this.route.snapshot.queryParams[&#x27;returnUrl&#x27;] || &#x27;/&#x27;;
-  }
+	ngOnInit(): void {				
+		// get return url from route parameters or default to &#x27;/&#x27;
+		this.returnUrl &#x3D; this.route.snapshot.queryParams[&#x27;returnUrl&#x27;] || &#x27;/&#x27;;
+	}
 
-  login():void{
-    this.authenticationService.login(this.username, this.password)
-  }
+	login():void{
+		this.authenticationService.login(this.username, this.password)
+	}
 
 }
 </code></pre>
@@ -472,11 +472,11 @@ export class LoginComponent implements OnInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">
 &lt;div fxLayout&#x3D;&quot;column&quot; fxLayoutAlign&#x3D;&quot;center center&quot; style&#x3D;&quot;height:100%;width:100%&quot;&gt;
-    &lt;app-input-text placeholder&#x3D;&quot;username&quot; [(model)]&#x3D;&quot;username&quot;&gt;&lt;/app-input-text&gt;
-    &lt;app-input-text placeholder&#x3D;&quot;password&quot; [(model)]&#x3D;&quot;password&quot; [hiddenCharacters]&#x3D;&quot;true&quot;&gt;&lt;/app-input-text&gt;
-    &lt;button mat-flat-button style&#x3D;&quot;margin-top: 10px;&quot; (click)&#x3D;&quot;login()&quot;&gt;
-        LOGIN
-    &lt;/button&gt;
+		&lt;app-input-text placeholder&#x3D;&quot;username&quot; [(model)]&#x3D;&quot;username&quot;&gt;&lt;/app-input-text&gt;
+		&lt;app-input-text placeholder&#x3D;&quot;password&quot; [(model)]&#x3D;&quot;password&quot; [hiddenCharacters]&#x3D;&quot;true&quot;&gt;&lt;/app-input-text&gt;
+		&lt;button mat-flat-button style&#x3D;&quot;margin-top: 10px;&quot; (click)&#x3D;&quot;login()&quot;&gt;
+				LOGIN
+		&lt;/button&gt;
 &lt;/div&gt;</code></pre>
     </div>
 
@@ -512,8 +512,8 @@ export class LoginComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div fxLayout="column" fxLayoutAlign="center center" style="height:100%;width:100%">    <app-input-text placeholder="username" [(model)]="username"></app-input-text>    <app-input-text placeholder="password" [(model)]="password" [hiddenCharacters]="true"></app-input-text>    <button mat-flat-button style="margin-top: 10px;" (click)="login()">        LOGIN    </button></div></div>'
-    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentiLandingComponent', 'selector': 'app-allenamenti-landing'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoLandingComponent', 'selector': 'app-allenamento-landing'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AllenamentoSelectAtletaComponent', 'selector': 'app-allenamento-select-atleta'},{'name': 'AllenamentoSelectTestComponent', 'selector': 'app-allenamento-select-test'},{'name': 'AnagraficaAtletaComponent', 'selector': 'app-anagrafica-atleta'},{'name': 'AnagraficaTestComponent', 'selector': 'app-anagrafica-test'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'GestioneAtletiComponent', 'selector': 'app-gestione-atleti'},{'name': 'GestioneAtletiLandingComponent', 'selector': 'app-gestione-atleti-landing'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'GestioneLandingComponent', 'selector': 'app-gestione-landing'},{'name': 'GestioneTestComponent', 'selector': 'app-gestione-test'},{'name': 'GestioneTestLandingComponent', 'selector': 'app-gestione-test-landing'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputSexComponent', 'selector': 'app-input-sex'},{'name': 'InputTestTypeComponent', 'selector': 'app-input-test-type'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAllenamentiLandingComponent', 'selector': 'app-lista-allenamenti-landing'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
+        var COMPONENT_TEMPLATE = '<div><div fxLayout="column" fxLayoutAlign="center center" style="height:100%;width:100%">		<app-input-text placeholder="username" [(model)]="username"></app-input-text>		<app-input-text placeholder="password" [(model)]="password" [hiddenCharacters]="true"></app-input-text>		<button mat-flat-button style="margin-top: 10px;" (click)="login()">				LOGIN		</button></div></div>'
+    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentiLandingComponent', 'selector': 'app-allenamenti-landing'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoLandingComponent', 'selector': 'app-allenamento-landing'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AllenamentoSelectAtletaComponent', 'selector': 'app-allenamento-select-atleta'},{'name': 'AllenamentoSelectTestComponent', 'selector': 'app-allenamento-select-test'},{'name': 'AnagraficaAtletaComponent', 'selector': 'app-anagrafica-atleta'},{'name': 'AnagraficaRisultatoComponent', 'selector': 'app-anagrafica-risultato'},{'name': 'AnagraficaTestComponent', 'selector': 'app-anagrafica-test'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'BeforeGaraComponent', 'selector': 'app-before-gara'},{'name': 'CostruisciComponent', 'selector': 'app-costruisci'},{'name': 'GaraLandingComponent', 'selector': 'app-gara-landing'},{'name': 'GaraPreviewComponent', 'selector': 'app-gara-preview'},{'name': 'GareComponent', 'selector': 'app-gare'},{'name': 'GareggiaComponent', 'selector': 'app-gareggia'},{'name': 'GareLandingComponent', 'selector': 'app-gare-landing'},{'name': 'GestioneAtletiComponent', 'selector': 'app-gestione-atleti'},{'name': 'GestioneAtletiLandingComponent', 'selector': 'app-gestione-atleti-landing'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'GestioneLandingComponent', 'selector': 'app-gestione-landing'},{'name': 'GestioneTestComponent', 'selector': 'app-gestione-test'},{'name': 'GestioneTestLandingComponent', 'selector': 'app-gestione-test-landing'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputSexComponent', 'selector': 'app-input-sex'},{'name': 'InputTestTypeComponent', 'selector': 'app-input-test-type'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAllenamentiLandingComponent', 'selector': 'app-lista-allenamenti-landing'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaGareComponent', 'selector': 'app-lista-gare'},{'name': 'ListaGareLandingComponent', 'selector': 'app-lista-gare-landing'},{'name': 'ListaRisultatiComponent', 'selector': 'app-lista-risultati'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'RisultatoPreviewComponent', 'selector': 'app-risultato-preview'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
     var DIRECTIVES = [{'name': 'BackButtonDirective', 'selector': '[backButton]'}];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
 </script>

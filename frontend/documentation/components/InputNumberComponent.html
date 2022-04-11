@@ -153,6 +153,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#disabled" >disabled</a>
+                            </li>
+                            <li>
                                 <a href="#model" >model</a>
                             </li>
                             <li>
@@ -194,7 +197,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/base/components/input-number/input-number.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/base/components/input-number/input-number.component.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -204,6 +207,32 @@
 
     <section>
     <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="disabled"></a>
+                        <b>disabled</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/base/components/input-number/input-number.component.ts:11</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -275,7 +304,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/base/components/input-number/input-number.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/base/components/input-number/input-number.component.ts:12</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -308,8 +337,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/base/components/input-number/input-number.component.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">src/app/base/components/input-number/input-number.component.ts:15</a></div>
                 </td>
             </tr>
 
@@ -345,8 +374,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/base/components/input-number/input-number.component.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/base/components/input-number/input-number.component.ts:18</a></div>
                 </td>
             </tr>
 
@@ -403,22 +432,23 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, EventEmitter, Input, OnInit, Output } from &#x27;@angular/core&#x27;;
 
 @Component({
-  selector: &#x27;app-input-number&#x27;,
-  templateUrl: &#x27;./input-number.component.html&#x27;,
-  styleUrls: [&#x27;./input-number.component.scss&#x27;]
+	selector: &#x27;app-input-number&#x27;,
+	templateUrl: &#x27;./input-number.component.html&#x27;,
+	styleUrls: [&#x27;./input-number.component.scss&#x27;]
 })
 export class InputNumberComponent implements OnInit {
-  @Input() placeholder:string &#x3D; &quot;&quot;;
-  @Input() model:number &#x3D; 0;
-  @Output() modelChange:EventEmitter&lt;number&gt; &#x3D; new EventEmitter&lt;number&gt;();
-  constructor() { }
+	@Input() placeholder:string &#x3D; &quot;&quot;;
+	@Input() model:number &#x3D; 0;
+	@Input() disabled:boolean &#x3D; false;
+	@Output() modelChange:EventEmitter&lt;number&gt; &#x3D; new EventEmitter&lt;number&gt;();
+	constructor() { }
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {
+	}
 
-  onModelChange(value: number) {
-    this.modelChange.emit(value);
-  }
+	onModelChange(value: number) {
+		this.modelChange.emit(value);
+	}
 
 }
 </code></pre>
@@ -426,16 +456,17 @@ export class InputNumberComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div style&#x3D;&quot;margin-left: 10px;margin-right: 10px; background-color: white;border-radius: 15px;&quot;&gt;
-    &lt;mat-form-field fxFlex style&#x3D;&quot;margin-left: 10px;margin-right: 10px;&quot;&gt;
-        &lt;input 
-            matInput 
-            type&#x3D;&quot;number&quot; 
-            [placeholder]&#x3D;&quot;placeholder&quot; 
-            [(ngModel)]&#x3D;&quot;model&quot; 
-            (ngModelChange)&#x3D;&quot;onModelChange(model)&quot;
-            [ngModelOptions]&#x3D;&quot;{standalone: true}&quot;
-        &gt;
-    &lt;/mat-form-field&gt;
+		&lt;mat-form-field fxFlex style&#x3D;&quot;margin-left: 10px;margin-right: 10px;&quot;&gt;
+				&lt;input 
+						matInput 
+						type&#x3D;&quot;number&quot; 
+						[placeholder]&#x3D;&quot;placeholder&quot; 
+						[(ngModel)]&#x3D;&quot;model&quot; 
+						(ngModelChange)&#x3D;&quot;onModelChange(model)&quot;
+						[ngModelOptions]&#x3D;&quot;{standalone: true}&quot;
+						[disabled]&#x3D;&quot;disabled&quot;
+				&gt;
+		&lt;/mat-form-field&gt;
 &lt;/div&gt;
 </code></pre>
     </div>
@@ -472,8 +503,8 @@ export class InputNumberComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div style="margin-left: 10px;margin-right: 10px; background-color: white;border-radius: 15px;">    <mat-form-field fxFlex style="margin-left: 10px;margin-right: 10px;">        <input             matInput             type="number"             [placeholder]="placeholder"             [(ngModel)]="model"             (ngModelChange)="onModelChange(model)"            [ngModelOptions]="{standalone: true}"        >    </mat-form-field></div></div>'
-    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentiLandingComponent', 'selector': 'app-allenamenti-landing'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoLandingComponent', 'selector': 'app-allenamento-landing'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AllenamentoSelectAtletaComponent', 'selector': 'app-allenamento-select-atleta'},{'name': 'AllenamentoSelectTestComponent', 'selector': 'app-allenamento-select-test'},{'name': 'AnagraficaAtletaComponent', 'selector': 'app-anagrafica-atleta'},{'name': 'AnagraficaTestComponent', 'selector': 'app-anagrafica-test'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'GestioneAtletiComponent', 'selector': 'app-gestione-atleti'},{'name': 'GestioneAtletiLandingComponent', 'selector': 'app-gestione-atleti-landing'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'GestioneLandingComponent', 'selector': 'app-gestione-landing'},{'name': 'GestioneTestComponent', 'selector': 'app-gestione-test'},{'name': 'GestioneTestLandingComponent', 'selector': 'app-gestione-test-landing'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputSexComponent', 'selector': 'app-input-sex'},{'name': 'InputTestTypeComponent', 'selector': 'app-input-test-type'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAllenamentiLandingComponent', 'selector': 'app-lista-allenamenti-landing'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
+        var COMPONENT_TEMPLATE = '<div><div style="margin-left: 10px;margin-right: 10px; background-color: white;border-radius: 15px;">		<mat-form-field fxFlex style="margin-left: 10px;margin-right: 10px;">				<input 						matInput 						type="number" 						[placeholder]="placeholder" 						[(ngModel)]="model" 						(ngModelChange)="onModelChange(model)"						[ngModelOptions]="{standalone: true}"						[disabled]="disabled"				>		</mat-form-field></div></div>'
+    var COMPONENTS = [{'name': 'AllenamentiComponent', 'selector': 'app-allenamenti'},{'name': 'AllenamentiLandingComponent', 'selector': 'app-allenamenti-landing'},{'name': 'AllenamentoAttivoComponent', 'selector': 'app-allenamento-attivo'},{'name': 'AllenamentoComponent', 'selector': 'app-allenamento'},{'name': 'AllenamentoLandingComponent', 'selector': 'app-allenamento-landing'},{'name': 'AllenamentoPreviewComponent', 'selector': 'app-allenamento-preview'},{'name': 'AllenamentoSelectAtletaComponent', 'selector': 'app-allenamento-select-atleta'},{'name': 'AllenamentoSelectTestComponent', 'selector': 'app-allenamento-select-test'},{'name': 'AnagraficaAtletaComponent', 'selector': 'app-anagrafica-atleta'},{'name': 'AnagraficaRisultatoComponent', 'selector': 'app-anagrafica-risultato'},{'name': 'AnagraficaTestComponent', 'selector': 'app-anagrafica-test'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AtletaPreviewComponent', 'selector': 'app-atleta-preview'},{'name': 'BeforeAllenamentoComponent', 'selector': 'app-before-allenamento'},{'name': 'BeforeGaraComponent', 'selector': 'app-before-gara'},{'name': 'CostruisciComponent', 'selector': 'app-costruisci'},{'name': 'GaraLandingComponent', 'selector': 'app-gara-landing'},{'name': 'GaraPreviewComponent', 'selector': 'app-gara-preview'},{'name': 'GareComponent', 'selector': 'app-gare'},{'name': 'GareggiaComponent', 'selector': 'app-gareggia'},{'name': 'GareLandingComponent', 'selector': 'app-gare-landing'},{'name': 'GestioneAtletiComponent', 'selector': 'app-gestione-atleti'},{'name': 'GestioneAtletiLandingComponent', 'selector': 'app-gestione-atleti-landing'},{'name': 'GestioneComponent', 'selector': 'app-gestione'},{'name': 'GestioneLandingComponent', 'selector': 'app-gestione-landing'},{'name': 'GestioneTestComponent', 'selector': 'app-gestione-test'},{'name': 'GestioneTestLandingComponent', 'selector': 'app-gestione-test-landing'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'app-input-date'},{'name': 'InputNumberComponent', 'selector': 'app-input-number'},{'name': 'InputSexComponent', 'selector': 'app-input-sex'},{'name': 'InputTestTypeComponent', 'selector': 'app-input-test-type'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTimeComponent', 'selector': 'app-input-time'},{'name': 'ListaAllenamentiComponent', 'selector': 'app-lista-allenamenti'},{'name': 'ListaAllenamentiLandingComponent', 'selector': 'app-lista-allenamenti-landing'},{'name': 'ListaAtletiComponent', 'selector': 'app-lista-atleti'},{'name': 'ListaGareComponent', 'selector': 'app-lista-gare'},{'name': 'ListaGareLandingComponent', 'selector': 'app-lista-gare-landing'},{'name': 'ListaRisultatiComponent', 'selector': 'app-lista-risultati'},{'name': 'ListaTestComponent', 'selector': 'app-lista-test'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'RisultatoPreviewComponent', 'selector': 'app-risultato-preview'},{'name': 'TestPreviewComponent', 'selector': 'app-test-preview'}];
     var DIRECTIVES = [{'name': 'BackButtonDirective', 'selector': '[backButton]'}];
     var ACTUAL_COMPONENT = {'name': 'InputNumberComponent'};
 </script>
