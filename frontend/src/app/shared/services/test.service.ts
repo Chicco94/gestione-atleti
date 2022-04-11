@@ -26,4 +26,6 @@ export class TestService {
 }
 
 export class MockTestService {
+	public fetchTests(){}
+	getTest(id:number){}
 }

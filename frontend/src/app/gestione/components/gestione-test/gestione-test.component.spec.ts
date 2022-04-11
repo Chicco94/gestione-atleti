@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockTestService, TestService } from 'src/app/shared/services/test.service';
 
 import { GestioneTestComponent } from './gestione-test.component';
 
@@ -8,15 +9,16 @@ describe('GestioneTestComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [ GestioneTestComponent ]
+			declarations: [ GestioneTestComponent ],
+			providers:[
+				GestioneTestComponent,
+				{provide: TestService, useClass: MockTestService }
+			]
 		})
-		.compileComponents();
-	});
-
-	beforeEach(() => {
-		fixture = TestBed.createComponent(GestioneTestComponent);
-		component = fixture.componentInstance;
-		fixture.detectChanges();
+		.compileComponents().then(()=>{
+			fixture = TestBed.createComponent(GestioneTestComponent);
+			component = fixture.componentInstance;
+		});
 	});
 
 	it('should create', () => {

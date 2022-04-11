@@ -33,8 +33,5 @@ describe('AllenamentiComponent', () => {
 	});
 });
 
-class MockRouter {
-    navigateByUrl(url: string) { return url; }
-}
 class MockMatDialog {
 }

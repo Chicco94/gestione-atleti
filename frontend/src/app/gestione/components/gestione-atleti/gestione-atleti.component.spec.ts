@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AtletaService, MockAtletaService } from 'src/app/shared/services/atleta.service';
 
 import { GestioneAtletiComponent } from './gestione-atleti.component';
 
@@ -8,15 +9,16 @@ describe('GestioneAtletiComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [ GestioneAtletiComponent ]
+			declarations: [ GestioneAtletiComponent ],
+			providers:[
+				GestioneAtletiComponent,
+				{provide: AtletaService, useClass: MockAtletaService }
+			]
 		})
-		.compileComponents();
-	});
-
-	beforeEach(() => {
-		fixture = TestBed.createComponent(GestioneAtletiComponent);
-		component = fixture.componentInstance;
-		fixture.detectChanges();
+		.compileComponents().then(()=>{
+			fixture = TestBed.createComponent(GestioneAtletiComponent);
+			component = fixture.componentInstance;
+		});
 	});
 
 	it('should create', () => {

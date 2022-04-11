@@ -24,4 +24,5 @@ export class RisultatoService {
 }
 
 export class MockRisultatoService {
+	getRisultato(id:number){}
 }
