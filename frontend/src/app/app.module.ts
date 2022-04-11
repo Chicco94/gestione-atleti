@@ -24,7 +24,6 @@ const config: SocketIoConfig = {
 	],
 	imports: [
 		BrowserModule,
-		BrowserAnimationsModule,
 
 		// Custom
 		AllenamentiModule,
