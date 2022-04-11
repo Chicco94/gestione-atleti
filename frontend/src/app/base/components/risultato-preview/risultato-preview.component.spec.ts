@@ -1,4 +1,6 @@
 import	{	ComponentFixture,	TestBed	}	from	'@angular/core/testing';
+import { BaseModule } from '../../base.module';
+import { MaterialModule } from '../../material.module';
 
 import	{	RisultatoPreviewComponent	}	from	'./risultato-preview.component';
 
@@ -8,7 +10,8 @@ describe('RisultatoPreviewComponent',	()	=>	{
 
 		beforeEach(async	()	=>	{
 				await	TestBed.configureTestingModule({
-						declarations:	[	RisultatoPreviewComponent	]
+						declarations:	[	RisultatoPreviewComponent	],
+						imports:[ BaseModule ],
 				})
 				.compileComponents();
 		});

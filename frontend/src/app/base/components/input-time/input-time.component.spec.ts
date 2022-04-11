@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BaseModule } from '../../base.module';
+import { MaterialModule } from '../../material.module';
 
 import { InputTimeComponent } from './input-time.component';
 
@@ -8,7 +10,8 @@ describe('InputTimeComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [ InputTimeComponent ]
+			declarations: [ InputTimeComponent ],
+			imports:[ BaseModule ],
 		})
 		.compileComponents();
 	});

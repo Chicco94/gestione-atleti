@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BaseModule } from '../../base.module';
+import { MaterialModule } from '../../material.module';
 import { SearchPipe } from '../../pipes/search.pipe';
 
 import { ListaAtletiComponent } from './lista-atleti.component';
@@ -12,7 +14,8 @@ describe('ListaAtletiComponent', () => {
 			declarations: [ ListaAtletiComponent, SearchPipe ],
 			providers:[
 				ListaAtletiComponent,
-			]
+			],
+			imports:[ BaseModule ],
 		})
 		.compileComponents().then(()=>{
 			fixture = TestBed.createComponent(ListaAtletiComponent);

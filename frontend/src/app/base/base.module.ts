@@ -3,28 +3,6 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-// MATERIAL
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatCardModule} from '@angular/material/card';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatInputModule} from '@angular/material/input';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatListModule} from '@angular/material/list';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatSelectModule} from '@angular/material/select';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {ScrollingModule} from '@angular/cdk/scrolling';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {DateAdapter, MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material/core';
-import {MatTableModule} from '@angular/material/table';
-import {MatDividerModule} from '@angular/material/divider';
-
 
 // Components
 import { InputTextComponent } from './components/input-text/input-text.component';
@@ -37,14 +15,24 @@ import { AtletaPreviewComponent } from './components/atleta-preview/atleta-previ
 import { ListaAtletiComponent } from './components/lista-atleti/lista-atleti.component';
 import { ListaTestComponent } from './components/lista-test/lista-test.component';
 import { TestPreviewComponent } from './components/test-preview/test-preview.component';
+import { RisultatoPreviewComponent } from './components/risultato-preview/risultato-preview.component';
+import { ListaRisultatiComponent } from './components/lista-risultati/lista-risultati.component';
 
 
 // Pipes
 import { SearchPipe } from './pipes/search.pipe';
-import { CustomDateAdapter } from './services/custom.date.adapter';
+
+
+// Directives
 import { BackButtonDirective } from './directives/backbutton.directive';
-import { RisultatoPreviewComponent } from './components/risultato-preview/risultato-preview.component';
-import { ListaRisultatiComponent } from './components/lista-risultati/lista-risultati.component';
+
+
+// Material
+import { MaterialModule } from './material.module';
+import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
+import { CustomDateAdapter } from './services/custom.date.adapter';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -72,54 +60,20 @@ import { ListaRisultatiComponent } from './components/lista-risultati/lista-risu
 
 		FlexLayoutModule,
 
-		// Material
-		MatToolbarModule,
-		MatCardModule,
-		MatDialogModule,
-		MatInputModule,
 		FormsModule,
-		MatGridListModule,
-		MatSlideToggleModule,
-		MatListModule,
-		MatButtonModule,
-		MatIconModule,
-		MatFormFieldModule,
-		MatMenuModule,
-		MatSelectModule,
-		MatDatepickerModule,
-		MatNativeDateModule,
-		MatTabsModule,
-		MatProgressSpinnerModule,
-		ScrollingModule,
-		MatCheckboxModule,
-		MatTableModule,
-		MatDividerModule,
+
+		MaterialModule,
+		
+		BrowserAnimationsModule
 	],
 	exports:[
 		FlexLayoutModule,
 
-		// Material
-		MatToolbarModule,
-		MatCardModule,
-		MatDialogModule,
-		MatInputModule,
 		FormsModule,
-		MatGridListModule,
-		MatSlideToggleModule,
-		MatListModule,
-		MatButtonModule,
-		MatIconModule,
-		MatFormFieldModule,
-		MatMenuModule,
-		MatSelectModule,
-		MatDatepickerModule,
-		MatNativeDateModule,
-		MatTabsModule,
-		MatProgressSpinnerModule,
-		ScrollingModule,
-		MatCheckboxModule,
-		MatTableModule,
-		MatDividerModule,
+
+		MaterialModule,
+
+		BrowserAnimationsModule,
 
 		// Components
 		InputTextComponent,

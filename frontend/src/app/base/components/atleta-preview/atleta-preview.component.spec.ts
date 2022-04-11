@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BaseModule } from '../../base.module';
+import { MaterialModule } from '../../material.module';
 
 import { AtletaPreviewComponent } from './atleta-preview.component';
 
@@ -8,7 +10,8 @@ describe('AtletaPreviewComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [ AtletaPreviewComponent ]
+			declarations: [ AtletaPreviewComponent ],
+			imports:[ BaseModule ],
 		})
 		.compileComponents();
 	});

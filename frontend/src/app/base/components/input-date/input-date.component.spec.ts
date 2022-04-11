@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BaseModule } from '../../base.module';
+import { MaterialModule } from '../../material.module';
 
 import { InputDateComponent } from './input-date.component';
 
@@ -8,15 +10,14 @@ describe('InputDateComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [ InputDateComponent ]
+			declarations: [ InputDateComponent ],
+			imports:[ BaseModule ],
+			providers:[ InputDateComponent, ]
 		})
-		.compileComponents();
-	});
-
-	beforeEach(() => {
-		fixture = TestBed.createComponent(InputDateComponent);
-		component = fixture.componentInstance;
-		fixture.detectChanges();
+		.compileComponents().then(()=>{
+			fixture = TestBed.createComponent(InputDateComponent);
+			component = fixture.componentInstance;
+		});
 	});
 
 	it('should create', () => {

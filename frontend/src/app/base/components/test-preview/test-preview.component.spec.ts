@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BaseModule } from '../../base.module';
+import { MaterialModule } from '../../material.module';
 
 import { TestPreviewComponent } from './test-preview.component';
 
@@ -8,7 +10,8 @@ describe('TestPreviewComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [ TestPreviewComponent ]
+			declarations: [ TestPreviewComponent ],
+			imports:[ BaseModule ],
 		})
 		.compileComponents();
 	});
